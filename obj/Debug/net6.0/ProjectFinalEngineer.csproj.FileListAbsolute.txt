@@ -303,3 +303,5 @@ E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\bin\Debug\net6.0\runt
 E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.csproj.CopyComplete
+E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\bin\Debug\net6.0\package-lock.json
+E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\bin\Debug\net6.0\package.json

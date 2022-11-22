@@ -6,7 +6,7 @@ namespace ProjectFinalEngineer
 {
     public class Startup
     {
-        public static string ContentRootPath { get; set; }
+        public static string ContentRootPath { get; set; } = null!;
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
@@ -21,6 +21,10 @@ namespace ProjectFinalEngineer
             services.AddDbContext<AppDbContext>(options =>
             {
                 string connectString = Configuration.GetConnectionString("ForumDb");
+                if (connectString == null)
+                {
+                    throw new Exception("Không tìm thấy chuỗi kết nối.");
+                }
                 options.UseSqlServer(connectString);
             });
             services.AddControllersWithViews();

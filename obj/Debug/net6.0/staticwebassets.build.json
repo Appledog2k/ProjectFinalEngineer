@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9kCmJmtQiLtYtO3TnMpL8mo3ic4Fh4G13GJXdU5Na9Q=",
+  "Hash": "iieGAnYznRLwQNZAAnsuBaVKu1NGiHq5gJldvrLaIpo=",
   "Source": "ProjectFinalEngineer",
   "BasePath": "_content/ProjectFinalEngineer",
   "Mode": "Default",
@@ -49,23 +49,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "E:\\WorkSpace\\Đồ án tốt nghiệp\\ProjectFinalEngineer\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ProjectFinalEngineer.bundle.scp.css"
-    },
-    {
-      "Identity": "E:\\WorkSpace\\Đồ án tốt nghiệp\\ProjectFinalEngineer\\wwwroot\\css\\sb-admin-2.min.css",
-      "SourceId": "ProjectFinalEngineer",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\WorkSpace\\Đồ án tốt nghiệp\\ProjectFinalEngineer\\wwwroot\\",
-      "BasePath": "_content/ProjectFinalEngineer",
-      "RelativePath": "css/sb-admin-2.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\sb-admin-2.min.css"
     },
     {
       "Identity": "E:\\WorkSpace\\Đồ án tốt nghiệp\\ProjectFinalEngineer\\wwwroot\\css\\site.css",

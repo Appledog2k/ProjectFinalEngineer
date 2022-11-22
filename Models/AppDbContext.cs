@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ProjectFinalEngineer.Models.AggregateContact;
 
 namespace ProjectFinalEngineer.Models;
 
@@ -18,13 +19,18 @@ public class AppDbContext : DbContext
         base.OnModelCreating(modelBuilder);
 
         //* Xử lý table name loại bỏ tiền tố ASP.NET
-        // foreach (var entityType in modelBuilder.Model.GetEntityTypes())
-        // {
-        //     var tableName = entityType.GetTableName();
-        //     if (tableName.StartsWith("AspNet"))
-        //     {
-        //         entityType.SetTableName(tableName.Substring(6));
-        //     }
-        // }
+        foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+        {
+            var tableName = entityType.GetTableName();
+            if (tableName == null)
+            {
+                Console.WriteLine("Không có tên bảng dữ liệu.");
+            }
+            if (tableName.StartsWith("AspNet"))
+            {
+                entityType.SetTableName(tableName.Substring(6));
+            }
+        }
     }
+    public DbSet<Contact> Contacts { get; set; }
 }
