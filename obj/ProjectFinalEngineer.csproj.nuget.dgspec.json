@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\WorkSpace\\Đồ án tốt nghiệp\\ProjectFinalEngineer\\ProjectFinalEngineer.csproj": {}
+    "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\ProjectFinalEngineer.csproj": {}
   },
   "projects": {
-    "E:\\WorkSpace\\Đồ án tốt nghiệp\\ProjectFinalEngineer\\ProjectFinalEngineer.csproj": {
+    "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\ProjectFinalEngineer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\WorkSpace\\Đồ án tốt nghiệp\\ProjectFinalEngineer\\ProjectFinalEngineer.csproj",
+        "projectUniqueName": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\ProjectFinalEngineer.csproj",
         "projectName": "ProjectFinalEngineer",
-        "projectPath": "E:\\WorkSpace\\Đồ án tốt nghiệp\\ProjectFinalEngineer\\ProjectFinalEngineer.csproj",
+        "projectPath": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\ProjectFinalEngineer.csproj",
         "packagesPath": "C:\\Users\\x2vos\\.nuget\\packages\\",
-        "outputPath": "E:\\WorkSpace\\Đồ án tốt nghiệp\\ProjectFinalEngineer\\obj\\",
+        "outputPath": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -46,19 +46,71 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.4.2, )"
+            },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Facebook": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.AspNetCore.Authentication.MicrosoftAccount": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.AspNetCore.Authentication.OAuth": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Twitter": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[6.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[6.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[6.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Tools.DotNet": {
               "target": "Package",
@@ -66,23 +118,31 @@
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[6.0.1, )"
             },
             "Microsoft.Extensions.Logging": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[6.0.0, )"
             },
             "Microsoft.Extensions.Logging.Console": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[6.0.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.10, )"
             },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[3.4.2, )"
+            },
             "MySql.Data.EntityFramework": {
               "target": "Package",
               "version": "[8.0.31, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
             }
           },
           "imports": [

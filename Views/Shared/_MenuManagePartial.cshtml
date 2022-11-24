@@ -1,13 +1,28 @@
-<div class="dropdown">
+@* <div class="dropdown">
     <a class="btn btn-outline-danger dropdown-toggle" href="#" id="managedropdownmenu" data-toggle="dropdown">
-        Manage
+    Manage
     </a>
     <div class="dropdown-menu" aria-labelledby="managedropdownmenu">
+    <a class="dropdown-item" asp-action="Index" asp-controller="DbManage" asp-area="Database">
+    Database
+    </a>
+    <a class="dropdown-item" asp-action="Index" asp-controller="Contact" asp-area="Contact">
+    Quản lý liên hệ.
+    </a>
+    </div>
+    </div> *@
+<div class="dropdown show">
+    <a class="btn btn-outline-danger dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Trang quản lý
+    </a>
+
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a class="dropdown-item" asp-action="Index" asp-controller="DbManage" asp-area="Database">
-            Database
+            Quản lý cơ sở dữ liệu
         </a>
         <a class="dropdown-item" asp-action="Index" asp-controller="Contact" asp-area="Contact">
-            Quản lý liên hệ.
+            Quản lý liên hệ
         </a>
     </div>
 </div>

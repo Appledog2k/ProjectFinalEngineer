@@ -1,9 +1,11 @@
+
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ProjectFinalEngineer.Models.AggregateContact;
 
 namespace ProjectFinalEngineer.Models;
 
-public class AppDbContext : DbContext
+public class AppDbContext : IdentityDbContext<UserAggregate>
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
