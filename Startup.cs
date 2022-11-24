@@ -1,8 +1,8 @@
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using ProjectFinalEngineer.Models;
-using ProjectFinalEngineer.Models.AggregateContact;
 
 namespace ProjectFinalEngineer
 {
@@ -23,15 +23,11 @@ namespace ProjectFinalEngineer
             services.AddDbContext<AppDbContext>(options =>
             {
                 string connectString = Configuration.GetConnectionString("ForumDb");
-                if (connectString == null)
-                {
-                    throw new Exception("Không tìm thấy chuỗi kết nối.");
-                }
                 options.UseSqlServer(connectString);
             });
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddIdentity<UserAggregate, IdentityRole>()
+            services.AddIdentity<AppUser, IdentityRole>()
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
             // services.AddTransient(typeof(ILogger<>), typeof(Logger<>));
@@ -90,6 +86,12 @@ namespace ProjectFinalEngineer
                     // .AddTwitter()
                     // .AddMicrosoftAccount()
                     ;
+
+            services.AddOptions();
+            var mailsetting = Configuration.GetSection("MailSettings");
+            services.Configure<MailSettings>(mailsetting);
+            services.AddSingleton<IEmailSender, SendMailService>();
+            services.AddSingleton<IdentityErrorDescriber, App.Services.AppIdentityErrorDescriber>();
 
         }
 

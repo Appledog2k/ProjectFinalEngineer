@@ -1,10 +1,10 @@
-using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Identity;
+// using System.ComponentModel.DataAnnotations;
+// using Microsoft.AspNetCore.Identity;
 
-namespace ProjectFinalEngineer.Models.AggregateContact;
+// namespace ProjectFinalEngineer.Models.AggregateContact;
 
-public class UserAggregate : IdentityUser
-{
-    [DataType(DataType.Date)]
-    public DateTime? BirthDate { get; set; }
-}
+// public class AppUser : IdentityUser
+// {
+//     [DataType(DataType.Date)]
+//     public DateTime? BirthDate { get; set; }
+// }

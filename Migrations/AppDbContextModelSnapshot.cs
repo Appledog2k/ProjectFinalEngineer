@@ -190,7 +190,7 @@ namespace ProjectFinalEngineer.Migrations
                     b.ToTable("Contacts");
                 });
 
-            modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateContact.UserAggregate", b =>
+            modelBuilder.Entity("ProjectFinalEngineer.Models.AppUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -211,6 +211,11 @@ namespace ProjectFinalEngineer.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("HomeAdress")
+                        .IsRequired()
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -269,7 +274,7 @@ namespace ProjectFinalEngineer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("ProjectFinalEngineer.Models.AggregateContact.UserAggregate", null)
+                    b.HasOne("ProjectFinalEngineer.Models.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -278,7 +283,7 @@ namespace ProjectFinalEngineer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("ProjectFinalEngineer.Models.AggregateContact.UserAggregate", null)
+                    b.HasOne("ProjectFinalEngineer.Models.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -293,7 +298,7 @@ namespace ProjectFinalEngineer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProjectFinalEngineer.Models.AggregateContact.UserAggregate", null)
+                    b.HasOne("ProjectFinalEngineer.Models.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -302,7 +307,7 @@ namespace ProjectFinalEngineer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("ProjectFinalEngineer.Models.AggregateContact.UserAggregate", null)
+                    b.HasOne("ProjectFinalEngineer.Models.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

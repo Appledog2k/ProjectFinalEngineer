@@ -5,7 +5,7 @@ using ProjectFinalEngineer.Models.AggregateContact;
 
 namespace ProjectFinalEngineer.Models;
 
-public class AppDbContext : IdentityDbContext<UserAggregate>
+public class AppDbContext : IdentityDbContext<AppUser>
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {

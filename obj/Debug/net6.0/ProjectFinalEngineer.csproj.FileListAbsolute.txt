@@ -307,6 +307,7 @@ E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\bin\Debug\net6.0\pack
 E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\bin\Debug\net6.0\package.json
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\appsettings.Development.json
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\appsettings.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\libman.json
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\package-lock.json
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\package.json
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.staticwebassets.runtime.json
@@ -322,8 +323,18 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\K4os.Compression.LZ4.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\MailKit.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\MessagePack.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\MessagePack.Annotations.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Facebook.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Twitter.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.Build.dll
@@ -353,6 +364,8 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\dotnet-ef.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
@@ -369,6 +382,7 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\MimeKit.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\MySql.Data.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\ZstdNet.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\MySql.Data.EntityFramework.dll
@@ -589,16 +603,3 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.pdb
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.genruntimeconfig.cache
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ref\ProjectFinalEngineer.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\MailKit.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Facebook.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Twitter.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\MimeKit.dll
