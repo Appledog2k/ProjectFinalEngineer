@@ -1,4 +1,5 @@
 
+using App.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
@@ -92,6 +93,14 @@ namespace ProjectFinalEngineer
             services.Configure<MailSettings>(mailsetting);
             services.AddSingleton<IEmailSender, SendMailService>();
             services.AddSingleton<IdentityErrorDescriber, App.Services.AppIdentityErrorDescriber>();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("ViewManageMenu", builder =>
+                {
+                    builder.RequireAuthenticatedUser();
+                    builder.RequireRole(RoleName.Administrator);
+                });
+            });
 
         }
 
