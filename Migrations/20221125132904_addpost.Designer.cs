@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjectFinalEngineer.Models;
 
@@ -11,9 +12,10 @@ using ProjectFinalEngineer.Models;
 namespace ProjectFinalEngineer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221125132904_addpost")]
+    partial class addpost
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -281,7 +283,7 @@ namespace ProjectFinalEngineer.Migrations
 
                     b.HasIndex("CategoryID");
 
-                    b.ToTable("PostCategory");
+                    b.ToTable("PostCategories");
                 });
 
             modelBuilder.Entity("ProjectFinalEngineer.Models.AppUser", b =>

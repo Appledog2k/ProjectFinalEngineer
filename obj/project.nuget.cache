@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9x16ZEjx2JZgbUMtJsmg0Y+a/lBM6CXRkpD0e4MlDbP2p4sYhalEmmzSxW6+qnUosxRNzO5olRtWWO0Tc9ao2g==",
+  "dgSpecHash": "4QWAQOKIKVkvj6SbSjErkHcif93crdOIXw46DBLusdJkjka2Ae8Y3zmm5aTNUBkw+2Y5KX+1x6tTAblgNoERGQ==",
   "success": true,
   "projectFilePath": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\ProjectFinalEngineer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\x2vos\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\x2vos\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\x2vos\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
     "C:\\Users\\x2vos\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

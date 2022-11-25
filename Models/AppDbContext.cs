@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ProjectFinalEngineer.Models.AggregateCategory;
 using ProjectFinalEngineer.Models.AggregateContact;
+using ProjectFinalEngineer.Models.AggregatePost;
+using ProjectFinalEngineer.Models.AggregatePostCategory;
 
 namespace ProjectFinalEngineer.Models;
 
@@ -32,7 +34,13 @@ public class AppDbContext : IdentityDbContext<AppUser>
 
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasIndex(c => c.Slug);
+            entity.HasIndex(c => c.Slug).IsUnique();
+        });
+        modelBuilder.Entity<PostCategory>().HasKey(p => new { p.PostID, p.CategoryID });
+        modelBuilder.Entity<Post>(entity =>
+        {
+            entity.HasIndex(p => p.Slug)
+                  .IsUnique();
         });
 
     }
@@ -40,4 +48,7 @@ public class AppDbContext : IdentityDbContext<AppUser>
     public DbSet<Contact> Contacts { get; set; }
 
     public DbSet<Category> Categories { get; set; }
+    public DbSet<Post> Posts { set; get; }
+    public DbSet<PostCategory> PostCategories { set; get; }
+
 }
