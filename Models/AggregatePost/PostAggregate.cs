@@ -8,19 +8,6 @@ namespace ProjectFinalEngineer.Models.AggregatePost;
 public class Post
 {
 
-    [Required]
-    [Display(Name = "Tác giả")]
-    public string AuthorId { set; get; }
-    [ForeignKey("AuthorId")]
-    [Display(Name = "Tác giả")]
-    public AppUser Author { set; get; }
-
-    [Display(Name = "Ngày tạo")]
-    public DateTime DateCreated { set; get; }
-
-    [Display(Name = "Ngày cập nhật")]
-    public DateTime DateUpdated { set; get; }
-
     [Key]
     public int PostId { set; get; }
 
@@ -44,4 +31,19 @@ public class Post
     public bool Published { set; get; }
 
     public List<PostCategory> PostCategories { get; set; }
+
+    // [Required]
+    [Display(Name = "Tác giả")]
+    public string AuthorId { set; get; }
+    [ForeignKey("AuthorId")]
+    [Display(Name = "Tác giả")]
+    public AppUser Author { set; get; }
+
+
+
+    [Display(Name = "Ngày tạo")]
+    public DateTime DateCreated { set; get; }
+
+    [Display(Name = "Ngày cập nhật")]
+    public DateTime DateUpdated { set; get; }
 }
