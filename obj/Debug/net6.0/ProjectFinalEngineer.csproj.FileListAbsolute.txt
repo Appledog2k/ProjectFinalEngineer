@@ -316,6 +316,7 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.runtimeconfig.json
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.pdb
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Bogus.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\EntityFramework.SqlServer.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\EntityFramework.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Google.Protobuf.dll
@@ -603,4 +604,3 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.pdb
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.genruntimeconfig.cache
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ref\ProjectFinalEngineer.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Bogus.dll

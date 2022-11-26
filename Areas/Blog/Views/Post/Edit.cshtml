@@ -48,6 +48,7 @@
             <div class="form-group">
                 <input type="submit" value="Cập nhật" class="btn btn-primary" />
             </div>
+            <div></div>
         </form>
     </div>
 </div>
@@ -71,4 +72,10 @@
 </script>
 
 <partial name="_ValidationScriptsPartial" />
+@{
+var summernote = new ProjectFinalEngineer.Models.AggregateSummernote.Summernote("#Content"){
+height = 500
+};
+}
+<partial name="_Summernote" model="summernote"></partial>
 }

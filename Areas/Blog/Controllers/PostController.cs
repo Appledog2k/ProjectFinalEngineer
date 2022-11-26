@@ -1,15 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authorization;
-using App.Data;
-using ProjectFinalEngineer.Models;
-using ProjectFinalEngineer.Models.AggregateCategory;
-using Microsoft.AspNetCore.Identity;
 using App.Models;
+using App.Data;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using App.Utilities;
-using ProjectFinalEngineer.Models.AggregatePostCategory;
+using ProjectFinalEngineer.Models;
 using ProjectFinalEngineer.Areas.Blog.Models;
+using ProjectFinalEngineer.Models.AggregatePostCategory;
 
 namespace ProjectFinalEngineer.Areas.Blog.Controllers;
 [Area("Blog")]
@@ -116,13 +115,12 @@ public class PostController : Controller
             ModelState.AddModelError("Slug", "Nhập chuỗi Url khác");
             return View(post);
         }
-
-
-
         if (ModelState.IsValid)
         {
+
             var user = await _userManager.GetUserAsync(this.User);
             post.DateCreated = post.DateUpdated = DateTime.Now;
+            Console.WriteLine(user.Id);
             post.AuthorId = user.Id;
             _context.Add(post);
 
@@ -137,8 +135,6 @@ public class PostController : Controller
                     });
                 }
             }
-
-
             await _context.SaveChangesAsync();
             StatusMessage = "Vừa tạo bài viết mới";
             return RedirectToAction(nameof(Index));
