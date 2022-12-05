@@ -305,11 +305,23 @@ E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\bin\Debug\net6.0\runt
 E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.csproj.CopyComplete
 E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\bin\Debug\net6.0\package-lock.json
 E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\bin\Debug\net6.0\package.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\web.config
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\appsettings.Development.json
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\appsettings.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\appsettings.Development.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\appsettings.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\libman.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\package-lock.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\package.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\ProjectFinalEngineer.deps.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\ProjectFinalEngineer.runtimeconfig.json
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\libman.json
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\package-lock.json
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\package.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\.tmb\1_0F29BEEC41D52C972EBADD2D358E80E8.jpg
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\.tmb\quang hung (2)_7003CFBAFFD5B171E17FBFBCEF29CFB1.jpg
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\1.jpg
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\quang hung (2).jpg
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.staticwebassets.runtime.json
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.exe
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.deps.json
@@ -317,6 +329,7 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.pdb
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Bogus.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\elFinder.NetCore.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\EntityFramework.SqlServer.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\EntityFramework.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Google.Protobuf.dll
@@ -590,6 +603,7 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.AssemblyInfoInputs.cache
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.AssemblyInfo.cs
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.csproj.CoreCompileInputs.cache
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.MvcApplicationPartsAssemblyInfo.cs
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.MvcApplicationPartsAssemblyInfo.cache
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.RazorAssemblyInfo.cache
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.RazorAssemblyInfo.cs
@@ -604,5 +618,11 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.pdb
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.genruntimeconfig.cache
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ref\ProjectFinalEngineer.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\elFinder.NetCore.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.MvcApplicationPartsAssemblyInfo.cs
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\app\publish\web.config
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\app\publish\appsettings.Development.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\app\publish\appsettings.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\app\publish\libman.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\app\publish\package-lock.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\app\publish\package.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\app\publish\ProjectFinalEngineer.deps.json
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\app\publish\ProjectFinalEngineer.runtimeconfig.json
