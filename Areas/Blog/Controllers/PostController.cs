@@ -12,7 +12,7 @@ using ProjectFinalEngineer.Models.AggregatePostCategory;
 
 namespace ProjectFinalEngineer.Areas.Blog.Controllers;
 [Area("Blog")]
-[Route("admin/blog/post/[action]/{id?}")]
+[Route("/forum/article/[action]/{id?}")]
 [Authorize(Roles = RoleName.Administrator + "," + RoleName.Editor)]
 public class PostController : Controller
 {
@@ -28,6 +28,7 @@ public class PostController : Controller
     [TempData]
     public string StatusMessage { get; set; }
     // GET: Blog/Post
+    [AllowAnonymous]
     public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage, int pagesize)
     {
         var posts = _context.Posts
@@ -67,6 +68,8 @@ public class PostController : Controller
     }
 
     // GET: Blog/Post/Details/5
+    [AllowAnonymous]
+
     public async Task<IActionResult> Details(int? id)
     {
         if (id == null)
@@ -145,6 +148,7 @@ public class PostController : Controller
     }
 
     // GET: Blog/Post/Edit/5
+
     public async Task<IActionResult> Edit(int? id)
     {
         if (id == null)

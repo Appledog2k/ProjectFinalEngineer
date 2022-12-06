@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "v4axR2h1J4nEyH6cGueEfz2jk2qh8e34lpMcyPmixSSKnm877lflCrcDKxLpOohJqZQBYoKLjkxt7gFFuLKQFg==",
+  "dgSpecHash": "nwSgFA3MkXIz88gAXBwAXje5F3uRdk4ZbRaEnO/3fGzDFraISCXIrNL8PflcvwlOVBYSpG7cXDV2SqxTaLBIQg==",
   "success": true,
   "projectFilePath": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\ProjectFinalEngineer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\x2vos\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\x2vos\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\x2vos\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\x2vos\\.nuget\\packages\\elfinder.netcore\\1.3.6\\elfinder.netcore.1.3.6.nupkg.sha512",
     "C:\\Users\\x2vos\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

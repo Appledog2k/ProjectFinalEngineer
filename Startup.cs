@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using ProjectFinalEngineer.Models;
+using AutoMapper;
+using ProjectFinalEngineer;
+
 
 namespace ProjectFinalEngineer
 {
@@ -22,6 +25,7 @@ namespace ProjectFinalEngineer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddDbContext<AppDbContext>(options =>
             {
                 string connectString = Configuration.GetConnectionString("ForumDb");
@@ -68,7 +72,7 @@ namespace ProjectFinalEngineer
                 options.LogoutPath = "/logout/";
                 options.AccessDeniedPath = "/khongduoctruycap.html";
             });
-
+            services.AddAutoMapper(typeof(Startup));
             services.AddAuthentication()
                     .AddGoogle(options =>
                     {
@@ -94,6 +98,7 @@ namespace ProjectFinalEngineer
             services.Configure<MailSettings>(mailsetting);
             services.AddSingleton<IEmailSender, SendMailService>();
             services.AddSingleton<IdentityErrorDescriber, App.Services.AppIdentityErrorDescriber>();
+
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("ViewManageMenu", builder =>

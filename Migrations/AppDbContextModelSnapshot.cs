@@ -222,6 +222,37 @@ namespace ProjectFinalEngineer.Migrations
                     b.ToTable("Contacts");
                 });
 
+            modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateMessage.Message", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("FromUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ToRoomId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FromUserId");
+
+                    b.HasIndex("ToRoomId");
+
+                    b.ToTable("Messages", (string)null);
+                });
+
             modelBuilder.Entity("ProjectFinalEngineer.Models.AggregatePost.Post", b =>
                 {
                     b.Property<int>("PostId")
@@ -231,7 +262,6 @@ namespace ProjectFinalEngineer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PostId"), 1L, 1);
 
                     b.Property<string>("AuthorId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Content")
@@ -284,6 +314,30 @@ namespace ProjectFinalEngineer.Migrations
                     b.ToTable("PostCategory");
                 });
 
+            modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateRoom.Room", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AdminId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdminId");
+
+                    b.ToTable("Rooms", (string)null);
+                });
+
             modelBuilder.Entity("ProjectFinalEngineer.Models.AppUser", b =>
                 {
                     b.Property<string>("Id")
@@ -291,6 +345,9 @@ namespace ProjectFinalEngineer.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
+
+                    b.Property<string>("Avatar")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("BirthDate")
                         .HasColumnType("datetime2");
@@ -305,6 +362,9 @@ namespace ProjectFinalEngineer.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HomeAdress")
                         .HasMaxLength(400)
@@ -416,13 +476,28 @@ namespace ProjectFinalEngineer.Migrations
                     b.Navigation("ParentCategory");
                 });
 
+            modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateMessage.Message", b =>
+                {
+                    b.HasOne("ProjectFinalEngineer.Models.AppUser", "FromUser")
+                        .WithMany("Messages")
+                        .HasForeignKey("FromUserId");
+
+                    b.HasOne("ProjectFinalEngineer.Models.AggregateRoom.Room", "ToRoom")
+                        .WithMany("Messages")
+                        .HasForeignKey("ToRoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FromUser");
+
+                    b.Navigation("ToRoom");
+                });
+
             modelBuilder.Entity("ProjectFinalEngineer.Models.AggregatePost.Post", b =>
                 {
                     b.HasOne("ProjectFinalEngineer.Models.AppUser", "Author")
                         .WithMany()
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AuthorId");
 
                     b.Navigation("Author");
                 });
@@ -446,6 +521,17 @@ namespace ProjectFinalEngineer.Migrations
                     b.Navigation("Post");
                 });
 
+            modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateRoom.Room", b =>
+                {
+                    b.HasOne("ProjectFinalEngineer.Models.AppUser", "Admin")
+                        .WithMany("Rooms")
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Admin");
+                });
+
             modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateCategory.Category", b =>
                 {
                     b.Navigation("CategoryChildren");
@@ -454,6 +540,18 @@ namespace ProjectFinalEngineer.Migrations
             modelBuilder.Entity("ProjectFinalEngineer.Models.AggregatePost.Post", b =>
                 {
                     b.Navigation("PostCategories");
+                });
+
+            modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateRoom.Room", b =>
+                {
+                    b.Navigation("Messages");
+                });
+
+            modelBuilder.Entity("ProjectFinalEngineer.Models.AppUser", b =>
+                {
+                    b.Navigation("Messages");
+
+                    b.Navigation("Rooms");
                 });
 #pragma warning restore 612, 618
         }
