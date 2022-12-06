@@ -7,7 +7,7 @@ using Microsoft.Extensions.FileProviders;
 using ProjectFinalEngineer.Models;
 using AutoMapper;
 using ProjectFinalEngineer;
-
+using Microsoft.OpenApi.Models;
 
 namespace ProjectFinalEngineer
 {
@@ -107,7 +107,10 @@ namespace ProjectFinalEngineer
                     builder.RequireRole(RoleName.Administrator);
                 });
             });
-
+            services.AddSwaggerGen(c =>
+                {
+                    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+                });
         }
 
 
@@ -117,6 +120,7 @@ namespace ProjectFinalEngineer
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
             else
             {
@@ -146,6 +150,12 @@ namespace ProjectFinalEngineer
 
                 endpoints.MapRazorPages();
             });
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApp Space Api V1");
+            });
+
         }
     }
 }
