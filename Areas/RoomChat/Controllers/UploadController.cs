@@ -1,13 +1,18 @@
 using System.Text.RegularExpressions;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
+using ProjectFinalEngineer.Areas.RoomChat.Hubs;
 using ProjectFinalEngineer.Areas.RoomChat.Models;
+using ProjectFinalEngineer.Areas.RoomChat.Services;
 using ProjectFinalEngineer.Models;
 using ProjectFinalEngineer.Models.AggregateMessage;
 using ProjectFinalEngineer.Models.AggregateRoom;
 
 namespace ProjectFinalEngineer.Areas.RoomChat.Controllers;
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class UploadController : ControllerBase
@@ -17,22 +22,25 @@ public class UploadController : ControllerBase
     private readonly AppDbContext _context;
     private readonly IMapper _mapper;
     private readonly IWebHostEnvironment _environment;
+    private readonly IHubContext<ChatHub> _hubContext;
+    private readonly IFileValidator _fileValidator;
 
     public UploadController(AppDbContext context,
         IMapper mapper,
         IWebHostEnvironment environment,
-
-        IConfiguration configruation)
+        IHubContext<ChatHub> hubContext,
+        IConfiguration configruation,
+        IFileValidator fileValidator)
     {
         _context = context;
         _mapper = mapper;
         _environment = environment;
-
+        _hubContext = hubContext;
+        _fileValidator = fileValidator;
 
         FileSizeLimit = configruation.GetSection("FileUpload").GetValue<int>("FileSizeLimit");
         AllowedExtensions = configruation.GetSection("FileUpload").GetValue<string>("AllowedExtensions").Split(",");
     }
-
 
     [HttpPost]
     //[ValidateAntiForgeryToken]
@@ -40,10 +48,8 @@ public class UploadController : ControllerBase
     {
         if (ModelState.IsValid)
         {
-            if (!Validate(uploadViewModel.File))
-            {
+            if (!_fileValidator.IsValid(uploadViewModel.File))
                 return BadRequest("Validation failed!");
-            }
 
             var fileName = DateTime.Now.ToString("yyyymmddMMss") + "_" + Path.GetFileName(uploadViewModel.File.FileName);
             var folderPath = Path.Combine(_environment.WebRootPath, "uploads");
@@ -79,23 +85,11 @@ public class UploadController : ControllerBase
 
             // Send image-message to group
             var messageViewModel = _mapper.Map<Message, MessageViewModel>(message);
-            //   await _hubContext.Clients.Group(room.Name).SendAsync("newMessage", messageViewModel);
+            await _hubContext.Clients.Group(room.Name).SendAsync("newMessage", messageViewModel);
 
             return Ok();
         }
 
         return BadRequest();
-    }
-
-    private bool Validate(IFormFile file)
-    {
-        if (file.Length > FileSizeLimit)
-            return false;
-
-        var extension = Path.GetExtension(file.FileName).ToLowerInvariant();
-        if (string.IsNullOrEmpty(extension) || !AllowedExtensions.Any(s => s.Contains(extension)))
-            return false;
-
-        return true;
     }
 }

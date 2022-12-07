@@ -279,6 +279,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/WorkSpace/DHBKHN-Project-final-2018-2023/ProjectFinalEngineer/Areas/RoomChat/Views/Room/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUm9vbUNoYXRcVmlld3NcUm9vbVxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WorkSpace/DHBKHN-Project-final-2018-2023/ProjectFinalEngineer/Areas/RoomChat/Views/Room/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUm9vbUNoYXRcVmlld3NcUm9vbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WorkSpace/DHBKHN-Project-final-2018-2023/ProjectFinalEngineer/Areas/RoomChat/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUm9vbUNoYXRcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WorkSpace/DHBKHN-Project-final-2018-2023/ProjectFinalEngineer/Areas/RoomChat/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUm9vbUNoYXRcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/WorkSpace/DHBKHN-Project-final-2018-2023/ProjectFinalEngineer/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

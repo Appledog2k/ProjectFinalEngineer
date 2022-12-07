@@ -4,7 +4,7 @@ using ProjectFinalEngineer.Areas.RoomChat.Models;
 using ProjectFinalEngineer.Models.AggregateMessage;
 using ProjectFinalEngineer.Utilities;
 
-namespace ProjectFinalEngineer.Mapper
+namespace ProjectFinalEngineer.Areas.RoomChat.Mapper
 {
     public class MessageProfile : Profile
     {

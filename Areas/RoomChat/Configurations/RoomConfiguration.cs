@@ -2,7 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ProjectFinalEngineer.Models.AggregateRoom;
 
-namespace ProjectFinalEngineer.Configurations;
+namespace ProjectFinalEngineer.Areas.RoomChat.Configurations;
+
 public class RoomConfiguration : IEntityTypeConfiguration<Room>
 {
     public void Configure(EntityTypeBuilder<Room> builder)

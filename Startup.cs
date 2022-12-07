@@ -8,6 +8,8 @@ using ProjectFinalEngineer.Models;
 using AutoMapper;
 using ProjectFinalEngineer;
 using Microsoft.OpenApi.Models;
+using ProjectFinalEngineer.Areas.RoomChat.Services;
+using ProjectFinalEngineer.Areas.RoomChat.Hubs;
 
 namespace ProjectFinalEngineer
 {
@@ -25,12 +27,13 @@ namespace ProjectFinalEngineer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddSignalR();
             services.AddDbContext<AppDbContext>(options =>
             {
                 string connectString = Configuration.GetConnectionString("ForumDb");
                 options.UseSqlServer(connectString);
             });
+            services.AddTransient<IFileValidator, FileValidator>();
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddIdentity<AppUser, IdentityRole>()
@@ -108,9 +111,9 @@ namespace ProjectFinalEngineer
                 });
             });
             services.AddSwaggerGen(c =>
-                {
-                    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
-                });
+ {
+     c.SwaggerDoc("v2", new OpenApiInfo { Title = "MVCCallWebAPI", Version = "v2" });
+ });
         }
 
 
@@ -149,11 +152,16 @@ namespace ProjectFinalEngineer
                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapRazorPages();
+                endpoints.MapHub<ChatHub>("/chatHub");
             });
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApp Space Api V1");
+                c.SwaggerEndpoint("/swagger/v2/swagger.json", "MVCCallWebAPI");
             });
 
         }

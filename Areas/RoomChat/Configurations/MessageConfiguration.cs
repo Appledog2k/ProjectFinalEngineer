@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ProjectFinalEngineer.Models.AggregateMessage;
 
-namespace ProjectFinalEngineer.Configurations;
+namespace ProjectFinalEngineer.Areas.RoomChat.Configurations;
 public class MessageConfiguration : IEntityTypeConfiguration<Message>
 {
     public void Configure(EntityTypeBuilder<Message> builder)

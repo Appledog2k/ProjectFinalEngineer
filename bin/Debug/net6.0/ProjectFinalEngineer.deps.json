@@ -36,6 +36,8 @@
           "MySql.Data.EntityFramework": "8.0.31",
           "Swashbuckle.AspNetCore": "6.4.0",
           "Swashbuckle.AspNetCore.Swagger": "6.4.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.4.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.4.0",
           "System.Collections": "4.3.0",
           "System.Data.SqlClient": "4.8.5",
           "elFinder.NetCore": "1.3.6"
