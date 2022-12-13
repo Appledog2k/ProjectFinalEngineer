@@ -305,15 +305,6 @@ E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\bin\Debug\net6.0\runt
 E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.csproj.CopyComplete
 E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\bin\Debug\net6.0\package-lock.json
 E:\WorkSpace\Đồ án tốt nghiệp\ProjectFinalEngineer\bin\Debug\net6.0\package.json
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.csproj.AssemblyReference.cache
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.GeneratedMSBuildEditorConfig.editorconfig
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.AssemblyInfoInputs.cache
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.AssemblyInfo.cs
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.csproj.CoreCompileInputs.cache
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.MvcApplicationPartsAssemblyInfo.cs
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.MvcApplicationPartsAssemblyInfo.cache
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.RazorAssemblyInfo.cache
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.RazorAssemblyInfo.cs
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\app\publish\web.config
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\app\publish\web.config
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\appsettings.Development.json
@@ -338,6 +329,21 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\.tmb\1_0F29BEEC41D52C972EBADD2D358E80E8.jpg
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\.tmb\quang hung (2)_7003CFBAFFD5B171E17FBFBCEF29CFB1.jpg
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\1.jpg
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\Avatars\avatar1.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\Avatars\avatar2.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\Avatars\avatar3.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\Avatars\avatar4.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\avatar_circle.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji1.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji2.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji3.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji4.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji5.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji6.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji7.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\remove.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\send.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\sign-out.png
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\quang hung (2).jpg
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.staticwebassets.runtime.json
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.exe
@@ -406,6 +412,7 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.OpenApi.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -430,6 +437,9 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\NuGet.Protocol.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\NuGet.Versioning.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\System.CodeDom.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\System.Composition.AttributedModel.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\System.Composition.Convention.dll
@@ -617,6 +627,15 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.csproj.AssemblyReference.cache
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.GeneratedMSBuildEditorConfig.editorconfig
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.AssemblyInfoInputs.cache
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.AssemblyInfo.cs
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.csproj.CoreCompileInputs.cache
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.MvcApplicationPartsAssemblyInfo.cs
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.MvcApplicationPartsAssemblyInfo.cache
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.RazorAssemblyInfo.cache
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.RazorAssemblyInfo.cs
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\staticwebassets.build.json
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\staticwebassets.development.json
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
@@ -628,22 +647,4 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.pdb
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.genruntimeconfig.cache
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ref\ProjectFinalEngineer.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\Projectfinalengineer\bin\Debug\net6.0\Microsoft.OpenApi.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\Projectfinalengineer\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\Projectfinalengineer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\Projectfinalengineer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\Avatars\avatar1.png
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\Avatars\avatar2.png
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\Avatars\avatar3.png
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\Avatars\avatar4.png
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\avatar_circle.png
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji1.png
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji2.png
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji3.png
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji4.png
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji5.png
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji6.png
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji7.png
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\remove.png
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\send.png
-E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\sign-out.png
+E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji8.jpg

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "R2gWEAGEe3RWpV5t61f6WLxmCMmPRQB3bwr8fJ+MTE8=",
+  "Hash": "CrWE5lXp21s2zLUGkWoDoWOG5LKI/MsJTxMn7WO2AFY=",
   "Source": "ProjectFinalEngineer",
   "BasePath": "_content/ProjectFinalEngineer",
   "Mode": "Default",
@@ -287,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\emojis\\emoji7.png"
+    },
+    {
+      "Identity": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\Images\\emojis\\emoji8.jpg",
+      "SourceId": "ProjectFinalEngineer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\",
+      "BasePath": "_content/ProjectFinalEngineer",
+      "RelativePath": "Images/emojis/emoji8.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\emojis\\emoji8.jpg"
     },
     {
       "Identity": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\Images\\remove.png",
