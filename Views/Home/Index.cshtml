@@ -1,204 +1,173 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
-<partial name="_AlertMessage" />
+@* @{
+    ViewData["Title"] = "Home Page";
+    } *@
+@* <partial name="_AlertMessage" /> *@
 
-<div style="margin-left: 200px; padding:10px; color:red">
-    <h1 style="margin-left: 300px;"><i class="fas fa-kiss-wink-heart"></i>
-        Hello em iu, Yêu em !<i class="fas fa-heart"></i> </h1>
-    <div><img src="~/Images/emojis/emoji8.jpg" style="" width="800" height="550" /></div>
-</div>
-<div class="app">
-    <div class="sidebar">
-        <div class="header">
-            <h5>Chat Rooms</h5>
-            <a href="#" class="d-flex" id="create-room" data-toggle="modal" data-target="#create-room-modal">
-                <i class="fas fa-plus"></i>
-            </a>
-        </div>
-        <ul class="rooms list-unstyled" id="rooms-list">
-            <li>
-                <a href="#">Học tập</a>
-            </li>
-        </ul>
-        <div class="profile">
-            <div>
-                <img src="~/Images/Avatars/avatar1.png" class="user-avatar" />
-                <a>Tên đăng nhập</a>
-            </div>
-            <div>
-                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/"
-                    method="post">
-                    <button type="submit" class="btn-sign-out">
-                        <i class="fas fa-sign-out-alt"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
+@* <div class="main-content">
+    <span class="m-auto">Please select room to join!</span>
     </div>
-
-    @* <div class="main-content">
-        <span class="m-auto">Please select room to join!</span>
-        </div> *@
     <div class="main-content">
-        <div class="header">
-            <h5 id="joinedRoom">Loby</h5>
-            <div clas="room-actions">
-                <button type="button" class="btn btn-link text-secondary px-1" data-toggle="modal"
-                    data-target="#rename-room-modal">
-                    <i class="fas fa-edit"></i>
-                </button>
-                <button type="button" class="btn btn-link text-secondary px-1" data-toggle="modal"
-                    data-target="#remove-room-modal">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-        </div>
-        <div class="chat-body">
-            <ul class="list-unstyled">
-                <li>
-                    <div class="chat-message d-flex">
-                        <div class="left-side">
-                            <img src="~/Images/Avatars/avatar1.png" class="message-avatar" />
-                        </div>
-                        <div class="message-content d-flex flex-column">
-                            <div class="d-flex justify-content-between">
-                                <span class="author">Tác giả</span>
-                                <span class="timestamp">
-                                    <i class="fa fa-clock"></i>
-                                    <span>12:00</span>
-                                </span>
-                            </div>
-                            <span class="content">Nội dung </span>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="chat-input">
-            <input id="chat-message" type="text" value="" placeholder="What's on  your mind?" />
-            <div class="actions d-flex align-items-center">
-                <form method="post" id="uploadForm">
-                    <label for="UploadedFile" class="custom-file-upload">
-                        <i class="fa fa-image"></i>
-                    </label>
-                    <input type="file" id="UploadedFile" name="File" accept=".jpg,.jpeg,.png" />
-                </form>
-                <a id="emojibtn" href="#">
-                    <i class="fa fa-smile"></i>
-                </a>
-                <i class="fa fa-paper-plane" id="btn-send-message"></i>
-            </div>
-            <div class=" emoticon-container d-none" id="emojis-container">
-                <a href="#">
-                    <input type="hidden" data-value=":)" />
-                    <img src="~/Images/emojis/emoji1.png" />
-                </a>
-                <a href="#">
-                    <input type="hidden" data-value=":P" />
-                    <img src="~/Images/emojis/emoji2.png" />
-                </a>
-                <a href="#">
-                    <input type="hidden" data-value=":0" />
-                    <img src="~/Images/emojis/emoji3.png" />
-                </a>
-                <a href="#">
-                    <input type="hidden" data-value=":-)" />
-                    <img src="~/Images/emojis/emoji4.png" />
-                </a>
-                <a href="#">
-                    <input type="hidden" data-value="B|" />
-                    <img src="~/Images/emojis/emoji5.png" />
-                </a>
-                <a href="#">
-                    <input type="hidden" data-value=":D" />
-                    <img src="~/Images/emojis/emoji6.png" />
-                </a>
-                <a href="#">
-                    <input type="hidden" data-value="<3" />
-                    <img src="~/Images/emojis/emoji7.png" />
-                </a>
-            </div>
-        </div>
+    <div class="header">
+    <h5 id="joinedRoom">Loby</h5>
+    <div clas="room-actions">
+    <button type="button" class="btn btn-link text-secondary px-1" data-toggle="modal"
+    data-target="#rename-room-modal">
+    <i class="fas fa-edit"></i>
+    </button>
+    <button type="button" class="btn btn-link text-secondary px-1" data-toggle="modal"
+    data-target="#remove-room-modal">
+    <i class="fas fa-times"></i>
+    </button>
+    </div>
+    </div>
+    <div class="chat-body">
+    <ul class="list-unstyled">
+    <li>
+    <div class="chat-message d-flex">
+    <div class="left-side">
+    <img src="~/Images/Avatars/avatar1.png" class="message-avatar" />
+    </div>
+    <div class="message-content d-flex flex-column">
+    <div class="d-flex justify-content-between">
+    <span class="author">Tác giả</span>
+    <span class="timestamp">
+    <i class="fa fa-clock"></i>
+    <span>12:00</span>
+    </span>
+    </div>
+    <span class="content">Nội dung </span>
+    </div>
+    </div>
+    </li>
+    </ul>
+    </div>
+    <div class="chat-input">
+    <input id="chat-message" type="text" value="" placeholder="What's on your mind?" />
+    <div class="actions d-flex align-items-center">
+    <form method="post" id="uploadForm">
+    <label for="UploadedFile" class="custom-file-upload">
+    <i class="fa fa-image"></i>
+    </label>
+    <input type="file" id="UploadedFile" name="File" accept=".jpg,.jpeg,.png" />
+    </form>
+    <a id="emojibtn" href="#">
+    <i class="fa fa-smile"></i>
+    </a>
+    <i class="fa fa-paper-plane" id="btn-send-message"></i>
+    </div>
+    <div class=" emoticon-container d-none" id="emojis-container">
+    <a href="#">
+    <input type="hidden" data-value=":)" />
+    <img src="~/Images/emojis/emoji1.png" />
+    </a>
+    <a href="#">
+    <input type="hidden" data-value=":P" />
+    <img src="~/Images/emojis/emoji2.png" />
+    </a>
+    <a href="#">
+    <input type="hidden" data-value=":0" />
+    <img src="~/Images/emojis/emoji3.png" />
+    </a>
+    <a href="#">
+    <input type="hidden" data-value=":-)" />
+    <img src="~/Images/emojis/emoji4.png" />
+    </a>
+    <a href="#">
+    <input type="hidden" data-value="B|" />
+    <img src="~/Images/emojis/emoji5.png" />
+    </a>
+    <a href="#">
+    <input type="hidden" data-value=":D" />
+    <img src="~/Images/emojis/emoji6.png" />
+    </a>
+    <a href="#">
+    <input type="hidden" data-value="<3" />
+    <img src="~/Images/emojis/emoji7.png" />
+    </a>
+    </div>
+    </div>
     </div>
     <div class="users-container">
-        <div class="header">
-            <h5>Who's Here (<span>0</span>)</h5>
-        </div>
-        <ul class="list-unstyled  " id="users-list">
-            <li>
-                <div class="user">
-                    <img src="~/Images/Avatars/avatar1.png" class="user-avatar" />
-                    <div class="right-side">
-                        <span class="author">Tác giả</span>
-                        <small>Web</small>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <input type="text" class="" placeholder="Search someone" />
+    <div class="header">
+    <h5>Who's Here (<span>0</span>)</h5>
     </div>
-</div>
-<div class="modal" id="create-room-modal" tabindex="-1" role="dialog">
+    <ul class="list-unstyled " id="users-list">
+    <li>
+    <div class="user">
+    <img src="~/Images/Avatars/avatar1.png" class="user-avatar" />
+    <div class="right-side">
+    <span class="author">Tác giả</span>
+    <small>Web</small>
+    </div>
+    </div>
+    </li>
+    </ul>
+    <input type="text" class="" placeholder="Search someone" />
+    </div>
+    </div>
+    <div class="modal" id="create-room-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Create Room</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <input type="text" class="form-control" id="roomName" placeholder="Enter room name..." />
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Create</button>
-            </div>
-        </div>
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title">Create Room</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
     </div>
-</div>
-<div class="modal" id="rename-room-modal" tabindex="-1" role="dialog">
+    <div class="modal-body">
+    <input type="text" class="form-control" id="roomName" placeholder="Enter room name..." />
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary" data-dismiss="modal">Create</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="modal" id="rename-room-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Rename Room</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <input type="text" class="form-control" id="newRoomName" maxlength="100"
-                    data-bind="value: $root.joinedRoom()" />
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal"
-                    data-bind="click: editRoom">Update</button>
-            </div>
-        </div>
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title">Rename Room</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
     </div>
-</div>
-<div class="modal" id="remove-room-modal" tabindex="-1" role="dialog">
+    <div class="modal-body">
+    <input type="text" class="form-control" id="newRoomName" maxlength="100"
+    data-bind="value: $root.joinedRoom()" />
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary" data-dismiss="modal"
+    data-bind="click: editRoom">Update</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="modal" id="remove-room-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Delete Room</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Are you sure you want to delete this Chat Room?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
-            </div>
-        </div>
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title">Delete Room</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
     </div>
-</div>
+    <div class="modal-body">
+    <p>Are you sure you want to delete this Chat Room?</p>
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+    </div>
+    </div>
+    </div>
+    </div>
 
 
-@section Scripts{
-<script src="~/js/site.js"></script>}
+    @section Scripts{
+    <script src="~/js/site.js"></script>} *@
