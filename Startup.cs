@@ -10,6 +10,7 @@ using ProjectFinalEngineer;
 using Microsoft.OpenApi.Models;
 using ProjectFinalEngineer.Areas.RoomChat.Services;
 using ProjectFinalEngineer.Areas.RoomChat.Hubs;
+using System.Net;
 
 namespace ProjectFinalEngineer
 {
@@ -27,6 +28,8 @@ namespace ProjectFinalEngineer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+
             services.AddSignalR();
             services.AddDbContext<AppDbContext>(options =>
             {
@@ -153,16 +156,6 @@ namespace ProjectFinalEngineer
                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapRazorPages();
-                endpoints.MapHub<ChatHub>("/chatHub");
-            });
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
-
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
-            // specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v2/swagger.json", "MVCCallWebAPI");
             });
 
         }
