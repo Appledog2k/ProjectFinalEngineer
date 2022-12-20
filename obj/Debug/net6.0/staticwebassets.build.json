@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oBK0O/g5IKjferqKIYyUae0cwC9PyPABsvLRPuQ4z5w=",
+  "Hash": "yHRbFm90R6fDrg8aLohkteCuWnaFoK86wVcdaU0ycCw=",
   "Source": "ProjectFinalEngineer",
   "BasePath": "_content/ProjectFinalEngineer",
   "Mode": "Default",
@@ -17,46 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\obj\\Debug\\net6.0\\scopedcss\\bundle\\ProjectFinalEngineer.styles.css",
-      "SourceId": "ProjectFinalEngineer",
-      "SourceType": "Computed",
-      "ContentRoot": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/ProjectFinalEngineer",
-      "RelativePath": "ProjectFinalEngineer.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\obj\\Debug\\net6.0\\scopedcss\\bundle\\ProjectFinalEngineer.styles.css"
-    },
-    {
-      "Identity": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ProjectFinalEngineer.bundle.scp.css",
-      "SourceId": "ProjectFinalEngineer",
-      "SourceType": "Computed",
-      "ContentRoot": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/ProjectFinalEngineer",
-      "RelativePath": "ProjectFinalEngineer.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ProjectFinalEngineer.bundle.scp.css"
-    },
-    {
-      "Identity": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\css\\site.css",
+      "Identity": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\css\\base.css",
       "SourceId": "ProjectFinalEngineer",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\",
       "BasePath": "_content/ProjectFinalEngineer",
-      "RelativePath": "css/site.css",
+      "RelativePath": "css/base.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -65,24 +31,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\site.css"
-    },
-    {
-      "Identity": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\css\\siteIndex.css",
-      "SourceId": "ProjectFinalEngineer",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\",
-      "BasePath": "_content/ProjectFinalEngineer",
-      "RelativePath": "css/siteIndex.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\siteIndex.css"
+      "OriginalItemSpec": "wwwroot\\css\\base.css"
     },
     {
       "Identity": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\Images\\avatar_circle.png",
@@ -306,23 +255,6 @@
       "OriginalItemSpec": "wwwroot\\Images\\emojis\\emoji8.jpg"
     },
     {
-      "Identity": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\Images\\home\\B04539C4.png",
-      "SourceId": "ProjectFinalEngineer",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\",
-      "BasePath": "_content/ProjectFinalEngineer",
-      "RelativePath": "Images/home/B04539C4.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\home\\B04539C4.png"
-    },
-    {
       "Identity": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\Images\\home\\bkhust.jpg",
       "SourceId": "ProjectFinalEngineer",
       "SourceType": "Discovered",
@@ -527,12 +459,12 @@
       "OriginalItemSpec": "wwwroot\\Images\\sign-out.png"
     },
     {
-      "Identity": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\js\\sb-admin-2.min.js",
+      "Identity": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\js\\base.js",
       "SourceId": "ProjectFinalEngineer",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\",
       "BasePath": "_content/ProjectFinalEngineer",
-      "RelativePath": "js/sb-admin-2.min.js",
+      "RelativePath": "js/base.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -541,24 +473,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\sb-admin-2.min.js"
-    },
-    {
-      "Identity": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\js\\site.js",
-      "SourceId": "ProjectFinalEngineer",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\",
-      "BasePath": "_content/ProjectFinalEngineer",
-      "RelativePath": "js/site.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\site.js"
+      "OriginalItemSpec": "wwwroot\\js\\base.js"
     },
     {
       "Identity": "E:\\WorkSpace\\DHBKHN-Project-final-2018-2023\\ProjectFinalEngineer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",

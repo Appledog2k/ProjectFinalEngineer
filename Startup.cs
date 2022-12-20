@@ -56,7 +56,7 @@ namespace ProjectFinalEngineer
 
                 // Cấu hình Lockout - khóa user
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); // Khóa 5 phút
-                options.Lockout.MaxFailedAccessAttempts = 3; // Thất bại 3 lầ thì khóa
+                options.Lockout.MaxFailedAccessAttempts = 1000; // Thất bại 3 lầ thì khóa
                 options.Lockout.AllowedForNewUsers = true;
 
                 // Cấu hình về User.
@@ -153,8 +153,12 @@ namespace ProjectFinalEngineer
                 // First/Index
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Home}/{id?}");
 
+                endpoints.MapControllerRoute(
+                            name: "areas",
+                            pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                          );
                 endpoints.MapRazorPages();
             });
 
