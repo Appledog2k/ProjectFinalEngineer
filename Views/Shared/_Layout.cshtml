@@ -32,39 +32,33 @@
                 <a href="###">Chia sẻ
                     <span>// hello everyone - xin chào tất cả mọi người</span>
                 </a>
-
             </li>
             <li class="pt">
                 <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">Kiến thức
                     <span>// hello everyone - xin chào tất cả mọi người</span>
 
                 </a>
-
             </li>
             <li class="pt">
                 <a asp-area="Blog" asp-controller="Post" asp-action="Index">
                     Tìm trọ
                     <span>// hello everyone - xin chào tất cả mọi người</span>
-
                 </a>
-
             </li>
             <li class="pt">
                 <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">Liên hệ
-                    <span>// hello everyone - xin chào tất cả mọi người</span></a>
-
-
+                    <span>// hello everyone - xin chào tất cả mọi người</span>
+                </a>
             </li>
             <li class="pt">
                 <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">Giải trí
                     <span>// hello everyone - xin chào tất cả mọi người</span>
                 </a>
-
             </li>
         </ul>
         <div class="main ">
             <div class="pt">
-                <a class="user " asp-area="Identity" asp-controller="Account" asp-action="Login">
+                <a class="user" asp-area="Identity" asp-controller="Account" asp-action="Login">
                     Đăng nhập
                 </a>
             </div>
@@ -73,7 +67,7 @@
         </div>
     </header>
     <div id="container">
-        @RenderBody();
+        @RenderBody()
     </div>
     <footer>
         <div class="row primary">
@@ -142,6 +136,4 @@
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>
-
-
 </html>
