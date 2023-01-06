@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="~/css/base.css">
-    <title>Document</title>
+    <title>SEEE Forum</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
@@ -29,12 +29,14 @@
                 </a>
             </li>
             <li class="pt">
-                <a href="###">Chia sẻ
+                <a asp-area="Blog" asp-controller="Post" asp-action="Index">
+                    Chia sẻ
                     <span>// hello everyone - xin chào tất cả mọi người</span>
                 </a>
             </li>
             <li class="pt">
-                <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">Kiến thức
+                <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                    Kiến thức
                     <span>// hello everyone - xin chào tất cả mọi người</span>
 
                 </a>
@@ -46,12 +48,14 @@
                 </a>
             </li>
             <li class="pt">
-                <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">Liên hệ
+                <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                    Liên hệ
                     <span>// hello everyone - xin chào tất cả mọi người</span>
                 </a>
             </li>
             <li class="pt">
-                <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">Giải trí
+                <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                    Giải trí
                     <span>// hello everyone - xin chào tất cả mọi người</span>
                 </a>
             </li>
@@ -66,15 +70,108 @@
             </div>
         </div>
     </header>
-    <div id="container">
-        @RenderBody()
+    <div id="forum">
+        <div class="container">
+            <div id="forum-wapper">
+                <aside>
+                    <div class="forum-left">
+                        <button>
+                            <span>Tạo bài viết</span>
+                        </button>
+
+                        <ul class="forum-ul">
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Tất cả chủ đề
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Phổ biến
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Phổ biến trong tuần
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Kiến thức
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Giải đáp
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Trao đổi, mua bán
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                <div id="forum-main">
+                    <div class="fm-text">
+                        <div class="fm-head">
+                            <div class="fm-filter">
+                                <div class="ft-1">
+                                    <div class="select-wrap">
+                                        <select>
+                                            <option>Mới</option>
+                                            <option>Phổ biến</option>
+                                            <option>Thảo luận</option>
+                                            <option>Giải pháp</option>
+                                        </select>
+                                        <svg width="20" height="16" class="fill-current text-grey-600" viewBox="0 0 10 16">
+                                            <path d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ft-2">
+                                        <div class="select-wrap">
+                                            <select>
+                                                <option>Mới nhất</option>
+                                                <option>Mã nguồn mở</option>
+                                                <option>Mã nguồn mở</option>
+                                                <option>Cần thảo luận</option>
+                                                <option>Cần trao đổi</option>
+                                            </select>
+                                        <svg width="20" height="16" class="fill-current text-grey-600" viewBox="0 0 10 16">
+                                            <path d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
+                                        </svg>
+                                        </div>
+                                </div>
+                            </div>
+                            <form class="fm-search">
+                                <label>
+                                    <svg></svg>
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                    @RenderBody()
+                </div>
+                <div class="forum-full"></div>
+            </div>
+        </div>
     </div>
     <footer>
         <div class="row primary">
             <div class="column about">
                 <h3>Thông tin</h3>
-                <p>Xin chào tất cả thành viên trong diễn đàn, chúc các bạn một ngày mới vui vẻ. Mình tên là Nguyễn Quang
-                    Hùng sinh viên khóa 63 trường Điện - Điện tử Đại học Bách Khoa Hà Nội</p>
+                <p>
+                    Xin chào tất cả thành viên trong diễn đàn, chúc các bạn một ngày mới vui vẻ. Mình tên là Nguyễn Quang
+                    Hùng sinh viên khóa 63 trường Điện - Điện tử Đại học Bách Khoa Hà Nội
+                </p>
             </div>
             <div class="column links">
                 <h3>Liên kết</h3>
@@ -85,7 +182,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="###">Chia sẻ
+                        <a href="###">
+                            Chia sẻ
                         </a>
                     </li>
                     <li>
@@ -94,7 +192,8 @@
                         </a>
                     </li>
                     <li>
-                        <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">Liên hệ
+                        <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                            Liên hệ
                         </a>
                 </ul>
             </div>
