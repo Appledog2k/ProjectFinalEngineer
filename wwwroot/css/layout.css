@@ -438,7 +438,7 @@ div.social {
     padding-right: 50px;
     appearance: none;
     line-height: 1;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 100;
     padding-left: 1.25rem;
     padding-bottom: 0.75rem;
@@ -458,16 +458,22 @@ div.social {
         --bg-opacity: 1;
         background-color: rgb(18 35 58 / var(--bg-opacity));
     }
-.select-wrap svg {
-    pointer-events: none;
-    position: absolute;
-    right: 11px;
-    top: 12px;
-    color: rgb(186 217 252 / var(--text-opacity));
-    fill: currentColor;
-    display: block;
-    vertical-align: middle;
+
+.select-arrow-1 {
+    width: 8px;
+    height: 8px;
+    margin-top: -26px;
+    margin-left: 110px;
+    transform: rotate(45deg);
+    border-left: none;
+    border-top: none;
+    border-right: 2px var(--text-colorchange) solid;
+    border-bottom: 2px var(--text-colorchange) solid;
+    cursor: pointer;
 }
+
+
+
 .fm-filter .ft-2 {
     display: block;
 }
@@ -475,15 +481,17 @@ div.social {
     .fm-filter .ft-2 .select-wrap {
         position: relative;
     }
-.ft-2 .select-wrap svg {
-    pointer-events: none;
-    position: absolute;
-    right: 20px;
-    top: 13px;
-    color: rgb(186 217 252 / var(--text-opacity));
-    fill: currentColor;
-    display: block;
-    vertical-align: middle;
+.select-arrow-2 {
+    width: 8px;
+    height: 8px;
+    margin-top: -26px;
+    margin-left: 140px;
+    transform: rotate(45deg);
+    border-left: none;
+    border-top: none;
+    border-right: 2px var(--text-colorchange) solid;
+    border-bottom: 2px var(--text-colorchange) solid;
+    cursor: pointer;
 }
 
 .fm-search {
