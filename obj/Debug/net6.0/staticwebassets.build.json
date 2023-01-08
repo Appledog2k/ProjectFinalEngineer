@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "G5ixJ0oWg5qs1EPgVG2POaj++qp9IFHcOfBATqXizS8=",
+  "Hash": "HHyq0o2oNsDTw+3TM7gHrLMqz+xdTryb/ef1tptpY1k=",
   "Source": "ProjectFinalEngineer",
   "BasePath": "_content/ProjectFinalEngineer",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\base.css",
+      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\layout.css",
       "SourceId": "ProjectFinalEngineer",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\",
       "BasePath": "_content/ProjectFinalEngineer",
-      "RelativePath": "css/base.css",
+      "RelativePath": "css/layout.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -31,7 +31,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\base.css"
+      "OriginalItemSpec": "wwwroot\\css\\layout.css"
     },
     {
       "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\avatar_circle.png",
@@ -459,12 +459,12 @@
       "OriginalItemSpec": "wwwroot\\Images\\sign-out.png"
     },
     {
-      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\base.js",
+      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\layout.js",
       "SourceId": "ProjectFinalEngineer",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\",
       "BasePath": "_content/ProjectFinalEngineer",
-      "RelativePath": "js/base.js",
+      "RelativePath": "js/layout.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -473,7 +473,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\base.js"
+      "OriginalItemSpec": "wwwroot\\js\\layout.js"
     },
     {
       "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

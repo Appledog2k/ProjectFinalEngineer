@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="~/css/base.css">
+    <link rel="stylesheet" href="~/css/layout.css">
     <title>SEEE Forum</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
     <header>
         <a href="#" class="logo"><i class="ri-home-heart-fill"></i><span>Logo</span></a>
         <ul class="navbar">
-            <li class="active pt">
+            <li class="pt">
                 <a asp-area="Blog" asp-controller="Post" asp-action="Index">
                     Diễn đàn
                     <span>// hello everyone - xin chào tất cả mọi người</span>
@@ -151,9 +151,15 @@
                                         </div>
                                 </div>
                             </div>
-                            <form class="fm-search">
-                                <label>
-                                    <svg></svg>
+                            <form class="fm-search" autocomplete="off">
+                                <label class="fm-s-lb">
+                                    <div class="search-icon">
+                                        <div class="search">
+                                            <div class="search_circle"></div>
+                                            <div class="search_rectangle"> </div>
+                                        </div>
+                                    </div>
+                                    <input class="fm-s-input" placeholder="Tìm kiếm" />
                                 </label>
                             </form>
                         </div>
@@ -231,7 +237,7 @@
         </div>
     </footer>
     <!-- js link -->
-    <script type="text/javascript" src="~/js/base.js"></script>
+    <script type="text/javascript" src="~/js/layout.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>
