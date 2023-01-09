@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using ProjectFinalEngineer.Models;
-using Microsoft.OpenApi.Models;
-using ProjectFinalEngineer.Areas.RoomChat.Services;
 
 namespace ProjectFinalEngineer
 {
@@ -32,7 +30,6 @@ namespace ProjectFinalEngineer
                 string connectString = Configuration.GetConnectionString("ForumDb");
                 options.UseNpgsql(connectString);
             });
-            services.AddTransient<IFileValidator, FileValidator>();
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddIdentity<AppUser, IdentityRole>()

@@ -3497,26 +3497,6 @@
       "PackagePath": "staticwebassets\\lib\\summernote\\summernote.min.js.map"
     },
     {
-      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\tailwind\\package-lock.json",
-      "PackagePath": "staticwebassets\\tailwind\\package-lock.json"
-    },
-    {
-      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\tailwind\\package.json",
-      "PackagePath": "staticwebassets\\tailwind\\package.json"
-    },
-    {
-      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\tailwind\\public\\tailwind.css",
-      "PackagePath": "staticwebassets\\tailwind\\public\\tailwind.css"
-    },
-    {
-      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\tailwind\\src\\tailwind.css",
-      "PackagePath": "staticwebassets\\tailwind\\src\\tailwind.css"
-    },
-    {
-      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\tailwind\\tailwind.config.js",
-      "PackagePath": "staticwebassets\\tailwind\\tailwind.config.js"
-    },
-    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ProjectFinalEngineer.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

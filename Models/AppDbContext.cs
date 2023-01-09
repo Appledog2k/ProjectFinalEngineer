@@ -3,11 +3,10 @@ using System.Reflection;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ProjectFinalEngineer.Models.AggregateCategory;
+using ProjectFinalEngineer.Models.AggregateComment;
 using ProjectFinalEngineer.Models.AggregateContact;
-using ProjectFinalEngineer.Models.AggregateMessage;
 using ProjectFinalEngineer.Models.AggregatePost;
 using ProjectFinalEngineer.Models.AggregatePostCategory;
-using ProjectFinalEngineer.Models.AggregateRoom;
 
 namespace ProjectFinalEngineer.Models;
 
@@ -49,13 +48,12 @@ public class AppDbContext : IdentityDbContext<AppUser>
 
     }
 
-    public DbSet<Contact> Contacts { get; set; }
 
+    public DbSet<Contact> Contacts { get; set; }
+    public DbSet<Comment> Comments { get; set; }
     public DbSet<Category> Categories { get; set; }
     public DbSet<Post> Posts { set; get; }
     public DbSet<PostCategory> PostCategories { set; get; }
     public DbSet<AppUser> AppUsers { set; get; }
-    public DbSet<Room> Rooms { get; set; }
-    public DbSet<Message> Messages { get; set; }
 
 }

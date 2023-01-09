@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ProjectFinalEngineer.Models.AggregateComment;
 using ProjectFinalEngineer.Models.AggregatePostCategory;
 
 namespace ProjectFinalEngineer.Models.AggregatePost;
@@ -7,7 +8,6 @@ namespace ProjectFinalEngineer.Models.AggregatePost;
 [Table("Post")]
 public class Post
 {
-
     [Key]
     public int PostId { set; get; }
 
@@ -46,4 +46,9 @@ public class Post
 
     [Display(Name = "Ngày cập nhật")]
     public DateTime DateUpdated { set; get; }
+
+    public bool Approved { set; get; }
+    public AppUser Approver { set; get; }
+    public virtual IEnumerable<Comment> Comments { get; set; }
+
 }

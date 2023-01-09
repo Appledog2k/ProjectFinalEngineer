@@ -7,7 +7,7 @@ public class Contact
 {
     [Key]
     public int Id { get; set; }
-    [Column(TypeName = "nvarchar")]
+    [Column(TypeName = "varchar")]
     [StringLength(100)]
     [Required(ErrorMessage = "Phải nhập {0}")]
     [Display(Name = "Họ và tên")]

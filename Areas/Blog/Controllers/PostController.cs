@@ -157,7 +157,14 @@ public class PostController : Controller
         }
 
         // var post = await _context.Posts.FindAsync(id);
-        var post = await _context.Posts.Include(p => p.PostCategories).FirstOrDefaultAsync(p => p.PostId == id);
+        var post = await _context.Posts.Include(p => p.PostCategories)
+        .Include(post => post.Author)
+        .Include(post => post.Comments)
+            .ThenInclude(comment => comment.Author)
+        .Include(post => post.Comments)
+            .ThenInclude(comment => comment.Comments)
+                .ThenInclude(reply => reply.Parent)
+        .FirstOrDefaultAsync(p => p.PostId == id);
         if (post == null)
         {
             return NotFound();
