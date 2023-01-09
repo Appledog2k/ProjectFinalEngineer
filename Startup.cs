@@ -1,16 +1,11 @@
 
 using App.Data;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using ProjectFinalEngineer.Models;
-using AutoMapper;
-using ProjectFinalEngineer;
 using Microsoft.OpenApi.Models;
 using ProjectFinalEngineer.Areas.RoomChat.Services;
-using ProjectFinalEngineer.Areas.RoomChat.Hubs;
-using System.Net;
 
 namespace ProjectFinalEngineer
 {
@@ -28,13 +23,14 @@ namespace ProjectFinalEngineer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-
+            // add extensions timezone information
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+            AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
             services.AddSignalR();
             services.AddDbContext<AppDbContext>(options =>
             {
                 string connectString = Configuration.GetConnectionString("ForumDb");
-                options.UseSqlServer(connectString);
+                options.UseNpgsql(connectString);
             });
             services.AddTransient<IFileValidator, FileValidator>();
             services.AddControllersWithViews();
@@ -113,10 +109,6 @@ namespace ProjectFinalEngineer
                     builder.RequireRole(RoleName.Administrator);
                 });
             });
-            services.AddSwaggerGen(c =>
- {
-     c.SwaggerDoc("v2", new OpenApiInfo { Title = "MVCCallWebAPI", Version = "v2" });
- });
         }
 
 

@@ -12,8 +12,9 @@ namespace ProjectFinalEngineer
 
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    // webBuilder.UseUrls("http://0.0.0.0:8090");
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder
+                    .UseUrls("http://localhost:5000/;https://localhost:5001/")
+                    .UseStartup<Startup>();
                 });
     }
 }

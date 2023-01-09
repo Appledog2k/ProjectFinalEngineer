@@ -12,15 +12,16 @@ html {
   list-style: none;
 }
 :root {
-    --gradient-from: #328af1;
-    --gradient-stops: var(--gradient-from), var(--gradient-to, rgba(50, 138, 241, 0));
-    --gradient-to: #328af1;
+  --gradient-from: #328af1;
+  --gradient-stops: var(--gradient-from),
+    var(--gradient-to, rgba(50, 138, 241, 0));
+  --gradient-to: #328af1;
 
-    --bg-color: linear-gradient(rgb(40, 64, 103), rgb(21, 31, 50));
+  --bg-color: linear-gradient(rgb(40, 64, 103), rgb(21, 31, 50));
 
-    --text-opacity: 1;
-    --text-color: rgb(112, 121, 136);
-    --text-colorchange: rgb(255, 255, 255);
+  --text-opacity: 1;
+  --text-color: rgb(112, 121, 136);
+  --text-colorchange: rgb(255, 255, 255);
 }
 body {
   position: relative;
@@ -43,20 +44,20 @@ header {
   transition: all 0.5s ease;
 }
 a {
-  cursor:pointer;
+  cursor: pointer;
   color: var(--text-color);
-  text-decoration:none;
+  text-decoration: none;
 }
-option{
-    cursor: pointer;
+option {
+  cursor: pointer;
 }
 
-span{
-    font-style: inherit;
-    font-weight: inherit;
+span {
+  font-style: inherit;
+  font-weight: inherit;
 }
-label{
-    cursor:default;
+label {
+  cursor: default;
 }
 .pt {
   cursor: pointer;
@@ -93,9 +94,9 @@ label{
   display: none;
 }
 a:hover {
-    color: var(--text-colorchange);
-    background-color: transparent;
-    text-decoration: none;
+  color: var(--text-colorchange);
+  background-color: transparent;
+  text-decoration: none;
 }
 .navbar li:hover {
   color: var(--text-colorchange);
@@ -309,245 +310,243 @@ div.social {
 }
 
 #forum {
-    display: flex;
-    position: absolute;
-    top: 60px;
-    max-width: 1700px;
-    margin-left: auto;
-    margin-right: auto;
-    background: transparent;
-    border: 0px solid;
-    box-sizing: border-box;
+  display: flex;
+  position: absolute;
+  top: 60px;
+  max-width: 1700px;
+  margin-left: auto;
+  margin-right: auto;
+  background: transparent;
+  border: 0px solid;
+  box-sizing: border-box;
 }
 .container {
-    padding: 40px 30px;
+  padding: 40px 30px;
 }
 
 #forum-wapper {
-    max-width: 1400px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    column-gap: 2.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    transition: all 0.5s ease;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.5s ease;
 }
-    #forum-wapper aside {
-        width: 210px;
-        top: 40px;
-        position: sticky;
-        flex: none;
-        transition: all 0.5s ease;
-    }
+#forum-wapper aside {
+  width: 210px;
+  top: 40px;
+  position: sticky;
+  flex: none;
+  transition: all 0.5s ease;
+}
 .forum-left button {
-    padding: 1rem 2rem;
-    width: 100%;
-    margin-bottom: 2rem;
-    background-image: linear-gradient(to right, var(--gradient-stops));
-    color: rgb(255 255 255 / var(--text-opacity));
-    background-clip: padding-box;
-    border-color: transparent;
-    border-radius: 16px;
-    border-width: 1px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.2px;
-    line-height: 1.15;
-    text-transform: none;
-    background-color: transparent;
-    transition: all 0.5s ease;
+  padding: 1rem 2rem;
+  width: 100%;
+  margin-bottom: 2rem;
+  background-image: linear-gradient(to right, var(--gradient-stops));
+  color: rgb(255 255 255 / var(--text-opacity));
+  background-clip: padding-box;
+  border-color: transparent;
+  border-radius: 16px;
+  border-width: 1px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1.15;
+  text-transform: none;
+  background-color: transparent;
+  transition: all 0.5s ease;
 }
-    .forum-left button:hover {
-        --gradient-from: #328af1;
-        --gradient-stops: var(--gradient-from), var(--gradient-to, rgba(50, 138, 241, 0));
-        --gradient-to: #21c8f6;
-        --text-opacity: 1;
-    }
+.forum-left button:hover {
+  --gradient-from: #328af1;
+  --gradient-stops: var(--gradient-from),
+    var(--gradient-to, rgba(50, 138, 241, 0));
+  --gradient-to: #21c8f6;
+  --text-opacity: 1;
+}
 .forum-left .forum-ul {
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
 }
 .forum-ul li a {
-    display: flex;
-    color: hsla(0, 0%, 100%, 0.85);
-    font-weight: 500;
-    font-size: 0.867rem;
-    text-align: left;
-    padding: 0.5rem 0.75rem;
-    border-radius: 12px;
-    align-items: center;
+  display: flex;
+  color: hsla(0, 0%, 100%, 0.85);
+  font-weight: 500;
+  font-size: 0.867rem;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px;
+  align-items: center;
 }
-    .forum-ul li a:hover {
-        --bg-opacity: 1;
-        font-weight: 500;
-        font-size: 0.867rem;
-        text-align: left;
-        color: rgb(50 138 241 / var(--text-opacity));
-        background-color: rgb(24 39 63 / var(--bg-opacity));
-    }
-        .forum-ul li a:hover span {
-            --bg-opacity: 1;
-            background-color: rgb(50 138 241 / var(--bg-opacity));
-        }
-    .forum-ul li a span {
-        display: inline-block;
-        border-radius: 0.934rem;
-        background-color: rgba(50, 138, 241, 0.1);
-        width: 9px;
-        height: 16px;
-        margin-right: 9px;
-        transition: all 0.5s ease;
-    }
+.forum-ul li a:hover {
+  --bg-opacity: 1;
+  font-weight: 500;
+  font-size: 0.867rem;
+  text-align: left;
+  color: rgb(50 138 241 / var(--text-opacity));
+  background-color: rgb(24 39 63 / var(--bg-opacity));
+}
+.forum-ul li a:hover span {
+  --bg-opacity: 1;
+  background-color: rgb(50 138 241 / var(--bg-opacity));
+}
+.forum-ul li a span {
+  display: inline-block;
+  border-radius: 0.934rem;
+  background-color: rgba(50, 138, 241, 0.1);
+  width: 9px;
+  height: 16px;
+  margin-right: 9px;
+  transition: all 0.5s ease;
+}
 #forum-main {
-    max-width: 835px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+  max-width: 835px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
-    #forum-main .fm-text {
-        display: block;
-        color: rgb(255 255 255 / var(--text-opacity));
-    }
+#forum-main .fm-text {
+  display: block;
+  color: rgb(255 255 255 / var(--text-opacity));
+}
 .fm-text .fm-head {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-    column-gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  column-gap: 1rem;
 }
-    .fm-text .fm-head .fm-filter {
-        display: flex;
-        flex: 1 1 0%;
-        column-gap: 1rem;
-    }
+.fm-text .fm-head .fm-filter {
+  display: flex;
+  flex: 1 1 0%;
+  column-gap: 1rem;
+}
 .fm-filter .ft-1 {
-    display: block;
+  display: block;
 }
 
-    .fm-filter .ft-1 .select-wrap {
-        position: relative;
-    }
-.select-wrap select {
-    text-transform: none;
-    display: flex;
-    color: rgb(186 217 252 / var(--text-opacity));
-    background-color: rgba(50, 138, 241, 0.13);
-    height: 40px;
-    padding-right: 50px;
-    appearance: none;
-    line-height: 1;
-    font-size: 0.8rem;
-    font-weight: 100;
-    padding-left: 1.25rem;
-    padding-bottom: 0.75rem;
-    padding-top: 0.75rem;
-    border-radius: 9999px;
-    align-items: center;
-    cursor: pointer;
-    outline: none;
+.fm-filter .ft-1 .select-wrap {
+  position: relative;
 }
-    .select-wrap select option {
-        font-weight: normal;
-        display: block;
-        white-space: nowrap;
-        min-height: 1.2em;
-        padding: 0px 2px 1px;
-        color: rgb(186 217 252 / var(--text-opacity));
-        --bg-opacity: 1;
-        background-color: rgb(18 35 58 / var(--bg-opacity));
-    }
+.select-wrap select {
+  text-transform: none;
+  display: flex;
+  color: rgb(186 217 252 / var(--text-opacity));
+  background-color: rgba(50, 138, 241, 0.13);
+  height: 40px;
+  padding-right: 50px;
+  appearance: none;
+  line-height: 1;
+  font-size: 0.8rem;
+  font-weight: 100;
+  padding-left: 1.25rem;
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+  border-radius: 9999px;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+}
+.select-wrap select option {
+  font-weight: normal;
+  display: block;
+  white-space: nowrap;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+  color: rgb(186 217 252 / var(--text-opacity));
+  --bg-opacity: 1;
+  background-color: rgb(18 35 58 / var(--bg-opacity));
+}
 
 .select-arrow-1 {
-    width: 8px;
-    height: 8px;
-    margin-top: -26px;
-    margin-left: 110px;
-    transform: rotate(45deg);
-    border-left: none;
-    border-top: none;
-    border-right: 2px var(--text-colorchange) solid;
-    border-bottom: 2px var(--text-colorchange) solid;
-    cursor: pointer;
+  width: 8px;
+  height: 8px;
+  margin-top: -26px;
+  margin-left: 110px;
+  transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 2px var(--text-colorchange) solid;
+  border-bottom: 2px var(--text-colorchange) solid;
+  cursor: pointer;
 }
-
-
 
 .fm-filter .ft-2 {
-    display: block;
+  display: block;
 }
 
-    .fm-filter .ft-2 .select-wrap {
-        position: relative;
-    }
+.fm-filter .ft-2 .select-wrap {
+  position: relative;
+}
 .select-arrow-2 {
-    width: 8px;
-    height: 8px;
-    margin-top: -26px;
-    margin-left: 140px;
-    transform: rotate(45deg);
-    border-left: none;
-    border-top: none;
-    border-right: 2px var(--text-colorchange) solid;
-    border-bottom: 2px var(--text-colorchange) solid;
-    cursor: pointer;
+  width: 8px;
+  height: 8px;
+  margin-top: -26px;
+  margin-left: 137px;
+  transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 2px var(--text-colorchange) solid;
+  border-bottom: 2px var(--text-colorchange) solid;
+  cursor: pointer;
 }
 
 .fm-search {
-    margin-left:260px;
-    display: flex;
-    width: 14rem;
-    margin-top: 0;
-    background-color: rgba(50,138,241,.13);
-    border-radius: 9999px;
-    height: 40px;
+  margin-left: 260px;
+  display: flex;
+  width: 14rem;
+  margin-top: 0;
+  background-color: rgba(50, 138, 241, 0.13);
+  border-radius: 9999px;
+  height: 40px;
 }
-    .fm-search .fm-s-lb {
-        display: flex;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        box-sizing: border-box;
-    }
-        .fm-search .fm-s-lb .search-icon {
-            position: relative;
-            width: 20px;
-            height: 40px;
-            margin: 0 auto;
-            background-color: transparent;
-        }
-            .fm-search .fm-s-lb .search-icon .search {
-                position: relative;
-                width: 5px;
-                margin: 0 auto;
-                padding: 12px 30px 0 0;
-                text-align: center;
-            }
+.fm-search .fm-s-lb {
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+.fm-search .fm-s-lb .search-icon {
+  position: relative;
+  width: 20px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: transparent;
+}
+.fm-search .fm-s-lb .search-icon .search {
+  position: relative;
+  width: 5px;
+  margin: 0 auto;
+  padding: 12px 30px 0 0;
+  text-align: center;
+}
 .search-icon .search .search_circle {
-    width: 11px;
-    height: 11px;
-    border: 1px solid var(--text-colorchange);
-    border-radius: 100px;
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--text-colorchange);
+  border-radius: 100px;
 }
 .search-icon .search .search_rectangle {
-    position: absolute;
-    right: 13px;
-    top:23px;
-    width: 9px;
-    transform: rotate(45deg);
-    border: 1px solid var(--text-colorchange);
-    border-radius: 1px;
+  position: absolute;
+  right: 13px;
+  top: 23px;
+  width: 9px;
+  transform: rotate(45deg);
+  border: 1px solid var(--text-colorchange);
+  border-radius: 1px;
 }
 
 .fm-search .fm-s-lb .fm-s-input {
-    border: none;
-    outline: none;
-    background: 0 0;
-    color: rgb(186 217 252/var(--text-opacity));
-    font-size: .8rem;
-    padding-top: 0;
-    width: 100%;
-    height: 100%;
-    margin-left: 0.75rem;
+  border: none;
+  outline: none;
+  background: 0 0;
+  color: rgb(186 217 252 / var(--text-opacity));
+  font-size: 0.8rem;
+  padding-top: 0;
+  width: 100%;
+  height: 100%;
+  margin-left: 0.75rem;
 }
-       

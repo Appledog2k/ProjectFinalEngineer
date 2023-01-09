@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ProjectFinalEngineer.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ProjectFinalEngineer.bundle.scp.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\avatar1.png",
       "PackagePath": "staticwebassets\\Images\\Avatars\\avatar1.png"
     },
@@ -103,6 +107,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\layout.css",
       "PackagePath": "staticwebassets\\css\\layout.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\layout.js",
