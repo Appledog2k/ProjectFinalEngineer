@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using ProjectFinalEngineer.Models.AggregatePost;
 using ProjectFinalEngineer.Models.AggregatePostCategory;
+using ProjectFinalEngineer.Models.AggregateUser;
 
 namespace ProjectFinalEngineer.Models.AggregateComment;
 

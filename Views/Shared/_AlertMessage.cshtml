@@ -1,12 +1,29 @@
-@{
+﻿@{
     var message = TempData["StatusMessage"] as string;
 }
+<head>
+    <link rel="stylesheet" href="~/css/alertmessage.css">
+</head>
 @if (!string.IsNullOrEmpty(message))
 {
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <body>
+        <div class="notifications">
+            <div class="toast success">
+                <div class="column">
+                    <span>
+                        Thành công: @message
+                    </span>
+                    <div class="icon">X</div>
+                </div>
+                <div class="icon-cancel"></div>
+            </div>
+        </div>
+    </body>
+    @* <div class="alert-message-main">
         @message
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
             <span aria-hidden="true">&times;</span>
         </button>
-    </div>
+    </div>*@
+
 }

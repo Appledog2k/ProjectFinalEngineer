@@ -50,5 +50,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Account\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
 
 </Project>

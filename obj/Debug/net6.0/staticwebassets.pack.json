@@ -21,6 +21,18 @@
       "PackagePath": "staticwebassets\\Images\\Avatars\\avatar4.png"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\deciding-monster.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\deciding-monster.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\drehimself-placeholder.webp",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\drehimself-placeholder.webp"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\eloquent-performance-patterns.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\eloquent-performance-patterns.svg"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\avatar_circle.png",
       "PackagePath": "staticwebassets\\Images\\avatar_circle.png"
     },
@@ -105,12 +117,32 @@
       "PackagePath": "staticwebassets\\Images\\sign-out.png"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\alertmessage.css",
+      "PackagePath": "staticwebassets\\css\\alertmessage.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\dbmanage.css",
+      "PackagePath": "staticwebassets\\css\\dbmanage.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\dbmanagedel.css",
+      "PackagePath": "staticwebassets\\css\\dbmanagedel.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\layout.css",
       "PackagePath": "staticwebassets\\css\\layout.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\layoutbase.css",
+      "PackagePath": "staticwebassets\\css\\layoutbase.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\alertmessage.js",
+      "PackagePath": "staticwebassets\\js\\alertmessage.js"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\layout.js",

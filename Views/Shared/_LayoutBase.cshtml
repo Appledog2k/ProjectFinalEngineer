@@ -1,0 +1,297 @@
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="~/css/layout.css">
+    <title>SEEE Forum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <title>@ViewData["Title"]</title>
+    <link rel="icon" type="image/x-icon" href="~/Images/logo/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo"><i class="ri-home-heart-fill"></i><span>Logo</span></a>
+        <ul class="navbar">
+            <li class="pt">
+                <a asp-controller="Post" asp-action="Index">
+                    Diễn đàn
+                    <span>// hello everyone - xin chào tất cả mọi người</span>
+                </a>
+            </li>
+            <li class="pt">
+                <a asp-area="Blog" asp-controller="Post" asp-action="Index">
+                    Chia sẻ
+                    <span>// hello everyone - xin chào tất cả mọi người</span>
+                </a>
+            </li>
+            <li class="pt">
+                <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                    Kiến thức
+                    <span>// hello everyone - xin chào tất cả mọi người</span>
+
+                </a>
+            </li>
+            <li class="pt">
+                <a asp-area="Blog" asp-controller="Post" asp-action="Index">
+                    Tìm trọ
+                    <span>// hello everyone - xin chào tất cả mọi người</span>
+                </a>
+            </li>
+            <li class="pt">
+                <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                    Liên hệ
+                    <span>// hello everyone - xin chào tất cả mọi người</span>
+                </a>
+            </li>
+            <li class="pt">
+                <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                    Giải trí
+                    <span>// hello everyone - xin chào tất cả mọi người</span>
+                </a>
+            </li>
+        </ul>
+        <div class="main ">
+            <div class="pt">
+                <a class="user" asp-area="Identity" asp-controller="Account" asp-action="Login">
+                    Đăng nhập
+                </a>
+            </div>
+            <div class="bx bx-menu" id="menu-icon">
+            </div>
+        </div>
+    </header>
+    <div id="forum">
+        <div class="container">
+            <div id="forum-wapper">
+                <aside>
+                    <div class="forum-left">
+                        <button>
+                            <span>Tạo bài viết</span>
+                        </button>
+
+                        <ul class="forum-ul">
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Tất cả chủ đề
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Phổ biến
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Phổ biến trong tuần
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Kiến thức
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Giải đáp
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Trao đổi, mua bán
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                <div id="forum-main">
+                    <div class="fm-text">
+                        <div class="fm-head">
+                            <div class="fm-filter">
+                                <div class="ft-1">
+                                    <div class="select-wrap">
+                                        <select>
+                                            <option>Mới</option>
+                                            <option>Phổ biến</option>
+                                            <option>Thảo luận</option>
+                                            <option>Giải pháp</option>
+                                        </select>
+                                    </div>
+                                    <div class="select-arrow-1"></div>
+                                </div>
+                                <div class="ft-2">
+                                    <div class="select-wrap">
+                                        <select>
+                                            <option>Mới nhất</option>
+                                            <option>Mã nguồn mở</option>
+                                            <option>Mã nguồn mở</option>
+                                            <option>Cần thảo luận</option>
+                                            <option>Cần trao đổi</option>
+                                        </select>
+                                    </div>
+                                    <div class="select-arrow-2"></div>
+                                </div>
+                            </div>
+                            <form class="fm-search" autocomplete="off">
+                                <label class="fm-s-lb">
+                                    <div class="search-icon">
+                                        <div class="search">
+                                            <div class="search_circle"></div>
+                                            <div class="search_rectangle"> </div>
+                                        </div>
+                                    </div>
+                                    <input class="fm-s-input" placeholder="Tìm kiếm" />
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                    @RenderBody()
+                </div>
+                <div class="forum-full"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="row primary">
+            <div class="column about">
+                <h3>Thông tin</h3>
+                <p>
+                    Xin chào tất cả thành viên trong diễn đàn, chúc các bạn một ngày mới vui vẻ. Mình tên là Nguyễn
+                    Quang
+                    Hùng sinh viên khóa 63 trường Điện - Điện tử Đại học Bách Khoa Hà Nội
+                </p>
+            </div>
+            <div class="column links">
+                <h3>Liên kết</h3>
+                <ul class="quickLinks">
+                    <li>
+                        <a asp-area="Blog" asp-controller="Post" asp-action="Index">
+                            Diễn đàn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###">
+                            Chia sẻ
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="Blog" asp-controller="Post" asp-action="Index">
+                            Tìm trọ
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                            Liên hệ
+                        </a>
+                </ul>
+            </div>
+            <div class="column subscribe">
+                <h3>Gửi lời nhắn</h3>
+                <div class="btn-col">
+                    <input type="text" placeholder="Gửi lời nhắn tới quản lý">
+                    <button>Tiếp lửa</button>
+                </div>
+                <div class="social">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-square-youtube"></i>
+                    <i class="fa-brands fa-square-github"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row secondary">
+            <div>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                </p>
+                <p>+84 962220635</p>
+            </div>
+            <div>
+                <div> <i class="fa-solid fa-envelope"></i></div>
+                <p>hung.nq182556@sis.hust.edu.vn</p>
+            </div>
+            <div>
+                <div> <i class="fa-solid fa-map-location-dot"></i></div>
+                <p>165 Cầu Giấy, Hà Nội, Việt Nam</p>
+            </div>
+        </div>
+        <div class="row copyright">
+            <p>Bản quyền &copy; 2022 Hùng Nguyễn | Appledog2k</p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="~/js/layout.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+
+</html>
+@* <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HUST FORUM</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    </head>
+
+    <body>
+    <header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 app-navbar">
+    <div class="container">
+    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+    <ul class="navbar-nav flex-grow-1">
+
+    <li class="nav-item">
+    <a class="nav-link text-dark" asp-controller="Contact" asp-action="SendContact">Liên hệ</a>
+    </li>
+    </ul>
+
+    <partial name="_LoginPartial" />
+    <partial name="_MenuManagePartial" />
+
+
+
+
+    </div>
+    </div>
+    </nav>
+    </header>
+    <div class="container">
+    <main role="main" class="pb-3">
+    @RenderBody()
+    </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+    <div class="container">
+    &copy; 2022-HUST FORUM <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    </body>
+
+    </html> *@

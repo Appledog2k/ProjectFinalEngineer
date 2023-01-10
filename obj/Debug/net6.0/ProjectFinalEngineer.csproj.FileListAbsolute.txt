@@ -325,7 +325,12 @@ E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.
 E:\WorkSpace\DHBKHN-Project-final-2018-2023\ProjectFinalEngineer\obj\Debug\net6.0\ref\ProjectFinalEngineer.dll
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\appsettings.Development.json
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\appsettings.json
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\libman.json
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\package-lock.json
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\package.json
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\.tmb\1_0F29BEEC41D52C972EBADD2D358E80E8.jpg
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\.tmb\1_C0F454B9EA8DCD7EA838CCAD4C5D0EAA.jpg
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\.tmb\quang hung (2)_4DFB64581E4A7D2EF938F5C2B78E7E5D.jpg
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\.tmb\quang hung (2)_7003CFBAFFD5B171E17FBFBCEF29CFB1.jpg
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\1.jpg
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\Avatars\avatar1.png
@@ -345,9 +350,6 @@ E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\r
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\send.png
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\sign-out.png
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\quang hung (2).jpg
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\libman.json
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\package-lock.json
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\package.json
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.staticwebassets.runtime.json
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.exe
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.deps.json
@@ -418,6 +420,8 @@ E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.Visual
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\MimeKit.dll
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Npgsql.dll
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\NuGet.Common.dll
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\NuGet.Configuration.dll
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\NuGet.DependencyResolver.Core.dll
@@ -625,14 +629,14 @@ E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\staticwebassets\
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\staticwebassets.pack.json
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\staticwebassets.build.json
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\staticwebassets.development.json
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\scopedcss\bundle\ProjectFinalEngineer.styles.css
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\scopedcss\projectbundle\ProjectFinalEngineer.bundle.scp.css
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.csproj.CopyComplete
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.dll
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\refint\ProjectFinalEngineer.dll
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.pdb
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.genruntimeconfig.cache
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ref\ProjectFinalEngineer.dll
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Npgsql.dll
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\scopedcss\projectbundle\ProjectFinalEngineer.bundle.scp.css
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.Resource.resources
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.csproj.GenerateResource.cache

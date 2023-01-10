@@ -1,0 +1,49 @@
+@using Microsoft.EntityFrameworkCore
+@using System.Data
+@using ProjectFinalEngineer.EntityFramework
+
+
+@inject AppDbContext dbContext
+@{
+    var connect = dbContext.Database.GetDbConnection();
+    var dbName = connect.Database;
+    ViewData["Title"] = "Xóa cơ sở dữ liệu " + @dbName;
+}
+<head>
+    <link rel="stylesheet" href="~/css/dbmanagedel.css">
+</head>
+
+<section class="db-main">
+    <div class="db-main-header">
+        <header>
+            <h3>Xóa cơ sở dữ liệu</h3>
+            <p>Hành động này dẫn đến việc toàn bộ dữ liệu bị xóa hoàn toàn</p>
+        </header>
+    </div>
+    <div>
+        <article class="db">
+            <div class="db-article">
+                <div class="db-article-line">
+                    <h1>Bạn có thực sự muốn xóa ?</h1>
+                    <div class="db-action">
+                        <div class="db-seed">
+                            <a asp-action="ManageDatabase">
+                                <div class="icon"></div>
+                                <span>Quay lại trang quản lý</span>
+                            </a>
+                        </div>
+                        <form class="db-update" method="post">
+                            <button type="submit">
+                                <div class="icon"></div>
+                                <span>Xóa cơ sở dữ liệu</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <img class="db-image" src="~/images/avatars/eloquent-performance-patterns.svg">
+        </article>
+    </div>
+</section>
+
+

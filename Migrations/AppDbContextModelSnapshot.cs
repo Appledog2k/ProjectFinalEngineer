@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using ProjectFinalEngineer.Models;
+using ProjectFinalEngineer.EntityFramework;
 
 #nullable disable
 
@@ -323,7 +323,7 @@ namespace ProjectFinalEngineer.Migrations
                     b.ToTable("PostCategory");
                 });
 
-            modelBuilder.Entity("ProjectFinalEngineer.Models.AppUser", b =>
+            modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateUser.AppUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("text");
@@ -411,7 +411,7 @@ namespace ProjectFinalEngineer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("ProjectFinalEngineer.Models.AppUser", null)
+                    b.HasOne("ProjectFinalEngineer.Models.AggregateUser.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -420,7 +420,7 @@ namespace ProjectFinalEngineer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("ProjectFinalEngineer.Models.AppUser", null)
+                    b.HasOne("ProjectFinalEngineer.Models.AggregateUser.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -435,7 +435,7 @@ namespace ProjectFinalEngineer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProjectFinalEngineer.Models.AppUser", null)
+                    b.HasOne("ProjectFinalEngineer.Models.AggregateUser.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -444,7 +444,7 @@ namespace ProjectFinalEngineer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("ProjectFinalEngineer.Models.AppUser", null)
+                    b.HasOne("ProjectFinalEngineer.Models.AggregateUser.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -462,7 +462,7 @@ namespace ProjectFinalEngineer.Migrations
 
             modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateComment.Comment", b =>
                 {
-                    b.HasOne("ProjectFinalEngineer.Models.AppUser", "Author")
+                    b.HasOne("ProjectFinalEngineer.Models.AggregateUser.AppUser", "Author")
                         .WithMany()
                         .HasForeignKey("AuthorId");
 
@@ -483,11 +483,11 @@ namespace ProjectFinalEngineer.Migrations
 
             modelBuilder.Entity("ProjectFinalEngineer.Models.AggregatePost.Post", b =>
                 {
-                    b.HasOne("ProjectFinalEngineer.Models.AppUser", "Approver")
+                    b.HasOne("ProjectFinalEngineer.Models.AggregateUser.AppUser", "Approver")
                         .WithMany()
                         .HasForeignKey("ApproverId");
 
-                    b.HasOne("ProjectFinalEngineer.Models.AppUser", "Author")
+                    b.HasOne("ProjectFinalEngineer.Models.AggregateUser.AppUser", "Author")
                         .WithMany()
                         .HasForeignKey("AuthorId");
 

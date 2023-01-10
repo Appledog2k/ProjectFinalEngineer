@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
-namespace ProjectFinalEngineer.Models
+namespace ProjectFinalEngineer.Models.AggregateUser
 {
     public class AppUser : IdentityUser
     {

@@ -1,0 +1,108 @@
+@using Microsoft.EntityFrameworkCore
+@using System.Data
+@using ProjectFinalEngineer.EntityFramework
+
+
+@inject AppDbContext dbContext
+@{
+    ViewData["Title"] = "Quản lý cơ sở dữ liệu";
+    var connect = dbContext.Database.GetDbConnection();
+    var dbName = connect.Database;
+    var dbSource = connect.ConnectionString;
+    var dbState = connect.State;
+    var can_Connect = dbContext.Database.CanConnect();
+
+}
+<head>
+    <link rel="stylesheet" href="~/css/dbmanage.css">
+</head>
+
+<section class="db-main">
+    <div>
+        <partial name="_AlertMessage"></partial>
+    </div>
+    <div class="db-main-header">
+        <header>
+            <h3>Thông tin</h3>
+            <p>Đây là trang quản lý các hành động liên quan tới cơ sở dữ liệu.</p>
+        </header>
+    </div>
+    <div>
+        <img class="db-image" src="~/images/avatars/deciding-monster.svg"
+                 style="width: 310px; top:60px; left:-10px;">
+        <article class="db">
+            <div class="db-article">
+                <div class="db-article-line">
+                    <h1>Thông tin cơ bản</h1>
+                    <div class="db-content">
+                        <div>
+                            <p>Hệ quản trị cơ sở dữ liệu: PostgreSQL</p>
+                        </div>
+                        <div>
+                            <p>Tên cở sở dữ liệu: @dbName</p>
+                        </div>
+                        <div>
+                            <p>Trạng thái: @dbState</p>
+                        </div>
+                    </div>
+                    <aside class="db-aside">
+                        <dl>
+                            <div>
+                                <dt>Migrations (Số lượng: @dbContext.Database.GetAppliedMigrations().Count())</dt>
+                                @foreach (var migration in dbContext.Database.GetAppliedMigrations())
+                                {
+                                    <dd> @migration</dd>
+                                }
+                            </div>
+                            <div>
+                                <dt>Migrations hàng chờ (Số lượng: @dbContext.Database.GetPendingMigrations().Count())</dt>
+                                @foreach (var migration in dbContext.Database.GetPendingMigrations())
+                                {
+                                    <dd>@migration</dd>
+                                }
+                            </div>
+                        </dl>
+                    </aside>
+                    <div>
+                        @if (!can_Connect)
+                        {
+                            <div>
+                                <p>Không có khả năng kết nối tới Database</p>
+                            </div>
+                        }
+                    </div>
+                    <div class="db-action">
+                        @if (can_Connect)
+                        {
+                            <div class="db-seed">
+                                <a asp-action="SeedData">
+                                    <div class="icon"></div>
+                                    <span>Tạo dữ liệu mẫu</span>
+                                </a>
+                            </div>
+                            <div class="db-del">
+                                <a asp-action="DeleteDatabase">
+                                    <div class="icon"></div>
+                                    <span>Xóa cơ sở dữ liệu @dbName</span>
+                                </a>
+                            </div>
+                        }
+                        @if (dbContext.Database.GetPendingMigrations().Any())
+                        {
+                            <form  class="db-update" method="post">
+                                <button asp-action="Migrate">
+                                    <div class="icon"></div>
+                                    <span>Tạo/Cập nhật Db hàng chờ</span>
+                                </button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+            <img class="db-image" src="~/images/avatars/drehimself-placeholder.webp"
+                 style="width: 310px; bottom: -1px; right: 0px;">
+        </article>
+    </div>
+</section>
+
+

@@ -1,9 +1,9 @@
-
-using App.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
-using ProjectFinalEngineer.Models;
+using ProjectFinalEngineer.EntityFramework;
+using ProjectFinalEngineer.Models.AggregateRole;
+using ProjectFinalEngineer.Models.AggregateUser;
 
 namespace ProjectFinalEngineer
 {
@@ -143,11 +143,6 @@ namespace ProjectFinalEngineer
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Home}/{id?}");
-
-                endpoints.MapControllerRoute(
-                            name: "areas",
-                            pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-                          );
                 endpoints.MapRazorPages();
             });
 
