@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProjectFinalEngineer.EntityFramework;
-using ProjectFinalEngineer.Migrations.ExtendMethods;
+using ProjectFinalEngineer.Models.AggregateExtensions;
 using ProjectFinalEngineer.Models.AggregateRole;
 using ProjectFinalEngineer.Models.AggregateUser;
 

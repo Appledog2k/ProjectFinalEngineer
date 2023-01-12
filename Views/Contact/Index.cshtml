@@ -1,10 +1,50 @@
 @model IEnumerable<ProjectFinalEngineer.Models.AggregateContact.Contact>
 
 @{
-    ViewData["Title"] = "Danh sách liên hệ.";
+    ViewData["Title"] = "Quản lý liên hệ";
 }
+<head>
+    <link rel="stylesheet" href="~/css/Contact/index.css">
+    <script src="~/js/SendContact.js"></script>
+</head>
+<div class="contact-main">
+    <div class="contact-header">
+        <h1>Danh sách liên hệ</h1>
+        <p>Đây là trang thống kê liên hệ của thành viên trong diễn đàn gửi tới quản trị viên</p>
+    </div>
+    <div class="contact-list">
+        @foreach (var item in Model)
+        {
+            <div class="contact-element">
+                <div class="contact-element-avatar">
+                    <img class="ct-image" src="~/images/avatars/default-avatar-23.webp">
+                </div>
+                <div class="contact-element-content">
+                    <div>
+                        <div class="ct-header">
+                            <h4>@Html.DisplayFor(modelItem => item.Message)</h4>
+                            <div class="ct-header-action">
+                                <a class="a1" asp-action="Details" asp-route-id="@item.Id">Xem</a>
+                                <a class="a2" asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+                            </div>
+                        </div>
+                        <div class="ct-body">
+                            <div class="ct-body-name">
+                                <p>@Html.DisplayFor(modelItem => item.FullName),</p>
+                            </div>
+                            <div class="ct-body-time">
+                                <p>
+                                    &nbsp;tạo liên hệ vào @Html.DisplayFor(modelItem => item.DateSent.Value.Day)/@Html.DisplayFor(modelItem => item.DateSent.Value.Month)/@Html.DisplayFor(modelItem => item.DateSent.Value.Year)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 
-<h1>Danh sách liên hệ.</h1>
+</div>
+@*
 
 <table class="table">
     <thead>
@@ -54,3 +94,4 @@
         }
     </tbody>
 </table>
+*@

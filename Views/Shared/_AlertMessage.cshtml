@@ -2,28 +2,16 @@
     var message = TempData["StatusMessage"] as string;
 }
 <head>
-    <link rel="stylesheet" href="~/css/alertmessage.css">
+    <link rel="stylesheet" href="~/css/AlertMessage/alertmessage.css">
+    <script src="~/js/alertmessage.js"></script>
 </head>
 @if (!string.IsNullOrEmpty(message))
 {
-    <body>
-        <div class="notifications">
-            <div class="toast success">
-                <div class="column">
-                    <span>
-                        Thành công: @message
-                    </span>
-                    <div class="icon">X</div>
-                </div>
-                <div class="icon-cancel"></div>
-            </div>
-        </div>
-    </body>
-    @* <div class="alert-message-main">
-        @message
-        <button type="button" class="close" data-dismiss="alert" aria-label="close">
-            <span aria-hidden="true">&times;</span>
+    <div id="toast" class="show">
+        <img id="toast-icon" src="~/images/Icon/notification-svgrepo-com.svg" />
+        <div id="toast-mess">@message</div>
+        <button id="toast-btn" onclick="launch_toast()">
+            <img src="~/images/Icon/icons8-close.svg" />
         </button>
-    </div>*@
-
+    </div>
 }

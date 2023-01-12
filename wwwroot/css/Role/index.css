@@ -1,0 +1,300 @@
+﻿:root {
+    --bg-opacity: 1;
+    --text-opacity: 1;
+    --gradient-to: #f19a1a;
+    --gradient-from: #ffc73c;
+    --gradient-stops: var(--gradient-from),var(--gradient-to,rgba(255,199,60,0));
+}
+
+
+* {
+    border: 0 solid;
+    box-sizing: border-box;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+.alert-message {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+}
+
+.role-main {
+    display: block;
+    padding: 40px 30px;
+    padding-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1700px;
+    position: relative;
+    z-index: 9;
+}
+
+.role-main-header header {
+    display: block;
+    position: relative;
+    width: 100%;
+    color: rgb(255 255 255/var(--text-opacity));
+    text-align: center;
+    padding-bottom: 6rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 auto;
+}
+
+    .role-main-header header h3 {
+        line-height: 1.25;
+        font-weight: 600;
+        font-size: 2.6666rem;
+        z-index: 10;
+        position: relative;
+        color: inherit;
+        font-family: Cabin,sans-serif;
+        letter-spacing: .02rem;
+        text-align: center;
+    }
+
+    .role-main-header header p {
+        font-weight: 500;
+        margin-top: 1rem;
+        color: inherit;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+
+.role {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 1100px;
+    border-radius: 1.25rem;
+    color: rgb(255 255 255/var(--text-opacity));
+    background-image: linear-gradient(to left,var(--gradient-stops));
+    margin: 0 auto;
+}
+
+    .role .role-article {
+        display: flex;
+        padding-top: 1.75rem;
+        padding: 2rem;
+        justify-content: space-between;
+        flex-direction: column;
+        flex: 1 1 0%;
+    }
+
+.role-article-line {
+    display: flex;
+    padding-right: 30%;
+    flex-direction: column;
+    height: 100%;
+}
+
+    .role-article-line h1 {
+        display: flex;
+        font-size: 2.4rem;
+        align-items: center;
+        height: 70px;
+        line-height: 1.25;
+        justify-content: center;
+        font-family: Cabin,sans-serif;
+        letter-spacing: .02rem;
+    }
+
+.role-aside {
+    display: block;
+    padding-bottom: 1.75rem;
+    padding-top: 1.75rem;
+    margin-top: auto;
+}
+
+    .role-aside dl {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+        .role-aside dl div {
+            font-size: 1rem;
+        }
+
+            .role-aside dl div dt {
+                display: block;
+                color: hsla(0,0%,100%,.75);
+                letter-spacing: -.02em;
+                font-weight: 500;
+            }
+
+            .role-aside dl div dd {
+                font-weight: 600;
+            }
+
+.role-action {
+    display: flex;
+    max-width: 550px;
+    margin-top: 1.25rem;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+    .role-action .role-seed {
+        flex-basis: 100px;
+        flex: 1 1 0%;
+    }
+
+        .role-action .role-seed a {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            text-transform: none;
+            margin-left: 0;
+            margin-right: 0;
+            height: 100%;
+            background-color: rgb(255 255 255/var(--bg-opacity));
+            color: rgb(34 34 34/var(--text-opacity));
+            max-width: 100%;
+            padding-bottom: 0.75rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-top: 0.75rem;
+            transition: background .3s;
+            background-clip: padding-box;
+            border-color: transparent;
+            border-radius: 16px;
+            border-width: 1px;
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .2px;
+            line-height: 1.15;
+            position: relative;
+            text-align: center;
+        }
+
+            .role-action .role-seed a:hover {
+                color: rgb(50 138 241/var(--text-opacity));
+            }
+
+            .role-action .role-seed a span {
+                flex-shrink: 0;
+                display: inline-block;
+                font-style: inherit;
+                font-weight: inherit;
+            }
+
+    .role-action .role-del a {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-transform: none;
+        margin-left: 0;
+        margin-right: 0;
+        height: 100%;
+        background-color: rgb(255 255 255/var(--bg-opacity));
+        color: rgb(34 34 34/var(--text-opacity));
+        max-width: 100%;
+        padding-bottom: 0.75rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 0.75rem;
+        transition: background .3s;
+        background-clip: padding-box;
+        border-color: transparent;
+        border-radius: 16px;
+        border-width: 1px;
+        font-size: .8rem;
+        font-weight: 600;
+        letter-spacing: .2px;
+        line-height: 1.15;
+        position: relative;
+        text-align: center;
+    }
+
+        .role-action .role-del a:hover {
+            color: rgb(50 138 241/var(--text-opacity));
+        }
+
+        .role-action .role-del a span {
+            flex-shrink: 0;
+            display: inline-block;
+            font-style: inherit;
+            font-weight: inherit;
+        }
+
+
+    .role-action .role-update button {
+        width: 550px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-transform: none;
+        margin-left: 0;
+        margin-right: 0;
+        height: 100%;
+        background-color: rgb(255 255 255/var(--bg-opacity));
+        color: rgb(34 34 34/var(--text-opacity));
+        max-width: 100%;
+        padding-bottom: 0.75rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 0.75rem;
+        transition: background .3s;
+        background-clip: padding-box;
+        border-color: transparent;
+        border-radius: 16px;
+        border-width: 1px;
+        font-size: .8rem;
+        font-weight: 600;
+        letter-spacing: .2px;
+        line-height: 1.15;
+        position: relative;
+        text-align: center;
+        cursor: pointer;
+    }
+
+        .role-action .role-update button:hover {
+            color: rgb(50 138 241/var(--text-opacity));
+        }
+
+
+.role-image {
+    position: absolute;
+    top: -50px;
+    right: 50px;
+    z-index: 10;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+.form-task {
+    padding-bottom: 2px;
+}
+
+    .form-task .task1 {
+        padding: 0px 3px;
+        border: 1px solid white;
+        border-radius: 6px;
+        color: white;
+    }
+        .form-task .task1:hover {
+            background: white;
+            color: #ffc73c;
+        }
+
+        .form-task .task2 {
+            padding: 0px 3px;
+            border: 1px solid white;
+            border-radius: 6px;
+            color:white;
+        }
+            .form-task .task2:hover {
+                background: white;
+                color: #ffc73c;
+            }

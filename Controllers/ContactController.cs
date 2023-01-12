@@ -62,7 +62,7 @@ namespace ProjectFinalEngineer.Controllers
                 _context.Add(contact);
                 await _context.SaveChangesAsync();
                 StatusMessage = "Gửi ý kiến, đóng góp thành công";
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Home","Home");
             }
             return View(contact);
         }

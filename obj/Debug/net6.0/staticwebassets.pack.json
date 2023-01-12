@@ -21,8 +21,20 @@
       "PackagePath": "staticwebassets\\Images\\Avatars\\avatar4.png"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\code-katas-with-phpunit.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\code-katas-with-phpunit.svg"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\deciding-monster.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\deciding-monster.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\default-avatar-14.webp",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\default-avatar-14.webp"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\default-avatar-23.webp",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\default-avatar-23.webp"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\drehimself-placeholder.webp",
@@ -31,6 +43,30 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\eloquent-performance-patterns.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\eloquent-performance-patterns.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\fish.png",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\fish.png"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\object-oriented-principles-in-php.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\object-oriented-principles-in-php.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\php-for-beginners.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\php-for-beginners.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Icon\\icons8-close-window-48.png",
+      "PackagePath": "staticwebassets\\Images\\Icon\\icons8-close-window-48.png"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Icon\\icons8-close.svg",
+      "PackagePath": "staticwebassets\\Images\\Icon\\icons8-close.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Icon\\notification-svgrepo-com.svg",
+      "PackagePath": "staticwebassets\\Images\\Icon\\notification-svgrepo-com.svg"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\avatar_circle.png",
@@ -117,16 +153,40 @@
       "PackagePath": "staticwebassets\\Images\\sign-out.png"
     },
     {
-      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\alertmessage.css",
-      "PackagePath": "staticwebassets\\css\\alertmessage.css"
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\AlertMessage\\alertmessage.css",
+      "PackagePath": "staticwebassets\\css\\AlertMessage\\alertmessage.css"
     },
     {
-      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\dbmanage.css",
-      "PackagePath": "staticwebassets\\css\\dbmanage.css"
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Contact\\SendContact.css",
+      "PackagePath": "staticwebassets\\css\\Contact\\SendContact.css"
     },
     {
-      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\dbmanagedel.css",
-      "PackagePath": "staticwebassets\\css\\dbmanagedel.css"
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Contact\\delete.css",
+      "PackagePath": "staticwebassets\\css\\Contact\\delete.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Contact\\details.css",
+      "PackagePath": "staticwebassets\\css\\Contact\\details.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Contact\\index.css",
+      "PackagePath": "staticwebassets\\css\\Contact\\index.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\DatabaseManage\\dbmanage.css",
+      "PackagePath": "staticwebassets\\css\\DatabaseManage\\dbmanage.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\DatabaseManage\\dbmanagedel.css",
+      "PackagePath": "staticwebassets\\css\\DatabaseManage\\dbmanagedel.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Management\\management.css",
+      "PackagePath": "staticwebassets\\css\\Management\\management.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Role\\index.css",
+      "PackagePath": "staticwebassets\\css\\Role\\index.css"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\layout.css",
@@ -141,12 +201,20 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\SendContact.js",
+      "PackagePath": "staticwebassets\\js\\SendContact.js"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\alertmessage.js",
       "PackagePath": "staticwebassets\\js\\alertmessage.js"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\layout.js",
       "PackagePath": "staticwebassets\\js\\layout.js"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\management.js",
+      "PackagePath": "staticwebassets\\js\\management.js"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\lib\\bootstrap\\LICENSE",

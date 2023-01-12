@@ -28,16 +28,9 @@
                 </a>
             </li>
             <li class="pt">
-                <a asp-area="Blog" asp-controller="Post" asp-action="Index">
-                    Chia sẻ
-                    <span>// hello everyone - xin chào tất cả mọi người</span>
-                </a>
-            </li>
-            <li class="pt">
                 <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
                     Kiến thức
                     <span>// hello everyone - xin chào tất cả mọi người</span>
-
                 </a>
             </li>
             <li class="pt">
@@ -58,7 +51,12 @@
                     <span>// hello everyone - xin chào tất cả mọi người</span>
                 </a>
             </li>
+            <li>
+                <partial name="_MenuManagePartial"></partial>
+            </li>
+
         </ul>
+
         <div class="main ">
             <div class="pt">
                 <a class="user" asp-area="Identity" asp-controller="Account" asp-action="Login">
@@ -70,8 +68,8 @@
         </div>
     </header>
     <div id="forum">
-        <div class="container">       
-                    @RenderBody()
+        <div class="container">
+            @RenderBody()
         </div>
     </div>
     <footer>
@@ -112,7 +110,7 @@
                 <h3>Gửi lời nhắn</h3>
                 <div class="btn-col">
                     <input type="text" placeholder="Gửi lời nhắn tới quản lý">
-                    <button>Tiếp lửa</button>
+                    <button>Gửi lời nhắn</button>
                 </div>
                 <div class="social">
                     <i class="fa-brands fa-square-facebook"></i>

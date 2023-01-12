@@ -9,17 +9,18 @@ public class Contact
     public int Id { get; set; }
     [Column(TypeName = "varchar")]
     [StringLength(100)]
-    [Required(ErrorMessage = "Phải nhập {0}")]
+    [Required(ErrorMessage = "Phải nhập họ và tên")]
     [Display(Name = "Họ và tên")]
     public string FullName { get; set; }
-    [Required(ErrorMessage = "Phải nhập {0}")]
+    [Required(ErrorMessage = "Phải nhập địa chỉ thư điện tử")]
+    [Display(Name = "Địa chỉ thư điện tử")]
     [StringLength(100)]
-    [EmailAddress(ErrorMessage = "Không đúng định dạng email.")]
+    [EmailAddress(ErrorMessage = "Không đúng định dạng email")]
     public string Email { get; set; }
     public DateTime? DateSent { get; set; }
-    [Display(Name = "Nội dung.")]
+    [Display(Name = "Nội dung")]
     public string Message { get; set; }
     [StringLength(100)]
-    [Display(Name = "Số điện thoại.")]
+    [Display(Name = "Số điện thoại")]
     public string Phone { get; set; }
 }

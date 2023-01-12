@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
-using ProjectFinalEngineer.Migrations.ExtendMethods;
 using ProjectFinalEngineer.Models;
+using ProjectFinalEngineer.Models.AggregateExtensions;
 using ProjectFinalEngineer.Models.AggregateUser;
 
 namespace ProjectFinalEngineer.Controllers

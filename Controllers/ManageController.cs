@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using ProjectFinalEngineer.Migrations.ExtendMethods;
 using ProjectFinalEngineer.Models;
+using ProjectFinalEngineer.Models.AggregateExtensions;
 using ProjectFinalEngineer.Models.AggregateManage;
 using ProjectFinalEngineer.Models.AggregateUser;
 

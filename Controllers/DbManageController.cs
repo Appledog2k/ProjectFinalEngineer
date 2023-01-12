@@ -1,4 +1,5 @@
 using Bogus;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ using ProjectFinalEngineer.Models.AggregateUser;
 namespace ProjectFinalEngineer.Controllers
 {
     [Route("/database-manage/[action]")]
+    //[Authorize(Roles = RoleName.Administrator)]
     public class DbManageController : Controller
     {
         private readonly AppDbContext _dbContext;
@@ -24,7 +26,6 @@ namespace ProjectFinalEngineer.Controllers
             _userManager = userManager;
             _roleManager = roleManager;
         }
-
         public IActionResult ManageDatabase()
         {
             return View();
@@ -63,7 +64,6 @@ namespace ProjectFinalEngineer.Controllers
                     await _roleManager.CreateAsync(new IdentityRole(rolename));
                 }
             }
-
             // admin, pass=admin123, admin@example.com
             var useradmin = await _userManager.FindByEmailAsync("admin@example.com");
             if (useradmin == null)
@@ -94,9 +94,6 @@ namespace ProjectFinalEngineer.Controllers
             fakerCategory.RuleFor(c => c.Title, fk => $"CM{cm++} " + fk.Lorem.Sentence(1, 2).Trim('.'));
             fakerCategory.RuleFor(c => c.Description, fk => fk.Lorem.Sentences(5) + "[fakeData]");
             fakerCategory.RuleFor(c => c.Slug, fk => fk.Lorem.Slug());
-
-
-
             var cate1 = fakerCategory.Generate();
             var cate11 = fakerCategory.Generate();
             var cate12 = fakerCategory.Generate();
@@ -148,9 +145,6 @@ namespace ProjectFinalEngineer.Controllers
             _dbContext.AddRange(posts);
             _dbContext.AddRange(post_categories);
             // END POST
-
-
-
             _dbContext.SaveChanges();
         }
     }

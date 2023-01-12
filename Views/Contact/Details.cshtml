@@ -1,47 +1,58 @@
-@model ProjectFinalEngineer.Models.AggregateContact.Contact
+﻿@model ProjectFinalEngineer.Models.AggregateContact.Contact
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi tiết liên hệ";
 }
+<head>
+    <link rel="stylesheet" href="~/css/Contact/details.css">
+</head>
 
-<h1>Details</h1>
+<section class="ct-main">
+    <div class="ct-main-header">
+        <header>
+            <h3>Chi tiết liên hệ</h3>
+            <p>Chi tiết liên hệ với đầy đủ nội dung các trường</p>
+        </header>
+    </div>
+    <div>
+        <article class="ct">
+            <div class="ct-article">
+                <div class="ct-article-line">
+                    <div class="form-contact">
+                        <div>
+                            <img class="form-contact-image" src="~/images/avatars/default-avatar-23.webp" />
+                        </div>
+                        <div class="form-ct-name">
 
-<div>
-    <h4>Contact</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.FullName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.FullName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DateSent)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DateSent)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Message)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Message)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+                            <p>@Html.DisplayFor(model => model.FullName)</p>
+                        </div>
+                        <div class="form-ct-message">
+                            <h2>Nội dung liên hệ</h2>
+                            <p>@Html.DisplayFor(model => model.Message)</p>
+                        </div>
+                        <div class="form-ct">
+                            <h3>Phương thức liên lạc</h3>
+                            <div class="form-ct-email">
+                                <p>Thư điện tử: @Html.DisplayFor(model => model.Email)</p>
+                            </div>
+                            <div class="form-ct-phone">
+                                <p>Số điện thoại: @Html.DisplayFor(model => model.Phone)</p>
+                            </div>
+                        </div>
+
+                        <div class="form-ct-time">
+                            
+                            <p>@Html.DisplayFor(model => model.DateSent)</p>
+                        </div>
+                        <div class="form-action-1">
+                            @*<div class="arrow-left icon"></div>k*@
+                            <a asp-action="Index">
+                                <p>Quay lại danh sách liên hệ</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
