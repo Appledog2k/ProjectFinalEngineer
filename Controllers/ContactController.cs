@@ -21,7 +21,7 @@ namespace ProjectFinalEngineer.Controllers
         [HttpGet("/admin/contact")]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Contacts.ToListAsync());
+            return View(await _context.Contacts.OrderByDescending(x => x.DateSent).ToListAsync());
         }
 
         // GET: Contact/Details/5

@@ -9,293 +9,293 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjectFinalEngineer
 build_property.RootNamespace = ProjectFinalEngineer
-build_property.ProjectDir = e:\WorkSpace\ProjectFinal\ProjectFinalEngineer\
+build_property.ProjectDir = E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = e:\WorkSpace\ProjectFinal\ProjectFinalEngineer
+build_property.MSBuildProjectDirectory = E:\WorkSpace\ProjectFinal\ProjectFinalEngineer
 build_property._RazorSourceGeneratorDebug = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/AccessDenied.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ConfirmEmail.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/Error.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ErrorConfirmEmail.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ErrorConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFcnJvckNvbmZpcm1FbWFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ExternalLoginConfirmation.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ExternalLoginConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFeHRlcm5hbExvZ2luQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ExternalLoginFailure.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ExternalLoginFailure.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFeHRlcm5hbExvZ2luRmFpbHVyZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ForgotPassword.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ForgotPasswordConfirmation.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/Lockout.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/Lockout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2Nrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/Login.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/Register.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/RegisterConfirmation.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ResetPassword.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ResetPasswordConfirmation.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/SendCode.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/SendCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTZW5kQ29kZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/UseRecoveryCode.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/UseRecoveryCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxVc2VSZWNvdmVyeUNvZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/VerifyAuthenticatorCode.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/VerifyAuthenticatorCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWZXJpZnlBdXRoZW50aWNhdG9yQ29kZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/VerifyCode.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Account/VerifyCode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWZXJpZnlDb2RlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Category/Create.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Category/Delete.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Category/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Category/Details.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Category/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Category/Edit.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Category/Index.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Contact/Delete.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Contact/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Contact/Details.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Contact/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Contact/Index.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Contact/SendContact.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Contact/SendContact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxTZW5kQ29udGFjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/DbManage/DeleteDatabase.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/DbManage/DeleteDatabase.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGJNYW5hZ2VcRGVsZXRlRGF0YWJhc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/DbManage/ManageDatabase.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/DbManage/ManageDatabase.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGJNYW5hZ2VcTWFuYWdlRGF0YWJhc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/FileManager/Index.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/FileManager/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZU1hbmFnZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Home/Home.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Home/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Home/Privacy.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/AddPhoneNumber.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/AddPhoneNumber.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlXEFkZFBob25lTnVtYmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/ChangePassword.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlXENoYW5nZVBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/DisplayRecoveryCodes.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/DisplayRecoveryCodes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlXERpc3BsYXlSZWNvdmVyeUNvZGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/EditProfile.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/EditProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlXEVkaXRQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/Error.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/Index.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/ManageLogins.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/ManageLogins.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlXE1hbmFnZUxvZ2lucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/SetPassword.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlXFNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/VerifyPhoneNumber.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/VerifyPhoneNumber.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlXFZlcmlmeVBob25lTnVtYmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Post/Create.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Post/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Post/Delete.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Post/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Post/Details.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Post/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Post/Edit.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Post/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Post/Index.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Post/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Role/AddRoleClaim.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Role/AddRoleClaim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxBZGRSb2xlQ2xhaW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Role/Create.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Role/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Role/Delete.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Role/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Role/Edit.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Role/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Role/EditRoleClaim.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Role/EditRoleClaim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxFZGl0Um9sZUNsYWltLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Role/Index.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Role/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/Error.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_AlertMessage.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_AlertMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BbGVydE1lc3NhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_LayoutBase.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_LayoutBase.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRCYXNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_LayoutFileManager.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_LayoutFileManager.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRGaWxlTWFuYWdlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_LayoutHome.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_LayoutHome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_LayoutIndex.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_LayoutIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_LoginPartial.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_MenuManagePartial.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_MenuManagePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NZW51TWFuYWdlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_PagingXTL.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_PagingXTL.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWdpbmdYVEwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_StatusMessage.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdGF0dXNNZXNzYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_Summernote.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_Summernote.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdW1tZXJub3RlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/User/AddClaim.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/User/AddClaim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBZGRDbGFpbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/User/AddRole.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/User/AddRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBZGRSb2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/User/Index.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/User/SetPassword.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/User/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTZXRQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/_ViewImports.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/_ViewStart.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_Layout.cshtml]
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zylbxhhq6v

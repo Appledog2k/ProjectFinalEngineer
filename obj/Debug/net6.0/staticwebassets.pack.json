@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\Images\\Avatars\\default-avatar-23.webp"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\developing-serverless-functions.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\developing-serverless-functions.svg"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\drehimself-placeholder.webp",
       "PackagePath": "staticwebassets\\Images\\Avatars\\drehimself-placeholder.webp"
     },
@@ -55,6 +59,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\php-for-beginners.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\php-for-beginners.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\visual-studio-code-for-php-developers.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\visual-studio-code-for-php-developers.svg"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Icon\\icons8-close-window-48.png",
@@ -185,8 +193,36 @@
       "PackagePath": "staticwebassets\\css\\Management\\management.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Role\\addroleclaim.css",
+      "PackagePath": "staticwebassets\\css\\Role\\addroleclaim.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Role\\create.css",
+      "PackagePath": "staticwebassets\\css\\Role\\create.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Role\\delete.css",
+      "PackagePath": "staticwebassets\\css\\Role\\delete.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Role\\edit.css",
+      "PackagePath": "staticwebassets\\css\\Role\\edit.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Role\\editroleclaim.css",
+      "PackagePath": "staticwebassets\\css\\Role\\editroleclaim.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Role\\index.css",
       "PackagePath": "staticwebassets\\css\\Role\\index.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\User\\index.css",
+      "PackagePath": "staticwebassets\\css\\User\\index.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\User\\setpassword.css",
+      "PackagePath": "staticwebassets\\css\\User\\setpassword.css"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\layout.css",

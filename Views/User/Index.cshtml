@@ -4,43 +4,81 @@
 @{
     ViewData["Title"] = "Danh sách các thành viên";
 }
-<h2>@ViewData["Title"]</h2>
-<partial name="_StatusMessage"></partial>
-<p>Tổng số thành viên: @Model.totalUsers</p>
 
-<table class="table">
-    <tr>
-        <th>Tên user</th>
-        <th>Vai trò (role)</th>
-        <th>Tác vụ</th>
-    </tr>
-    @foreach (var user in Model.users)
-    {
-        <tr>
-            <td>@user.UserName</td>
-            <td>
-                @if (string.IsNullOrEmpty(user.RoleNames))
-                {
-                    <a class="text-dark" asp-action="AddRole" asp-route-id="@user.Id">+ Thêm roles</a>
-                }
-                else
-                {
-                    <a asp-action="AddRole" asp-route-id="@user.Id">@user.RoleNames</a>
-                }
-            </td>
-            <td>
-                <a class="btn btn-success btn-sm" asp-action="SetPassword" asp-route-id="@user.Id">Đặt mật khẩu</a>
-            </td>
-        </tr>
-    }
-</table>
+<head>
+    <link rel="stylesheet" href="~/css/User/index.css">
+</head>
+
+<section class="userArea-main">
+    <div>
+        <partial name="_AlertMessage"></partial>
+    </div>
+    <div class="userArea-main-header">
+        <header>
+            <h3>Quản lý thành viên</h3>
+            <p>Đây là trang quản lý thành viên của diễn dàn </p>
+        </header>
+    </div>
+    <div>
+        <article class="userArea">
+            <div class="userArea-article">
+                <div class="userArea-article-line">
+                    <h1>Danh sách các thành viên</h1>
+                    <aside class="userArea-aside">
+                        <div class="userArea-total">
+                            <p>Tổng số thành viên: @Model.totalUsers</p>
+                        </div>
+                        <dl>
+                            <div class="userArea-name">
+                                <dt>Tên thành viên</dt>
+                                @foreach (var user in Model.users)
+                                {
+                                    <dd>@user.UserName</dd>
+                                }
+                            </div>
+                            <div class="userArea-role">
+                                <dt>Vai trò</dt>
+                                @foreach (var user in Model.users)
+                                {
+                                    <dd>
+                                        @if (string.IsNullOrEmpty(user.RoleNames))
+                                        {
+                                            <a class="userArea-addrole" asp-action="AddRole" asp-route-id="@user.Id">+ Thêm vai trò</a>
+                                        }
+                                        else
+                                        {
+                                            <a asp-action="AddRole" asp-route-id="@user.Id">@user.RoleNames</a>
+                                        }
+                                    </dd>
+                                }
+                            </div>
+                            <div class="userArea-task">
+                                <dt>Tác vụ</dt>
+                                @foreach (var user in Model.users)
+                                {
+                                    <dd>
+                                        <div class="form-task">
+                                            <a class="task1" asp-action="SetPassword" asp-route-id="@user.Id">Đặt mật khẩu</a>
+                                        </div>
+                                    </dd>
+                                }
+                            </div>
+                        </dl>
+                    </aside>
+                </div>
+            </div>
+            <img class="userArea-image" src="~/images/avatars/visual-studio-code-for-php-developers.svg"
+                 style="width: 310px;">
+        </article>
+    </div>
+</section>     
 @{
     var pagingmodel = new PagingModel()
-    {
-        currentpage = Model.currentPage,
-        countpages = Model.countPages,
-        generateUrl = (int? p) => Url.Action("Index", new { p = p })
-    };
+            {
+                currentpage = Model.currentPage,
+                countpages = Model.countPages,
+                generateUrl = (int? p) => Url.Action("Index", new { p = p })
+            };
 }
 
 <partial name="_PagingXTL" model="@pagingmodel" />

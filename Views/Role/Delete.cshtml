@@ -1,28 +1,52 @@
 @using Microsoft.AspNetCore.Identity;
 @model IdentityRole
 @{
-    ViewData["Title"] = "Xóa role";
+    ViewData["Title"] = "Xóa vai trò";
 }
-<h2>@ViewData["Title"]</h2>
-<partial name="_StatusMessage"></partial>
 
-<hr>
 
-<div class="row">
-    <div class="col-md-6">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-         
-            <p>Bạn có chắc chắn xóa <strong>@Model.Name</strong></p>
-            <div class="form-group">
-                <input type="submit" value="Đồng ý" class="btn btn-danger" />
-                <a class="btn btn-primary" asp-action="Index">Danh sách các role</a>
-            </div>
-        </form>
+<head>
+    <link rel="stylesheet" href="~/css/Role/delete.css">
+</head>
+
+<section class="role-main">
+    <div>
+        <partial name="_AlertMessage"></partial>
     </div>
-</div>
-
+    <div class="role-main-header">
+        <header>
+            <h3>Xóa vai trò</h3>
+            <p>Hành động này dẫn đến việc vai trò được chọn bị xóa hoàn toàn</p>
+        </header>
+    </div>
+    <div>
+        <article class="role">
+            <div class="role-article">
+                <div class="role-article-line">
+                    <h1>Bạn có thực sự muốn xóa @Model.Name?</h1>
+                    <div class="role-action">
+                        <div class="role-seed">
+                            <a asp-action="Index">
+                                <div class="icon"></div>
+                                <span>Quay lại danh sách vai trò</span>
+                            </a>
+                        </div>
+                        <form class="role-update" method="post">
+                            <button type="submit">
+                                <div class="icon"></div>
+                                <span>Xóa vai trò</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <img class="role-image" src="~/images/avatars/eloquent-performance-patterns.svg">
+        </article>
+    </div>
+</section>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

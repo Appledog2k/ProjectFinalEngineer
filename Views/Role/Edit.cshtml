@@ -1,52 +1,84 @@
 @using ProjectFinalEngineer.Models.AggregateRole;
 @model EditRoleModel
- 
+
 @{
-    ViewData["Title"] = "Cập nhật role";
+    ViewData["Title"] = "Cập nhật vai trò";
 }
-<h2>@ViewData["Title"]</h2>
-<partial name="_StatusMessage"></partial>
+<head>
+    <link rel="stylesheet" href="~/css/Role/edit.css">
+</head>
 
-<hr>
-
-<div class="row">
-    <div class="col-md-6">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Cập nhật" class="btn btn-primary" />
-                <a class="btn btn-primary" asp-action="Index">Danh sách các role</a>
-            </div>
-        </form>
-        <hr>
-        <p>Các đặc tính  (claim) của role:
-            <a asp-action="AddRoleClaim" asp-route-roleid="@Model.role.Id">+ Thêm claim</a>
-        </p>
-        @if (Model.Claims.Count > 0)
-        {
-            <ul>
-                @foreach (var claim in Model.Claims)
-                {
-                    <li>
-                        <a asp-action="EditRoleClaim" asp-route-claimid="@claim.Id">
-                            @claim.ClaimType  : @claim.ClaimValue
-                        </a>
-                        
-
-                    </li>
-                }
-            </ul>
-        }
+<section class="role-main">
+    <div>
+        <partial name="_AlertMessage"></partial>
     </div>
-</div>
+    <div class="role-main-header">
+        <header>
+            <h3>Cập nhật vai trò</h3>
+            <p>Cập nhật lại các trường dữ liệu của vai trò trên hệ thống diễn đàn</p>
+        </header>
+    </div>
+    <div>
+        <article class="role">
+            <div class="role-article">
+                <div class="role-article-line">
+                    <h1>@Model.role.Name</h1>
+                    <form method="post">
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label">Tên vai trò:</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="role-claim">
+                            <p>
+                                Các quyền của vai trò:
+                                <a asp-action="AddRoleClaim" asp-route-roleid="@Model.role.Id">+ Thêm quyền</a>
+                            </p>
+                            @if (Model.Claims.Count > 0)
+                            {
 
+                                <div class="role-claim-list">
+                                    <dl>
+                                        <div>
+                                            <dt>Tên quyền (Số lượng @Model.Claims.Count)</dt>
+                                            @foreach (var claim in Model.Claims)
+                                            {
+                                                <dd>@claim.ClaimType</dd>
+                                            }
+                                        </div>
+                                        <div>
+                                            <dt>Giá trị</dt>
+                                            @foreach (var claim in Model.Claims)
+                                            {
+                                                <dd>@claim.ClaimValue</dd>
+                                            }
+                                        </div>
+                                        <div>
+                                            <dt>Tác vụ</dt>
+                                            @foreach (var claim in Model.Claims)
+                                            {
+                                                <dd>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+                                                    <a id="a-color" asp-action="EditRoleClaim" asp-route-claimid="@claim.Id">Chi tiết</a>
+
+                                                </dd>
+                                            }
+                                        </div>
+                                    </dl>
+                                </div>
+                            }
+                        </div>
+                        <div class="form-group-action">
+                            <a asp-action="Index">Quay lại danh sách các vai trò</a>
+                            <input type="submit" value="Cập nhật" />
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <img class="role-image" src="~/images/avatars/object-oriented-principles-in-php.svg"
+                 style="width: 310px;">
+        </article>
+    </div>
+</section>
+
