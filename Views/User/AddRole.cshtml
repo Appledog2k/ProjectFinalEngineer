@@ -1,62 +1,117 @@
 @using ProjectFinalEngineer.Models.AggregateUser;
+@using App.Models.AggregateExtensions
 @model AddUserRoleModel
 @{
-    ViewData["Title"] = "Gán role";
+    ViewData["Title"] = "Thêm vai trò";
 }
 
-<h4>Thiết lập role cho user: @Model.user.UserName</h4>
-<partial name="_StatusMessage" />
+<head>
+    <link rel="stylesheet" href="~/css/User/addrole.css">
+</head>
 
-<div class="row">
-    <div class="col-md-6">
-        <form id="set-password-form" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <div class="form-group">
-                <label asp-for="RoleNames"></label>
-                @Html.ListBoxFor(m => m.RoleNames, (IEnumerable<SelectListItem>)ViewBag.allRoles, new {
-                    id = "id-select-roles",
-                    @class = "w-100"
-                })
-                <span asp-validation-for="RoleNames" class="text-danger"></span>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Cập nhật</button>
-            <a class="btn btn-primary" asp-action="Index">Danh sách thành viên</a>
-        </form>
-        <hr>
-        <p>Các claim của user có được từ role:</p>
-        @if (Model.claimsInRole.Count >  0)
-        {
-            <ul>
-                @foreach (var claim in Model.claimsInRole)
-                {
-                    <li>@claim.ClaimType : @claim.ClaimValue</li>
-                }
-            </ul>
-        }
-        <hr>
-        <p>Các claim riêng:
-            <a asp-action="AddClaim" asp-route-userid="@Model.user.Id">+ Thêm claim riêng</a>     
-        </p>
-        @if (Model.claimsInUserClaim.Count >  0)
-        {
-            <ul>
-                @foreach (var claim in Model.claimsInUserClaim)
-                {
-                    <li>
-                        <a asp-action="EditClaim" asp-route-claimid="@claim.Id">@claim.ClaimType : @claim.ClaimValue</a>
-                    </li>
-                }
-            </ul>
-        }
-
-
-
-
+<section class="userArea-main">
+    <div>
+        <partial name="_AlertMessage"></partial>
     </div>
-</div>
+    <div class="userArea-main-header">
+        <header>
+            <h3>Thêm vai trò</h3>
+            <p>Đây là trang thiết lập vai trò cho thành viên</p>
+        </header>
+    </div>
+    <div>
+        <article class="userArea">
+            <div class="userArea-article">
+                <div class="userArea-article-line">
+                    <h1>Thành viên @Model.user.UserName</h1>
+                    <aside class="userArea-aside">
+                        <div class="aside-user-table">
+                            <div class="as-u-tb-form">
+                                <form class="as-u-tb-form" method="post">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-group">
+                                        <label asp-for="RoleNames">Danh sách các vai trò</label>
+                                        <span class="list-role">
+                                            @Html.ListBoxFor(m => m.RoleNames, (IEnumerable<SelectListItem>)ViewBag.allRoles,
+                                            new {
+                                            id = "id-select-roles",
+                                            })
+                                        </span>
+                                        <span asp-validation-for="RoleNames" class="text-danger"></span>
+                                    </div>
+                                    <div class="as-u-tb-form-title">
+                                        <p>Các quyền của thành viên (Số lượng: @Model.claimsInRole.Count)</p>
+                                    </div>
+                                    @if (Model.claimsInRole.Count > 0)
+                                    {
+                                        <div class="list-user-claim">
+                                            <div class="userArea-name">
+                                                <dt>Tên quyền</dt>
+                                                @foreach (var claim in Model.claimsInRole)
+                                                {
+                                                    <dd> @claim.ClaimType</dd>
+                                                }
+                                            </div>
+                                            <div class="userArea-role">
+                                                <dt>Tác vụ</dt>
+                                                @foreach (var claim in Model.claimsInRole)
+                                                {
+                                                    <dd>
+                                                        @claim.ClaimValue
+                                                    </dd>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                    <div class="claim-private">
+                                        <p>
+                                            Các quyền riêng
+                                        </p>
+                                        <a asp-action="AddClaim" asp-route-userid="@Model.user.Id">+ Thêm quyền</a>
+                                    </div>
 
+                                    @if (Model.claimsInUserClaim.Count > 0)
+                                    {
+                                        <div class="as-u-tb-form-title1">
+                                            <p>Các quyền riêng của thành viên (Số lượng @Model.claimsInUserClaim.Count)</p>
+                                        </div>
+                                        <div class="claim-private-list">
+                                            <div class="userArea-name">
+                                                <dt>Tên quyền</dt>
+                                                @foreach (var claim in Model.claimsInUserClaim)
+                                                {
+                                                    <dd>
+                                                        <a asp-action="EditClaim" asp-route-claimid="@claim.Id">@claim.ClaimType</a>
+                                                    </dd>
+                                                }
+                                            </div>
+                                            <div class="userArea-role">
+                                                <dt>Tác vụ</dt>
+                                                @foreach (var claim in Model.claimsInUserClaim)
+                                                {
+                                                    <dd>
+                                                        <a asp-action="EditClaim" asp-route-claimid="@claim.Id"> @claim.ClaimValue</a>
+                                                    </dd>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                    <div class="user-role-action">
+                                        <a class="btn btn-primary" asp-action="Index">Danh sách thành viên</a>
+                                        <button type="submit" class="btn btn-primary">Cập nhật</button>                                     
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            <img class="userArea-image" src="~/images/avatars/visual-studio-code-for-php-developers.svg"
+                 style="width: 310px;">
+        </article>
+    </div>
+</section>
 
 @section Scripts {
 

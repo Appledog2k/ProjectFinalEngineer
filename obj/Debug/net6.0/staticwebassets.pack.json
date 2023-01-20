@@ -217,6 +217,10 @@
       "PackagePath": "staticwebassets\\css\\Role\\index.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\User\\addrole.css",
+      "PackagePath": "staticwebassets\\css\\User\\addrole.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\User\\index.css",
       "PackagePath": "staticwebassets\\css\\User\\index.css"
     },
