@@ -2,85 +2,84 @@
 @model IEnumerable< ProjectFinalEngineer.Models.AggregateCategory.Category>
 
 @{
-    ViewData["Title"] = "Chuyên mục Blog";
+    ViewData["Title"] = "Quản lý chủ đề";
 }
 
 <head>
-    <link rel="stylesheet" href="~/css/User/index.css">
+    <link rel="stylesheet" href="~/css/Category/index.css">
 </head>
 
-<section class="userArea-main">
+<section class="category-main">
     <div>
         <partial name="_AlertMessage"></partial>
     </div>
-    <div class="userArea-main-header">
+    <div class="category-main-header">
         <header>
-            <h3>Quản lý thành viên</h3>
-            <p>Đây là trang quản lý thành viên của diễn dàn </p>
+            <h3>Quản lý chủ đề</h3>
+            <p>Đây là trang quản lý chủ đề trong diễn đàn</p>
         </header>
     </div>
     <div>
-        <article class="userArea">
-            <div class="userArea-article">
-                <div class="userArea-article-line">
-                    <h1>Danh sách các thành viên</h1>
-                    <aside class="userArea-aside">
-                        
+        <article class="category">
+            <div class="category-article">
+                <div class="category-article-line">
+                    <div class="category-article-line-title">
+                        <h1>Danh sách chủ đề</h1>
+                    </div>
+                    <div class="category-article-line-createCate">
+                        <p>
+                            <a asp-action="Create">+ Tạo chuyên mục</a>
+                        </p>
+                    </div>
+                    <aside class="category-aside">
+                        <table class="table">
+                            <thead class="category-list">
+                                <tr class="category-list-tr">
+                                    <th class="category-list-title">
+                                        @Html.DisplayNameFor(model => model.Title)
+                                    </th>
+                                    <th class="category-list-url">
+                                        @Html.DisplayNameFor(model => model.Slug)
+                                    </th>
+                                    <th class="category-list-task">
+                                        <p>Tác vụ</p>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="category-list-body">
+
+                                @foreach (var item in Model)
+                                {
+                                    await RenderCategory(item, 0);
+                                }
+
+                            </tbody>
+                        </table>
                     </aside>
                 </div>
             </div>
-            <img class="userArea-image" src="~/images/avatars/developing-serverless-functions.svg"
+            <img class="category-image" src="~/images/avatars/hands-on-community-contributions.svg"
                  style="width: 310px;">
         </article>
     </div>
-</section>     
-
-
-
-
-<h1>@ViewData["Title"]</h1>
-
-<p>
-    <a asp-action="Create" class="btn btn-primary btn-sm">Tạo chuyên mục</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Slug)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-
-        @foreach (var item in Model)
-        {
-            await RenderCategory(item, 0);
-        }
-
-    </tbody>
-</table>
+</section>
 
 
 @{
     async Task RenderCategory(Category item, int level)
     {
         string prefix = string.Concat(Enumerable.Repeat("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;", level));
-        <tr>
-            <td>
+        <tr >
+            <td class="category-list-body-title">
                 @Html.Raw(prefix)
                 <a asp-action="Edit" asp-route-id="@item.Id">
                     @Html.DisplayFor(modelItem => item.Title)
                 </a>
             </td>
-            <td>
+            <td class="category-list-body-url">
                 @Html.DisplayFor(modelItem => item.Slug)
             </td>
-            <td>
+            <td class="category-list-body-task">
                 <a asp-action="Details" asp-route-id="@item.Id">Chi tiết</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
             </td>

@@ -53,6 +53,14 @@
       "PackagePath": "staticwebassets\\Images\\Avatars\\fish.png"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\hands-on-community-contributions.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\hands-on-community-contributions.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\in-stock.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\in-stock.svg"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\learn-redis-through-examples.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\learn-redis-through-examples.svg"
     },
@@ -167,6 +175,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\AlertMessage\\alertmessage.css",
       "PackagePath": "staticwebassets\\css\\AlertMessage\\alertmessage.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Category\\index.css",
+      "PackagePath": "staticwebassets\\css\\Category\\index.css"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Contact\\SendContact.css",
