@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\Images\\Avatars\\fish.png"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\learn-redis-through-examples.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\learn-redis-through-examples.svg"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\object-oriented-principles-in-php.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\object-oriented-principles-in-php.svg"
     },
@@ -215,6 +219,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Role\\index.css",
       "PackagePath": "staticwebassets\\css\\Role\\index.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\User\\addclaim.css",
+      "PackagePath": "staticwebassets\\css\\User\\addclaim.css"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\User\\addrole.css",

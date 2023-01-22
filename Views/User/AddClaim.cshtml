@@ -1,49 +1,77 @@
 @using ProjectFinalEngineer.Models.AggregateUser;
 @model AddUserClaimModel
 @{
-    ViewData["Title"] = "Claim của user";
+    ViewData["Title"] = "Quyền của thành viên";
 }
-<h1>@ViewData["Title"] : @ViewBag.user.UserName</h1>
-<partial name="_StatusMessage" />
 
+<head>
+    <link rel="stylesheet" href="~/css/User/addclaim.css">
+</head>
 
-<hr>
-
-<div class="row">
-    <div class="col-md-6">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <div class="form-group">
-                <label asp-for="ClaimType" class="control-label"></label>
-                <input asp-for="ClaimType" class="form-control" />
-                <span asp-validation-for="ClaimType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ClaimValue" class="control-label"></label>
-                <input asp-for="ClaimValue" class="form-control" />
-                <span asp-validation-for="ClaimValue" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                @if (ViewBag.userclaim != null)
-                {
-                    <input type="submit" value="Cập nhật" class="btn btn-primary" />
-                    <input type="submit" value="Xóa" asp-route-claimid="@ViewBag.userclaim.Id" 
-                      class="btn btn-danger" asp-action="DeleteClaim" />
-                }
-                else 
-                {
-                    <input type="submit" value="Tạo mới" class="btn btn-primary" />
-                }
-                
-
-                <a class="btn btn-primary" asp-action="AddRole" asp-route-id="@ViewBag.user.Id">Edit User Role</a>
-            </div>
-        </form>
+<section class="userArea-main">
+    <div>
+        <partial name="_AlertMessage"></partial>
     </div>
-</div>
+    <div class="userArea-main-header">
+        <header>
+            <h3>Thêm quyền</h3>
+            <p>Thêm mới quyền cho @ViewBag.user.UserName trên hệ thống diễn đàn</p>
+        </header>
+    </div>
+    <div>
+        <article class="userArea">
+            <div class="userArea-article">
+                <div class="userArea-article-line">
+                    <h1>@ViewBag.user.UserName</h1>
+                    <aside class="userArea-aside">
+                        <div class="us-as-table">
+                            <div class="us-as-table-form">
+                                <form method="post" class="us-as-table-form-method">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-group">
+                                        <label asp-for="ClaimType" class="control-label1">Tên quyền</label>
+                                        <input asp-for="ClaimType" class="form-control1" />
+                                        <span asp-validation-for="ClaimType" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="ClaimValue" class="control-label2">Giá trị</label>
+                                        <input asp-for="ClaimValue" class="form-control2" />
+                                        <span asp-validation-for="ClaimValue" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group-action1">
+                                        <div class="form-action1">
+                                            @if (ViewBag.userclaim != null)
+                                            {
+                                                <input type="submit" value="Cập nhật" class="userArea-action1" />
+                                                <input type="submit" value="Xóa" asp-route-claimid="@ViewBag.userclaim.Id"
+                                                   class="userArea-action2" asp-action="DeleteClaim" />
+
+                                            }
+                                            else
+                                            {
+                                                <input class="userArea-action3" type="submit" value="Tạo mới" class="userArea-action" />
+                                            }
+                                        </div>
+                                        <div class="form-group-return">
+                                            <a asp-action="AddRole" asp-route-id="@ViewBag.user.Id">Quay lại trang thêm vai trò</a>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            <img class="userArea-image" src="~/images/avatars/learn-redis-through-examples.svg"
+                 style="width: 310px;">
+        </article>
+    </div>
+</section>
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
