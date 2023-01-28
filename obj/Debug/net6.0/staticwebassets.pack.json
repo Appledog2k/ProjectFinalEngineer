@@ -89,6 +89,26 @@
       "PackagePath": "staticwebassets\\Images\\Icon\\notification-svgrepo-com.svg"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\ImageLogin\\log.svg",
+      "PackagePath": "staticwebassets\\Images\\ImageLogin\\log.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\ImageLogin\\register.svg",
+      "PackagePath": "staticwebassets\\Images\\ImageLogin\\register.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\ImageLogin\\undraw_login_re_4vu2.svg",
+      "PackagePath": "staticwebassets\\Images\\ImageLogin\\undraw_login_re_4vu2.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\ImageLogin\\undraw_projections_re_ulc6.svg",
+      "PackagePath": "staticwebassets\\Images\\ImageLogin\\undraw_projections_re_ulc6.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\ImageLogin\\undraw_secure_login_pdn4.svg",
+      "PackagePath": "staticwebassets\\Images\\ImageLogin\\undraw_secure_login_pdn4.svg"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\avatar_circle.png",
       "PackagePath": "staticwebassets\\Images\\avatar_circle.png"
     },
@@ -171,6 +191,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\sign-out.png",
       "PackagePath": "staticwebassets\\Images\\sign-out.png"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Account\\login.css",
+      "PackagePath": "staticwebassets\\css\\Account\\login.css"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\AlertMessage\\alertmessage.css",
@@ -259,6 +283,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\Account\\login.js",
+      "PackagePath": "staticwebassets\\js\\Account\\login.js"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\SendContact.js",

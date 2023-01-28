@@ -1,101 +1,182 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @using ProjectFinalEngineer.Models.AggregateUser;
+@{
+    Layout = null;
+}
 
 @model LoginViewModel
 @inject SignInManager<AppUser> SignInManager
-
 @{
 
     ViewData["Title"] = "Đăng nhập";
 }
 
-<h1>@ViewData["Title"].</h1>
-<div class="row">
-    <div class="col-md-8">
-        <section>
-            <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post"
-                class="form-horizontal" role="form">
-                <h4>Sử dụng tài khoản đã đăng ký để đăng nhập</h4>
-                <hr />
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="UserNameOrEmail" class="control-label"></label>
-                    <div class="col-md-10">
-                        <input asp-for="UserNameOrEmail" class="form-control" />
-                        <span asp-validation-for="UserNameOrEmail" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Password" class="control-label"></label>
-                    <div class="col-md-10">
-                        <input asp-for="Password" class="form-control" />
-                        <span asp-validation-for="Password" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            <label asp-for="RememberMe">
-                                <input asp-for="RememberMe" />
-                                @Html.DisplayNameFor(m => m.RememberMe)
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <button type="submit" class="btn btn-primary">Đăng nhập</button>
-                    </div>
-                </div>
-                <p>
-                    <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">Chưa có tài khoản? Đăng ký</a>
-                </p>
-                <p>
-                    <a asp-action="ForgotPassword">Quyên mật khẩu?</a>
-                </p>
-            </form>
-        </section>
-    </div>
-    <div class="col-md-4">
-        <section>
-            <h4>Đăng nhập bằng tài khoản.</h4>
-            <hr />
-            @{
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/Account/login.css">
+    <script src="https://kit.fontawesome.com/64d58efce2.js"
+            crossorigin="anonymous"></script>
+    <title>@ViewData["Title"]</title>
+    <link rel="icon" type="image/x-icon" href="~/Images/logo/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                @*Form đăng nhập tài khoản*@
+                <div class="signin">
+                    <div class="signin-table">
+                        <section class="signin-section">
+                            <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post"
+                                  class="sign-in-form" role="form">
+                                <h2 class="title">Đăng nhập</h2>
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                @*Nhập tên tài khoản hoặc địa chỉ thư điện tử*@
+                                <div class="input-field">
+                                    <i class="fas fa-user"></i>
+                                    <div class="input-fields">
+                                        <input type="text" placeholder="Tên tài khoản hoặc thư điện tử" asp-for="UserNameOrEmail" />
+                                        <span asp-validation-for="UserNameOrEmail"></span>
+                                    </div>
+                                </div>
+                                @*Nhập mật khẩu*@
+                                <div class="input-field">
+                                    <i class="fas fa-lock"></i>
+                                    <div class="input-fields">
+                                        <input asp-for="Password" type="password" placeholder="Mật khẩu" />
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="input-remember">
+                                    <div class="checkbox">
+                                        <input asp-for="RememberMe" />
+                                        <label asp-for="RememberMe">
+                                            @Html.DisplayNameFor(m => m.RememberMe)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="btn-login">
+                                    <button type="submit" class="btn">Đăng nhập</button>
+                                </div>
+                                <div class="btn-forgotPass">
+                                    <p>
+                                        <a asp-action="ForgotPassword">Quên mật khẩu?</a>
+                                    </p>
+                                </div>
 
-                var schemes = await SignInManager.GetExternalAuthenticationSchemesAsync();
-                var loginProviders = schemes.ToList();
-                if (loginProviders.Count == 0)
-                {
-                    <div>
-                        <p>
-                            Ứng dụng chưa hỗ trợ đăng nhập từ tài khoản ngoài
-                        </p>
+                            </form>
+                        </section>
                     </div>
-
-                }
-                else
-                {
-                    <form asp-controller="Account" asp-action="ExternalLogin" asp-route-returnurl="@ViewData["ReturnUrl"]"
-                method="post" class="form-horizontal" role="form">
-                        <div>
-                            <p>
-                                @foreach (var provider in loginProviders)
-
+                    <div class="login-platform">
+                        <section>
+                            <h4>Đăng nhập bằng tài khoản</h4>
+                            @{
+                                var schemes = await SignInManager.GetExternalAuthenticationSchemesAsync();
+                                var loginProviders = schemes.ToList();
+                                if (loginProviders.Count == 0)
                                 {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name"
-                                title="Log in using your @provider.Name account">@provider.Name</button>
+                                    <div>
+                                        <p>
+                                            Ứng dụng chưa hỗ trợ đăng nhập từ tài khoản ngoài
+                                        </p>
+                                    </div>
 
                                 }
-                            </p>
-                        </div>
-                    </form>
+                                else
+                                {
+                                    <form asp-controller="Account" asp-action="ExternalLogin" asp-route-returnurl="@ViewData["ReturnUrl"]"
+                                  method="post" class="login-flatform-log" role="form">
+                                        <div class="login-flatform-login">
+                                            <div class="flatform-google">
+                                                <i class="fab fa-google"></i>
+                                                <button class="btn" type="submit" name="provider" value="Google" title="Log in using your Google account">
+                                                    Google
+                                                </button>
+                                            </div>
+                                            <div class="flatform-facebook">
+                                                <i class="fab fa-facebook-f"></i>
+                                                <button class="btn" type="submit" name="provider" value="Facebook" title="Log in using your Facebook account">
+                                                    Facebook
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                }
+                            }
+                        </section>
+                    </div>
+                </div>
 
-                }
-            }
-        </section>
+
+                @*Form đăng ký tài khoản*@
+                <form action="#" class="sign-up-form">
+                    <h2 class="title">Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" />
+                    </div>
+                    <input type="submit" class="btn" value="Sign up" />
+                    <p class="social-text">Or Sign up with social platforms</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Tài khoản mới ?</h3>
+                    <p>
+                        Nếu bạn chưa có tài khoản để tiếp tục truy cập vào diễn đàn hãy tạo một tài khoản mới.
+                    </p>
+                    <button class="btn transparent" id="sign-up-btn">
+                        Đăng ký
+                    </button>
+                </div>
+                <img src="~/Images/ImageLogin/undraw_login_re_4vu2.svg" class="image" alt="" />
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Đã có tài khoản ?</h3>
+                    <p>
+                        Nếu bạn đã có tài khoản của diễn đàn hay đăng nhập để truy cập vào diễn đàn
+                    </p>
+                    <button class="btn transparent" id="sign-in-btn">
+                        Đăng nhập
+                    </button>
+                </div>
+                <img src="~/Images/ImageLogin/undraw_secure_login_pdn4.svg" class="image" alt="" />
+            </div>
+        </div>
     </div>
-</div>
+
+    <script src="~/js/Account/login.js"></script>
+</body>
 
 @section Scripts {
-@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
