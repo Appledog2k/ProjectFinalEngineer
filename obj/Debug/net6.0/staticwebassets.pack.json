@@ -197,6 +197,10 @@
       "PackagePath": "staticwebassets\\css\\Account\\login.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Account\\register.css",
+      "PackagePath": "staticwebassets\\css\\Account\\register.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\AlertMessage\\alertmessage.css",
       "PackagePath": "staticwebassets\\css\\AlertMessage\\alertmessage.css"
     },

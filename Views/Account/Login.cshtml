@@ -1,14 +1,12 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @using ProjectFinalEngineer.Models.AggregateUser;
-@{
-    Layout = null;
-}
 
 @model LoginViewModel
 @inject SignInManager<AppUser> SignInManager
 @{
 
     ViewData["Title"] = "Đăng nhập";
+    Layout = null;
 }
 
 <head>
@@ -89,15 +87,13 @@
                                   method="post" class="login-flatform-log" role="form">
                                         <div class="login-flatform-login">
                                             <div class="flatform-google">
-                                                <i class="fab fa-google"></i>
-                                                <button class="btn" type="submit" name="provider" value="Google" title="Log in using your Google account">
-                                                    Google
+                                                <button class="btn-google" type="submit" name="provider" value="Google" title="Log in using your Google account">
+                                                    <i class="fab fa-google"></i>
                                                 </button>
                                             </div>
                                             <div class="flatform-facebook">
-                                                <i class="fab fa-facebook-f"></i>
-                                                <button class="btn" type="submit" name="provider" value="Facebook" title="Log in using your Facebook account">
-                                                    Facebook
+                                                <button class="btn-facebook" type="submit" name="provider" value="Facebook" title="Log in using your Facebook account">
+                                                    <i class="fab fa-facebook-f"></i>
                                                 </button>
                                             </div>
                                         </div>
@@ -107,40 +103,6 @@
                         </section>
                     </div>
                 </div>
-
-
-                @*Form đăng ký tài khoản*@
-                <form action="#" class="sign-up-form">
-                    <h2 class="title">Sign up</h2>
-                    <div class="input-field">
-                        <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" />
-                    </div>
-                    <div class="input-field">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" />
-                    </div>
-                    <div class="input-field">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" />
-                    </div>
-                    <input type="submit" class="btn" value="Sign up" />
-                    <p class="social-text">Or Sign up with social platforms</p>
-                    <div class="social-media">
-                        <a href="#" class="social-icon">
-
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-google"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </form>
             </div>
         </div>
 
@@ -151,28 +113,18 @@
                     <p>
                         Nếu bạn chưa có tài khoản để tiếp tục truy cập vào diễn đàn hãy tạo một tài khoản mới.
                     </p>
-                    <button class="btn transparent" id="sign-up-btn">
-                        Đăng ký
-                    </button>
+                    <form asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">
+                        <div>
+                            <button class="btn-register-action" type="submit" name="provider" value="Google" title="Log in using your Google account">
+                                Đăng ký
+                            </button>
+                        </div>
+                    </form>
                 </div>
                 <img src="~/Images/ImageLogin/undraw_login_re_4vu2.svg" class="image" alt="" />
             </div>
-            <div class="panel right-panel">
-                <div class="content">
-                    <h3>Đã có tài khoản ?</h3>
-                    <p>
-                        Nếu bạn đã có tài khoản của diễn đàn hay đăng nhập để truy cập vào diễn đàn
-                    </p>
-                    <button class="btn transparent" id="sign-in-btn">
-                        Đăng nhập
-                    </button>
-                </div>
-                <img src="~/Images/ImageLogin/undraw_secure_login_pdn4.svg" class="image" alt="" />
-            </div>
         </div>
     </div>
-
-    <script src="~/js/Account/login.js"></script>
 </body>
 
 @section Scripts {
