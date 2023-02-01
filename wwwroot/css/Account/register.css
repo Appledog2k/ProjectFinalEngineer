@@ -327,10 +327,14 @@ form {
     transition: 0.2s;
 }
 
+    .btn-register-action a {
+        color: white;
+        text-decoration: none;
+    }
+
     .btn-register-action:hover {
-        background-color: white;
-        color: #328af1;
-        border: 1px solid #328af1;
+        background-color: #21c8f6;
+        border: 1px solid #21c8f6;
     }
 
 .right-panel .image,

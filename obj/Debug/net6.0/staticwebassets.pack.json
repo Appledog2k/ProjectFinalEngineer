@@ -97,6 +97,10 @@
       "PackagePath": "staticwebassets\\Images\\ImageLogin\\register.svg"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\ImageLogin\\undraw_forgot_password_re_hxwm.svg",
+      "PackagePath": "staticwebassets\\Images\\ImageLogin\\undraw_forgot_password_re_hxwm.svg"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\ImageLogin\\undraw_login_re_4vu2.svg",
       "PackagePath": "staticwebassets\\Images\\ImageLogin\\undraw_login_re_4vu2.svg"
     },
@@ -191,6 +195,14 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\sign-out.png",
       "PackagePath": "staticwebassets\\Images\\sign-out.png"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Account\\forgotpassword.css",
+      "PackagePath": "staticwebassets\\css\\Account\\forgotpassword.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Account\\forgotpasswordconfirmation.css",
+      "PackagePath": "staticwebassets\\css\\Account\\forgotpasswordconfirmation.css"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Account\\login.css",

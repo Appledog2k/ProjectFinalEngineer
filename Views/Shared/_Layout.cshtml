@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <a href="#" class="logo"><i class="ri-home-heart-fill"></i><span>Logo</span></a>
+        <a href="#" class="logo"><span>SEEE FORUM</span></a>
         <ul class="navbar">
             <li class="pt">
                 <a asp-controller="Post" asp-action="Index">
@@ -55,13 +55,9 @@
 
         </ul>
 
-        <div class="main ">
+        <div class="main">
             <div class="pt">
-                <a class="user" asp-area="Identity" asp-controller="Account" asp-action="Login">
-                    Đăng nhập
-                </a>
-            </div>
-            <div class="bx bx-menu" id="menu-icon">
+                <partial name="_LoginPartial"></partial>
             </div>
         </div>
     </header>
@@ -109,6 +105,7 @@
                         </a>
                     </li>
                 </ul>
+
             </div>
             <div class="column subscribe">
                 <h3>Gửi lời nhắn</h3>

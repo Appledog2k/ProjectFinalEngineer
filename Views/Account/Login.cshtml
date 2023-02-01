@@ -113,13 +113,15 @@
                     <p>
                         Nếu bạn chưa có tài khoản để tiếp tục truy cập vào diễn đàn hãy tạo một tài khoản mới.
                     </p>
-                    <form asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">
-                        <div>
-                            <button class="btn-register-action" type="submit" name="provider" value="Google" title="Log in using your Google account">
-                                Đăng ký
-                            </button>
-                        </div>
-                    </form>
+                    <div>
+                        <button class="btn-register-action">
+                            <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">Đăng ký</a>
+                        </button>
+                    </div>
+                    
+                    @*<form asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">
+                        
+                    </form>*@
                 </div>
                 <img src="~/Images/ImageLogin/undraw_login_re_4vu2.svg" class="image" alt="" />
             </div>
