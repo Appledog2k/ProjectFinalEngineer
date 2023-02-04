@@ -4,23 +4,36 @@
 
 @inject SignInManager<AppUser> SignInManager
 @inject UserManager<AppUser> UserManager
+<head>
+    <link rel="stylesheet" href="~/css/loginpartial.css">
+    <script src="https://kit.fontawesome.com/64d58efce2.js"
+            crossorigin="anonymous"></script>
+    <script src="~/js/management.js"></script>
+</head>
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <form asp-area="Identity" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm">
-        <ul>
-            <li>
-                <a asp-area="Identity" asp-controller="Manage" asp-action="Index" title="Manage">
+    <div class="dropdown-user">
+        <button onclick="myDropdownUser()" class="drop-user-btn" asp-action="">
+            <i class="far fa-user"></i>
+            @UserManager.GetUserName(User)</button>
+        <div id="myDropdown-user" class="dropdown-user-content">
+            <a asp-controller="Manage" asp-action="Index" title="Tài khoản">
                 <i class="far fa-user"></i>
-                @UserManager.GetUserName(User)</a>
-            </li>
-            <li >
+                Thông tin cá nhân
+            </a>
+            <a asp-controller="" asp-action="" title="">
+                <i class="fas fa-unlock"></i>
+                Đổi mật khẩu
+            </a>
+            <form asp-area="Identity" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm">
                 <button type="submit">
+                    <i class="fas fa-sign-out"></i>
                     Đăng xuất
                 </button>
-            </li>
-        </ul>
-    </form>
+            </form>
+        </div>
+    </div> 
 }
 else
 {
