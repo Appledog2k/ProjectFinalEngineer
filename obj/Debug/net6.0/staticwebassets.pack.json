@@ -245,6 +245,10 @@
       "PackagePath": "staticwebassets\\css\\DatabaseManage\\dbmanagedel.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Manage\\index.css",
+      "PackagePath": "staticwebassets\\css\\Manage\\index.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Management\\management.css",
       "PackagePath": "staticwebassets\\css\\Management\\management.css"
     },
