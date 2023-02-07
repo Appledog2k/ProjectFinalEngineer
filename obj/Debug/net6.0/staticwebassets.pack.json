@@ -61,6 +61,10 @@
       "PackagePath": "staticwebassets\\Images\\Avatars\\in-stock.svg"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\jeffreys-larabits.webp",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\jeffreys-larabits.webp"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\learn-redis-through-examples.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\learn-redis-through-examples.svg"
     },
@@ -71,6 +75,14 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\php-for-beginners.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\php-for-beginners.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\security-logo.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\security-logo.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\sub-lifetime.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\sub-lifetime.svg"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\visual-studio-code-for-php-developers.svg",

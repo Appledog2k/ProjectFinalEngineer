@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0ZbrZeXL9X3RrMsdKCUyI4bZzsgiyr69eSFt6xBCaXs=",
+  "Hash": "p8v8Np1yz4v2MAAMf/irc4h+LkO1si39ZEsDgeXFIBI=",
   "Source": "ProjectFinalEngineer",
   "BasePath": "_content/ProjectFinalEngineer",
   "Mode": "Default",
@@ -782,6 +782,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\Avatars\\in-stock.svg"
     },
     {
+      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\jeffreys-larabits.webp",
+      "SourceId": "ProjectFinalEngineer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\",
+      "BasePath": "_content/ProjectFinalEngineer",
+      "RelativePath": "Images/Avatars/jeffreys-larabits.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Avatars\\jeffreys-larabits.webp"
+    },
+    {
       "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\learn-redis-through-examples.svg",
       "SourceId": "ProjectFinalEngineer",
       "SourceType": "Discovered",
@@ -831,6 +848,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Avatars\\php-for-beginners.svg"
+    },
+    {
+      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\security-logo.svg",
+      "SourceId": "ProjectFinalEngineer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\",
+      "BasePath": "_content/ProjectFinalEngineer",
+      "RelativePath": "Images/Avatars/security-logo.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Avatars\\security-logo.svg"
+    },
+    {
+      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\sub-lifetime.svg",
+      "SourceId": "ProjectFinalEngineer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\",
+      "BasePath": "_content/ProjectFinalEngineer",
+      "RelativePath": "Images/Avatars/sub-lifetime.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Avatars\\sub-lifetime.svg"
     },
     {
       "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\visual-studio-code-for-php-developers.svg",
