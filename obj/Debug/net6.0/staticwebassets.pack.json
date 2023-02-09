@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ProjectFinalEngineer.bundle.scp.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\404.png",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\404.png"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\Screenshot_20230209_091816.png",
       "PackagePath": "staticwebassets\\Images\\Avatars\\Screenshot_20230209_091816.png"
     },
@@ -27,6 +31,14 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\clean-code-logo.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\clean-code-logo.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\clear.png",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\clear.png"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\cloud.png",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\cloud.png"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\code-katas-with-phpunit.svg",
@@ -81,6 +93,10 @@
       "PackagePath": "staticwebassets\\Images\\Avatars\\learn-redis-through-examples.svg"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\mist.png",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\mist.png"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\object-oriented-principles-in-php.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\object-oriented-principles-in-php.svg"
     },
@@ -89,8 +105,16 @@
       "PackagePath": "staticwebassets\\Images\\Avatars\\php-for-beginners.svg"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\rain.png",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\rain.png"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\security-logo.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\security-logo.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\snow.png",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\snow.png"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\sub-lifetime.svg",
@@ -297,6 +321,10 @@
       "PackagePath": "staticwebassets\\css\\Management\\management.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Post\\index.css",
+      "PackagePath": "staticwebassets\\css\\Post\\index.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Role\\addroleclaim.css",
       "PackagePath": "staticwebassets\\css\\Role\\addroleclaim.css"
     },
@@ -359,6 +387,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\Account\\login.js",
       "PackagePath": "staticwebassets\\js\\Account\\login.js"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\Post\\Post.js",
+      "PackagePath": "staticwebassets\\js\\Post\\Post.js"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\SendContact.js",

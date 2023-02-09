@@ -58,12 +58,17 @@
         display: block;
         margin: 0px;
     }
-.dropdown-user-content a:hover {
-    text-decoration: none;
-    background: #21c8f6;
-    color: var(--light);
-    font-size: 15px;
-}
+        .dropdown-user-content a i {
+            text-decoration: none;
+            color: #21c8f6;
+        }
+
+        .dropdown-user-content a:hover {
+            text-decoration: none;
+            background: #21c8f6;
+            color: var(--light);
+            font-size: 15px;
+        }
 
     .dropdown-user-content form button {
         text-align:left;
@@ -83,6 +88,10 @@
         display: block;
         margin: 0px;
     }
+        .dropdown-user-content form button i {
+            text-decoration: none;
+            color: #21c8f6;
+        }
 
         .dropdown-user-content form button:hover {
             text-decoration: none;
