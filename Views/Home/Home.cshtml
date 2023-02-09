@@ -1,6 +1,100 @@
 ﻿@{
     ViewData["Title"] = "SEEE HUST";
+    Layout = null;
 }
 <partial name="_AlertMessage" />
-@*<h1 style="display:flex; justify-content: center; align-items: center; text-align: center; margin-top: 100px; color:white; ">Đại học Bách Khoa Hà Nội</h1>*@
+<head>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/home.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <title>@ViewData["Title"]</title>
+    <link rel="icon" type="image/x-icon" href="~/Images/logo/favicon.ico" />
+</head>
+
+<body>
+    <header>
+        <div class="nav-login-main">
+            <partial name="_LoginPartial" style="color: white"></partial>
+        </div>
+    </header>
+    <main>
+
+        <div style="background: linear-gradient(rgb(40, 64, 103), rgb(21, 31, 50));">
+            <div>
+                <img src="/images/home/home-root.svg">
+            </div>
+        </div>
+        <div class="code-menu">
+            <div class="code-menu-back">
+                <span>"menu"</span>
+                =&gt; [                
+                <a class="a" asp-controller="Post" asp-action="Index">
+                    <div class="">// thảo luận</div>
+                    <span class="s1">"forum"&nbsp;=&gt;&nbsp;</span>
+                    <span class="s2">"Diễn đàn"</span>
+                    <span class="s3">,</span>
+                </a>
+
+
+                <a class="a" asp-controller="Post" asp-action="Index">
+                    <div>// tìm hiểu</div>
+                    <span class="s1">"knowledge"&nbsp;=&gt;&nbsp;</span>
+                    <span class="s2">"Kiến thức"</span>
+                    <span class="s3">,</span>
+                </a>
+
+                <a class="a" asp-controller="Post" asp-action="Index">
+                    <div>// tìm nhà, tìm trọ</div>
+                    <span class="s1">"find"&nbsp;=&gt;&nbsp;</span>
+                    <span class="s2">"Tìm trọ"</span>
+                </a>
+                <a class="a" asp-controller="Contact" asp-action="SendContact">
+                    <div class="">// Góp ý, liên hệ</div>
+                    <span class="s1">"Feedback"&nbsp;=&gt;&nbsp;</span>
+                    <span class="s2">"Liên hệ"</span>
+                    <span class="s3">,</span>
+                </a>
+                <a class="a" asp-controller="Post" asp-action="Index">
+                    <div>// Tiện ích, giải trí</div>
+                    <span class="s1">"utilities"&nbsp;=&gt;&nbsp;</span>
+                    <span class="s2">"Tiện ích"</span>
+                </a>
+                
+                ]
+            </div>
+            <div class="code-menu-back">
+                <span>"stats"</span>
+                =&gt; [
+                <a class="a" asp-controller="Contact" asp-action="SendContact">
+                    <div class="">// Số lượng góp ý</div>
+                    <span class="s1">"feedback"&nbsp;=&gt;&nbsp;</span>
+                    <span class="s2">"1200"</span>
+                    <span class="s3">,</span>
+                </a>
+                <a class="a" asp-controller="Post" asp-action="Index">
+                    <div>// Số lượng bài học</div>
+                    <span class="s1">"lesson"&nbsp;=&gt;&nbsp;</span>
+                    <span class="s2">"66"</span>
+                    <span class="s3">,</span>
+                </a>
+                <a class="a" asp-controller="Post" asp-action="Index">
+                    <div>// Số lượng bài viết</div>
+                    <span class="s1">"article"&nbsp;=&gt;&nbsp;</span>
+                    <span class="s2">"888"</span>
+                </a>
+                ]
+            </div>
+        </div>
+    </main>
+</body>
+
+
 

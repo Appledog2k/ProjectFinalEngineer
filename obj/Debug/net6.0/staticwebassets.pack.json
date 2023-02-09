@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ProjectFinalEngineer.bundle.scp.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\Screenshot_20230209_091816.png",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\Screenshot_20230209_091816.png"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\avatar1.png",
       "PackagePath": "staticwebassets\\Images\\Avatars\\avatar1.png"
     },
@@ -19,6 +23,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\avatar4.png",
       "PackagePath": "staticwebassets\\Images\\Avatars\\avatar4.png"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\clean-code-logo.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\clean-code-logo.svg"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\code-katas-with-phpunit.svg",
@@ -57,6 +65,10 @@
       "PackagePath": "staticwebassets\\Images\\Avatars\\hands-on-community-contributions.svg"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\image-uploading-with-vue-and-laravel.webp",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\image-uploading-with-vue-and-laravel.webp"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\in-stock.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\in-stock.svg"
     },
@@ -83,6 +95,14 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\sub-lifetime.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\sub-lifetime.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\undraw_authentication_re_svpt.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\undraw_authentication_re_svpt.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\undraw_fingerprint_login_re_t71l.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\undraw_fingerprint_login_re_t71l.svg"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\visual-studio-code-for-php-developers.svg",
@@ -163,6 +183,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\home\\bkhust.jpg",
       "PackagePath": "staticwebassets\\Images\\home\\bkhust.jpg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\home\\home-banner-illustration - Copy.svg",
+      "PackagePath": "staticwebassets\\Images\\home\\home-banner-illustration - Copy.svg"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\home\\home-banner-illustration.svg",
@@ -257,6 +281,14 @@
       "PackagePath": "staticwebassets\\css\\DatabaseManage\\dbmanagedel.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Manage\\ChangePassword.css",
+      "PackagePath": "staticwebassets\\css\\Manage\\ChangePassword.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Manage\\editprofile.css",
+      "PackagePath": "staticwebassets\\css\\Manage\\editprofile.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Manage\\index.css",
       "PackagePath": "staticwebassets\\css\\Manage\\index.css"
     },
@@ -303,6 +335,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\User\\setpassword.css",
       "PackagePath": "staticwebassets\\css\\User\\setpassword.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\layout.css",

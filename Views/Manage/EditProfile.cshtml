@@ -1,45 +1,73 @@
 @using ProjectFinalEngineer.Models.AggregateManage;
 @model EditExtraProfileModel
 @{
-    ViewData["Title"] = "Hồ sơ cá nhân";
+    ViewData["Title"] = "Cập nhật thông tin";
 }
 
-<h4>@ViewData["Title"]</h4>
+<head>
+    <link rel="stylesheet" href="~/css/Manage/editprofile.css">
+</head>
 
-<partial name="_StatusMessage" />
-
-<div class="row">
-    <div class="col-md-6">
-        <form id="profile-form" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="UserName"></label>
-                <input asp-for="UserName" class="form-control" disabled />
-            </div>
-            <div class="form-group">
-                <label asp-for="UserEmail"></label>
-                <input asp-for="UserEmail" class="form-control" disabled />
-            </div>
-
-            <div class="form-group">
-                <label asp-for="PhoneNumber"></label>
-                <input asp-for="PhoneNumber" class="form-control" disabled/>
-            </div>
-            <div class="form-group">
-                <label asp-for="HomeAdress"></label>
-                <textarea asp-for="HomeAdress" class="form-control"></textarea>
-                <span asp-validation-for="HomeAdress" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BirthDate"></label>
-                <input asp-for="BirthDate" class="form-control" />
-                <span asp-validation-for="BirthDate" class="text-danger"></span>
-            </div>            
-
-            <button id="update-profile-button" type="submit" class="btn btn-primary">Lưu dữ liệu</button>
-        </form>
+<section class="db-main">
+    <div>
+        <partial name="_AlertMessage"></partial>
     </div>
-</div>
+    <div class="db-main-header">
+        <header>
+            <h3>Cập nhật thông tin</h3>
+            <p>Nếu thông tin cá nhân chưa đúng hoặc đã thay đổi vui lòng cập nhật</p>
+        </header>
+    </div>
+    <div>
+        @*<img class="db-image" src=""
+        style="width: 310px; top:60px; left:-10px;">*@
+        <article class="db">
+            <div class="db-article">
+                <div class="db-article-line">
+                    <div class="main-info">
+                        <h2>Thông tin cơ bản</h2>
+                        <div class="card-info">
+                            <div class="card-body-info">
+                                <form id="profile-form" method="post">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-group">
+                                        <label asp-for="UserName"></label>
+                                        <input asp-for="UserName" class="form-control-user" disabled title="Không được chỉnh sửa tên tài khoản"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="UserEmail">Địa chỉ thư điện tử</label>
+                                        <input asp-for="UserEmail" class="form-control-email" disabled title="Không được chỉnh sửa địa chỉ thư điện tử" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label asp-for="PhoneNumber"></label>
+                                        <input asp-for="PhoneNumber" class="form-control-phone" disabled title="Không được chỉnh sửa địa chỉ thư điện tử" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="HomeAdress" class="home-address"></label>
+                                        <textarea asp-for="HomeAdress" class="form-control area-text"></textarea>
+                                        <span asp-validation-for="HomeAdress" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="BirthDate"></label>
+                                        <input asp-for="BirthDate" class="form-control date-birthdate" />
+                                        <span asp-validation-for="BirthDate" class="text-danger"></span>
+                                    </div>
+                                    <button id="update-profile-button" type="submit" class="btn btn-primary">Lưu dữ liệu</button>
+                                </form>
+                            </div>
+                        </div>
+                        <aside class="db-aside">
+
+                        </aside>
+                    </div>
+                </div>
+                <img class="db-image" src="~/images/avatars/drehimself-placeholder.webp"
+                     style="width: 310px; bottom: -1px; right: 0px;">
+            </div>
+        </article>
+    </div>
+</section>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
