@@ -129,8 +129,16 @@
       "PackagePath": "staticwebassets\\Images\\Avatars\\learn-redis-through-examples.svg"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\mic-drop@2x.webp",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\mic-drop@2x.webp"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\mist.png",
       "PackagePath": "staticwebassets\\Images\\Avatars\\mist.png"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\news-1.jpg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\news-1.jpg"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\object-oriented-principles-in-php.svg",
@@ -345,6 +353,10 @@
       "PackagePath": "staticwebassets\\css\\DatabaseManage\\dbmanagedel.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\LayoutForum.css",
+      "PackagePath": "staticwebassets\\css\\LayoutForum.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Manage\\ChangePassword.css",
       "PackagePath": "staticwebassets\\css\\Manage\\ChangePassword.css"
     },
@@ -359,6 +371,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Management\\management.css",
       "PackagePath": "staticwebassets\\css\\Management\\management.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\PagingXTL.css",
+      "PackagePath": "staticwebassets\\css\\PagingXTL.css"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Post\\index.css",

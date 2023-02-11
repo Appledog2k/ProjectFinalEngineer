@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Diễn đàn";
+    Layout = "~/Views/Shared/_LayoutForum.cshtml";
 }
 <head>
     <meta charset="UTF-8">
@@ -121,17 +122,34 @@
                                                             @Html.DisplayFor(modelItem => item.Title)
                                                         </a>
                                                     </h4>
+                                                    <div class="ct-header-analytics">
+                                                        <div class="ct-header-analytics-see">
+                                                            <div>
+                                                                <i class="far fa-eye"></i>
+                                                            </div>
+                                                            <div class="soluong">66</div>
+                                                        </div>
+                                                        <div class="ct-header-analytics-mess">
+                                                            <div>
+                                                                <i class="far fa-comment-dots"></i>
+                                                            </div>
+                                                            <div class="soluong">66</div>
+                                                        </div>
+
+                                                    </div>
                                                 </div>
                                                 <div class="ct-body">
                                                     <div class="ct-body-name">
-                                                        <p>@Html.DisplayFor(modelItem => item.Author.UserName),</p>
+                                                        <a><p style="color:rgb(50 138 241);">@Html.DisplayFor(modelItem => item.Author.UserName)</p></a>
+
                                                     </div>
                                                     <div class="ct-body-time">
                                                         <p>
-                                                            &nbsp;tạo liên hệ vào @Html.DisplayFor(modelItem => item.DateUpdated.Day)/@Html.DisplayFor(modelItem => item.DateUpdated.Month)/@Html.DisplayFor(modelItem => item.DateUpdated.Year)
+                                                            &nbsp;tạo bài viết vào @Html.DisplayFor(modelItem => item.DateUpdated.Day)/@Html.DisplayFor(modelItem => item.DateUpdated.Month)/@Html.DisplayFor(modelItem => item.DateUpdated.Year)
                                                         </p>
                                                     </div>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -146,7 +164,7 @@
                         <div class="container-ex">
                             <div class="wt-title"><p>Thời tiết</p></div>
                             <div class="search-box">
-@*                                <img src="~/images/avatars/icons8-weather-64.png">*@
+                                @*                                <img src="~/images/avatars/icons8-weather-64.png">*@
                                 <i class="fa-solid fa-location-dot loca-icon"></i>
                                 <input type="text" placeholder="Vị trí của bạn">
                                 <button class="wt-btn">
@@ -184,7 +202,7 @@
                             </div>
                         </div>
                         @*serp stack*@
-                        <div class="container-ex-1" >
+                        <div class="container-ex-1">
                             <div class="wt-title"><p>Google</p></div>
                             <form id="form" autocomplete="off" class="search-box">
                                 <i class="fab fa-google loca-icon"></i>
@@ -202,11 +220,25 @@
                             <div id="result">
                             </div>
                         </div>
-                      
+                        <div class="container-ex-2">
+                            <div class="img-ex-2"><img width="134px;" height="110px;" src="~/images/avatars/news-1.jpg" /></div>
+                            <div class="title-ex-2">
+                                <p>
+                                    Đại học bách khoa Hà Nội
+                                </p>
+                            </div>
+                            <div class="search-ex-2">
+                                <a href="https://ctt.hust.edu.vn/" target="_blank">
+                                    Cổng thông tin
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </aside>
+
             </div>
+            </aside>
         </div>
+    </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
