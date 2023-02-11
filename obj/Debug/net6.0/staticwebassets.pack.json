@@ -77,6 +77,42 @@
       "PackagePath": "staticwebassets\\Images\\Avatars\\hands-on-community-contributions.svg"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\icons8-google-blog-search.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\icons8-google-blog-search.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\icons8-google-classroom.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\icons8-google-classroom.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\icons8-google-images.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\icons8-google-images.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\icons8-google-images1.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\icons8-google-images1.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\icons8-google-images2.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\icons8-google-images2.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\icons8-google-news.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\icons8-google-news.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\icons8-google-news22.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\icons8-google-news22.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\icons8-google-web-search.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\icons8-google-web-search.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\icons8-weather-64.png",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\icons8-weather-64.png"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\image-uploading-with-vue-and-laravel.webp",
       "PackagePath": "staticwebassets\\Images\\Avatars\\image-uploading-with-vue-and-laravel.webp"
     },
@@ -127,6 +163,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\undraw_fingerprint_login_re_t71l.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\undraw_fingerprint_login_re_t71l.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\upper-gradient.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\upper-gradient.svg"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\visual-studio-code-for-php-developers.svg",

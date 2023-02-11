@@ -15,7 +15,7 @@ html {
     --gradient-from: #328af1;
     --gradient-stops: var(--gradient-from), var(--gradient-to, rgba(50, 138, 241, 0));
     --gradient-to: #328af1;
-    --bg-color: linear-gradient(rgb(40, 64, 103), rgb(21, 31, 50));
+    --bg-color: linear-gradient(rgb(40, 64, 95), rgb(24 39 63/var(--text-opacity)));
     --text-opacity: 1;
     --text-color: rgb(112, 121, 136);
     --text-colorchange: rgb(255, 255, 255);
@@ -23,8 +23,11 @@ html {
 
 body {
     position: relative;
-    min-height: 2000px;
-    background: var(--bg-color);
+    min-height: 1800px;
+    background-color: #151f32;
+    background-image: url(/images/avatars/upper-gradient.svg);
+    background-repeat: no-repeat;
+    background-size: 55%;
     color: var(--text-color);
 }
 
