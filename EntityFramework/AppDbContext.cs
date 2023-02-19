@@ -41,11 +41,6 @@ public class AppDbContext : IdentityDbContext<AppUser>
             entity.HasIndex(c => c.Slug).IsUnique();
         });
         modelBuilder.Entity<PostCategory>().HasKey(p => new { p.PostID, p.CategoryID });
-        modelBuilder.Entity<Post>(entity =>
-        {
-            entity.HasIndex(p => p.Slug)
-                  .IsUnique();
-        });
 
     }
 

@@ -14,6 +14,7 @@
           rel="stylesheet">
 </head>
 <body>
+    <partial name="_AlertMessage" />
     <div id="forum">
         <div class="container">
             <div id="forum-wapper">
@@ -234,9 +235,7 @@
                             </div>
                         </div>
                     </div>
-
-            </div>
-            </aside>
+                </aside>
         </div>
     </div>
     </div>
@@ -244,12 +243,7 @@
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
     <script src="~/js/Post/Post.js"></script>
 </body>
-@*@model IEnumerable<ProjectFinalEngineer.Models.AggregatePost.Post>
-
-@{
-    ViewData["Title"] = "Danh sách BLog";
-}
-
+@*
 <h1>@ViewData["Title"]</h1>
 
 <partial name="_AlertMessage" />
