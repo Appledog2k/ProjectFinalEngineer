@@ -109,22 +109,11 @@ public class PostController : Controller
         var categories = await _context.Categories.ToListAsync();
         ViewData["categories"] = new MultiSelectList(categories, "Id", "Title");
 
-        if (post.Slug == null)
-        {
-            post.Slug = AppUtilities.GenerateSlug(post.Title);
-        }
-
-        if (await _context.Posts.AnyAsync(p => p.Slug == post.Slug))
-        {
-            ModelState.AddModelError("Slug", "Nhập chuỗi Url khác");
-            return View(post);
-        }
         if (ModelState.IsValid)
         {
 
             var user = await _userManager.GetUserAsync(this.User);
             post.DateCreated = post.DateUpdated = DateTime.Now;
-            Console.WriteLine(user.Id);
             post.AuthorId = user.Id;
             _context.Add(post);
 
@@ -176,8 +165,6 @@ public class PostController : Controller
             PostId = post.PostId,
             Title = post.Title,
             Content = post.Content,
-            Description = post.Description,
-            Slug = post.Slug,
             Published = post.Published,
             CategoryIDs = post.PostCategories.Select(pc => pc.CategoryID).ToArray()
         };
@@ -201,20 +188,6 @@ public class PostController : Controller
         }
         var categories = await _context.Categories.ToListAsync();
         ViewData["categories"] = new MultiSelectList(categories, "Id", "Title");
-
-
-        if (post.Slug == null)
-        {
-            post.Slug = AppUtilities.GenerateSlug(post.Title);
-        }
-
-        if (await _context.Posts.AnyAsync(p => p.Slug == post.Slug && p.PostId != id))
-        {
-            ModelState.AddModelError("Slug", "Nhập chuỗi Url khác");
-            return View(post);
-        }
-
-
         if (ModelState.IsValid)
         {
             try
@@ -227,10 +200,8 @@ public class PostController : Controller
                 }
 
                 postUpdate.Title = post.Title;
-                postUpdate.Description = post.Description;
                 postUpdate.Content = post.Content;
                 postUpdate.Published = post.Published;
-                postUpdate.Slug = post.Slug;
                 postUpdate.DateUpdated = DateTime.Now;
 
                 // Update PostCategory

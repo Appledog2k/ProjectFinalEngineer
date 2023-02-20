@@ -377,6 +377,10 @@
       "PackagePath": "staticwebassets\\css\\PagingXTL.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Post\\details.css",
+      "PackagePath": "staticwebassets\\css\\Post\\details.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Post\\index.css",
       "PackagePath": "staticwebassets\\css\\Post\\index.css"
     },
