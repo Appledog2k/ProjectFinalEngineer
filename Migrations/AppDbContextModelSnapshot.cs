@@ -263,9 +263,6 @@ namespace ProjectFinalEngineer.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("PostId"));
 
-                    b.Property<bool>("Approved")
-                        .HasColumnType("boolean");
-
                     b.Property<string>("ApproverId")
                         .HasColumnType("text");
 
@@ -281,15 +278,8 @@ namespace ProjectFinalEngineer.Migrations
                     b.Property<DateTime>("DateUpdated")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
                     b.Property<bool>("Published")
                         .HasColumnType("boolean");
-
-                    b.Property<string>("Slug")
-                        .HasMaxLength(160)
-                        .HasColumnType("character varying(160)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -301,9 +291,6 @@ namespace ProjectFinalEngineer.Migrations
                     b.HasIndex("ApproverId");
 
                     b.HasIndex("AuthorId");
-
-                    b.HasIndex("Slug")
-                        .IsUnique();
 
                     b.ToTable("Post");
                 });

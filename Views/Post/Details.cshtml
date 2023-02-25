@@ -1,6 +1,6 @@
-@model ProjectFinalEngineer.Models.AggregatePost.Post
+@model ProjectFinalEngineer.Models.AggregatePost.PostViewModel
 @{
-    ViewData["Title"] = @Model.Title;
+    ViewData["Title"] = @Model.Post.Title;
     Layout = "~/Views/Shared/_LayoutForum.cshtml";
 }
 <head>
@@ -11,6 +11,7 @@
     <title>@ViewData["Title"]</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap"
           rel="stylesheet">
+    <script src="~/js/Post/Details.js"></script>
 </head>
 <body>
     <partial name="_AlertMessage" />
@@ -75,7 +76,7 @@
                                         <div>
                                             <div class="ct-header">
                                                 <h4>
-                                                    @Html.DisplayFor(model => model.Author.UserName)
+                                                    @Html.DisplayFor(model => model.Post.Author.UserName)
                                                 </h4>
                                                 <div class="ct-header-analytics">
                                                     <div class="ct-header-analytics-see">
@@ -88,29 +89,29 @@
                                                         <div>
                                                             <i class="far fa-comment-dots"></i>
                                                         </div>
-                                                        <div class="soluong">66</div>
+                                                        <div class="soluong">@Model.Post.Comments.Count()</div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="ct-body-time">
                                                 <p>
-                                                    &nbsp;tạo bài viết vào @Html.DisplayFor(model => model.DateUpdated.Day)/@Html.DisplayFor(model => model.DateUpdated.Month)/@Html.DisplayFor(model => model.DateUpdated.Year)
+                                                    &nbsp;tạo bài viết vào @Html.DisplayFor(model => model.Post.DateUpdated.Day)/@Html.DisplayFor(model => model.Post.DateUpdated.Month)/@Html.DisplayFor(model => model.Post.DateUpdated.Year)
                                                 </p>
                                             </div>
                                             <div class="title-details">
                                                 <h1>
-                                                    @Html.DisplayFor(model => model.Title)
+                                                    @Html.DisplayFor(model => model.Post.Title)
                                                 </h1>
                                             </div>
                                             <div class="ct-body-content">
                                                 <p>
-                                                    @Html.DisplayFor(model => model.Content)
+                                                    @Html.DisplayFor(model => model.Post.Content)
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                <partial name="_CommentPartial"/>
                             </div>
                         </div>
                     </div>
@@ -195,8 +196,8 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
-    <script src="~/js/Post/Post.js"></script>
 </body>
 
 @*@model ProjectFinalEngineer.Models.AggregatePost.Post

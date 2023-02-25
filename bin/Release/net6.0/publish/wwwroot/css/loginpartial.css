@@ -1,0 +1,105 @@
+﻿:root {
+    --text-opacity: 1;
+    --dark: #34495E;
+    --light: #ffffff;
+    --success: #0ABF30;
+    --error: #E24D4C;
+    --warning: #E9BD0C;
+    --info: 3498BD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.drop-user-btn {
+    background-color: transparent;
+    color: inherit;
+    font-size: inherit;
+    font: inherit;
+    margin-left: 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dropdown-user {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-user-content {
+    background: var(--light);
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    transition: all 0.5s ease;
+}
+
+    .dropdown-user-content a {
+        font-size: 13px;
+        border-radius: 8px;
+        color: #21c8f6;
+        width: 100%;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        margin: 0px;
+    }
+        .dropdown-user-content a i {
+            text-decoration: none;
+            color: #21c8f6;
+        }
+
+        .dropdown-user-content a:hover {
+            text-decoration: none;
+            background: #21c8f6;
+            color: var(--light);
+            font-size: 15px;
+        }
+
+    .dropdown-user-content form button {
+        text-align:left;
+        background-color: transparent;
+        color: inherit;
+        font-size: inherit;
+        font: inherit;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-size: 13px;
+        border-radius: 8px;
+        color: #21c8f6;
+        width: 100%;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        margin: 0px;
+    }
+        .dropdown-user-content form button i {
+            text-decoration: none;
+            color: #21c8f6;
+        }
+
+        .dropdown-user-content form button:hover {
+            text-decoration: none;
+            background: #21c8f6;
+            color: var(--light);
+            font-size: 15px;
+        }
+
+.show {
+    display: block;
+}

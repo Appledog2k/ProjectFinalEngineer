@@ -2,6 +2,8 @@
 using System.Reflection;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.Extensions.Options;
 using ProjectFinalEngineer.Models.AggregateCategory;
 using ProjectFinalEngineer.Models.AggregateComment;
 using ProjectFinalEngineer.Models.AggregateContact;
@@ -20,6 +22,8 @@ public class AppDbContext : IdentityDbContext<AppUser>
     protected override void OnConfiguring(DbContextOptionsBuilder builder)
     {
         base.OnConfiguring(builder);
+        builder.ConfigureWarnings(warnings => warnings.Ignore(CoreEventId.NavigationBaseIncludeIgnored));
+
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

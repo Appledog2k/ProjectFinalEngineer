@@ -1,9 +1,13 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Options;
+using ProjectFinalEngineer.BusinessManager;
 using ProjectFinalEngineer.EntityFramework;
 using ProjectFinalEngineer.Models.AggregateRole;
 using ProjectFinalEngineer.Models.AggregateUser;
+using ProjectFinalEngineer.Services.Comment;
 
 namespace ProjectFinalEngineer
 {
@@ -30,6 +34,10 @@ namespace ProjectFinalEngineer
                 string connectString = Configuration.GetConnectionString("ForumDb");
                 options.UseNpgsql(connectString);
             });
+
+           
+
+
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddIdentity<AppUser, IdentityRole>()
@@ -96,6 +104,8 @@ namespace ProjectFinalEngineer
             var mailsetting = Configuration.GetSection("MailSettings");
             services.Configure<MailSettings>(mailsetting);
             services.AddSingleton<IEmailSender, SendMailService>();
+            services.AddTransient<ICommentBusinessManager, CommentBusinessManager>();
+            services.AddTransient<ICommentService, CommentService>();
             services.AddSingleton<IdentityErrorDescriber, App.Services.AppIdentityErrorDescriber>();
 
             services.AddAuthorization(options =>

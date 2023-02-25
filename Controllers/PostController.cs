@@ -3,13 +3,16 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using App.Utilities;
 using ProjectFinalEngineer.Models.AggregatePostCategory;
 using ProjectFinalEngineer.Models.AggregateRole;
 using ProjectFinalEngineer.EntityFramework;
 using ProjectFinalEngineer.Models.AggregateUser;
 using App.Models.AggregateExtensions;
 using ProjectFinalEngineer.Models.AggregatePost;
+using ProjectFinalEngineer.BusinessManager;
+using ProjectFinalEngineer.Services.Comment;
+using ProjectFinalEngineer.Models.AggregateComment;
+using Microsoft.Extensions.Hosting;
 
 namespace ProjectFinalEngineer.Controllers;
 
@@ -19,22 +22,30 @@ public class PostController : Controller
 {
     private readonly AppDbContext _context;
     private readonly UserManager<AppUser> _userManager;
-
-    public PostController(AppDbContext context, UserManager<AppUser> userManager)
+    private readonly ICommentBusinessManager _commentBusinessManager;
+    private readonly ICommentService _commentService;
+    public PostController(AppDbContext context, UserManager<AppUser> userManager,
+                        ICommentBusinessManager commentBusinessManager,
+                        ICommentService commentService)
     {
         _context = context;
         _userManager = userManager;
+        _commentBusinessManager = commentBusinessManager;
+        _commentService = commentService;
     }
 
     [TempData]
     public string StatusMessage { get; set; }
     // GET: Blog/Post
     [AllowAnonymous]
-    public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage, int pagesize)
+    public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString = null)
     {
         var posts = _context.Posts
-                    .Include(p => p.Author)
-                    .OrderByDescending(p => p.DateUpdated);
+            .OrderByDescending(p => p.DateUpdated)
+            .Include(p => p.Author)
+            .Include(post => post.Comments);
+        //.Where(post => post.Title.Contains(searchString) || post.Content.Contains(searchString));
+
 
         int totalPosts = await posts.CountAsync();
         if (pagesize <= 0) pagesize = 10;
@@ -80,13 +91,23 @@ public class PostController : Controller
 
         var post = await _context.Posts
             .Include(p => p.Author)
+            .Include(post => post.Comments)
+                .ThenInclude(comment => comment.Author)
+            .Include(post => post.Comments)
+                .ThenInclude(comment => comment.Comments)
+                    .ThenInclude(reply => reply.Parent)
             .FirstOrDefaultAsync(m => m.PostId == id);
+
         if (post == null)
         {
             return NotFound();
         }
 
-        return View(post);
+        var result  = new PostViewModel
+        {
+            Post = post
+        };
+        return View(result);
     }
 
     // GET: Blog/Post/Create
@@ -104,7 +125,7 @@ public class PostController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Title,Description,Slug,Content,Published,CategoryIDs")] CreatePostModel post)
+    public async Task<IActionResult> Create([Bind("Title,Content,Published,CategoryIDs")] CreatePostModel post)
     {
         var categories = await _context.Categories.ToListAsync();
         ViewData["categories"] = new MultiSelectList(categories, "Id", "Title");
@@ -132,8 +153,6 @@ public class PostController : Controller
             StatusMessage = "Vừa tạo bài viết mới";
             return RedirectToAction(nameof(Index));
         }
-
-
         return View(post);
     }
 
@@ -205,7 +224,7 @@ public class PostController : Controller
                 postUpdate.DateUpdated = DateTime.Now;
 
                 // Update PostCategory
-                if (post.CategoryIDs == null) post.CategoryIDs = new int[] { };
+                post.CategoryIDs ??= new int[] { };
 
                 var oldCateIds = postUpdate.PostCategories.Select(c => c.CategoryID).ToArray();
                 var newCateIds = post.CategoryIDs;
@@ -293,4 +312,32 @@ public class PostController : Controller
     {
         return _context.Posts.Any(e => e.PostId == id);
     }
+
+    [HttpPost]
+    public async Task<IActionResult> Comment(PostViewModel postViewModel)
+    {
+        var actionResult = await _commentBusinessManager.CreateComment(postViewModel, this.User);
+        if (actionResult.Result is null)
+            return RedirectToAction("Details", "Post", new { id = postViewModel.Post.PostId });
+
+        return actionResult.Result;
+    }
+
+    //[HttpPost]
+    //public async Task<IActionResult> Comment(PostViewModel postViewModel)
+    //{
+    //    var actionResult = await _commentBusinessManager.CreateComment(postViewModel, User);
+    //    if (actionResult.Result is null)
+    //    {
+    //        //var comments = await _commentBusinessManager.GetComments(postViewModel.Post.PostId);
+    //        var comments = _commentService.GetComment(postViewModel.Post.PostId);
+    //        var result = new PostViewModel
+    //        {
+    //            Comment = comments
+    //        };
+    //        return PartialView("_CommentPartial", result);
+    //    }
+
+    //    return actionResult.Result;
+    //}
 }

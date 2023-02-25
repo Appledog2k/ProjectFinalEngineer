@@ -329,6 +329,10 @@
       "PackagePath": "staticwebassets\\css\\Category\\index.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\CommentPartial.css",
+      "PackagePath": "staticwebassets\\css\\CommentPartial.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Contact\\SendContact.css",
       "PackagePath": "staticwebassets\\css\\Contact\\SendContact.css"
     },
@@ -447,6 +451,14 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\Account\\login.js",
       "PackagePath": "staticwebassets\\js\\Account\\login.js"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\CommentPartial.js",
+      "PackagePath": "staticwebassets\\js\\CommentPartial.js"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\Post\\Details.js",
+      "PackagePath": "staticwebassets\\js\\Post\\Details.js"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\Post\\Post.js",

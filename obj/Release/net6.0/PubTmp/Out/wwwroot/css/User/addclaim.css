@@ -1,0 +1,409 @@
+﻿:root {
+    --bg-opacity: 1;
+    --text-opacity: 1;
+    --gradient-to: #8b60ed;
+    --gradient-from: #b372bd;
+    --gradient-stops: var(--gradient-from),var(--gradient-to,rgba(179,114,189,0));
+}
+
+
+* {
+    border: 0 solid;
+    box-sizing: border-box;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+.alert-message {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+}
+
+.userArea-main {
+    display: block;
+    padding: 20px 30px;
+    padding-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1700px;
+    position: relative;
+    z-index: 9;
+}
+
+.userArea-main-header header {
+    display: block;
+    position: relative;
+    width: 100%;
+    color: rgb(255 255 255/var(--text-opacity));
+    text-align: center;
+    padding-bottom: 6rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 auto;
+}
+
+    .userArea-main-header header h3 {
+        line-height: 1.25;
+        font-weight: 600;
+        font-size: 2.6666rem;
+        z-index: 10;
+        position: relative;
+        color: inherit;
+        font-family: Cabin,sans-serif;
+        letter-spacing: .02rem;
+        text-align: center;
+    }
+
+    .userArea-main-header header p {
+        font-weight: 500;
+        margin-top: 1rem;
+        color: inherit;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+
+.userArea {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 1100px;
+    border-radius: 1.25rem;
+    color: rgb(255 255 255/var(--text-opacity));
+    background-image: linear-gradient(to left,var(--gradient-stops));
+    margin: 0 auto;
+}
+
+    .userArea .userArea-article {
+        display: flex;
+        padding-top: 1.75rem;
+        padding: 2rem;
+        justify-content: space-between;
+        flex-direction: column;
+        flex: 1 1 0%;
+    }
+
+.userArea-article-line {
+    display: flex;
+    padding-right: 30%;
+    flex-direction: column;
+    height: 100%;
+}
+
+    .userArea-article-line h1 {
+        display: flex;
+        font-size: 2.4rem;
+        align-items: center;
+        height: 70px;
+        line-height: 1.25;
+        justify-content: center;
+        font-family: Cabin,sans-serif;
+        letter-spacing: .02rem;
+    }
+
+.userArea-aside {
+    display: block;
+    padding-bottom: 1rem;
+    padding-top: 1.75rem;
+    margin-top: auto;
+}
+
+.us-as-table-form-method {
+    display: block;
+}
+
+    .us-as-table-form-method .form-group {
+        display: block;
+    }
+
+        .us-as-table-form-method .form-group span {
+            color: red;
+        }
+
+        .us-as-table-form-method .form-group label {
+            letter-spacing: -.02em;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 0px 10px;
+        }
+
+        .us-as-table-form-method .form-group .form-control1 {
+            letter-spacing: -.02em;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 10px 10px;
+            margin-left: 10px;
+            width: 400px;
+            height: 40px;
+            border: 3px solid white;
+            border-radius: 10px;
+        }
+
+            .us-as-table-form-method .form-group .form-control1:focus {
+                border: solid 3px #F56857;
+                outline: none;
+            }
+
+        .us-as-table-form-method .form-group .form-control2 {
+            letter-spacing: -.02em;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 10px 10px;
+            margin-left: 40px;
+            width: 400px;
+            height: 40px;
+            border: 3px solid white;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+            .us-as-table-form-method .form-group .form-control2:focus {
+                border: solid 3px #F56857;
+                outline: none;
+            }
+
+.form-group-action1 {
+    display: block;
+}
+
+.us-as-table-form-method .form-group-action1 .form-control2:focus {
+    border: solid 3px #F56857;
+    outline: none;
+}
+
+.form-group-action1 .form-group-return {
+    padding: 10px 10px;
+}
+
+    .form-group-action1 .form-group-return a {
+        display: flex;
+        color: white;
+        border: 2px solid white;
+        border-radius: 20px;
+        padding: 5px;
+        width: 490px;
+        justify-content: center;
+        text-align: center;
+        font-size: 14px;
+    }
+
+        .form-group-action1 .form-group-return a:hover {
+            color: #8b60ed;
+            background-color: white;
+        }
+
+
+.userArea-image {
+    position: absolute;
+    top: -50px;
+    right: 50px;
+    z-index: 10;
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+.aside-user-table {
+    display: flex;
+    padding: 5px;
+}
+
+.as-u-tb-form {
+    display: block;
+}
+
+.as-u-tb-form-title {
+    display: block;
+    color: hsla(0,0%,100%,.75);
+    letter-spacing: -.02em;
+    font-weight: 500;
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+
+.list-user-claim {
+    display: flex;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+    .list-user-claim .userArea-name {
+        padding: 0 10px;
+        font-weight: 500;
+        font-size: 13px;
+    }
+
+    .list-user-claim .userArea-role {
+        padding: 0 10px;
+        font-weight: 500;
+        font-size: 13px;
+    }
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group .list-role {
+        margin-left: 20px;
+        width: 40px;
+        height: 40px;
+    }
+
+#id-select-roles {
+    margin-left: 20px;
+    width: 200px;
+}
+
+.claim-private {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+    .claim-private p {
+        font-size: 14px;
+        font-weight: 500;
+        margin-right: 10px;
+    }
+
+    .claim-private a {
+        font-size: 14px;
+        font-weight: 500;
+        margin-right: 10px;
+        border: 1px solid white;
+        padding: 2px 4px;
+        color: white;
+        border-radius: 8px;
+    }
+
+        .claim-private a:hover {
+            background-color: white;
+            color: #8b60ed;
+        }
+
+.as-u-tb-form-title1 {
+    display: block;
+    color: hsla(0,0%,100%,.75);
+    letter-spacing: -.02em;
+    font-weight: 500;
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+
+.claim-private-list {
+    display: flex;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+    .claim-private-list .userArea-name {
+        padding: 0 10px;
+        font-weight: 500;
+        font-size: 13px;
+    }
+
+        .claim-private-list .userArea-name dt {
+            margin-bottom: 5px;
+        }
+
+        .claim-private-list .userArea-name a {
+            font-size: 14px;
+            font-weight: 500;
+            margin-right: 10px;
+            margin-top: 10px;
+            border: 1px solid white;
+            padding: 2px 4px;
+            color: white;
+            border-radius: 8px;
+        }
+
+            .claim-private-list .userArea-name a:hover {
+                background-color: white;
+                color: #8b60ed;
+            }
+
+    .claim-private-list .userArea-role {
+        padding: 0 10px;
+        font-weight: 500;
+        font-size: 13px;
+    }
+
+        .claim-private-list .userArea-role dt {
+            margin-bottom: 5px;
+        }
+
+        .claim-private-list .userArea-role a {
+            font-size: 14px;
+            font-weight: 500;
+            margin-right: 10px;
+            margin-top: 10px;
+            border: 1px solid white;
+            padding: 2px 4px;
+            color: white;
+            border-radius: 8px;
+        }
+
+            .claim-private-list .userArea-role a:hover {
+                background-color: white;
+                color: #8b60ed;
+            }
+
+
+
+.form-action1 .userArea-action1 {
+    border: 2px solid white;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 30px;
+    width: 490px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    color: white;
+    background-color: transparent;
+}
+
+.userArea-action1:hover {
+    color: #8b60ed;
+    background-color: white;
+    cursor:pointer;
+}
+
+.form-action1 .userArea-action2 {
+    border: 2px solid white;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 30px;
+    width: 490px;
+    border-radius: 10px;
+    border-radius: 20px;
+    color: white;
+    background-color: transparent;
+}
+.userArea-action2:hover {
+    color: #8b60ed;
+    background-color: white;
+    cursor: pointer;
+}
+
+.form-action1 .userArea-action3 {
+    border: 2px solid white;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 30px;
+    width: 490px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+}
+.userArea-action3:hover {
+    color: #8b60ed;
+    background-color: white;
+    cursor: pointer;
+}

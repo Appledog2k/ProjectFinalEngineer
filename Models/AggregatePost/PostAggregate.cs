@@ -21,7 +21,8 @@ public class Post
     public string Content { set; get; }
 
     [Display(Name = "Xuất bản")]
-    public bool Published { set; get; }
+    public bool Published { set; get; } = false;
+    public AppUser Approver { set; get; }
 
     public List<PostCategory> PostCategories { get; set; }
 
@@ -32,14 +33,13 @@ public class Post
     [Display(Name = "Tác giả")]
     public AppUser Author { set; get; }
 
-
-
     [Display(Name = "Ngày tạo")]
     public DateTime DateCreated { set; get; }
 
     [Display(Name = "Ngày cập nhật")]
     public DateTime DateUpdated { set; get; }
-    public AppUser Approver { set; get; }
+
+    //public long ViewCount { set; get; }
     public virtual IEnumerable<Comment> Comments { get; set; }
 
 }

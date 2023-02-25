@@ -9,6 +9,7 @@ namespace ProjectFinalEngineer.Models.AggregateComment;
 [Table("Comment")]
 public class Comment
 {
+    [Key]
     public int Id { get; set; }
     public Post Post { get; set; }
     public AppUser Author { get; set; }

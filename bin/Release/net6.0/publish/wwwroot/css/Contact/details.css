@@ -1,0 +1,218 @@
+﻿:root {
+    --bg-opacity: 1;
+    --text-opacity: 1;
+    --gradient-to: #1aab8b;
+    --gradient-from: #6edcc4;
+    --gradient-stops: var(--gradient-from),var(--gradient-to,rgba(110,220,196,0));
+    --success: #0ABF30;
+    --error: #E24D4C;
+}
+
+* {
+    border: 0 solid;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+.alert-message {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+}
+
+.ct-main {
+    display: block;
+    padding: 40px 30px;
+    padding-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1700px;
+    position: relative;
+    z-index: 9;
+}
+
+.ct-main-header header {
+    display: block;
+    position: relative;
+    width: 100%;
+    color: rgb(255 255 255/var(--text-opacity));
+    text-align: center;
+    padding-bottom: 6rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 auto;
+}
+
+    .ct-main-header header h3 {
+        line-height: 1.25;
+        font-weight: 600;
+        font-size: 2.6666rem;
+        z-index: 10;
+        position: relative;
+        color: inherit;
+        font-family: Cabin,sans-serif;
+        letter-spacing: .02rem;
+        text-align: center;
+    }
+
+    .ct-main-header header p {
+        font-weight: 500;
+        margin-top: 1rem;
+        color: inherit;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+
+.ct {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 1100px;
+    border-radius: 1.25rem;
+    color: rgb(255 255 255/var(--text-opacity));
+    background-image: linear-gradient(to left,var(--gradient-stops));
+    margin: 0 auto;
+}
+
+    .ct .ct-article {
+        display: flex;
+        padding-top: 1.75rem;
+        padding: 2rem;
+        justify-content: space-between;
+        flex-direction: column;
+        flex: 1 1 0%;
+    }
+
+.ct-article-line {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+    .ct-article-line h1 {
+        display: flex;
+        font-size: 2.4rem;
+        align-items: center;
+        height: 70px;
+        line-height: 1.25;
+        justify-content: center;
+        font-family: Cabin,sans-serif;
+        letter-spacing: .02rem;
+    }
+
+.form-contact {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+}
+
+.form-contact-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 5px;
+    border: 3px solid #F56857;
+    outline: none;
+}
+
+.form-contact .form-ct-name {
+    padding: 10px 0px;
+}
+
+.form-contact .form-ct-message {
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    width: 450px;
+}
+
+    .form-contact .form-ct-message h2 {
+        color: white;
+        margin-bottom: 20px;
+    }
+
+.form-contact .form-ct {
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+    .form-contact .form-ct h3 {
+        color: white;
+        margin-bottom: 20px;
+
+    }
+.form-ct-email {
+    letter-spacing: -.02em;
+    line-height: 1;
+    font-weight: 600;
+    font-size: .888rem;
+    padding-bottom:10px;
+}
+.form-ct-phone {
+    letter-spacing: -.02em;
+    line-height: 1;
+    font-weight: 600;
+    font-size: .888rem;
+}
+
+.form-contact .form-ct-time {
+    letter-spacing: -.02em;
+    line-height: 1;
+    font-weight: 600;
+    font-size: .777rem;
+    padding: 10px 0px;
+    padding-bottom: 20px;
+}
+
+/*.arrow-left.icon {
+    color: #000;
+    position: absolute;
+    margin-left: 3px;
+    margin-top: 11px;
+    width: 30px;
+    height: 3px;
+    background-color: #F56857;
+    cursor: pointer;
+}
+
+    .arrow-left.icon:before {
+        content: '';
+        position: absolute;
+        left: 1px;
+        top: -5px;
+        width: 10px;
+        height: 10px;
+        border-top: solid 3px #F56857;
+        border-right: solid 3px #F56857;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(-135deg);
+    }*/
+
+.form-action-1 {
+    display: flex;
+    border: 2px solid #F56857;
+    width: 250px;
+    border-radius: 10px;
+}
+
+    .form-action-1:hover {
+        background-color: #F56857;
+    }
+
+    .form-action-1 a {
+        padding: 0 10px;
+        color: #F56857;
+    }
+
+        .form-action-1 a:hover {
+            color: white;
+        }

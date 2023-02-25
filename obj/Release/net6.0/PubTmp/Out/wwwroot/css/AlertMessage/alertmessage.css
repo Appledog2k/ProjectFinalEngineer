@@ -1,0 +1,101 @@
+﻿:root {
+    --dark: #34495E;
+    --light: #ffffff;
+    --success: #0ABF30;
+    --error: #E24D4C;
+    --warning: #E9BD0C;
+    --info: 3498BD;
+
+}
+button{
+    cursor:pointer;
+}
+
+
+#toast {
+    --gradient-to: #1aab8b;
+    --gradient-from: #6edcc4;
+    --gradient-stops: var(--gradient-from),var(--gradient-to,rgba(110,220,196,0));
+    display: flex;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    min-width:500px;
+    margin: auto;
+    background-image: linear-gradient(to left,var(--gradient-stops));
+    color: var(--light);
+    text-align: center;
+    border-radius: 8px;
+    z-index: 10;
+    font-size: 17px;
+    white-space: nowrap;
+    font-family: Cabin,sans-serif;
+}
+
+    #toast #toast-icon {
+        display: flex;
+        width: 30px;
+        height: 30px;
+        margin-top:10px;
+        margin-left:20px;
+        float: left;
+        box-sizing: border-box;
+        background-color: transparent;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #toast #toast-mess {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 12px 30px 10px 12px;
+    }
+
+    #toast #toast-btn {
+        display: flex;
+        position: absolute;
+        color: var(--light);
+        top: 14px;
+        right: 12px;
+        box-sizing: border-box;
+        background-color: transparent;
+        border: none;
+    }
+        #toast #toast-btn img{
+            display:flex;
+            width: 20px;
+            height: 20px;
+        }
+
+        #toast.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s;
+            animation: fadein 0.5s;
+        }
+
+@-webkit-keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 60px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 60px;
+        opacity: 1;
+    }
+}
