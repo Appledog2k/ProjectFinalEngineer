@@ -23,7 +23,7 @@ html {
 
 body {
     position: relative;
-    min-height: 1300px;
+    min-height: 2000px;
     background: var(--bg-color);
     color: var(--text-color);
 }

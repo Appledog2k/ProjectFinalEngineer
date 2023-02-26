@@ -7,37 +7,8 @@
       "destination": "wwwroot/lib/multiple-select"
     },
     {
-      "library": "summernote@0.8.20",
+      "library": "summernote@0.8.18",
       "destination": "wwwroot/lib/summernote"
-    },
-    {
-      "library": "jqueryui@1.13.2",
-      "destination": "wwwroot/lib/jqueryui"
-    },
-    {
-      "library": "elfinder@2.1.61",
-      "destination": "wwwroot/lib/elfinder"
-    },
-    {
-      "library": "jquery-easing@1.4.1",
-      "destination": "wwwroot/lib/jquery-easing"
-    }
-    ,
-    {
-      "library": "font-awesome@5.15.3",
-      "destination": "wwwroot/lib/font-awesome"
-    },
-    {
-      "library": "microsoft-signalr@6.0.8",
-      "destination": "wwwroot/lib/microsoft-signalr/",
-      "files": [
-        "signalr.min.js",
-        "signalr.js"
-      ]
-    }, 
-    {
-      "library": "knockout@3.5.1",
-      "destination": "wwwroot/lib/knockout/"
     }
   ]
 }

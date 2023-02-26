@@ -93,7 +93,6 @@ namespace ProjectFinalEngineer.Controllers
             int cm = 1;
             fakerCategory.RuleFor(c => c.Title, fk => $"CM{cm++} " + fk.Lorem.Sentence(1, 2).Trim('.'));
             fakerCategory.RuleFor(c => c.Description, fk => fk.Lorem.Sentences(5) + "[fakeData]");
-            fakerCategory.RuleFor(c => c.Slug, fk => fk.Lorem.Slug());
             var cate1 = fakerCategory.Generate();
             var cate11 = fakerCategory.Generate();
             var cate12 = fakerCategory.Generate();

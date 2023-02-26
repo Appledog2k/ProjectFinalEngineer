@@ -21,7 +21,7 @@ namespace ProjectFinalEngineer.Models.AggregateSummernote
                 ['color', ['color']],
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['table', ['table']],
-                ['insert', ['link', 'picture', 'video', 'elfinder']],
+                ['insert', ['link', 'picture', 'video']],
                 ['height', ['height']],
                 ['view', ['fullscreen', 'codeview', 'help']]
             ]       

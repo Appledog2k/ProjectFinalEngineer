@@ -1,4 +1,7 @@
 ﻿const container = document.querySelector('.container-ex');
+const container1 = document.querySelector('.container-ex-1');
+const imageGoogle = document.querySelector('.image-google');
+const titleGoogle = document.querySelector('.container-ex-1  .wt-title');
 const search = document.querySelector('.search-box button');
 const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
@@ -7,7 +10,7 @@ const notLocation = document.querySelector('.not-location');
 
 search.addEventListener('click', () => {
 
-    const APIKey = '728b0ee6df5687559812bd3169ad77b7';
+    const APIKey = 'f509b0ac71453b1d13125bb4e2368303';
     const city = document.querySelector('.search-box input').value;
 
     if (city === '') {
@@ -87,23 +90,52 @@ search.addEventListener('click', () => {
 $("#form").submit(function (e) {
     e.preventDefault()
     var query = $("#search").val()
-    var API_KEY = 'df40ced1cf00df1797d5f5a1e21e986d'
+    if (query === '') {
+        var result1 = `
+                <div class="gg-result">
+                    <p style="font-size:13px color:white;">Vui lòng nhập từ khóa để tìm kiếm</p>
+                </div>
+            `
+        $("#result").append(result1)
+        container1.style.height = '100px';
+        imageGoogle.style.display = 'none';
+        return;
+    }
+    var API_KEY = 'AIzaSyApAutjcG0WckmOI-uQoIaVlve1dO1Ce4E'
     let result = ''
-    var url = 'http://api.serpstack.com/search?access_key=' + API_KEY + "&type=web&query=" + query
+    var url = 'https://www.googleapis.com/customsearch/v1?key=' + API_KEY + "&cx=309416ca1ba204c6b&q=" + query +"&num=3"
     console.log(url);
     $.get(url, function (data) {
         $("#result").html('')
         console.log(data)
-        data.organic_results.forEach(res => {
-            result = `
+        if (data.items == null) {
+            var result =
+                `
             <div class="gg-result">
-                <h4>${res.title}</h4>
-                <a target="_blank" href="${res.url}">${res.url}</a>
-                <p>${res.snippet}</p>
+                <h4>Không tìm thấy kết quả mong đợi</h4>
             </div>
-           
             `
             $("#result").append(result)
-        });
+            container1.style.height = '100px';
+            imageGoogle.style.display = 'none';
+        } else {
+            data.items.forEach(item => {
+                var title = item.title
+                var snippet = item.snippet
+                var link = item.link
+                var result = `
+                <div class="gg-result">
+                    <h4><a target="_blank" href="${link}" style="font-size:13px; color: white;">${title}</a></h4>
+                    <p style="font-size:11px">${snippet}</p>
+                </div>
+            `
+                $("#result").append(result)
+                container1.style.height = 'auto';
+                container1.style.background = 'rgb(25 48 78)';
+                imageGoogle.style.display = 'none';
+                titleGoogle.style.display = 'none';
+            });
+        }
+       
     })
 })

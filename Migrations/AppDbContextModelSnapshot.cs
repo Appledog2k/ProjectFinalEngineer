@@ -168,11 +168,6 @@ namespace ProjectFinalEngineer.Migrations
                     b.Property<int?>("ParentCategoryId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Slug")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -181,9 +176,6 @@ namespace ProjectFinalEngineer.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ParentCategoryId");
-
-                    b.HasIndex("Slug")
-                        .IsUnique();
 
                     b.ToTable("Category");
                 });
@@ -211,6 +203,9 @@ namespace ProjectFinalEngineer.Migrations
                     b.Property<int?>("PostId")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("RoomingHouseId")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
@@ -218,6 +213,8 @@ namespace ProjectFinalEngineer.Migrations
                     b.HasIndex("ParentId");
 
                     b.HasIndex("PostId");
+
+                    b.HasIndex("RoomingHouseId");
 
                     b.ToTable("Comment");
                 });
@@ -255,6 +252,53 @@ namespace ProjectFinalEngineer.Migrations
                     b.ToTable("Contacts");
                 });
 
+            modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateKnowledge.Knowledge", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AuthorId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime>("DateUpdated")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(160)
+                        .HasColumnType("character varying(160)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
+
+                    b.ToTable("Knowledge");
+                });
+
+            modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateKnowledge.KnowledgeCategory", b =>
+                {
+                    b.Property<int>("KnowledgeID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("CategoryID")
+                        .HasColumnType("integer");
+
+                    b.HasKey("KnowledgeID", "CategoryID");
+
+                    b.HasIndex("CategoryID");
+
+                    b.ToTable("KnowledgeCategory");
+                });
+
             modelBuilder.Entity("ProjectFinalEngineer.Models.AggregatePost.Post", b =>
                 {
                     b.Property<int>("PostId")
@@ -286,6 +330,9 @@ namespace ProjectFinalEngineer.Migrations
                         .HasMaxLength(160)
                         .HasColumnType("character varying(160)");
 
+                    b.Property<long>("ViewCount")
+                        .HasColumnType("bigint");
+
                     b.HasKey("PostId");
 
                     b.HasIndex("ApproverId");
@@ -303,9 +350,14 @@ namespace ProjectFinalEngineer.Migrations
                     b.Property<int>("CategoryID")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("KnowledgeId")
+                        .HasColumnType("integer");
+
                     b.HasKey("PostID", "CategoryID");
 
                     b.HasIndex("CategoryID");
+
+                    b.HasIndex("KnowledgeId");
 
                     b.ToTable("PostCategory");
                 });
@@ -387,6 +439,96 @@ namespace ProjectFinalEngineer.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
+            modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.Area", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("ParentAreaId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("ParentCategoryId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentCategoryId");
+
+                    b.ToTable("Area");
+                });
+
+            modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.RommingHouseArea", b =>
+                {
+                    b.Property<int>("AreaID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("RommingHouseID")
+                        .HasColumnType("integer");
+
+                    b.HasKey("AreaID", "RommingHouseID");
+
+                    b.HasIndex("RommingHouseID");
+
+                    b.ToTable("RommingHouseArea");
+                });
+
+            modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.RoomingHouse", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ApproverId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("AuthorId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime>("DateUpdated")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
+
+                    b.Property<bool>("Published")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(160)
+                        .HasColumnType("character varying(160)");
+
+                    b.Property<long>("ViewCount")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApproverId");
+
+                    b.HasIndex("AuthorId");
+
+                    b.ToTable("RoomingHouse");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -461,11 +603,43 @@ namespace ProjectFinalEngineer.Migrations
                         .WithMany("Comments")
                         .HasForeignKey("PostId");
 
+                    b.HasOne("ProjectFinalEngineer.Models.RoomingHouse.RoomingHouse", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("RoomingHouseId");
+
                     b.Navigation("Author");
 
                     b.Navigation("Parent");
 
                     b.Navigation("Post");
+                });
+
+            modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateKnowledge.Knowledge", b =>
+                {
+                    b.HasOne("ProjectFinalEngineer.Models.AggregateUser.AppUser", "Author")
+                        .WithMany()
+                        .HasForeignKey("AuthorId");
+
+                    b.Navigation("Author");
+                });
+
+            modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateKnowledge.KnowledgeCategory", b =>
+                {
+                    b.HasOne("ProjectFinalEngineer.Models.AggregateCategory.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjectFinalEngineer.Models.AggregateKnowledge.Knowledge", "Knowledge")
+                        .WithMany()
+                        .HasForeignKey("KnowledgeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Knowledge");
                 });
 
             modelBuilder.Entity("ProjectFinalEngineer.Models.AggregatePost.Post", b =>
@@ -491,6 +665,10 @@ namespace ProjectFinalEngineer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ProjectFinalEngineer.Models.AggregateKnowledge.Knowledge", null)
+                        .WithMany("PostCategories")
+                        .HasForeignKey("KnowledgeId");
+
                     b.HasOne("ProjectFinalEngineer.Models.AggregatePost.Post", "Post")
                         .WithMany("PostCategories")
                         .HasForeignKey("PostID")
@@ -500,6 +678,49 @@ namespace ProjectFinalEngineer.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Post");
+                });
+
+            modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.Area", b =>
+                {
+                    b.HasOne("ProjectFinalEngineer.Models.RoomingHouse.Area", "ParentArea")
+                        .WithMany("CategoryChildren")
+                        .HasForeignKey("ParentCategoryId");
+
+                    b.Navigation("ParentArea");
+                });
+
+            modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.RommingHouseArea", b =>
+                {
+                    b.HasOne("ProjectFinalEngineer.Models.RoomingHouse.Area", "Area")
+                        .WithMany()
+                        .HasForeignKey("AreaID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjectFinalEngineer.Models.RoomingHouse.RoomingHouse", "RoomingHouse")
+                        .WithMany("RommingHouseAreas")
+                        .HasForeignKey("RommingHouseID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Area");
+
+                    b.Navigation("RoomingHouse");
+                });
+
+            modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.RoomingHouse", b =>
+                {
+                    b.HasOne("ProjectFinalEngineer.Models.AggregateUser.AppUser", "Approver")
+                        .WithMany()
+                        .HasForeignKey("ApproverId");
+
+                    b.HasOne("ProjectFinalEngineer.Models.AggregateUser.AppUser", "Author")
+                        .WithMany()
+                        .HasForeignKey("AuthorId");
+
+                    b.Navigation("Approver");
+
+                    b.Navigation("Author");
                 });
 
             modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateCategory.Category", b =>
@@ -512,11 +733,28 @@ namespace ProjectFinalEngineer.Migrations
                     b.Navigation("Comments");
                 });
 
+            modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateKnowledge.Knowledge", b =>
+                {
+                    b.Navigation("PostCategories");
+                });
+
             modelBuilder.Entity("ProjectFinalEngineer.Models.AggregatePost.Post", b =>
                 {
                     b.Navigation("Comments");
 
                     b.Navigation("PostCategories");
+                });
+
+            modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.Area", b =>
+                {
+                    b.Navigation("CategoryChildren");
+                });
+
+            modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.RoomingHouse", b =>
+                {
+                    b.Navigation("Comments");
+
+                    b.Navigation("RommingHouseAreas");
                 });
 #pragma warning restore 612, 618
         }

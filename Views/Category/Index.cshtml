@@ -38,9 +38,6 @@
                                     <th class="category-list-title">
                                         @Html.DisplayNameFor(model => model.Title)
                                     </th>
-                                    <th class="category-list-url">
-                                        @Html.DisplayNameFor(model => model.Slug)
-                                    </th>
                                     <th class="category-list-task">
                                         <p>Tác vụ</p>
                                     </th>
@@ -75,9 +72,6 @@
                 <a asp-action="Edit" asp-route-id="@item.Id">
                     @Html.DisplayFor(modelItem => item.Title)
                 </a>
-            </td>
-            <td class="category-list-body-url">
-                @Html.DisplayFor(modelItem => item.Slug)
             </td>
             <td class="category-list-body-task">
                 <a asp-action="Details" asp-route-id="@item.Id">Chi tiết</a> |

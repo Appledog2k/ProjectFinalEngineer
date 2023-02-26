@@ -1,15 +1,15 @@
-
 using System.Reflection;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.Extensions.Options;
 using ProjectFinalEngineer.Models.AggregateCategory;
 using ProjectFinalEngineer.Models.AggregateComment;
 using ProjectFinalEngineer.Models.AggregateContact;
+using ProjectFinalEngineer.Models.AggregateKnowledge;
 using ProjectFinalEngineer.Models.AggregatePost;
 using ProjectFinalEngineer.Models.AggregatePostCategory;
 using ProjectFinalEngineer.Models.AggregateUser;
+using ProjectFinalEngineer.Models.RoomingHouse;
 
 namespace ProjectFinalEngineer.EntityFramework;
 
@@ -39,14 +39,20 @@ public class AppDbContext : IdentityDbContext<AppUser>
                 entityType.SetTableName(tableName.Substring(6));
             }
         }
-
-        modelBuilder.Entity<Category>(entity =>
-        {
-            entity.HasIndex(c => c.Slug).IsUnique();
-        });
         modelBuilder.Entity<PostCategory>().HasKey(p => new { p.PostID, p.CategoryID });
+        modelBuilder.Entity<KnowledgeCategory>().HasKey(p => new { p.KnowledgeID, p.CategoryID });
+        modelBuilder.Entity<RommingHouseArea>().HasKey(p => new { p.AreaID, p.RommingHouseID });
+
 
     }
+
+    public DbSet<RommingHouseArea> RommingHouseAreas { get; set; }
+    public DbSet<RoomingHouse> RoomingHouses { get; set; }
+    public DbSet<Area> Areas { get; set; }
+
+    public DbSet<KnowledgeCategory> KnowledgeCategories { get; set; }
+    public DbSet<Knowledge> Knowledges { get; set; }
+
 
 
     public DbSet<Contact> Contacts { get; set; }
