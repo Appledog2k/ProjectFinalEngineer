@@ -1,0 +1,89 @@
+﻿@using ProjectFinalEngineer.Models.RoomingHouse
+@model IEnumerable< ProjectFinalEngineer.Models.RoomingHouse.Area>
+
+@{
+    ViewData["Title"] = "Quản lý khu vực";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/Category/index.css">
+</head>
+
+<section class="category-main">
+    <div>
+        <partial name="_AlertMessage"></partial>
+    </div>
+    <div class="category-main-header">
+        <header>
+            <h3>Quản lý khu vực</h3>
+            <p>Đây là trang quản lý khu vực dành cho chức năng nhà trọ</p>
+        </header>
+    </div>
+    <div>
+        <article class="category">
+            <div class="category-article">
+                <div class="category-article-line">
+                    <div class="category-article-line-title">
+                        <h1>Danh sách chủ đề</h1>
+                    </div>
+                    <div class="category-article-line-createCate">
+                        <p>
+                            <a asp-action="Create">+ Tạo chuyên mục</a>
+                        </p>
+                    </div>
+                    <aside class="category-aside">
+                        <table class="table">
+                            <thead class="category-list">
+                                <tr class="category-list-tr">
+                                    <th class="category-list-title">
+                                        @Html.DisplayNameFor(model => model.Title)
+                                    </th>
+                                    <th class="category-list-task">
+                                        <p>Tác vụ</p>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="category-list-body">
+
+                                @foreach (var item in Model)
+                                {
+                                    await RenderArea(item, 0);
+                                }
+
+                            </tbody>
+                        </table>
+                    </aside>
+                </div>
+            </div>
+            <img class="category-image" src="~/images/avatars/hands-on-community-contributions.svg"
+                 style="width: 310px;">
+        </article>
+    </div>
+</section>
+
+
+@{
+    async Task RenderArea(Area item, int level)
+    {
+        string prefix = string.Concat(Enumerable.Repeat("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;", level));
+        <tr>
+            <td class="category-list-body-title">
+                @Html.Raw(prefix)
+                <a asp-action="Edit" asp-route-id="@item.Id">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </a>
+            </td>
+            <td class="category-list-body-task">
+                <a asp-action="Details" asp-route-id="@item.Id">Chi tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Xóa</a>
+            </td>
+        </tr>
+        if (item.AreaChildren?.Count > 0)
+        {
+            foreach (var cCategory in item.AreaChildren)
+            {
+                await RenderArea(cCategory, level + 1);
+            }
+        }
+    }
+}

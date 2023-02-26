@@ -21,7 +21,7 @@ namespace ProjectFinalEngineer.Models.RoomingHouse
             public string Description { get; set; }
 
             // Các Category con
-            public ICollection<Area> CategoryChildren { get; set; }
+            public ICollection<Area> AreaChildren { get; set; }
 
             // Category cha (FKey)
             [Display(Name = "Danh mục cha")]

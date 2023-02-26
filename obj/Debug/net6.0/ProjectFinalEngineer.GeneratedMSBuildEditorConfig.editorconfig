@@ -88,6 +88,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWZXJpZnlDb2RlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Area/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Area/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Area/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Area/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Area/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
