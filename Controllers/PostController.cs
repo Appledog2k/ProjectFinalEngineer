@@ -197,7 +197,7 @@ public class PostController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, [Bind("PostId,Title,Description,Slug,Content,Published,CategoryIDs")] CreatePostModel post)
+    public async Task<IActionResult> Edit(int id, [Bind("PostId,Title,Content,Published,CategoryIDs")] CreatePostModel post)
     {
         if (id != post.PostId)
         {

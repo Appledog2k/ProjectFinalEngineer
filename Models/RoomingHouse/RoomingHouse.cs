@@ -1,6 +1,4 @@
-﻿using Bogus.DataSets;
-using ProjectFinalEngineer.Models.AggregateComment;
-using ProjectFinalEngineer.Models.AggregatePostCategory;
+﻿using ProjectFinalEngineer.Models.AggregateComment;
 using ProjectFinalEngineer.Models.AggregateUser;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
