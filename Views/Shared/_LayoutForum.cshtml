@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li class="pt">
-                <a>
+                <a asp-controller="Knowledge" asp-action="Index">
                     Kiến thức
                     <span>// hello everyone - xin chào tất cả mọi người</span>
                 </a>
@@ -92,27 +92,27 @@
                 <h3>Liên kết</h3>
                 <ul class="quickLinks">
                     <li>
-                        <a asp-area="Blog" asp-controller="Post" asp-action="Index">
+                        <a asp-controller="Post" asp-action="Index">
                             Diễn đàn
                         </a>
                     </li>
                     <li>
-                        <a href="###">
+                        <a asp-controller="Knowledge" asp-action="Index">
                             Kiến thức
                         </a>
                     </li>
                     <li>
-                        <a asp-area="Blog" asp-controller="Post" asp-action="Index">
+                        <a  asp-controller="Post" asp-action="Index">
                             Tìm trọ
                         </a>
                     </li>
                     <li>
-                        <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                        <a asp-controller="Contact" asp-action="SendContact">
                             Liên hệ
                         </a>
                     </li>
                     <li>
-                        <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                        <a asp-controller="Contact" asp-action="SendContact">
                             Tiện ích
                         </a>
                     </li>

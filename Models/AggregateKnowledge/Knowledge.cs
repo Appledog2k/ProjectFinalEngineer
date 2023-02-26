@@ -19,7 +19,7 @@ namespace ProjectFinalEngineer.Models.AggregateKnowledge
         [Display(Name = "Nội dung")]
         public string Content { set; get; }
 
-        public List<PostCategory> PostCategories { get; set; }
+        public List<KnowledgeCategory> KnowledgeCategories { get; set; }
 
         [Display(Name = "Tác giả")]
         public string AuthorId { set; get; }

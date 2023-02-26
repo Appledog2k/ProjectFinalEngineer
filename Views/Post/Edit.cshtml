@@ -3,10 +3,14 @@
 @{
     ViewData["Title"] = "Cập nhật bài viết";
     var list = ViewData["categories"] as MultiSelectList;
+    Layout = "~/Views/Shared/_LayoutCreate.cshtml";
+    <link rel="stylesheet" href="~/css/Post/create.css">
 }
-
-<h1>@ViewData["Title"]</h1>
-<hr />
+<head>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
 <div class="row">
     <div class="col-md-12">
         <form asp-action="Edit">

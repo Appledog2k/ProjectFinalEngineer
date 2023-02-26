@@ -144,6 +144,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Knowledge/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS25vd2xlZGdlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Knowledge/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS25vd2xlZGdlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Knowledge/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS25vd2xlZGdlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Knowledge/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS25vd2xlZGdlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Knowledge/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS25vd2xlZGdlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Manage/AddPhoneNumber.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlXEFkZFBob25lTnVtYmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,16 @@
+﻿@model ProjectFinalEngineer.Models.AggregateKnowledge.Knowledge
+
+@{
+    ViewData["Title"] = "Xóa kiến thức";
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>Có chắc chắn xóa bài viết?</p>
+<h4>@Model.Title</h4>
+<div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Xóa" class="btn btn-danger" /> |
+        <a asp-action="Index">Danh sách kiến thức</a>
+    </form>
+</div>

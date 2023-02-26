@@ -81,15 +81,17 @@
                                                 <div class="ct-header-analytics">
                                                     <div class="ct-header-analytics-see">
                                                         <div>
-                                                            <i class="far fa-eye"></i>
+                                                            <a asp-action="Edit" asp-route-id="@Model.Post.PostId">
+                                                                <i class="fa fa-pen fa-xs " style="font-size: 13px;"></i>
+                                                            </a>
                                                         </div>
-                                                        <div class="soluong">66</div>
                                                     </div>
                                                     <div class="ct-header-analytics-mess">
                                                         <div>
-                                                            <i class="far fa-comment-dots"></i>
+                                                            <a asp-action="Delete" asp-route-id="@Model.Post.PostId">
+                                                                <i class="far fa-trash-alt" style="font-size: 13px;"></i>
+                                                            </a>
                                                         </div>
-                                                        <div class="soluong">@Model.Post.Comments.Count()</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -104,14 +106,14 @@
                                                 </h1>
                                             </div>
                                             <div class="ct-body-content">
-                                                <p >
+                                                <p>
                                                     @Html.Raw(@Model.Post.Content)
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <partial name="_CommentPartial"/>
+                                <partial name="_CommentPartial" />
                             </div>
                         </div>
                     </div>

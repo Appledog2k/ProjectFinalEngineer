@@ -11,13 +11,11 @@ using App.Models.AggregateExtensions;
 using ProjectFinalEngineer.Models.AggregatePost;
 using ProjectFinalEngineer.BusinessManager;
 using ProjectFinalEngineer.Services.Comment;
-using ProjectFinalEngineer.Models.AggregateComment;
-using Microsoft.Extensions.Hosting;
 
 namespace ProjectFinalEngineer.Controllers;
 
 [Route("/forum/article/[action]/{id?}")]
-[Authorize(Roles = RoleName.Administrator + "," + RoleName.Editor)]
+[Authorize(Roles = RoleName.Administrator + "," + RoleName.Member)]
 public class PostController : Controller
 {
     private readonly AppDbContext _context;
