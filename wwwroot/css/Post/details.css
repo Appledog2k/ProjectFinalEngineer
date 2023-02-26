@@ -324,11 +324,7 @@ button {
     display: flex;
 }
 
-    .contact-element-avatar .ct-image {
-        border-radius: 4px;
-        width: 55px;
-        height: 55px;
-    }
+
 
 .contact-element-content {
     display: flex;
@@ -763,4 +759,15 @@ button {
     margin-left: 70px;
     margin-right: 15px;
     margin-top: 10px;
+}
+p img {
+    width: 300px !important;
+}
+.ct-body-content img {
+    width: 300px !important;
+}
+.contact-element-avatar .ct-image {
+    border-radius: 4px;
+    width: 55px;
+    height: 55px;
 }

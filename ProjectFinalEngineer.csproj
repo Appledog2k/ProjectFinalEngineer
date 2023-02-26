@@ -51,6 +51,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\" />
     <Folder Include="Models\Account\" />
     <Folder Include="Repositories\" />
   </ItemGroup>

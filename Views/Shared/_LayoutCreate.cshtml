@@ -1,0 +1,160 @@
+﻿<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/layoutcreate.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <title>@ViewData["Title"]</title>
+    <link rel="icon" type="image/x-icon" href="~/Images/logo/favicon.ico">
+</head>
+
+<body>
+    <header class="header-create">
+        <a href="#" class="logo">
+            <img width="100px" height="50px" src="~/Images/Avatars/Screenshot_20230209_091816.png" />
+        </a>
+        <ul class="navbar-create">
+            <li class="pt-create">
+                <a asp-controller="Post" asp-action="Index">
+                    Diễn đàn
+                    <span>// hello everyone - xin chào tất cả mọi người</span>
+                </a>
+            </li>
+            <li class="pt-create">
+                <a>
+                    Kiến thức
+                    <span>// hello everyone - xin chào tất cả mọi người</span>
+                </a>
+            </li>
+            <li class="pt-create">
+                <a>
+                    Tìm trọ
+                    <span>// hello everyone - xin chào tất cả mọi người</span>
+                </a>
+            </li>
+            <li class="pt-create">
+                <a asp-controller="Contact" asp-action="SendContact">
+                    Liên hệ
+                    <span>// hello everyone - xin chào tất cả mọi người</span>
+                </a>
+            </li>
+            <li class="pt-create">
+                <a>
+                    Tiện ích
+                    <span>// hello everyone - xin chào tất cả mọi người</span>
+                </a>
+            </li>
+            <li class="pt-create">
+                <partial name="_MenuManagePartial"></partial>
+            </li>
+
+        </ul>
+
+        <div class="main-create">
+            <div class="pt-create">
+                <partial name="_LoginPartial"></partial>
+            </div>
+        </div>
+    </header>
+    <div id="forum">
+        <div class="container-create">
+            @RenderBody()
+        </div>
+    </div>
+    <footer>
+        <div class="footer-header">
+            <div class="footer-header-content">
+                <h3>Bạn có muốn thi thoảng gửi nhận một số tin tức quan trọng?</h3>
+                <div class="footer-header-content-contact">
+                    <input placeholder="Địa chỉ thư điện tử" />
+                    <button>Đăng kí ngay</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="row primary">
+            <div class="column about">
+                <h3>Thông tin</h3>
+                <p>
+                    Xin chào tất cả thành viên trong diễn đàn, chúc các bạn một ngày mới vui vẻ. Mình tên là Nguyễn
+                    Quang
+                    Hùng sinh viên khóa 63 trường Điện - Điện tử Đại học Bách Khoa Hà Nội
+                </p>
+            </div>
+            <div class="column links">
+                <h3>Liên kết</h3>
+                <ul class="quickLinks">
+                    <li>
+                        <a asp-area="Blog" asp-controller="Post" asp-action="Index">
+                            Diễn đàn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="###">
+                            Kiến thức
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="Blog" asp-controller="Post" asp-action="Index">
+                            Tìm trọ
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                            Liên hệ
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                            Tiện ích
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="column subscribe">
+                <h3>Gửi lời nhắn</h3>
+                <div class="btn-col">
+                    <input type="text" placeholder="Gửi lời nhắn tới quản lý">
+                    <button>Gửi lời nhắn</button>
+                </div>
+                <div class="social">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-square-youtube"></i>
+                    <i class="fa-brands fa-square-github"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row secondary">
+            <div>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                </p>
+                <p>+84 962220635</p>
+            </div>
+            <div>
+                <div> <i class="fa-solid fa-envelope"></i></div>
+                <p>hung.nq182556@sis.hust.edu.vn</p>
+            </div>
+            <div>
+                <div> <i class="fa-solid fa-map-location-dot"></i></div>
+                <p>165 Cầu Giấy, Hà Nội, Việt Nam</p>
+            </div>
+        </div>
+        <div class="row copyright">
+            <p>Bản quyền &copy; 2022 Hùng Nguyễn | Appledog2k</p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="~/js/layout.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+
+</html>

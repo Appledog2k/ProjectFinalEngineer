@@ -381,6 +381,10 @@
       "PackagePath": "staticwebassets\\css\\PagingXTL.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Post\\create.css",
+      "PackagePath": "staticwebassets\\css\\Post\\create.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Post\\details.css",
       "PackagePath": "staticwebassets\\css\\Post\\details.css"
     },
@@ -439,6 +443,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\layoutbase.css",
       "PackagePath": "staticwebassets\\css\\layoutbase.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\layoutcreate.css",
+      "PackagePath": "staticwebassets\\css\\layoutcreate.css"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\loginpartial.css",
