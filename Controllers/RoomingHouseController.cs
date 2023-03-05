@@ -83,7 +83,7 @@ namespace ProjectFinalEngineer.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title,Content,Price,Published,CategoryIDs")] CreateRoomingHouseModel roomingHouse)
+        public async Task<IActionResult> Create([Bind("Title,Content,Price,CategoryIDs")] CreateRoomingHouseModel roomingHouse)
         {
             var areas = await _context.Areas.ToListAsync();
             ViewData["areas"] = new MultiSelectList(areas, "Id", "Title");

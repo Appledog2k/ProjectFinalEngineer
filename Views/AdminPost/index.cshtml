@@ -135,11 +135,14 @@
                                                                     </div>
                                                             </button>
                                                         }
-                                                        <a asp-action="Edit" asp-route-id="@item.PostId">
-                                                            <div class="ct-header-analytics-mess">
-                                                                <div class="soluong">Từ chối</div>
-                                                            </div>
-                                                        </a>
+                                                        @if (item.Priority == 1)
+                                                        {
+                                                            <a asp-action="Refuse" asp-route-id="@item.PostId">
+                                                                <div class="ct-header-analytics-mess">
+                                                                    <div class="soluong">Từ chối</div>
+                                                                </div>
+                                                            </a>
+                                                        }
 
                                                     </div>
                                                 </div>

@@ -14,22 +14,14 @@ using ProjectFinalEngineer.Services.Comment;
 
 namespace ProjectFinalEngineer.Controllers
 {
-    [Route("/AdminPost/[action]/{id?}")]
+    [Route("/forum/AdminPost/[action]/{id?}")]
     [Authorize(Roles = RoleName.Administrator + "," + RoleName.Member)]
     public class AdminPostController : Controller
     {
         private readonly AppDbContext _context;
-        private readonly UserManager<AppUser> _userManager;
-        private readonly ICommentBusinessManager _commentBusinessManager;
-        private readonly ICommentService _commentService;
-        public AdminPostController(AppDbContext context, UserManager<AppUser> userManager,
-            ICommentBusinessManager commentBusinessManager,
-            ICommentService commentService)
+        public AdminPostController(AppDbContext context)
         {
             _context = context;
-            _userManager = userManager;
-            _commentBusinessManager = commentBusinessManager;
-            _commentService = commentService;
         }
         [TempData]
         public string StatusMessage { get; set; }
@@ -37,8 +29,8 @@ namespace ProjectFinalEngineer.Controllers
         public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString = null)
         {
             var posts = _context.Posts
-                .OrderByDescending(p => p.DateUpdated)
-                .ThenBy(p=>p.Priority)
+                .OrderBy(p => p.Priority)
+                .ThenByDescending(p => p.DateUpdated)
                 .Include(p => p.Author)
                 .Include(post => post.Comments)
                 .Where(x => x.Published == false);
@@ -117,7 +109,7 @@ namespace ProjectFinalEngineer.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Refuse(int? id)
         {
             if (id == null)
             {
@@ -138,14 +130,19 @@ namespace ProjectFinalEngineer.Controllers
                 return NotFound();
             }
 
-            var postEdit = new CreatePostModel();
+            var postEdit = new CreatePostModel()
+            {
+                PostId = post.PostId,
+                Reason = post.Reason,
+                Title = post.Title,
+            };
             var categories = await _context.Categories.ToListAsync();
             ViewData["categories"] = new MultiSelectList(categories, "Id", "Title");
             return View(postEdit);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Reason")] CreatePostModel post)
+        public async Task<IActionResult> Refuse(int id, [Bind("PostId,Title,Reason")] CreatePostModel post)
         {
             if (id != post.PostId)
             {
@@ -167,7 +164,7 @@ namespace ProjectFinalEngineer.Controllers
                     postUpdate.DateUpdated = DateTime.Now;
                     postUpdate.Reason = post.Reason;
                     postUpdate.Priority = 2;
-
+                    postUpdate.Title = post.Title;
                     // Update PostCategory
                     post.CategoryIDs ??= new int[] { };
 

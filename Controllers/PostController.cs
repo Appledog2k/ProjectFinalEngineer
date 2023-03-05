@@ -161,7 +161,7 @@ public class PostController : Controller
 
     // GET: Blog/Post/Edit/5
 
-    public async Task<IActionResult> Edit(int? id)
+    public async Task<IActionResult> Update(int? id)
     {
         if (id == null)
         {
@@ -187,7 +187,6 @@ public class PostController : Controller
             PostId = post.PostId,
             Title = post.Title,
             Content = post.Content,
-            Published = post.Published,
             CategoryIDs = post.PostCategories.Select(pc => pc.CategoryID).ToArray()
         };
 
@@ -197,12 +196,10 @@ public class PostController : Controller
         return View(postEdit);
     }
 
-    // POST: Blog/Post/Edit/5
-    // To protect from overposting attacks, enable the specific properties you want to bind to.
-    // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, [Bind("PostId,Title,Content,Published,CategoryIDs")] CreatePostModel post)
+    public async Task<IActionResult> Update(int id, [Bind("PostId,Title,Content,CategoryIDs")] CreatePostModel post)
     {
         if (id != post.PostId)
         {
@@ -223,7 +220,6 @@ public class PostController : Controller
 
                 postUpdate.Title = post.Title;
                 postUpdate.Content = post.Content;
-                postUpdate.Published = post.Published;
                 postUpdate.DateUpdated = DateTime.Now;
 
                 // Update PostCategory
