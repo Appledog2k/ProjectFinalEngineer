@@ -2,13 +2,13 @@
 
 @{
     ViewData["Title"] = "Kiến thức";
-    Layout = "~/Views/Shared/_LayoutForum.cshtml";
+    Layout = "~/Views/Shared/_LayoutHouse.cshtml";
 }
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/css/Post/index.css">
+    <link rel="stylesheet" href="~/css/House/house.css">
     <title>@ViewData["Title"]</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap"
           rel="stylesheet">
@@ -204,26 +204,26 @@
                         </div>
                         @*serp stack*@
                         <div class="container-ex-1">
-                            <div class="wt-title"><p>Google</p></div>
-                            <form id="form" autocomplete="off" class="search-box">
+                            <div class="wt-title"><p>Đăng ký tìm trọ</p></div>
+                            @*<form id="form" autocomplete="off" class="search-box">
                                 <i class="fab fa-google loca-icon"></i>
                                 <input type="text" id="search" placeholder="Vui lòng nhập từ khóa">
                                 <button>
                                     <i class="fas fa-search"></i>
                                 </button>
-                            </form>
+                            </form>*@
                             <div class="image-google">
-                                <img width="144px;" height="144px;" src="~/images/avatars/icons8-google-news22.svg" style=" margin-left:50px;" />
-                                <div class="google-search">
+                                <img width="220px;" height="160px;" src="~/images/avatars/Bạn mong muốn gì.jpg " style=" margin-left:20px; color: aquamarine" />
+                                @*<div class="google-search">
                                     <div class="google-search-element">Tìm kiếm thông tin với google</div>
-                                </div>
+                                </div>*@
                             </div>
                             <div id="result">
                             </div>
                         </div>
                         <div class="container-ex-2">
-                            <div class="img-ex-2"><img width="134px;" height="110px;" src="~/images/avatars/news-1.jpg" /></div>
-                            <div class="title-ex-2">
+                            <div class="img-ex-2"><img width="229px;" height="160px;" src="~/images/avatars/Screenshot_11.png" style=" margin-left:10px; color: aquamarine" /></div>
+                            @*<div class="title-ex-2">
                                 <p>
                                     Đại học bách khoa Hà Nội
                                 </p>
@@ -232,7 +232,7 @@
                                 <a href="https://ctt.hust.edu.vn/" target="_blank">
                                     Cổng thông tin
                                 </a>
-                            </div>
+                            </div>*@
                         </div>
                     </div>
                 </aside>

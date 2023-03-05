@@ -8,6 +8,7 @@ using ProjectFinalEngineer.Models.AggregateRole;
 using ProjectFinalEngineer.EntityFramework;
 using ProjectFinalEngineer.Models.AggregateUser;
 using App.Models.AggregateExtensions;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using ProjectFinalEngineer.Models.AggregatePost;
 using ProjectFinalEngineer.BusinessManager;
 using ProjectFinalEngineer.Services.Comment;
@@ -41,9 +42,13 @@ public class PostController : Controller
         var posts = _context.Posts
             .OrderByDescending(p => p.DateUpdated)
             .Include(p => p.Author)
-            .Include(post => post.Comments);
-        //.Where(post => post.Title.Contains(searchString) || post.Content.Contains(searchString));
-
+            .Include(post => post.Comments)
+            .Where(x => x.Published == false);
+            
+        if (searchString != null)
+        {
+            posts = posts.Where(post => post.Title.Contains(searchString) || post.Content.Contains(searchString));
+        }
 
         int totalPosts = await posts.CountAsync();
         if (pagesize <= 0) pagesize = 10;
@@ -275,9 +280,8 @@ public class PostController : Controller
             return NotFound();
         }
 
-        var post = await _context.Posts
-            .Include(p => p.Author)
-            .FirstOrDefaultAsync(m => m.PostId == id);
+        var post = await _context.Posts.Include(p => p.Comments)
+            .Include(p=>p.Author).FirstOrDefaultAsync(m => m.PostId == id);
         if (post == null)
         {
             return NotFound();
@@ -291,16 +295,21 @@ public class PostController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
-        var post = await _context.Posts.FindAsync(id);
+        var post = await _context.Posts.Include(p => p.Comments)
+            .Include(p => p.Author).FirstOrDefaultAsync(m => m.PostId == id);
 
         if (post == null)
         {
             return NotFound();
         }
 
-        _context.Posts.Remove(post);
-        await _context.SaveChangesAsync();
+        // Remove all comments related to the post
+        _context.Comments.RemoveRange(post.Comments);
 
+        // Remove the post
+        _context.Posts.Remove(post);
+
+        await _context.SaveChangesAsync();
         StatusMessage = "Bạn vừa xóa bài viết: " + post.Title;
 
         return RedirectToAction(nameof(Index));

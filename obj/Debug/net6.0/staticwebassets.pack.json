@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\Images\\Avatars\\404.png"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\Bạn mong muốn gì.jpg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\Bạn mong muốn gì.jpg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\Screenshot_11.png",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\Screenshot_11.png"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\Screenshot_20230209_091816.png",
       "PackagePath": "staticwebassets\\Images\\Avatars\\Screenshot_20230209_091816.png"
     },
@@ -145,6 +153,10 @@
       "PackagePath": "staticwebassets\\Images\\Avatars\\object-oriented-principles-in-php.svg"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\phong-tro-tan-binh-phongtro123_1621567479.jpg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\phong-tro-tan-binh-phongtro123_1621567479.jpg"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\php-for-beginners.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\php-for-beginners.svg"
     },
@@ -269,6 +281,14 @@
       "PackagePath": "staticwebassets\\Images\\home\\home-root.svg"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\home\\logo.svg",
+      "PackagePath": "staticwebassets\\Images\\home\\logo.svg"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\home\\logobeau.svg",
+      "PackagePath": "staticwebassets\\Images\\home\\logobeau.svg"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\home\\world-home.svg",
       "PackagePath": "staticwebassets\\Images\\home\\world-home.svg"
     },
@@ -355,6 +375,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\DatabaseManage\\dbmanagedel.css",
       "PackagePath": "staticwebassets\\css\\DatabaseManage\\dbmanagedel.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\House\\house.css",
+      "PackagePath": "staticwebassets\\css\\House\\house.css"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\LayoutForum.css",
@@ -463,6 +487,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\CommentPartial.js",
       "PackagePath": "staticwebassets\\js\\CommentPartial.js"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\Post\\Create.js",
+      "PackagePath": "staticwebassets\\js\\Post\\Create.js"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\Post\\Details.js",

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60">
+    <rect x="10" y="10" width="40" height="40" fill="#006699" />
+    <rect x="60" y="10" width="40" height="40" fill="#009933" />
+    <rect x="110" y="10" width="40" height="40" fill="#ffcc00" />
+    <rect x="160" y="10" width="40" height="40" fill="#cc0000" />
+    <text x="20" y="55" font-size="25" fill="#ffffff">HUST</text>
+    <text x="75" y="55" font-size="25" fill="#ffffff">SEEE</text>
+</svg>

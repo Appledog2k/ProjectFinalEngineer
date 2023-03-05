@@ -79,7 +79,7 @@ namespace ProjectFinalEngineer.Controllers
                 await _userManager.AddToRoleAsync(useradmin, RoleName.Administrator);
 
             }
-            SeedPostCategory();
+            //SeedPostCategory();
             StatusMessage = "Vừa tạo dữ liệu mẫu thành công";
             return RedirectToAction("ManageDatabase");
         }

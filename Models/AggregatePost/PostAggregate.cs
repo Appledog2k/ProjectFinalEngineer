@@ -40,6 +40,7 @@ public class Post
     public DateTime DateUpdated { set; get; }
 
     public long ViewCount { set; get; }
+    public long ReactCount { set; get; }
     public virtual IEnumerable<Comment> Comments { get; set; }
 
 }

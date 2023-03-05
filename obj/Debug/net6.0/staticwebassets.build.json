@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "J4xLof9axieix/gaQ14EDBzLyXuxWIHa8XeqBtOCYT8=",
+  "Hash": "VsS0/c3jtT0mtyoxVq71s/3gU6RT9B7aCkSY71PsQ5c=",
   "Source": "ProjectFinalEngineer",
   "BasePath": "_content/ProjectFinalEngineer",
   "Mode": "Default",
@@ -287,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\home.css"
+    },
+    {
+      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\House\\house.css",
+      "SourceId": "ProjectFinalEngineer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\",
+      "BasePath": "_content/ProjectFinalEngineer",
+      "RelativePath": "css/House/house.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\House\\house.css"
     },
     {
       "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\layout.css",
@@ -799,6 +816,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\Avatars\\avatar4.png"
     },
     {
+      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\Bạn mong muốn gì.jpg",
+      "SourceId": "ProjectFinalEngineer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\",
+      "BasePath": "_content/ProjectFinalEngineer",
+      "RelativePath": "Images/Avatars/Bạn mong muốn gì.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Avatars\\Bạn mong muốn gì.jpg"
+    },
+    {
       "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\clean-code-logo.svg",
       "SourceId": "ProjectFinalEngineer",
       "SourceType": "Discovered",
@@ -1292,6 +1326,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\Avatars\\object-oriented-principles-in-php.svg"
     },
     {
+      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\phong-tro-tan-binh-phongtro123_1621567479.jpg",
+      "SourceId": "ProjectFinalEngineer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\",
+      "BasePath": "_content/ProjectFinalEngineer",
+      "RelativePath": "Images/Avatars/phong-tro-tan-binh-phongtro123_1621567479.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Avatars\\phong-tro-tan-binh-phongtro123_1621567479.jpg"
+    },
+    {
       "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\php-for-beginners.svg",
       "SourceId": "ProjectFinalEngineer",
       "SourceType": "Discovered",
@@ -1324,6 +1375,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Avatars\\rain.png"
+    },
+    {
+      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\Screenshot_11.png",
+      "SourceId": "ProjectFinalEngineer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\",
+      "BasePath": "_content/ProjectFinalEngineer",
+      "RelativePath": "Images/Avatars/Screenshot_11.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Avatars\\Screenshot_11.png"
     },
     {
       "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\Screenshot_20230209_091816.png",
@@ -1664,6 +1732,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\home\\home-root.svg"
+    },
+    {
+      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\home\\logo.svg",
+      "SourceId": "ProjectFinalEngineer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\",
+      "BasePath": "_content/ProjectFinalEngineer",
+      "RelativePath": "Images/home/logo.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\home\\logo.svg"
+    },
+    {
+      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\home\\logobeau.svg",
+      "SourceId": "ProjectFinalEngineer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\",
+      "BasePath": "_content/ProjectFinalEngineer",
+      "RelativePath": "Images/home/logobeau.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\home\\logobeau.svg"
     },
     {
       "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\home\\world.svg",
@@ -2072,6 +2174,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\management.js"
+    },
+    {
+      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\Post\\Create.js",
+      "SourceId": "ProjectFinalEngineer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\",
+      "BasePath": "_content/ProjectFinalEngineer",
+      "RelativePath": "js/Post/Create.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Post\\Create.js"
     },
     {
       "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\js\\Post\\Details.js",

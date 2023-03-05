@@ -33,5 +33,7 @@ namespace ProjectFinalEngineer.Models.AggregateKnowledge
 
         [Display(Name = "Ngày cập nhật")]
         public DateTime DateUpdated { set; get; }
+        public long ViewCount { set; get; }
+        public long ReactCount { set; get; }
     }
 }
