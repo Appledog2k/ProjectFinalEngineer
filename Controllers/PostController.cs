@@ -8,7 +8,6 @@ using ProjectFinalEngineer.Models.AggregateRole;
 using ProjectFinalEngineer.EntityFramework;
 using ProjectFinalEngineer.Models.AggregateUser;
 using App.Models.AggregateExtensions;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using ProjectFinalEngineer.Models.AggregatePost;
 using ProjectFinalEngineer.BusinessManager;
 using ProjectFinalEngineer.Services.Comment;
@@ -35,7 +34,6 @@ public class PostController : Controller
 
     [TempData]
     public string StatusMessage { get; set; }
-    // GET: Blog/Post
     [AllowAnonymous]
     public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString = null)
     {
@@ -43,7 +41,7 @@ public class PostController : Controller
             .OrderByDescending(p => p.DateUpdated)
             .Include(p => p.Author)
             .Include(post => post.Comments)
-            .Where(x => x.Published == false);
+            .Where(x => x.Published == true);
             
         if (searchString != null)
         {
@@ -128,7 +126,7 @@ public class PostController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Title,Content,Published,CategoryIDs")] CreatePostModel post)
+    public async Task<IActionResult> Create([Bind("Title,Content,CategoryIDs")] CreatePostModel post)
     {
         var categories = await _context.Categories.ToListAsync();
         ViewData["categories"] = new MultiSelectList(categories, "Id", "Title");
@@ -139,6 +137,8 @@ public class PostController : Controller
             var user = await _userManager.GetUserAsync(this.User);
             post.DateCreated = post.DateUpdated = DateTime.Now;
             post.AuthorId = user.Id;
+            post.Published = false;
+            post.Priority = 1;
             _context.Add(post);
 
             if (post.CategoryIDs != null)

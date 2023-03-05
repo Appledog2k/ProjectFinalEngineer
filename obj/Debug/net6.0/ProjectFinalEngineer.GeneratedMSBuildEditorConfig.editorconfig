@@ -88,6 +88,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWZXJpZnlDb2RlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/AdminPost/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qb3N0XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/AdminPost/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qb3N0XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/AdminPost/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qb3N0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Area/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

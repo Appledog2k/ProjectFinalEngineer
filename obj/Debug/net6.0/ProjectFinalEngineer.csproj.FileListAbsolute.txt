@@ -640,3 +640,10 @@ E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngi
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ref\ProjectFinalEngineer.dll
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.Resource.resources
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.csproj.GenerateResource.cache
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\System.Web.Razor.dll
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\System.Web.Helpers.dll
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\System.Web.WebPages.dll
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\System.Web.Mvc.dll

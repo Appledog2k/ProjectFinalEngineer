@@ -41,6 +41,9 @@ public class Post
 
     public long ViewCount { set; get; }
     public long ReactCount { set; get; }
+    public int Priority { set; get; }
+    // Lý do từ chối
+    public string Reason { set; get; }
     public virtual IEnumerable<Comment> Comments { get; set; }
 
 }

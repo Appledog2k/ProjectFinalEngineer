@@ -13,7 +13,7 @@ using ProjectFinalEngineer.Models.RoomingHouse;
 
 namespace ProjectFinalEngineer.Controllers
 {
-    [Route("/forum/roominghouse/[action]/{id?}")]
+    [Route("/RoomingHouse/[action]/{id?}")]
     [Authorize(Roles = RoleName.Administrator + "," + RoleName.Member)]
     public class RoomingHouseController : Controller
     {
