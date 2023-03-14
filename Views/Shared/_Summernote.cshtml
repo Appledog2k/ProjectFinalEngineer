@@ -8,11 +8,10 @@
 
 }
 <script>
-
     $(document).ready(function () {
-        $('@Model.IDEditor').summernote({
-            height: @Model.height,
-            toolbar: @Html.Raw(Model.toolbar)
+        $('@Model.IdEditor').summernote({
+            height: @Model.Height,
+            toolbar: @Html.Raw(Model.Toolbar)
             });
     });
 </script>

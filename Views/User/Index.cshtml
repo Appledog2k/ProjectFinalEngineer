@@ -1,5 +1,5 @@
-@using App.Models.AggregateExtensions
 @using ProjectFinalEngineer.Models.AggregateUser;
+@using ProjectFinalEngineer.Models.AggregateExtensions
 @model UserListModel
 @{
     ViewData["Title"] = "Danh sách thành viên";
@@ -26,19 +26,19 @@
                     <h1>Danh sách các thành viên</h1>
                     <aside class="userArea-aside">
                         <div class="userArea-total">
-                            <p>Tổng số thành viên: @Model.totalUsers</p>
+                            <p>Tổng số thành viên: @Model.TotalUsers</p>
                         </div>
                         <dl>
                             <div class="userArea-name">
                                 <dt>Tên thành viên</dt>
-                                @foreach (var user in Model.users)
+                                @foreach (var user in Model.Users)
                                 {
                                     <dd>@user.UserName</dd>
                                 }
                             </div>
                             <div class="userArea-role">
                                 <dt>Vai trò</dt>
-                                @foreach (var user in Model.users)
+                                @foreach (var user in Model.Users)
                                 {
                                     <dd>
                                         @if (string.IsNullOrEmpty(user.RoleNames))
@@ -54,7 +54,7 @@
                             </div>
                             <div class="userArea-task">
                                 <dt>Tác vụ</dt>
-                                @foreach (var user in Model.users)
+                                @foreach (var user in Model.Users)
                                 {
                                     <dd>
                                         <div class="form-task">
@@ -73,12 +73,12 @@
     </div>
 </section>     
 @{
-    var pagingmodel = new PagingModel()
+    var pagingModel = new PagingModel()
             {
-                currentpage = Model.currentPage,
-                countpages = Model.countPages,
-                generateUrl = (int? p) => Url.Action("Index", new { p = p })
+                CurrentPage = Model.CurrentPage,
+                CountPages = Model.CountPages,
+                GenerateUrl = (int? p) => Url.Action("Index", new { p = p })
             };
 }
 
-<partial name="_PagingXTL" model="@pagingmodel" />
+<partial name="_PagingXTL" model="@pagingModel" />

@@ -45,13 +45,13 @@ namespace ProjectFinalEngineer.Controllers
         [TempData]
         public string StatusMessage { set; get; }
         // GET: Contact/Create
-        [HttpGet("/contact/")]
+        [HttpGet("/SendContact/")]
         [AllowAnonymous]
         public IActionResult SendContact()
         {
             return View();
         }
-        [HttpPost("/contact/")]
+        [HttpPost("/SendContact/")]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> SendContact([Bind("FullName,Email,Message,Phone")] ContactModel contact)

@@ -192,6 +192,7 @@ namespace ProjectFinalEngineer.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Content")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime>("CreatedOn")
@@ -272,6 +273,9 @@ namespace ProjectFinalEngineer.Migrations
                     b.Property<DateTime>("DateUpdated")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<string>("Media")
+                        .HasColumnType("text");
+
                     b.Property<long>("ReactCount")
                         .HasColumnType("bigint");
 
@@ -292,15 +296,23 @@ namespace ProjectFinalEngineer.Migrations
 
             modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateKnowledge.KnowledgeCategory", b =>
                 {
-                    b.Property<int>("KnowledgeID")
+                    b.Property<int>("KnowledgeId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("CategoryID")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("integer");
 
-                    b.HasKey("KnowledgeID", "CategoryID");
+                    b.Property<int?>("CategoryID")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("KnowledgeID")
+                        .HasColumnType("integer");
+
+                    b.HasKey("KnowledgeId", "CategoryId");
 
                     b.HasIndex("CategoryID");
+
+                    b.HasIndex("KnowledgeID");
 
                     b.ToTable("KnowledgeCategory");
                 });
@@ -327,6 +339,9 @@ namespace ProjectFinalEngineer.Migrations
 
                     b.Property<DateTime>("DateUpdated")
                         .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Media")
+                        .HasColumnType("text");
 
                     b.Property<int>("Priority")
                         .HasColumnType("integer");
@@ -359,15 +374,15 @@ namespace ProjectFinalEngineer.Migrations
 
             modelBuilder.Entity("ProjectFinalEngineer.Models.AggregatePostCategory.PostCategory", b =>
                 {
-                    b.Property<int>("PostID")
+                    b.Property<int>("PostId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("CategoryID")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("integer");
 
-                    b.HasKey("PostID", "CategoryID");
+                    b.HasKey("PostId", "CategoryId");
 
-                    b.HasIndex("CategoryID");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("PostCategory");
                 });
@@ -463,9 +478,6 @@ namespace ProjectFinalEngineer.Migrations
                     b.Property<int?>("ParentAreaId")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("ParentCategoryId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -473,20 +485,28 @@ namespace ProjectFinalEngineer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ParentCategoryId");
+                    b.HasIndex("ParentAreaId");
 
                     b.ToTable("Area");
                 });
 
             modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.RommingHouseArea", b =>
                 {
-                    b.Property<int>("AreaID")
+                    b.Property<int>("AreaId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("RommingHouseID")
+                    b.Property<int>("RommingHouseId")
                         .HasColumnType("integer");
 
-                    b.HasKey("AreaID", "RommingHouseID");
+                    b.Property<int?>("AreaID")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("RommingHouseID")
+                        .HasColumnType("integer");
+
+                    b.HasKey("AreaId", "RommingHouseId");
+
+                    b.HasIndex("AreaID");
 
                     b.HasIndex("RommingHouseID");
 
@@ -515,6 +535,10 @@ namespace ProjectFinalEngineer.Migrations
 
                     b.Property<DateTime>("DateUpdated")
                         .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<float>("Price")
                         .HasColumnType("real");
@@ -646,15 +670,11 @@ namespace ProjectFinalEngineer.Migrations
                 {
                     b.HasOne("ProjectFinalEngineer.Models.AggregateCategory.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryID");
 
                     b.HasOne("ProjectFinalEngineer.Models.AggregateKnowledge.Knowledge", "Knowledge")
                         .WithMany("KnowledgeCategories")
-                        .HasForeignKey("KnowledgeID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("KnowledgeID");
 
                     b.Navigation("Category");
 
@@ -680,13 +700,13 @@ namespace ProjectFinalEngineer.Migrations
                 {
                     b.HasOne("ProjectFinalEngineer.Models.AggregateCategory.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryID")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ProjectFinalEngineer.Models.AggregatePost.Post", "Post")
                         .WithMany("PostCategories")
-                        .HasForeignKey("PostID")
+                        .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -699,7 +719,7 @@ namespace ProjectFinalEngineer.Migrations
                 {
                     b.HasOne("ProjectFinalEngineer.Models.RoomingHouse.Area", "ParentArea")
                         .WithMany("AreaChildren")
-                        .HasForeignKey("ParentCategoryId");
+                        .HasForeignKey("ParentAreaId");
 
                     b.Navigation("ParentArea");
                 });
@@ -708,15 +728,11 @@ namespace ProjectFinalEngineer.Migrations
                 {
                     b.HasOne("ProjectFinalEngineer.Models.RoomingHouse.Area", "Area")
                         .WithMany()
-                        .HasForeignKey("AreaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AreaID");
 
                     b.HasOne("ProjectFinalEngineer.Models.RoomingHouse.RoomingHouse", "RoomingHouse")
                         .WithMany("RommingHouseAreas")
-                        .HasForeignKey("RommingHouseID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RommingHouseID");
 
                     b.Navigation("Area");
 

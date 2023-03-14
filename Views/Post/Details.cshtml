@@ -12,6 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap"
           rel="stylesheet">
     <script src="~/js/Post/Details.js"></script>
+    <script>
+
+        $('button[type="submit"]').click(function (e) {
+            $(this).addClass('liked');
+        });
+    </script>
 </head>
 <body>
     <partial name="_AlertMessage" />
@@ -78,22 +84,25 @@
                                                 <h4>
                                                     @Html.DisplayFor(model => model.Post.Author.UserName)
                                                 </h4>
-                                                <div class="ct-header-analytics">
-                                                    <div class="ct-header-analytics-see">
-                                                        <div>
-                                                            <a asp-action="Update" asp-route-id="@Model.Post.PostId">
-                                                                <i class="fa fa-pen fa-xs " style="font-size: 13px;"></i>
-                                                            </a>
+                                                @if (User.IsInRole("Administrator") || Model.Post.AuthorId == User.Identity?.Name)
+                                                {
+                                                    <div class="ct-header-analytics">
+                                                        <div class="ct-header-analytics-see">
+                                                            <div>
+                                                                <a asp-action="Update" asp-route-id="@Model.Post.PostId">
+                                                                    <i class="fa fa-pen fa-xs " style="font-size: 15px; color: white;"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ct-header-analytics-mess">
+                                                            <div>
+                                                                <a asp-action="Delete" asp-route-id="@Model.Post.PostId">
+                                                                    <i class="far fa-trash-alt" style="font-size: 15px; color: white"></i>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="ct-header-analytics-mess">
-                                                        <div>
-                                                            <a asp-action="Delete" asp-route-id="@Model.Post.PostId">
-                                                                <i class="far fa-trash-alt" style="font-size: 13px;"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                }
                                             </div>
                                             <div class="ct-body-time">
                                                 <p>
@@ -107,9 +116,21 @@
                                             </div>
                                             <div class="ct-body-content">
                                                 <p>
+                                                    @Html.Raw(@Model.Post.Media)
+                                                </p>
+                                            </div>
+                                            <div class="ct-body-content">
+                                                <p>
                                                     @Html.Raw(@Model.Post.Content)
                                                 </p>
                                             </div>
+
+                                            @using (Html.BeginForm("ActionReact", "Post", new { postId = @Model.Post.PostId }, FormMethod.Post))
+                                            {
+                                                <button type="submit"  style="background: transparent; color:white; border: none; font-size: 20px;">
+                                                    <i class="far fa-thumbs-up"></i>
+                                                </button>
+                                            }
                                         </div>
                                     </div>
                                 </div>
@@ -201,3 +222,5 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
 </body>
+
+

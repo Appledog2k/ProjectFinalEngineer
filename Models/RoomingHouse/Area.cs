@@ -9,26 +9,23 @@ namespace ProjectFinalEngineer.Models.RoomingHouse
 
             [Key]
             public int Id { get; set; }
-            // Tiều đề Category
-            [Required(ErrorMessage = "Phải có tên danh mục")]
+
+            [Required(ErrorMessage = "Phải có tên khu vực")]
             [StringLength(100, MinimumLength = 3, ErrorMessage = "{0} dài {1} đến {2}")]
-            [Display(Name = "Tên danh mục")]
+            [Display(Name = "Tên khu vực")]
             public string Title { get; set; }
 
-            // Nội dung, thông tin chi tiết về Category
             [DataType(DataType.Text)]
-            [Display(Name = "Nội dung danh mục")]
+            [Display(Name = "Mô tả ngắn gọn")]
             public string Description { get; set; }
 
-            // Các Category con
             public ICollection<Area> AreaChildren { get; set; }
 
-            // Category cha (FKey)
-            [Display(Name = "Danh mục cha")]
+            [Display(Name = "Khu vực cha")]
             public int? ParentAreaId { get; set; }
 
-            [ForeignKey("ParentCategoryId")]
-            [Display(Name = "Danh mục cha")]
+            [ForeignKey("ParentAreaId")]
+            [Display(Name = "Khu vực cha")]
             public Area ParentArea { set; get; }
 
         }

@@ -34,14 +34,14 @@ public class AppDbContext : IdentityDbContext<AppUser>
         foreach (var entityType in modelBuilder.Model.GetEntityTypes())
         {
             var tableName = entityType.GetTableName();
-            if (tableName.StartsWith("AspNet"))
+            if (tableName != null && tableName.StartsWith("AspNet"))
             {
                 entityType.SetTableName(tableName.Substring(6));
             }
         }
-        modelBuilder.Entity<PostCategory>().HasKey(p => new { p.PostID, p.CategoryID });
-        modelBuilder.Entity<KnowledgeCategory>().HasKey(p => new { p.KnowledgeID, p.CategoryID });
-        modelBuilder.Entity<RommingHouseArea>().HasKey(p => new { p.AreaID, p.RommingHouseID });
+        modelBuilder.Entity<PostCategory>().HasKey(p => new { p.PostId, p.CategoryId });
+        modelBuilder.Entity<KnowledgeCategory>().HasKey(p => new { p.KnowledgeId, p.CategoryId });
+        modelBuilder.Entity<RommingHouseArea>().HasKey(p => new { p.AreaId, p.RommingHouseId });
 
 
     }
@@ -52,8 +52,6 @@ public class AppDbContext : IdentityDbContext<AppUser>
 
     public DbSet<KnowledgeCategory> KnowledgeCategories { get; set; }
     public DbSet<Knowledge> Knowledges { get; set; }
-
-
 
     public DbSet<Contact> Contacts { get; set; }
     public DbSet<Comment> Comments { get; set; }

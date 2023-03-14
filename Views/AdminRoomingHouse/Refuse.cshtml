@@ -1,0 +1,73 @@
+﻿@model ProjectFinalEngineer.Models.RoomingHouse.CreateRoomingHouseModel
+
+@{
+    ViewData["Title"] = "Từ chối bài đăng";
+    Layout = "~/Views/Shared/_LayoutCreate.cshtml";
+}
+
+<head>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Post/create.css">
+    <script src="~/js/Post/Create.js"></script>
+
+</head>
+
+
+<section class="db-main">
+    <div class="db-main-header">
+        <header>
+            <h3>Từ chối bài viết</h3>
+            <p>Vui lòng cập nhật lý do bài viết bị từ chối</p>
+        </header>
+    </div>
+    <div>
+        <article class="db">
+            <div class="db-article">
+                <div class="db-article-line">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form asp-action="Refuse">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <input type="hidden" asp-for="Id" />
+                                <div class="form-group">
+                                    <label asp-for="Title" class="control-label"></label>
+                                    <input asp-for="Title" class="form-control"  />
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Reason" class="control-label"></label>
+                                    <textarea asp-for="Reason" class="form-control"></textarea>
+                                    <span asp-validation-for="Reason" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Từ chối" class="btn btn-primary" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+@section Scripts {
+
+    <script src="~/lib/multiple-select/multiple-select.min.js"></script>
+    <link rel="stylesheet" href="~/lib/multiple-select/multiple-select.min.css" />
+    <partial name="_ValidationScriptsPartial" />
+    @{
+        var summernote = new ProjectFinalEngineer.Models.AggregateSummernote.Summernote("#Reason")
+                {
+                    Height = 200
+                };
+    }
+    <partial name="_Summernote" model="summernote" />
+}
+
+
+

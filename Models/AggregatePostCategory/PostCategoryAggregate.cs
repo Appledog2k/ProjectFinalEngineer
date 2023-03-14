@@ -6,13 +6,13 @@ namespace ProjectFinalEngineer.Models.AggregatePostCategory;
 [Table("PostCategory")]
 public class PostCategory
 {
-    public int PostID { set; get; }
+    public int PostId { set; get; }
 
-    public int CategoryID { set; get; }
+    public int CategoryId { set; get; }
 
-    [ForeignKey("PostID")]
+    [ForeignKey("PostId")]
     public Post Post { set; get; }
 
-    [ForeignKey("CategoryID")]
+    [ForeignKey("CategoryId")]
     public Category Category { set; get; }
 }

@@ -1,6 +1,4 @@
-﻿
-
-namespace ProjectFinalEngineer.Models.AggregateManage
+﻿namespace ProjectFinalEngineer.Models.AggregateManage
 {
     public class RemoveLoginViewModel
     {

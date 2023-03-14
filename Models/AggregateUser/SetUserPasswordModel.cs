@@ -1,10 +1,4 @@
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using App.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ProjectFinalEngineer.Models.AggregateUser
 {
@@ -20,7 +14,5 @@ namespace ProjectFinalEngineer.Models.AggregateUser
         [Display(Name = "Xác nhận mật khẩu")]
         [Compare("NewPassword", ErrorMessage = "Lặp lại mật khẩu không chính xác.")]
         public string ConfirmPassword { get; set; }
-
-
     }
 }

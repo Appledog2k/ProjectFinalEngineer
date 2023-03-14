@@ -1,19 +1,17 @@
-﻿using App.Models.AggregateExtensions;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProjectFinalEngineer.EntityFramework;
+using ProjectFinalEngineer.Models.AggregateExtensions;
 using ProjectFinalEngineer.Models.AggregateKnowledge;
-using ProjectFinalEngineer.Models.AggregatePost;
-using ProjectFinalEngineer.Models.AggregatePostCategory;
 using ProjectFinalEngineer.Models.AggregateRole;
 using ProjectFinalEngineer.Models.AggregateUser;
 
 namespace ProjectFinalEngineer.Controllers
 {
-    [Route("/forum/knowledge/[action]/{id?}")]
+    [Route("/forum/knowledge/[action]/{id:int?}")]
     [Authorize(Roles = RoleName.Administrator + "," + RoleName.Member)]
     public class KnowledgeController : Controller
     {
@@ -36,8 +34,6 @@ namespace ProjectFinalEngineer.Controllers
             var knowledges = _context.Knowledges
                 .OrderByDescending(p => p.DateUpdated)
                 .Include(p => p.Author);
-            //.Where(post => post.Title.Contains(searchString) || post.Content.Contains(searchString));
-
 
             int totalPosts = await knowledges.CountAsync();
             if (pagesize <= 0) pagesize = 10;
@@ -48,12 +44,11 @@ namespace ProjectFinalEngineer.Controllers
 
             var pagingModel = new PagingModel()
             {
-                countpages = countPages,
-                currentpage = currentPage,
-                generateUrl = (pageNumber) => Url.Action("Index", new
+                CountPages = countPages,
+                CurrentPage = currentPage,
+                GenerateUrl = (pageNumber) => Url.Action("Index", new
                 {
-                    p = pageNumber,
-                    pagesize = pagesize
+                    p = pageNumber, pagesize
                 })
             };
 
@@ -98,17 +93,17 @@ namespace ProjectFinalEngineer.Controllers
 
                 if (knowledge.CategoryIDs != null)
                 {
-                    foreach (var CateId in knowledge.CategoryIDs)
+                    foreach (var cateId in knowledge.CategoryIDs)
                     {
                         _context.Add(new KnowledgeCategory()
                         {
-                            CategoryID = CateId,
+                            CategoryId = cateId,
                             Knowledge = knowledge
                         });
                     }
                 }
                 await _context.SaveChangesAsync();
-                StatusMessage = "Vừa tạo bài viết mới";
+                StatusMessage = "Vừa tạo kiến thức mới";
                 return RedirectToAction(nameof(Index));
             }
             return View(knowledge);
@@ -145,8 +140,6 @@ namespace ProjectFinalEngineer.Controllers
             {
                 return NotFound();
             }
-
-            // var post = await _context.Posts.FindAsync(id);
             var knowledge = await _context.Knowledges.Include(p => p.KnowledgeCategories)
                 .Include(post => post.Author)
                 .FirstOrDefaultAsync(p => p.Id == id);
@@ -160,7 +153,7 @@ namespace ProjectFinalEngineer.Controllers
                 Id = knowledge.Id,
                 Title = knowledge.Title,
                 Content = knowledge.Content,
-                CategoryIDs = knowledge.KnowledgeCategories.Select(pc => pc.CategoryID).ToArray()
+                CategoryIDs = knowledge.KnowledgeCategories.Select(pc => pc.CategoryId).ToArray()
             };
 
             var categories = await _context.Categories.ToListAsync();
@@ -199,24 +192,24 @@ namespace ProjectFinalEngineer.Controllers
                     // Update PostCategory
                     knowledge.CategoryIDs ??= new int[] { };
 
-                    var oldCateIds = knowledgeUpdate.KnowledgeCategories.Select(c => c.CategoryID).ToArray();
+                    var oldCateIds = knowledgeUpdate.KnowledgeCategories.Select(c => c.CategoryId).ToArray();
                     var newCateIds = knowledge.CategoryIDs;
 
                     var removeCatePosts = from knowledgeCate in knowledgeUpdate.KnowledgeCategories
-                                          where (!newCateIds.Contains(knowledgeCate.CategoryID))
+                                          where (!newCateIds.Contains(knowledgeCate.CategoryId))
                                           select knowledgeCate;
                     _context.KnowledgeCategories.RemoveRange(removeCatePosts);
 
-                    var addCateIds = from CateId in newCateIds
-                                     where !oldCateIds.Contains(CateId)
-                                     select CateId;
+                    var addCateIds = from cateId in newCateIds
+                                     where !oldCateIds.Contains(cateId)
+                                     select cateId;
 
-                    foreach (var CateId in addCateIds)
+                    foreach (var cateId in addCateIds)
                     {
                         _context.KnowledgeCategories.Add(new KnowledgeCategory()
                         {
-                            KnowledgeID = id,
-                            CategoryID = CateId
+                            KnowledgeId = id,
+                            CategoryId = cateId
                         });
                     }
 

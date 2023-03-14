@@ -1,25 +1,15 @@
-using System.Collections.Generic;
-using App.Models;
-
 namespace ProjectFinalEngineer.Models.AggregateUser
 {
     public class UserListModel
     {
-        public int totalUsers { get; set; }
-        public int countPages { get; set; }
-
-        public int ITEMS_PER_PAGE { get; set; } = 10;
-
-        public int currentPage { get; set; }
-
-        public List<UserAndRole> users { get; set; }
-
+        public int TotalUsers { get; set; }
+        public int CountPages { get; set; }
+        public int ItemsPerPage { get; set; } = 10;
+        public int CurrentPage { get; set; }
+        public List<UserAndRole> Users { get; set; }
     }
-
     public class UserAndRole : AppUser
     {
         public string RoleNames { get; set; }
     }
-
-
 }

@@ -1,6 +1,4 @@
-﻿using Bogus.DataSets;
-using ProjectFinalEngineer.Models.AggregatePost;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ProjectFinalEngineer.Models.RoomingHouse
 {

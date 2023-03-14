@@ -1,9 +1,9 @@
-﻿const container = document.querySelector('.container-ex');
-const search = document.querySelector('.search-box button');
-const weatherBox = document.querySelector('.weather-box');
-const weatherDetails = document.querySelector('.weather-details');
-const error404 = document.querySelector('.not-found');
-const notLocation = document.querySelector('.not-location');
+﻿const container = document.querySelector(".container-ex");
+const search = document.querySelector(".search-box button");
+const weatherBox = document.querySelector(".weather-box");
+const weatherDetails = document.querySelector(".weather-details");
+const error404 = document.querySelector(".not-found");
+const notLocation = document.querySelector(".not-location");
 
 search.addEventListener('click', () => {
 
@@ -43,28 +43,28 @@ search.addEventListener('click', () => {
             const wind = document.querySelector('.weather-details .wind span');
 
             switch (json.weather[0].main) {
-                case 'Clear':
-                    image.src = '/images/avatars/clear.png';
+                case "Clear":
+                    image.src = "/images/avatars/clear.png";
                     break;
 
-                case 'Rain':
-                    image.src = '/images/avatars/rain.png';
+                case "Rain":
+                    image.src = "/images/avatars/rain.png";
                     break;
 
-                case 'Snow':
-                    image.src = '/images/avatars/snow.png';
+                case "Snow":
+                    image.src = "/images/avatars/snow.png";
                     break;
 
-                case 'Clouds':
-                    image.src = '/images/avatars/cloud.png';
+                case "Clouds":
+                    image.src = "/images/avatars/cloud.png";
                     break;
 
-                case 'Haze':
-                    image.src = '/images/avatars/mist.png';
+                case "Haze":
+                    image.src = "/images/avatars/mist.png";
                     break;
 
                 default:
-                    image.src = '';
+                    image.src = "";
             }
 
             temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;

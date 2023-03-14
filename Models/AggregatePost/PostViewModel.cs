@@ -1,5 +1,4 @@
 using ProjectFinalEngineer.Models.AggregateComment;
-using ProjectFinalEngineer.Models.AggregatePost;
 
 namespace ProjectFinalEngineer.Models.AggregatePost
 {

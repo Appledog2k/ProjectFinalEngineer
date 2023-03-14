@@ -81,6 +81,10 @@
       "PackagePath": "staticwebassets\\Images\\Avatars\\fish.png"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\grid.svg",
+      "PackagePath": "staticwebassets\\Images\\Avatars\\grid.svg"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\Images\\Avatars\\hands-on-community-contributions.svg",
       "PackagePath": "staticwebassets\\Images\\Avatars\\hands-on-community-contributions.svg"
     },
@@ -407,6 +411,10 @@
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\PagingXTL.css",
       "PackagePath": "staticwebassets\\css\\PagingXTL.css"
+    },
+    {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Post\\Delete.css",
+      "PackagePath": "staticwebassets\\css\\Post\\Delete.css"
     },
     {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Post\\create.css",

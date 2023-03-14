@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="pt">
-                <a asp-controller="RoomingHouse" asp-action="Index">
+                <a asp-controller="RoomingHouse" asp-action="Index" class="@((ViewContext.RouteData.Values["Controller"] as string == "RoomingHouse" && ViewContext.RouteData.Values["Action"] as string == "Index") ? "active" : "")">
                     Tìm trọ
                     <span>// hello everyone - xin chào tất cả mọi người</span>
                 </a>

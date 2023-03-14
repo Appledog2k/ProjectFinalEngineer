@@ -1,11 +1,11 @@
-@model App.Models.AggregateExtensions.PagingModel
+@model ProjectFinalEngineer.Models.AggregateExtensions.PagingModel
 <head>
     <link rel="stylesheet" href="~/css/PagingXTL.css">
 </head>
 @{
-    int currentPage  = Model.currentpage;
-    int countPages   = Model.countpages;
-    var generateUrl  = Model.generateUrl; 
+    var currentPage  = Model.CurrentPage;
+    var countPages   = Model.CountPages;
+    var generateUrl  = Model.GenerateUrl; 
     if (currentPage > countPages) 
       currentPage = countPages;
     if (countPages <= 1) return;
@@ -18,16 +18,17 @@
     if (currentPage < countPages)
         next = currentPage + 1;
 
-    // Các trang hiện thị trong điều hướng
-    List<int> pagesRanges = new List<int>();    
+    var pagesRanges = new List<int>();
 
-        
-    int delta      = 10;             // Số trang mở rộng về mỗi bên trang hiện tại     
-    int remain     = delta * 2;     // Số trang hai bên trang hiện tại
+    // Số trang mở rộng về mỗi bên trang hiện tại
+    const int delta = 10;  
+    // Số trang hai bên trang hiện tại
+    var remain     = delta * 2; 
 
     pagesRanges.Add(currentPage);
+
     // Các trang phát triển về hai bên trang hiện tại
-    for (int i = 1; i <= delta; i++)
+    for (var i = 1; i <= delta; i++)
     {
         if (currentPage + i  <= countPages) {
             pagesRanges.Add(currentPage + i); 
@@ -40,8 +41,10 @@
         }
             
     }    
+
     // Xử lý thêm vào các trang cho đủ remain 
     //(xảy ra ở đầu mút của khoảng trang không đủ trang chèn  vào)
+
     if (remain > 0) {
         if (pagesRanges[0] == 1) {
             for (int i = 1; i <= remain; i++)

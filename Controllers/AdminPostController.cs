@@ -1,16 +1,12 @@
-﻿using App.Models.AggregateExtensions;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ProjectFinalEngineer.BusinessManager;
 using ProjectFinalEngineer.EntityFramework;
+using ProjectFinalEngineer.Models.AggregateExtensions;
 using ProjectFinalEngineer.Models.AggregatePost;
 using ProjectFinalEngineer.Models.AggregatePostCategory;
 using ProjectFinalEngineer.Models.AggregateRole;
-using ProjectFinalEngineer.Models.AggregateUser;
-using ProjectFinalEngineer.Services.Comment;
 
 namespace ProjectFinalEngineer.Controllers
 {
@@ -49,12 +45,11 @@ namespace ProjectFinalEngineer.Controllers
 
             var pagingModel = new PagingModel()
             {
-                countpages = countPages,
-                currentpage = currentPage,
-                generateUrl = (pageNumber) => Url.Action("Index", new
+                CountPages = countPages,
+                CurrentPage = currentPage,
+                GenerateUrl = (pageNumber) => Url.Action("Index", new
                 {
-                    p = pageNumber,
-                    pagesize = pagesize
+                    p = pageNumber, pagesize
                 })
             };
 
@@ -135,6 +130,9 @@ namespace ProjectFinalEngineer.Controllers
                 PostId = post.PostId,
                 Reason = post.Reason,
                 Title = post.Title,
+                Content = post.Content,
+                Published = false,
+                CategoryIDs = post.PostCategories.Select(pc => pc.CategoryId).ToArray()
             };
             var categories = await _context.Categories.ToListAsync();
             ViewData["categories"] = new MultiSelectList(categories, "Id", "Title");
@@ -142,7 +140,7 @@ namespace ProjectFinalEngineer.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Refuse(int id, [Bind("PostId,Title,Reason")] CreatePostModel post)
+        public async Task<IActionResult> Refuse(int id, [Bind("PostId,Title,Reason,CategoryIDs")] CreatePostModel post)
         {
             if (id != post.PostId)
             {
@@ -160,32 +158,32 @@ namespace ProjectFinalEngineer.Controllers
                     {
                         return NotFound();
                     }
-
+                    postUpdate.Title = post.Title;
                     postUpdate.DateUpdated = DateTime.Now;
                     postUpdate.Reason = post.Reason;
                     postUpdate.Priority = 2;
-                    postUpdate.Title = post.Title;
+       
                     // Update PostCategory
                     post.CategoryIDs ??= new int[] { };
 
-                    var oldCateIds = postUpdate.PostCategories.Select(c => c.CategoryID).ToArray();
+                    var oldCateIds = postUpdate.PostCategories.Select(c => c.CategoryId).ToArray();
                     var newCateIds = post.CategoryIDs;
 
                     var removeCatePosts = from postCate in postUpdate.PostCategories
-                                          where (!newCateIds.Contains(postCate.CategoryID))
+                                          where (!newCateIds.Contains(postCate.CategoryId))
                                           select postCate;
                     _context.PostCategories.RemoveRange(removeCatePosts);
 
-                    var addCateIds = from CateId in newCateIds
-                                     where !oldCateIds.Contains(CateId)
-                                     select CateId;
+                    var addCateIds = from cateId in newCateIds
+                                     where !oldCateIds.Contains(cateId)
+                                     select cateId;
 
-                    foreach (var CateId in addCateIds)
+                    foreach (var cateId in addCateIds)
                     {
                         _context.PostCategories.Add(new PostCategory()
                         {
-                            PostID = id,
-                            CategoryID = CateId
+                            PostId = id,
+                            CategoryId = cateId
                         });
                     }
 

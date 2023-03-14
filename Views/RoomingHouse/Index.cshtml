@@ -70,10 +70,8 @@
                                 <div class="ft-1">
                                     <div class="select-wrap">
                                         <select>
-                                            <option>Mới</option>
-                                            <option>Phổ biến</option>
-                                            <option>Thảo luận</option>
-                                            <option>Giải pháp</option>
+                                            <option>Khu vực Cầu Giấy</option>
+                                            <option>Khu vực Hai Bà Trưng</option>
                                         </select>
                                         <svg width="20" height="16" class="fill-current text-grey-600" viewBox="0 0 10 16">
                                             <path d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
@@ -83,16 +81,21 @@
                                 <div class="ft-2">
                                     <div class="select-wrap">
                                         <select>
-                                            <option>Mới nhất</option>
-                                            <option>Mã nguồn mở</option>
-                                            <option>Mã nguồn mở</option>
-                                            <option>Cần thảo luận</option>
-                                            <option>Cần trao đổi</option>
+                                            <option>Tất cả mức giá</option>
+                                            <option>Dưới 1 triệu</option>
+                                            <option>1 -3 triệu</option>
+                                            <option>3-10 triệu</option>
+                                            <option>10 triệu +</option>
                                         </select>
                                         <svg width="20" height="16" class="fill-current text-grey-600" viewBox="0 0 10 16">
                                             <path d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
                                         </svg>
                                     </div>
+                                </div>
+                                <div>
+                                    <button type="submit">
+                                        Lọc
+                                    </button>
                                 </div>
                             </div>
                             <form class="fm-search" autocomplete="off">
@@ -103,7 +106,7 @@
                                             <div class="search_rectangle"> </div>
                                         </div>
                                     </div>
-                                    <input class="fm-s-input" placeholder="Tìm kiếm" />
+                                    <input class="fm-s-input" placeholder="Tìm kiếm bằng từ khóa" />
                                 </label>
                             </form>
                         </div>
@@ -139,19 +142,25 @@
 
                                                     </div>
                                                 </div>
-                                                <div class="ct-body">
-                                                    <div class="ct-body-name">
-                                                        <a><p style="color:rgb(50 138 241);">@Html.DisplayFor(modelItem => item.Author.UserName)</p></a>
-
-                                                    </div>
-                                                    <div class="ct-body-time">
-                                                        <p>
-                                                            &nbsp;tạo bài viết vào @Html.DisplayFor(modelItem => item.DateUpdated.Day)/@Html.DisplayFor(modelItem => item.DateUpdated.Month)/@Html.DisplayFor(modelItem => item.DateUpdated.Year)
-                                                        </p>
-                                                    </div>
+                                                <div class="image-content" style ="width: 50px;height: 50px;">
+                                               
+                                                        @Html.Raw(item.Content)
+                                               
                                                 </div>
+                                                    <div class="ct-body">
+                                                        <div class="ct-body-name">
+                                                            <a>
+                                                                <p style="color: rgb(50 138 241);">@Html.DisplayFor(modelItem => item.Author.UserName)</p></a>
 
-                                            </div>
+                                                        </div>
+                                                        <div class="ct-body-time">
+                                                            <p>
+                                                                &nbsp;tạo bài viết vào @Html.DisplayFor(modelItem => item.DateUpdated.Day)/@Html.DisplayFor(modelItem => item.DateUpdated.Month)/@Html.DisplayFor(modelItem => item.DateUpdated.Year)
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
                                         </div>
                                     </div>
                                 }

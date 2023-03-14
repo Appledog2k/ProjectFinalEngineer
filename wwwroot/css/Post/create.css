@@ -15,9 +15,24 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
-button {
-    cursor: pointer;
+.ms-parent {
+    width: 500px;
+}
+.ms-parent button {
+    height: 36px;
+}
+    button {
+        cursor: pointer;
+    }
+.ms-parent button div {
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    font-size: 50px !important;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .alert-message {
@@ -77,11 +92,12 @@ button {
     position: relative;
     box-sizing: border-box;
     flex-direction: column;
-    width: 1050px;
+    width: 80%;
     border-radius: 1.25rem;
     color: rgb(255 255 255/var(--text-opacity));
     background-image: linear-gradient(to left,var(--gradient-stops));
     margin: 0 auto;
+    background-image: url('/images/avatars/grid.svg');
 }
 
 
@@ -199,12 +215,15 @@ button {
     }
 
 .main-info .card-info {
-    background-color: #fff;
+    background-color: white;
     border-radius: 18px;
     box-shadow: 1px 1px 8px 0 grey;
     height: auto;
     padding: 10px 0 10px 25px;
-
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: linear-gradient(to left,var(--gradient-stops));
 }
 
     .main-info .card-info table {
@@ -216,20 +235,48 @@ button {
 
 #profile-form .form-group {
     padding: 5px;
-    display: flex;
+    display: block;
+    padding-right: 30px;
+}
+.select-option {
+    display: flex !important;
+    flex-direction: column;
+}
+span {
+    color: black;
+}
+.form-group input {
+    border-color: white !important;
 }
 
-    #profile-form .form-group label {
-        color: rgb(112, 121, 136);
-        font-size: 13px;
-        padding: 5px;
-    }
+#profile-form .form-group label {
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 5px;
+}
+/*.media-none .card-block {
+    display: none !important;
+}*/
+.media-none .note-resizebar {
+    display: none !important;
+}
+.media-none .note-statusbar {
+    display: none !important;
+}
+.media-none .card-header {
+    background: white !important;
+    border: none !important;
+}
+/*.media-none .note-frame {
+    border: none !important;
+}*/
 
-    #profile-form .form-group input {
-        border: 2px solid rgb(112, 121, 136);
-        border-radius: 8px;
-        padding: 5px;
-    }
+#profile-form .form-group input {
+    border: 2px solid rgb(112, 121, 136);
+    border-radius: 8px;
+    padding: 5px;
+}
 
 .form-control-user {
     margin-left: 35px;

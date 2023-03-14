@@ -1,12 +1,10 @@
-﻿using App.Models.AggregateExtensions;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProjectFinalEngineer.EntityFramework;
-using ProjectFinalEngineer.Models.AggregatePost;
-using ProjectFinalEngineer.Models.AggregatePostCategory;
+using ProjectFinalEngineer.Models.AggregateExtensions;
 using ProjectFinalEngineer.Models.AggregateRole;
 using ProjectFinalEngineer.Models.AggregateUser;
 using ProjectFinalEngineer.Models.RoomingHouse;
@@ -19,7 +17,6 @@ namespace ProjectFinalEngineer.Controllers
     {
         private readonly AppDbContext _context;
         private readonly UserManager<AppUser> _userManager;
-
         public RoomingHouseController(AppDbContext context, UserManager<AppUser> userManager)
         {
             this._context = context;
@@ -28,32 +25,36 @@ namespace ProjectFinalEngineer.Controllers
 
         [TempData]
         public string StatusMessage { get; set; }
-        // GET: Blog/Post
+
         [AllowAnonymous]
         public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString = null)
         {
             var roomingHouses = _context.RoomingHouses
                 .OrderByDescending(p => p.DateUpdated)
                 .Include(p => p.Author)
-                .Include(post => post.Comments);
-                //.Where(post => post.Title.Contains(searchString) || post.Content.Contains(searchString));
+                .Include(p => p.Comments)
+                .Where(x => x.Published == true);
+
+            if (searchString != null)
+            {
+                roomingHouses = roomingHouses.Where(post => post.Title.ToLower().Contains(searchString.ToLower()) || post.Content.Contains(searchString));
+            }
 
 
-            int totalPosts = await roomingHouses.CountAsync();
+            var totalPosts = await roomingHouses.CountAsync();
+
             if (pagesize <= 0) pagesize = 10;
-            int countPages = (int)Math.Ceiling((double)totalPosts / pagesize);
-
+            var countPages = (int)Math.Ceiling((double)totalPosts / pagesize);
             if (currentPage > countPages) currentPage = countPages;
             if (currentPage < 1) currentPage = 1;
 
             var pagingModel = new PagingModel()
             {
-                countpages = countPages,
-                currentpage = currentPage,
-                generateUrl = (pageNumber) => Url.Action("Index", new
+                CountPages = countPages,
+                CurrentPage = currentPage,
+                GenerateUrl = (pageNumber) => Url.Action("Index", new
                 {
-                    p = pageNumber,
-                    pagesize = pagesize
+                    p = pageNumber, pagesize
                 })
             };
 
@@ -71,7 +72,20 @@ namespace ProjectFinalEngineer.Controllers
             return View(roomingHousesInPage);
         }
 
-        // GET: Blog/Post/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ActionReact(int postId)
+        {
+            var roomingHouse = _context.RoomingHouses.Find(postId);
+            if (roomingHouse != null)
+            {
+                roomingHouse.ReactCount++;
+            }
+
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         public async Task<IActionResult> CreateAsync()
         {
             var areas = await _context.Areas.ToListAsync();
@@ -83,35 +97,39 @@ namespace ProjectFinalEngineer.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title,Content,Price,CategoryIDs")] CreateRoomingHouseModel roomingHouse)
+        public async Task<IActionResult> Create([Bind("Title,Content,Price,Image,AreaIDs")] CreateRoomingHouseModel roomingHouse)
         {
             var areas = await _context.Areas.ToListAsync();
             ViewData["areas"] = new MultiSelectList(areas, "Id", "Title");
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(roomingHouse);
+
+            var user = await _userManager.GetUserAsync(this.User);
+
+            roomingHouse.DateCreated = roomingHouse.DateUpdated = DateTime.Now;
+            roomingHouse.ViewCount = 0;
+            roomingHouse.ReactCount = 0;
+            roomingHouse.AuthorId = user.Id;
+            roomingHouse.Published = false;
+            roomingHouse.Priority = 1;
+
+            _context.Add(roomingHouse);
+
+            if (roomingHouse.AreaIDs != null)
             {
-
-                var user = await _userManager.GetUserAsync(this.User);
-                roomingHouse.DateCreated = roomingHouse.DateUpdated = DateTime.Now;
-                roomingHouse.AuthorId = user.Id;
-                _context.Add(roomingHouse);
-
-                if (roomingHouse.AreaIDs != null)
+                foreach (var areaId in roomingHouse.AreaIDs)
                 {
-                    foreach (var AreaId in roomingHouse.AreaIDs)
+                    _context.Add(new RommingHouseArea()
                     {
-                        _context.Add(new RommingHouseArea()
-                        {
-                            AreaID = AreaId,
-                            RoomingHouse = roomingHouse
-                        });
-                    }
+                        AreaId = areaId,
+                        RoomingHouse = roomingHouse
+                    });
                 }
-                await _context.SaveChangesAsync();
-                StatusMessage = "Vừa đăng tin";
-                return RedirectToAction(nameof(Index));
             }
-            return View(roomingHouse);
+
+            await _context.SaveChangesAsync();
+            StatusMessage = "Vừa đăng tin, vui trong chờ quản trị viên phê duyệt";
+            return RedirectToAction(nameof(Index));
         }
 
         [AllowAnonymous]
@@ -136,6 +154,11 @@ namespace ProjectFinalEngineer.Controllers
                 return NotFound();
             }
 
+            // Tăng lượt xem lên 1 đơn vị
+            roomingHouse.ViewCount++;
+            _context.Update(roomingHouse);
+            await _context.SaveChangesAsync();
+
             var result = new RoomingHouseViewModel()
             {
                 RoomingHouse = roomingHouse
@@ -143,6 +166,7 @@ namespace ProjectFinalEngineer.Controllers
             return View(result);
         }
 
+        [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -159,6 +183,7 @@ namespace ProjectFinalEngineer.Controllers
                 .ThenInclude(comment => comment.Comments)
                 .ThenInclude(reply => reply.Parent)
                 .FirstOrDefaultAsync(p => p.Id == id);
+
             if (roomingHouse == null)
             {
                 return NotFound();
@@ -171,7 +196,7 @@ namespace ProjectFinalEngineer.Controllers
                 Content = roomingHouse.Content,
                 Price = roomingHouse.Price,
                 Published = false,
-                AreaIDs = roomingHouse.RommingHouseAreas.Select(pc => pc.AreaID).ToArray()
+                AreaIDs = roomingHouse.RommingHouseAreas.Select(pc => pc.AreaId).ToArray()
             };
 
             var areas = await _context.Areas.ToListAsync();
@@ -182,7 +207,7 @@ namespace ProjectFinalEngineer.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Content,Price,AreaIDs")] CreateRoomingHouseModel roomingHouse)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Image,Content,Price,AreaIDs")] CreateRoomingHouseModel roomingHouse)
         {
             if (id != roomingHouse.Id)
             {
@@ -203,18 +228,15 @@ namespace ProjectFinalEngineer.Controllers
 
                     roomingHousesUpdate.Title = roomingHouse.Title;
                     roomingHousesUpdate.Content = roomingHouse.Content;
-                    roomingHousesUpdate.Published = roomingHouse.Published;
                     roomingHousesUpdate.DateUpdated = DateTime.Now;
                     roomingHousesUpdate.Price = roomingHouse.Price;
 
-                    // Update PostCategory
                     roomingHouse.AreaIDs ??= new int[] { };
-
-                    var oldAreaIds = roomingHousesUpdate.RommingHouseAreas.Select(c => c.AreaID).ToArray();
+                    var oldAreaIds = roomingHousesUpdate.RommingHouseAreas.Select(c => c.AreaId).ToArray();
                     var newAreaIds = roomingHouse.AreaIDs;
 
                     var removeRoomingHousesAreas = from roomingHousesAreas in roomingHousesUpdate.RommingHouseAreas
-                                          where (!newAreaIds.Contains(roomingHousesAreas.AreaID))
+                                          where (!newAreaIds.Contains(roomingHousesAreas.AreaId))
                                           select roomingHousesAreas;
                     _context.RommingHouseAreas.RemoveRange(removeRoomingHousesAreas);
 
@@ -226,13 +248,12 @@ namespace ProjectFinalEngineer.Controllers
                     {
                         _context.RommingHouseAreas.Add(new RommingHouseArea()
                         {
-                            RommingHouseID = id,
-                            AreaID = areasId
+                            RommingHouseId = id,
+                            AreaId = areasId
                         });
                     }
 
                     _context.Update(roomingHousesUpdate);
-
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -246,7 +267,7 @@ namespace ProjectFinalEngineer.Controllers
                         throw;
                     }
                 }
-                StatusMessage = "Vừa cập nhật bản tin";
+                StatusMessage = "Vừa cập nhật bản tin, vui lòng chờ quản trị viên xét duyệt";
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AuthorId"] = new SelectList(_context.Users, "Id", "Id", roomingHouse.AuthorId);
@@ -255,7 +276,7 @@ namespace ProjectFinalEngineer.Controllers
 
         private bool RoomingHouseExists(int id)
         {
-            return _context.Posts.Any(e => e.PostId == id);
+            return _context.RoomingHouses.Any(e => e.Id == id);
         }
 
         public async Task<IActionResult> Delete(int? id)
@@ -266,6 +287,7 @@ namespace ProjectFinalEngineer.Controllers
             }
 
             var post = await _context.RoomingHouses
+                .Include(p => p.Comments)
                 .Include(p => p.Author)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (post == null)
@@ -276,22 +298,22 @@ namespace ProjectFinalEngineer.Controllers
             return View(post);
         }
 
-        // POST: Blog/Post/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var post = await _context.RoomingHouses.FindAsync(id);
+            var roomingHouse = await _context.RoomingHouses.FindAsync(id);
 
-            if (post == null)
+            if (roomingHouse == null)
             {
                 return NotFound();
             }
-
-            _context.RoomingHouses.Remove(post);
+            // Xóa comment liên quan
+            _context.Comments.RemoveRange(roomingHouse.Comments);
+            _context.RoomingHouses.Remove(roomingHouse);
             await _context.SaveChangesAsync();
 
-            StatusMessage = "Bạn vừa xóa bài viết: " + post.Title;
+            StatusMessage = "Bạn vừa xóa bài đăng " + roomingHouse.Title;
 
             return RedirectToAction(nameof(Index));
         }

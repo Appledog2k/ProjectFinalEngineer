@@ -11,10 +11,14 @@ namespace ProjectFinalEngineer.Models.RoomingHouse
         [Key]
         public int Id { set; get; }
 
-        [Required(ErrorMessage = "Phải có tiêu đề bài viết")]
+        [Required(ErrorMessage = "Phải có tiêu đề bài đăng")]
         [Display(Name = "Tiêu đề")]
         [StringLength(160, MinimumLength = 5, ErrorMessage = "{0} dài {1} đến {2}")]
         public string Title { set; get; }
+
+        [Display(Name = "Ảnh, Video")]
+        [Required(ErrorMessage = "Phải có hình ảnh, video")]
+        public string Image { set; get; }
 
         [Display(Name = "Nội dung")]
         public string Content { set; get; }
@@ -24,10 +28,8 @@ namespace ProjectFinalEngineer.Models.RoomingHouse
         [Display(Name = "Xuất bản")]
         public bool Published { set; get; } = false;
         public AppUser Approver { set; get; }
-
         public List<RommingHouseArea> RommingHouseAreas { get; set; }
 
-        // [Required]
         [Display(Name = "Tác giả")]
         public string AuthorId { set; get; }
         [ForeignKey("AuthorId")]

@@ -17,16 +17,17 @@ public class Post
     [StringLength(160, MinimumLength = 5, ErrorMessage = "{0} dài {1} đến {2}")]
     public string Title { set; get; }
 
+    [Display(Name ="Hình ảnh, Video")]
+    public string Media { set; get; }
+
     [Display(Name = "Nội dung")]
     public string Content { set; get; }
 
     [Display(Name = "Xuất bản")]
     public bool Published { set; get; } = false;
     public AppUser Approver { set; get; }
-
     public List<PostCategory> PostCategories { get; set; }
 
-    // [Required]
     [Display(Name = "Tác giả")]
     public string AuthorId { set; get; }
     [ForeignKey("AuthorId")]
@@ -38,12 +39,11 @@ public class Post
 
     [Display(Name = "Ngày cập nhật")]
     public DateTime DateUpdated { set; get; }
-
     public long ViewCount { set; get; }
     public long ReactCount { set; get; }
     public int Priority { set; get; }
-    // Lý do từ chối
+
+    [Display(Name = "Lý do")]
     public string Reason { set; get; }
     public virtual IEnumerable<Comment> Comments { get; set; }
-
 }

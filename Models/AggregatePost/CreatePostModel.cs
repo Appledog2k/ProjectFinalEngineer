@@ -4,7 +4,7 @@ namespace ProjectFinalEngineer.Models.AggregatePost
 {
     public class CreatePostModel : Post
     {
-        [Display(Name = "Chuyên mục")]
+        [Display(Name = "Miền kiến thức")]
         public int[] CategoryIDs { get; set; }
     }
 }

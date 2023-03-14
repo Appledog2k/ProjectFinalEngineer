@@ -6,6 +6,5 @@ namespace ProjectFinalEngineer.Models.AggregateManage
     {
         [Required]
         public IEnumerable<string> Codes { get; set; }
-
     }
 }

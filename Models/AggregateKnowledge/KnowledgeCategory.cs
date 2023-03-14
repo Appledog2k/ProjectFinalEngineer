@@ -6,9 +6,9 @@ namespace ProjectFinalEngineer.Models.AggregateKnowledge
     [Table("KnowledgeCategory")]
     public class KnowledgeCategory
     {
-        public int KnowledgeID { set; get; }
+        public int KnowledgeId { set; get; }
 
-        public int CategoryID { set; get; }
+        public int CategoryId { set; get; }
 
         [ForeignKey("KnowledgeID")]
         public Knowledge Knowledge { set; get; }

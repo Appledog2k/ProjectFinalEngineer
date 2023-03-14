@@ -9,21 +9,18 @@ namespace ProjectFinalEngineer.Models.AggregateCategory
 
         [Key]
         public int Id { get; set; }
-        // Tiều đề Category
-        [Required(ErrorMessage = "Phải có tên danh mục")]
+
+        [Required(ErrorMessage = "Phải có tên miền kiến thức")]
         [StringLength(100, MinimumLength = 3, ErrorMessage = "{0} dài {1} đến {2}")]
-        [Display(Name = "Tên danh mục")]
+        [Display(Name = "Tên miền kiến thức")]
         public string Title { get; set; }
 
-        // Nội dung, thông tin chi tiết về Category
         [DataType(DataType.Text)]
-        [Display(Name = "Nội dung danh mục")]
+        [Display(Name = "Mô tả miền kiến thưucs")]
         public string Description { get; set; }
 
-        // Các Category con
         public ICollection<Category> CategoryChildren { get; set; }
 
-        // Category cha (FKey)
         [Display(Name = "Danh mục cha")]
         public int? ParentCategoryId { get; set; }
 

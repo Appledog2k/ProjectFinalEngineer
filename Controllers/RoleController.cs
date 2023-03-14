@@ -1,6 +1,3 @@
-// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -140,7 +137,7 @@ namespace ProjectFinalEngineer.Controllers
             }
             model.Name = role.Name;
             model.Claims = await _context.RoleClaims.Where(rc => rc.RoleId == role.Id).ToListAsync();
-            model.role = role;
+            model.Role = role;
             ModelState.Clear();
             return View(model);
 
@@ -158,7 +155,7 @@ namespace ProjectFinalEngineer.Controllers
                 return NotFound("Không tìm thấy vai trò");
             }
             model.Claims = await _context.RoleClaims.Where(rc => rc.RoleId == role.Id).ToListAsync();
-            model.role = role;
+            model.Role = role;
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -193,7 +190,7 @@ namespace ProjectFinalEngineer.Controllers
 
             var model = new EditClaimModel()
             {
-                role = role
+                Role = role
             };
             return View(model);
         }
@@ -209,7 +206,7 @@ namespace ProjectFinalEngineer.Controllers
             {
                 return NotFound("Không tìm thấy vai trò");
             }
-            model.role = role;
+            model.Role = role;
             if (!ModelState.IsValid) return View(model);
 
 
@@ -238,7 +235,7 @@ namespace ProjectFinalEngineer.Controllers
         [HttpGet("{claimid:int}")]
         public async Task<IActionResult> EditRoleClaim(int claimid)
         {
-            var claim = _context.RoleClaims.Where(c => c.Id == claimid).FirstOrDefault();
+            var claim = _context.RoleClaims.FirstOrDefault(c => c.Id == claimid);
             if (claim == null) return NotFound("Không tìm thấy vai trò");
 
             var role = await _roleManager.FindByIdAsync(claim.RoleId);
@@ -249,7 +246,7 @@ namespace ProjectFinalEngineer.Controllers
             {
                 ClaimType = claim.ClaimType,
                 ClaimValue = claim.ClaimValue,
-                role = role
+                Role = role
             };
 
 
@@ -261,14 +258,14 @@ namespace ProjectFinalEngineer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditRoleClaim(int claimid, [Bind("ClaimType", "ClaimValue")] EditClaimModel Input)
         {
-            var claim = _context.RoleClaims.Where(c => c.Id == claimid).FirstOrDefault();
+            var claim = _context.RoleClaims.FirstOrDefault(c => c.Id == claimid);
             if (claim == null) return NotFound("Không tìm thấy vai trò");
 
             ViewBag.claimid = claimid;
 
             var role = await _roleManager.FindByIdAsync(claim.RoleId);
             if (role == null) return NotFound("Không tìm thấy vai trò");
-            Input.role = role;
+            Input.Role = role;
             if (!ModelState.IsValid)
             {
                 return View(Input);
@@ -294,12 +291,12 @@ namespace ProjectFinalEngineer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteClaim(int claimid, [Bind("ClaimType", "ClaimValue")] EditClaimModel Input)
         {
-            var claim = _context.RoleClaims.Where(c => c.Id == claimid).FirstOrDefault();
+            var claim = _context.RoleClaims.FirstOrDefault(c => c.Id == claimid);
             if (claim == null) return NotFound("Không tìm thấy vai trò");
 
             var role = await _roleManager.FindByIdAsync(claim.RoleId);
             if (role == null) return NotFound("Không tìm thấy vai trò");
-            Input.role = role;
+            Input.Role = role;
             if (!ModelState.IsValid)
             {
                 return View(Input);

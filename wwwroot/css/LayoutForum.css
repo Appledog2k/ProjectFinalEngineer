@@ -15,7 +15,7 @@
     --gradient-from: #328af1;
     --gradient-stops: var(--gradient-from), var(--gradient-to, rgba(50, 138, 241, 0));
     --gradient-to: #328af1;
-    --bg-color: linear-gradient(rgb(40, 64, 95), rgb(24 39 63/var(--text-opacity)));
+    --bg-color: linear-gradient(rgb(40, 64, 95), rgb(24 39 63));
     --text-opacity: 1;
     --text-color: rgb(112, 121, 136);
     --text-colorchange: rgb(255, 255, 255);
@@ -23,7 +23,7 @@
 
 body {
     position: relative;
-    min-height: 1600px;
+    min-height: 1300px;
     background-color: #151f32;
     background-image: url(/images/avatars/upper-gradient.svg);
     background-repeat: no-repeat;
@@ -44,7 +44,6 @@ header {
     background: transparent;
     padding: 1rem;
     transition: all 0.5s ease;
-    /*background: var(--bg-color);*/
 }
 
 a {
@@ -90,6 +89,18 @@ label {
     border-bottom: 3px solid #328af1;
     border-radius: 3px 3px 3px 3px;
 }
+.active-sidebar  {
+    --bg-opacity: 1;
+    font-weight: 500;
+    font-size: 0.867rem;
+    text-align: left;
+    color: rgb(50 138 241);
+    background-color: rgb(24 39 63);
+}
+.active-sidebar span {
+    --bg-opacity: 1;
+    background-color: rgb(50 138 241);
+}
 
 .navbar {
     display: flex;
@@ -102,8 +113,8 @@ label {
         color: var(--text-color);
         font-size: 1rem;
         font-weight: 600;
-        padding: 5px 0px;
-        margin: 0px 26px;
+        padding: 5px 0;
+        margin: 0 26px;
         transition: all 0.5s ease;
     }
 
@@ -169,7 +180,6 @@ a:hover {
 
     .navbar {
         padding: 5px 0;
-        margin: 0px 0px;
     }
 
     .main a:hover {
@@ -184,9 +194,9 @@ a:hover {
 
     .navbar {
         position: fixed;
-        top: 0px;
+        top: 0;
         right: 100%;
-        bottom: 0px;
+        bottom: 0;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -212,7 +222,7 @@ a:hover {
             }
 
         .navbar.open {
-            right: 0%;
+            right: 0;
         }
 
         .navbar li a {
@@ -238,7 +248,7 @@ footer {
     position: absolute;
     top: 100%;
     width: 100%;
-    height: 720px;
+    height: 750px;
     outline: none;
     background-image: radial-gradient(circle at 15% -3%,#365280,#080e17 116%);
     background-position: 50%;
@@ -360,6 +370,7 @@ div.social {
 .copyright {
     padding: 0.3em 1em;
     background: rgb(40, 64, 103);
+    margin-top: 33px;
 }
 
     .copyright p {
@@ -428,7 +439,7 @@ div.social {
         width: 100px;
         height: 40px;
         background-image: linear-gradient(to right,var(--gradient-stops));
-        color: rgb(255 255 255/var(--tw-text-opacity));
+        color: rgb(255 255 255);
         border-radius: 20px;
         border-color: transparent;
         outline: none;

@@ -102,6 +102,19 @@ button {
         row-gap: 0.5rem;
     }
 
+.image-content img {
+    width: 400px !important;
+    height: 200px !important;
+    margin-left: 70px;
+    margin-top: 15px;
+}
+
+iframe {
+    width: 400px !important;
+    height: 200px !important;
+    margin-left: 70px;
+    margin-top: 15px;
+}
 .forum-ul li a {
     display: flex;
     color: hsla(0, 0%, 100%, 0.85);
@@ -309,7 +322,7 @@ button {
     padding: 10px;
     margin: 10px 0;
     transition: all 0.5s ease;
-    height: 93.5px;
+    height: auto;
 }
 
     .contact-element:hover {
@@ -447,7 +460,7 @@ button {
 .ct-body {
     display: flex;
     margin-left: 70px;
-    margin-top: 25px;
+   padding-top: 180px;
 }
 
 .ct-body-name {

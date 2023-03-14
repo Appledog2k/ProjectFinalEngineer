@@ -7,10 +7,9 @@ using ProjectFinalEngineer.Models.AggregatePostCategory;
 using ProjectFinalEngineer.Models.AggregateRole;
 using ProjectFinalEngineer.EntityFramework;
 using ProjectFinalEngineer.Models.AggregateUser;
-using App.Models.AggregateExtensions;
 using ProjectFinalEngineer.Models.AggregatePost;
 using ProjectFinalEngineer.BusinessManager;
-using ProjectFinalEngineer.Services.Comment;
+using ProjectFinalEngineer.Models.AggregateExtensions;
 
 namespace ProjectFinalEngineer.Controllers;
 
@@ -21,48 +20,51 @@ public class PostController : Controller
     private readonly AppDbContext _context;
     private readonly UserManager<AppUser> _userManager;
     private readonly ICommentBusinessManager _commentBusinessManager;
-    private readonly ICommentService _commentService;
-    public PostController(AppDbContext context, UserManager<AppUser> userManager,
-                        ICommentBusinessManager commentBusinessManager,
-                        ICommentService commentService)
+    public PostController(
+        AppDbContext context,
+        UserManager<AppUser> userManager,
+        ICommentBusinessManager commentBusinessManager)
     {
-        _context = context;
-        _userManager = userManager;
-        _commentBusinessManager = commentBusinessManager;
-        _commentService = commentService;
+        this._context = context;
+        this._userManager = userManager;
+        this._commentBusinessManager = commentBusinessManager;
     }
 
     [TempData]
     public string StatusMessage { get; set; }
+
     [AllowAnonymous]
-    public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString = null)
+    public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString)
     {
         var posts = _context.Posts
-            .OrderByDescending(p => p.DateUpdated)
             .Include(p => p.Author)
             .Include(post => post.Comments)
+            .OrderByDescending(p => p.DateUpdated)
             .Where(x => x.Published == true);
-            
+
         if (searchString != null)
         {
-            posts = posts.Where(post => post.Title.Contains(searchString) || post.Content.Contains(searchString));
+            posts = posts.Where(post => post.Title.ToLower().Contains(searchString.ToLower()) ||
+                                        post.Content.Contains(searchString)
+                                        || post.PostCategories
+                                            .Any(pc => pc.Category.Title.ToLower().Contains(searchString.ToLower())));
         }
-
-        int totalPosts = await posts.CountAsync();
+        
+        var totalPosts = await posts.CountAsync();
         if (pagesize <= 0) pagesize = 10;
-        int countPages = (int)Math.Ceiling((double)totalPosts / pagesize);
+
+        var countPages = (int)Math.Ceiling((double)totalPosts / pagesize);
 
         if (currentPage > countPages) currentPage = countPages;
         if (currentPage < 1) currentPage = 1;
 
         var pagingModel = new PagingModel()
         {
-            countpages = countPages,
-            currentpage = currentPage,
-            generateUrl = (pageNumber) => Url.Action("Index", new
+            CountPages = countPages,
+            CurrentPage = currentPage,
+            GenerateUrl = (pageNumber) => Url.Action("Index", new
             {
-                p = pageNumber,
-                pagesize = pagesize
+                p = pageNumber, pagesize
             })
         };
 
@@ -80,9 +82,7 @@ public class PostController : Controller
         return View(postsInPage);
     }
 
-    // GET: Blog/Post/Details/5
     [AllowAnonymous]
-
     public async Task<IActionResult> Details(int? id)
     {
         if (id == null)
@@ -104,14 +104,32 @@ public class PostController : Controller
             return NotFound();
         }
 
-        var result  = new PostViewModel
+        post.ViewCount++;
+        _context.Update(post);
+        await _context.SaveChangesAsync();
+
+        var result = new PostViewModel
         {
             Post = post
         };
         return View(result);
     }
 
-    // GET: Blog/Post/Create
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public ActionResult ActionReact(int postId)
+    {
+        var post = _context.Posts.Find(postId);
+        if (post != null)
+        {
+            post.ReactCount++;
+        }
+
+        _context.SaveChanges();
+        return RedirectToAction("Details", "Post", new { id = postId });
+    }
+
+    [HttpGet]
     public async Task<IActionResult> CreateAsync()
     {
         var categories = await _context.Categories.ToListAsync();
@@ -121,46 +139,43 @@ public class PostController : Controller
         return View();
     }
 
-    // POST: Blog/Post/Create
-    // To protect from overposting attacks, enable the specific properties you want to bind to.
-    // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Title,Content,CategoryIDs")] CreatePostModel post)
+    public async Task<IActionResult> Create([Bind("Title,Media,Content,CategoryIDs")] CreatePostModel post)
     {
         var categories = await _context.Categories.ToListAsync();
         ViewData["categories"] = new MultiSelectList(categories, "Id", "Title");
 
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid) return View(post);
+
+        var user = await _userManager.GetUserAsync(this.User);
+
+        post.DateCreated = post.DateUpdated = DateTime.Now;
+        post.ViewCount = 0;
+        post.ReactCount = 0;
+        post.AuthorId = user.Id;
+        post.Published = false;
+        post.Priority = 1;
+
+        _context.Add(post);
+
+        if (post.CategoryIDs != null)
         {
-
-            var user = await _userManager.GetUserAsync(this.User);
-            post.DateCreated = post.DateUpdated = DateTime.Now;
-            post.AuthorId = user.Id;
-            post.Published = false;
-            post.Priority = 1;
-            _context.Add(post);
-
-            if (post.CategoryIDs != null)
+            foreach (var cateId in post.CategoryIDs)
             {
-                foreach (var CateId in post.CategoryIDs)
+                _context.Add(new PostCategory()
                 {
-                    _context.Add(new PostCategory()
-                    {
-                        CategoryID = CateId,
-                        Post = post
-                    });
-                }
+                    CategoryId = cateId,
+                    Post = post
+                });
             }
-            await _context.SaveChangesAsync();
-            StatusMessage = "Vừa tạo bài viết mới";
-            return RedirectToAction(nameof(Index));
         }
-        return View(post);
+        await _context.SaveChangesAsync();
+        StatusMessage = "Vừa tạo bài viết, vui trong chờ quản trị viên phê duyệt";
+        return RedirectToAction(nameof(Index));
     }
 
-    // GET: Blog/Post/Edit/5
-
+    [HttpGet]
     public async Task<IActionResult> Update(int? id)
     {
         if (id == null)
@@ -168,7 +183,6 @@ public class PostController : Controller
             return NotFound();
         }
 
-        // var post = await _context.Posts.FindAsync(id);
         var post = await _context.Posts.Include(p => p.PostCategories)
         .Include(post => post.Author)
         .Include(post => post.Comments)
@@ -177,6 +191,7 @@ public class PostController : Controller
             .ThenInclude(comment => comment.Comments)
                 .ThenInclude(reply => reply.Parent)
         .FirstOrDefaultAsync(p => p.PostId == id);
+
         if (post == null)
         {
             return NotFound();
@@ -186,8 +201,10 @@ public class PostController : Controller
         {
             PostId = post.PostId,
             Title = post.Title,
+            Media = post.Media,
             Content = post.Content,
-            CategoryIDs = post.PostCategories.Select(pc => pc.CategoryID).ToArray()
+            Published = false,
+            CategoryIDs = post.PostCategories.Select(pc => pc.CategoryId).ToArray()
         };
 
         var categories = await _context.Categories.ToListAsync();
@@ -199,14 +216,16 @@ public class PostController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Update(int id, [Bind("PostId,Title,Content,CategoryIDs")] CreatePostModel post)
+    public async Task<IActionResult> Update(int id, [Bind("PostId,Title,Media,Content,CategoryIDs")] CreatePostModel post)
     {
         if (id != post.PostId)
         {
             return NotFound();
         }
+
         var categories = await _context.Categories.ToListAsync();
         ViewData["categories"] = new MultiSelectList(categories, "Id", "Title");
+
         if (ModelState.IsValid)
         {
             try
@@ -220,34 +239,37 @@ public class PostController : Controller
 
                 postUpdate.Title = post.Title;
                 postUpdate.Content = post.Content;
+                postUpdate.Media = post.Media;
+                postUpdate.Published = false;
                 postUpdate.DateUpdated = DateTime.Now;
 
-                // Update PostCategory
                 post.CategoryIDs ??= new int[] { };
 
-                var oldCateIds = postUpdate.PostCategories.Select(c => c.CategoryID).ToArray();
+                // Loại bỏ miền kiến thức cũ
+                var oldCateIds = postUpdate.PostCategories.Select(c => c.CategoryId).ToArray();
                 var newCateIds = post.CategoryIDs;
 
                 var removeCatePosts = from postCate in postUpdate.PostCategories
-                                      where (!newCateIds.Contains(postCate.CategoryID))
+                                      where (!newCateIds.Contains(postCate.CategoryId))
                                       select postCate;
+
                 _context.PostCategories.RemoveRange(removeCatePosts);
 
-                var addCateIds = from CateId in newCateIds
-                                 where !oldCateIds.Contains(CateId)
-                                 select CateId;
+                // Thêm miền kiến thức
+                var addCateIds = from cateId in newCateIds
+                                 where !oldCateIds.Contains(cateId)
+                                 select cateId;
 
-                foreach (var CateId in addCateIds)
+                foreach (var cateId in addCateIds)
                 {
                     _context.PostCategories.Add(new PostCategory()
                     {
-                        PostID = id,
-                        CategoryID = CateId
+                        PostId = id,
+                        CategoryId = cateId
                     });
                 }
 
                 _context.Update(postUpdate);
-
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -261,14 +283,14 @@ public class PostController : Controller
                     throw;
                 }
             }
-            StatusMessage = "Vừa cập nhật bài viết";
+
+            StatusMessage = "Vừa cập nhật bài viết,vui lòng chờ quản trị viên xét duyệt";
             return RedirectToAction(nameof(Index));
         }
         ViewData["AuthorId"] = new SelectList(_context.Users, "Id", "Id", post.AuthorId);
         return View(post);
     }
 
-    // GET: Blog/Post/Delete/5
     public async Task<IActionResult> Delete(int? id)
     {
         if (id == null)
@@ -276,8 +298,11 @@ public class PostController : Controller
             return NotFound();
         }
 
-        var post = await _context.Posts.Include(p => p.Comments)
-            .Include(p=>p.Author).FirstOrDefaultAsync(m => m.PostId == id);
+        var post = await _context.Posts
+            .Include(p => p.Comments)
+            .Include(p => p.Author)
+            .FirstOrDefaultAsync(m => m.PostId == id);
+
         if (post == null)
         {
             return NotFound();
@@ -286,7 +311,6 @@ public class PostController : Controller
         return View(post);
     }
 
-    // POST: Blog/Post/Delete/5
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(int id)
@@ -299,10 +323,10 @@ public class PostController : Controller
             return NotFound();
         }
 
-        // Remove all comments related to the post
+        // Xóa comment liên quan tới vài viết
         _context.Comments.RemoveRange(post.Comments);
 
-        // Remove the post
+        // Xóa bài viết
         _context.Posts.Remove(post);
 
         await _context.SaveChangesAsync();
@@ -320,27 +344,6 @@ public class PostController : Controller
     public async Task<IActionResult> Comment(PostViewModel postViewModel)
     {
         var actionResult = await _commentBusinessManager.CreateComment(postViewModel, this.User);
-        if (actionResult.Result is null)
-            return RedirectToAction("Details", "Post", new { id = postViewModel.Post.PostId });
-
-        return actionResult.Result;
+        return actionResult.Result ?? RedirectToAction("Details", "Post", new { id = postViewModel.Post.PostId });
     }
-
-    //[HttpPost]
-    //public async Task<IActionResult> Comment(PostViewModel postViewModel)
-    //{
-    //    var actionResult = await _commentBusinessManager.CreateComment(postViewModel, User);
-    //    if (actionResult.Result is null)
-    //    {
-    //        //var comments = await _commentBusinessManager.GetComments(postViewModel.Post.PostId);
-    //        var comments = _commentService.GetComment(postViewModel.Post.PostId);
-    //        var result = new PostViewModel
-    //        {
-    //            Comment = comments
-    //        };
-    //        return PartialView("_CommentPartial", result);
-    //    }
-
-    //    return actionResult.Result;
-    //}
 }

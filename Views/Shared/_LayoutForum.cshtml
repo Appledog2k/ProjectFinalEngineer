@@ -13,12 +13,13 @@
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
     <title>@ViewData["Title"]</title>
     <link rel="icon" type="image/x-icon" href="~/Images/logo/favicon.ico">
+    <script type="text/javascript" src="~/js/layout.js"></script>
 </head>
 
 <body>
     <header>
         <a asp-controller="Home" asp-action="Home" class="logo">
-            <img width="120px" height="60px" src="~/Images/home/logobeau.svg" />
+            <img width="120px" height="110px" src="~/Images/home/logobeau.svg" />
         </a>
         <ul class="navbar">
             <li class="pt">
@@ -152,7 +153,7 @@
             <p>Bản quyền &copy; 2022 Hùng Nguyễn | Appledog2k</p>
         </div>
     </footer>
-    <script type="text/javascript" src="~/js/layout.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>

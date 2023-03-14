@@ -20,7 +20,7 @@
                 <aside>
                     <div class="forum-left">
                         <button>
-                            <a asp-action="Create">Tạo bài viết mới</a>
+                            <p>Tổng số @ViewBag.totalPosts bài đăng</p>
                         </button>
                         <ul class="forum-ul">
                             <li>
@@ -138,12 +138,11 @@
                                                         @if (item.Priority == 1)
                                                         {
                                                             <a asp-action="Refuse" asp-route-id="@item.PostId">
-                                                                <div class="ct-header-analytics-mess">
+                                                                <div class="ct-header-analytics-mess" style="margin-top: 1.5px;">
                                                                     <div class="soluong">Từ chối</div>
                                                                 </div>
                                                             </a>
                                                         }
-
                                                     </div>
                                                 </div>
                                                 <div class="ct-body">

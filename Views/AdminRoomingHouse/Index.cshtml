@@ -1,0 +1,262 @@
+﻿@model IEnumerable<ProjectFinalEngineer.Models.RoomingHouse.RoomingHouse>
+@{
+    ViewData["Title"] = "Diễn đàn";
+    Layout = "~/Views/Shared/_LayoutForum.cshtml";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/AdminPost/index.css">
+    <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+    <partial name="_AlertMessage" />
+    <div id="forum">
+        <div class="container">
+            <div id="forum-wapper">
+                <aside>
+                    <div class="forum-left">
+                        <button>
+                            @*<a asp-action="Create">Tạo bài viết mới</a>*@
+                            <p>Tổng số @ViewBag.totalPosts bài đăng</p>
+                        </button>
+                        <ul class="forum-ul">
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Tất cả chủ đề
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Phổ biến
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Phổ biến trong tuần
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Kiến thức
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Giải đáp
+                                </a>
+                            </li>
+                            <li>
+                                <a href="###">
+                                    <span></span>
+                                    Trao đổi, mua bán
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                <div id="forum-main">
+                    <div class="fm-text">
+                        <div class="fm-head">
+                            <div class="fm-filter">
+                                <div class="ft-1">
+                                    <div class="select-wrap">
+                                        <select>
+                                            <option>Mới</option>
+                                            <option>Phổ biến</option>
+                                            <option>Thảo luận</option>
+                                            <option>Giải pháp</option>
+                                        </select>
+                                        <svg width="20" height="16" class="fill-current text-grey-600" viewBox="0 0 10 16">
+                                            <path d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ft-2">
+                                    <div class="select-wrap">
+                                        <select>
+                                            <option>Mới nhất</option>
+                                            <option>Mã nguồn mở</option>
+                                            <option>Mã nguồn mở</option>
+                                            <option>Cần thảo luận</option>
+                                            <option>Cần trao đổi</option>
+                                        </select>
+                                        <svg width="20" height="16" class="fill-current text-grey-600" viewBox="0 0 10 16">
+                                            <path d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="fm-search" autocomplete="off">
+                                <label class="fm-s-lb">
+                                    <div class="search-icon">
+                                        <div class="search">
+                                            <div class="search_circle"></div>
+                                            <div class="search_rectangle"> </div>
+                                        </div>
+                                    </div>
+                                    @using (Html.BeginForm("Index", "Post", FormMethod.Get))
+                                    {
+                                        <input class="fm-s-input" placeholder="Bắt đầu tìm kiếm" name="searchString" value="@ViewBag.SearchString" />
+                                        <button type="submit" style="display: none"></button>
+                                    }
+                                </label>
+                            </form>
+                        </div>
+                        <div>
+                            <div class="table">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="contact-element">
+                                        <div class="contact-element-avatar">
+                                            <img class="ct-image" src="~/images/avatars/default-avatar-23.webp">
+                                        </div>
+                                        <div class="contact-element-content">
+                                            <div>
+                                                <div class="ct-header">
+                                                    <h4>
+                                                        <a asp-action="Details" asp-route-id="@item.Id">
+                                                            @Html.DisplayFor(modelItem => item.Title)
+                                                        </a>
+                                                    </h4>
+                                                    <div class="ct-header-analytics">
+                                                        @using (Html.BeginForm("ApproveRoomingHouse", "AdminRoomingHouse", new { Id = @item.Id }, FormMethod.Post))
+                                                        {
+                                                            <button type="submit" class="ct-header-analytics-see">
+                                                                <div class="soluong">
+                                                                    Phê duyệt
+                                                                </div>
+                                                            </button>
+                                                        }
+                                                        @if (item.Priority == 1)
+                                                        {
+                                                            <a asp-action="Refuse" asp-route-id="@item.Id">
+                                                                <div class="ct-header-analytics-mess">
+                                                                    <div class="soluong">Từ chối</div>
+                                                                </div>
+                                                            </a>
+                                                        }
+                                                    </div>
+                                                </div>
+                                                <div class="ct-body">
+                                                    <div class="ct-body-name">
+                                                        <a><p style="color:rgb(50 138 241);">@Html.DisplayFor(modelItem => item.Author.UserName)</p></a>
+
+                                                    </div>
+                                                    <div class="ct-body-time">
+                                                        <p>
+                                                            &nbsp;tạo bài viết vào @Html.DisplayFor(modelItem => item.DateUpdated.Day)/@Html.DisplayFor(modelItem => item.DateUpdated.Month)/@Html.DisplayFor(modelItem => item.DateUpdated.Year)
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                            <partial name="_PagingXTL" model="@ViewBag.pagingModel" />
+                        </div>
+                    </div>
+                </div>
+                <aside>
+                    <div class="forum-left">
+                        <div class="container-ex">
+                            <div class="wt-title"><p>Thời tiết</p></div>
+                            <div class="search-box">
+                                @*                                <img src="~/images/avatars/icons8-weather-64.png">*@
+                                <i class="fa-solid fa-location-dot loca-icon"></i>
+                                <input type="text" placeholder="Vị trí của bạn">
+                                <button class="wt-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                            <div class="not-found">
+                                <img src="~/images/avatars/404.png">
+                                <p style="color:white">Không tìm thấy vị trí</p>
+                            </div>
+                            <div class="not-location">
+                                <p style="color:white">Chưa nhập vị trí</p>
+                            </div>
+                            <div class="weather-box">
+                                <img src="">
+                                <p class="temperature" style="color:white"></p>
+                                <p class="description" style="color:white"></p>
+                            </div>
+
+                            <div class="weather-details">
+                                <div class="humidity">
+                                    <i class="fa-solid fa-water" style="color:white"></i>
+                                    <div class="text">
+                                        <span style="color:white"></span>
+                                        <p style="color:white">Độ ẩm</p>
+                                    </div>
+                                </div>
+                                <div class="wind">
+                                    <i class="fa-solid fa-wind" style="color:white"></i>
+                                    <div class="text">
+                                        <span style="color:white"></span>
+                                        <p style="color:white">Tốc độ gió</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*serp stack*@
+                        <div class="container-ex-1">
+                            <div class="wt-title"><p>Google</p></div>
+                            <form id="form" autocomplete="off" class="search-box">
+                                <i class="fab fa-google loca-icon"></i>
+                                <input type="text" id="search" placeholder="Vui lòng nhập từ khóa">
+                                <button>
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
+                            <div class="image-google">
+                                <img width="144px;" height="144px;" src="~/images/avatars/icons8-google-news22.svg" style=" margin-left:50px;" />
+                                <div class="google-search">
+                                    <div class="google-search-element">Tìm kiếm thông tin với google</div>
+                                </div>
+                            </div>
+                            <div id="result">
+                            </div>
+                        </div>
+                        <div class="container-ex-2">
+                            <div class="img-ex-2"><img width="134px;" height="110px;" src="~/images/avatars/news-1.jpg" /></div>
+                            <div class="title-ex-2">
+                                <p>
+                                    Đại học bách khoa Hà Nội
+                                </p>
+                            </div>
+                            <div class="search-ex-2">
+                                <a href="https://ctt.hust.edu.vn/" target="_blank">
+                                    Cổng thông tin
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
+    <script src="~/js/Post/Post.js"></script>
+</body>
+@*
+<h1>@ViewData["Title"]</h1>
+
+<partial name="_AlertMessage" />
+
+<p>
+    <a asp-action="Create">Tạo bài viết mới</a>
+</p>
+<p>Tổng số bài viết: @ViewBag.totalPosts</p>
+*@

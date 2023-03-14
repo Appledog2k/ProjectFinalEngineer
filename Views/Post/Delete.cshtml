@@ -4,13 +4,46 @@
     ViewData["Title"] = "Xóa bài viết";
 }
 
-<h1>@ViewData["Title"]</h1>
-<p>Có chắc chắn xóa bài viết?</p>
-<h4>@Model.Title</h4>
-<div>
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="PostId" />
-        <input type="submit" value="Xóa" class="btn btn-danger" /> |
-        <a asp-action="Index">Danh sách bài viết</a>
-    </form>
-</div>
+<head>
+    <link rel="stylesheet" href="~/css/Post/Delete.css">
+</head>
+
+<section class="contact-main">
+    <div class="contact-main-header">
+        <header>
+            <h3>Xóa bài viết</h3>
+            <p>Hành động dẫn đến việc bài viết này bị xóa hoàn toàn</p>
+        </header>
+    </div>
+    <div>
+        <article class="contact">
+            <div class="contact-article">
+                <div class="contact-article-line">
+                    <h1>Bạn có thực sự muốn xóa ?</h1>
+                    <div class="contact-action">
+                        <div class="contact-seed">
+                            <a asp-action="Index">
+                                <div class="icon"></div>
+                                <span>Quay lại danh sách bài viết</span>
+                            </a>
+                        </div>
+                        <form class="contact-update" asp-action="Delete">
+                          
+                        </form>
+                        <form asp-action="Delete" class="contact-update">
+                            <input type="hidden" asp-for="PostId" />
+                            <button type="submit">
+                                <div class="icon"></div>
+                                <span>Xóa bài viết</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <img class="contact-image" src="~/images/avatars/eloquent-performance-patterns.svg">
+        </article>
+    </div>
+</section>
+
+
+

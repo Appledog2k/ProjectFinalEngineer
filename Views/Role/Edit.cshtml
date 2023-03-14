@@ -22,7 +22,7 @@
         <article class="role">
             <div class="role-article">
                 <div class="role-article-line">
-                    <h1>@Model.role.Name</h1>
+                    <h1>@Model.Role.Name</h1>
                     <form method="post">
                         <div class="form-group">
                             <label asp-for="Name" class="control-label">Tên vai trò:</label>
@@ -32,7 +32,7 @@
                         <div class="role-claim">
                             <p>
                                 Các quyền của vai trò:
-                                <a asp-action="AddRoleClaim" asp-route-roleid="@Model.role.Id">+ Thêm quyền</a>
+                                <a asp-action="AddRoleClaim" asp-route-roleid="@Model.Role.Id">+ Thêm quyền</a>
                             </p>
                             @if (Model.Claims.Count > 0)
                             {

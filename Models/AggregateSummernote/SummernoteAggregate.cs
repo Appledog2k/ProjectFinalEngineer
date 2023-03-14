@@ -4,17 +4,17 @@ namespace ProjectFinalEngineer.Models.AggregateSummernote
     {
         public Summernote(string iDEditor, bool loadLibrary = true)
         {
-            IDEditor = iDEditor;
+            IdEditor = iDEditor;
             LoadLibrary = loadLibrary;
         }
 
-        public string IDEditor { get; set; }
+        public string IdEditor { get; set; }
 
         public bool LoadLibrary { get; set; }
 
-        public int height { get; set; } = 120;
+        public int Height { get; set; } = 120;
 
-        public string toolbar { get; set; } = @"
+        public string Toolbar { get; set; } = @"
             [
                 ['style', ['style']],
                 ['font', ['bold', 'underline', 'clear']],

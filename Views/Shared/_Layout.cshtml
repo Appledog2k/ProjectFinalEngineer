@@ -44,7 +44,7 @@
                 </a>
             </li>
             <li class="pt">
-                <a asp-controller="Contact" asp-action="SendContact">
+                <a asp-controller="Contact" asp-action="SendContact" class="@((ViewContext.RouteData.Values["Controller"] as string == "Contact" && ViewContext.RouteData.Values["Action"] as string == "SendContact") ? "active" : "")">
                     Liên hệ
                     <span>// hello everyone - xin chào tất cả mọi người</span>
                 </a>

@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using ProjectFinalEngineer.Models.AggregatePostCategory;
 using ProjectFinalEngineer.Models.AggregateUser;
 
 namespace ProjectFinalEngineer.Models.AggregateKnowledge
@@ -16,9 +15,11 @@ namespace ProjectFinalEngineer.Models.AggregateKnowledge
         [StringLength(160, MinimumLength = 5, ErrorMessage = "{0} dài {1} đến {2}")]
         public string Title { set; get; }
 
+        [Display(Name = "Hình ảnh, Video")]
+        public string Media { set; get; }
+
         [Display(Name = "Nội dung")]
         public string Content { set; get; }
-
         public List<KnowledgeCategory> KnowledgeCategories { get; set; }
 
         [Display(Name = "Tác giả")]

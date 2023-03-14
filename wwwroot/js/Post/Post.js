@@ -1,24 +1,41 @@
-﻿const container = document.querySelector('.container-ex');
-const container1 = document.querySelector('.container-ex-1');
-const imageGoogle = document.querySelector('.image-google');
-const titleGoogle = document.querySelector('.container-ex-1  .wt-title');
-const search = document.querySelector('.search-box button');
-const weatherBox = document.querySelector('.weather-box');
-const weatherDetails = document.querySelector('.weather-details');
-const error404 = document.querySelector('.not-found');
-const notLocation = document.querySelector('.not-location');
+﻿const container = document.querySelector(".container-ex");
+const container1 = document.querySelector(".container-ex-1");
+const imageGoogle = document.querySelector(".image-google");
+const titleGoogle = document.querySelector(".container-ex-1  .wt-title");
+const search = document.querySelector(".search-box button");
+const weatherBox = document.querySelector(".weather-box");
+const weatherDetails = document.querySelector(".weather-details");
+const error404 = document.querySelector(".not-found");
+const notLocation = document.querySelector(".not-location");
 
-search.addEventListener('click', () => {
+$(document).ready(function () {
+    navbarActive();
+    openMenu();
+});
+function openMenu() {
+    $("#menu-icon").click(function () {
+        $(this).toggleClass("bx-x");
+        $(".navbar").toggleClass("open");
+    });
+}
+function navbarActive() {
+    $(this).on("click", "ul li", function () {
+        $(this).addClass("active").siblings().removeClass("active");
+    });
+}
 
-    const APIKey = 'f509b0ac71453b1d13125bb4e2368303';
-    const city = document.querySelector('.search-box input').value;
 
-    if (city === '') {
-        container.style.height = '100px';
-        weatherBox.style.display = 'none';
-        weatherDetails.style.display = 'none';
-        notLocation.style.display = 'block';
-        notLocation.classList.add('fadeIn');
+search.addEventListener("click", () => {
+
+    const APIKey = "f509b0ac71453b1d13125bb4e2368303";
+    const city = document.querySelector(".search-box input").value;
+
+    if (city === "") {
+        container.style.height = "100px";
+        weatherBox.style.display = "none";
+        weatherDetails.style.display = "none";
+        notLocation.style.display = "block";
+        notLocation.classList.add("fadeIn");
         return;
     }
 
@@ -27,12 +44,12 @@ search.addEventListener('click', () => {
         .then(response => response.json())
         .then(json => {
 
-            if (json.cod === '404') {
-                container.style.height = '150px';
-                weatherBox.style.display = 'none';
-                weatherDetails.style.display = 'none';
-                error404.style.display = 'block';
-                error404.classList.add('fadeIn');
+            if (json.cod === "404") {
+                container.style.height = "150px";
+                weatherBox.style.display = "none";
+                weatherDetails.style.display = "none";
+                error404.style.display = "block";
+                error404.classList.add("fadeIn");
                 return;
             }
 
@@ -131,8 +148,8 @@ $("#form").submit(function (e) {
             `
                 $("#result").append(result)
                 container1.style.height = 'auto';
-                container1.style.background = 'rgb(25 48 78)';
-                imageGoogle.style.display = 'none';
+                container1.style.background = "rgb(25 48 78)";
+                imageGoogle.style.display = "none";
                 titleGoogle.style.display = 'none';
             });
         }

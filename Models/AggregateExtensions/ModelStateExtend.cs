@@ -1,6 +1,3 @@
-using System.Net;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Identity;
 
@@ -8,15 +5,15 @@ namespace ProjectFinalEngineer.Models.AggregateExtensions
 {
     public static class ModelStateExtend
     {
-        public static void AddModelError(this ModelStateDictionary ModelState, string mgs)
+        public static void AddModelError(this ModelStateDictionary modelState, string mgs)
         {
-            ModelState.AddModelError(string.Empty, mgs);
+            modelState.AddModelError(string.Empty, mgs);
         }
-        public static void AddModelError(this ModelStateDictionary ModelState, IdentityResult result)
+        public static void AddModelError(this ModelStateDictionary modelState, IdentityResult result)
         {
             foreach (var error in result.Errors)
             {
-                ModelState.AddModelError(error.Description);
+                modelState.AddModelError(error.Description);
             }
         }
     }

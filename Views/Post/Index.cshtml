@@ -4,6 +4,7 @@
     ViewData["Title"] = "Diễn đàn";
     Layout = "~/Views/Shared/_LayoutForum.cshtml";
 }
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,37 +26,37 @@
                         </button>
                         <ul class="forum-ul">
                             <li>
-                                <a href="###">
-                                    <span></span>
+                                <a asp-controller="Post" asp-action="Index" class="@((ViewContext.RouteData.Values["Controller"] as string == "Post" && ViewContext.RouteData.Values["Action"] as string == "Index") ? "active-sidebar" : "")">
+                                    <span style="background-color: rgb(50 138 241);"></span>
                                     Tất cả chủ đề
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Phổ biến
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Phổ biến trong tuần
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Kiến thức
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Giải đáp
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Trao đổi, mua bán
                                 </a>
@@ -75,7 +76,7 @@
                                             <option>Thảo luận</option>
                                             <option>Giải pháp</option>
                                         </select>
-                                        <svg width="20" height="16" class="fill-current text-grey-600" viewBox="0 0 10 16">
+                                        <svg width="20" height="16" viewBox="0 0 10 16">
                                             <path d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
                                         </svg>
                                     </div>
@@ -83,13 +84,12 @@
                                 <div class="ft-2">
                                     <div class="select-wrap">
                                         <select>
-                                            <option>Mới nhất</option>
-                                            <option>Mã nguồn mở</option>
-                                            <option>Mã nguồn mở</option>
-                                            <option>Cần thảo luận</option>
-                                            <option>Cần trao đổi</option>
+                                            <option>Tất cả miền kiến thức</option>
+                                            <option>Lập trình</option>
+                                            <option>Giải tích, đại số</option>
+                                            <option>Đại cương điện tử</option>
                                         </select>
-                                        <svg width="20" height="16" class="fill-current text-grey-600" viewBox="0 0 10 16">
+                                        <svg width="20" height="16" viewBox="0 0 10 16">
                                             <path d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
                                         </svg>
                                     </div>
@@ -132,16 +132,20 @@
                                                             <div>
                                                                 <i class="far fa-eye"></i>
                                                             </div>
-                                                            <div class="soluong">66</div>
+                                                            <div class="soluong"> @Html.DisplayFor(modelItem => item.ViewCount)</div>
                                                         </div>
                                                         <div class="ct-header-analytics-mess">
                                                             <div>
-                                                                <i class="far fa-comment-dots"></i>
+                                                                <i class="far fa-thumbs-up"></i>
                                                             </div>
-                                                            <div class="soluong">66</div>
+                                                            <div class="soluong"> @Html.DisplayFor(modelItem => item.ReactCount)</div>
                                                         </div>
 
                                                     </div>
+                                                </div>
+                                                <div class="category-class">
+                                                    <p>Miền kiến thức: @string.Join(", ", item.PostCategories.Select(pc => pc.Category.Title))</p>
+                                                    
                                                 </div>
                                                 <div class="ct-body">
                                                     <div class="ct-body-name">
@@ -169,7 +173,6 @@
                         <div class="container-ex">
                             <div class="wt-title"><p>Thời tiết</p></div>
                             <div class="search-box">
-                                @*                                <img src="~/images/avatars/icons8-weather-64.png">*@
                                 <i class="fa-solid fa-location-dot loca-icon"></i>
                                 <input type="text" placeholder="Vị trí của bạn">
                                 <button class="wt-btn">
@@ -206,7 +209,6 @@
                                 </div>
                             </div>
                         </div>
-                        @*serp stack*@
                         <div class="container-ex-1">
                             <div class="wt-title"><p>Google</p></div>
                             <form id="form" autocomplete="off" class="search-box">
@@ -217,7 +219,7 @@
                                 </button>
                             </form>
                             <div class="image-google">
-                                <img width="144px;" height="144px;" src="~/images/avatars/icons8-google-news22.svg" style=" margin-left:50px;" />
+                                <img width="144px;" height="144px;" src="~/images/avatars/icons8-google-news22.svg" style=" margin-left:50px;" alt=""/>
                                 <div class="google-search">
                                     <div class="google-search-element">Tìm kiếm thông tin với google</div>
                                 </div>
@@ -240,20 +242,10 @@
                         </div>
                     </div>
                 </aside>
+            </div>
         </div>
-    </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
     <script src="~/js/Post/Post.js"></script>
 </body>
-@*
-<h1>@ViewData["Title"]</h1>
-
-<partial name="_AlertMessage" />
-
-<p>
-    <a asp-action="Create">Tạo bài viết mới</a>
-</p>
-<p>Tổng số bài viết: @ViewBag.totalPosts</p>
-*@

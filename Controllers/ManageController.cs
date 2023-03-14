@@ -1,11 +1,6 @@
-// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using ProjectFinalEngineer.Models;
 using ProjectFinalEngineer.Models.AggregateExtensions;
 using ProjectFinalEngineer.Models.AggregateManage;
 using ProjectFinalEngineer.Models.AggregateUser;
@@ -57,7 +52,7 @@ namespace ProjectFinalEngineer.Controllers
                 Logins = await _userManager.GetLoginsAsync(user),
                 BrowserRemembered = await _signInManager.IsTwoFactorClientRememberedAsync(user),
                 AuthenticatorKey = await _userManager.GetAuthenticatorKeyAsync(user),
-                profile = new EditExtraProfileModel()
+                Profile = new EditExtraProfileModel()
                 {
                     BirthDate = user.BirthDate,
                     HomeAdress = user.HomeAdress,
@@ -252,18 +247,14 @@ namespace ProjectFinalEngineer.Controllers
             await _emailSender.SendSmsAsync(model.PhoneNumber, "Mã xác thực là: " + code);
             return RedirectToAction(nameof(VerifyPhoneNumber), new { model.PhoneNumber });
         }
-        //
-        // GET: /Manage/VerifyPhoneNumber
+
         [HttpGet]
         public async Task<IActionResult> VerifyPhoneNumber(string phoneNumber)
         {
-            var code = await _userManager.GenerateChangePhoneNumberTokenAsync(await GetCurrentUserAsync(), phoneNumber);
-            // Send an SMS to verify the phone number
+            await _userManager.GenerateChangePhoneNumberTokenAsync(await GetCurrentUserAsync(), phoneNumber);
             return phoneNumber == null ? View("Error") : View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
         }
 
-        //
-        // POST: /Manage/VerifyPhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> VerifyPhoneNumber(VerifyPhoneNumberViewModel model)
@@ -282,12 +273,10 @@ namespace ProjectFinalEngineer.Controllers
                     return RedirectToAction(nameof(Index), new { Message = ManageMessageId.AddPhoneSuccess });
                 }
             }
-            // If we got this far, something failed, redisplay the form
             ModelState.AddModelError(string.Empty, "Lỗi thêm số điện thoại");
             return View(model);
         }
-        //
-        // GET: /Manage/RemovePhoneNumber
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> RemovePhoneNumber()
@@ -336,8 +325,7 @@ namespace ProjectFinalEngineer.Controllers
             }
             return RedirectToAction(nameof(Index), "Manage");
         }
-        //
-        // POST: /Manage/ResetAuthenticatorKey
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ResetAuthenticatorKey()

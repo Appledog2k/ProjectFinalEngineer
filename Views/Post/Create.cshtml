@@ -10,14 +10,9 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/Post/create.css">
-    <script src="~/js/Post/Create.js"></script>
-
 </head>
-
-
 <section class="db-main">
     <div class="db-main-header">
         <header>
@@ -26,8 +21,6 @@
         </header>
     </div>
     <div>
-        @*<img class="db-image" src=""
-        style="width: 310px; top:60px; left:-10px;">*@
         <article class="db">
             <div class="db-article">
                 <div class="db-article-line">
@@ -36,15 +29,20 @@
                             <div class="card-body-info">
                                 <form id="profile-form" asp-action="Create">
                                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                    <div class="form-group">
+                                    <div class="form-group select-option">
                                         <label asp-for="CategoryIDs" class="control-label"></label>
-                                        <select asp-for="CategoryIDs" multiple="multiple" asp-items="list"></select>
+                                        <select asp-for="CategoryIDs" multiple="multiple" asp-items="list" style="width: 300px !important; height: 50px !important; color: black !important"></select>
                                         <span asp-validation-for="CategoryIDs" class="text-danger"></span>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group select-option">
                                         <label asp-for="Title" class="control-label"></label>
-                                        <input asp-for="Title" class="form-control-user" />
+                                        <input asp-for="Title" class="form-control-user" style="margin-left: 0px !important;"/>
                                         <span asp-validation-for="Title" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group media-none">
+                                        <label asp-for="Media" class="control-label "></label>
+                                        <textarea asp-for="Media" class="form-control"></textarea>
+                                        <span asp-validation-for="Media" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
                                         <label asp-for="Content" class="control-label"></label>
@@ -52,7 +50,7 @@
                                         <span asp-validation-for="Content" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" value="Tạo bài viết" class="btn btn-primary" />
+                                        <input type="submit" value="Tạo bài viết" class="btn btn-primary"/>
                                     </div>
                                 </form>
                             </div>
@@ -68,7 +66,7 @@
 </section>
 
 @section Scripts {
-
+    <script src="~/js/Post/Create.js"></script>
     <script src="~/lib/multiple-select/multiple-select.min.js"></script>
     <link rel="stylesheet" href="~/lib/multiple-select/multiple-select.min.css" />
 
@@ -90,8 +88,15 @@
 
 @{
     var summernote = new ProjectFinalEngineer.Models.AggregateSummernote.Summernote("#Content")
+            {
+                Height = 100
+            };
+    var summernoteMedia = new ProjectFinalEngineer.Models.AggregateSummernote.Summernote("#Media")
     {
-        height = 200
+        Height = 0, 
+        Toolbar = @"[['insert', ['picture', 'video']],
+        ['view', ['fullscreen', 'codeview', 'help']],]",
     };
 }
 <partial name="_Summernote" model="summernote" />
+<partial name="_Summernote" model="summernoteMedia" />
