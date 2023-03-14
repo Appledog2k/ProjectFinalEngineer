@@ -24,36 +24,32 @@
             <p>Vui lòng cập nhật lý do bài viết bị từ chối</p>
         </header>
     </div>
-    <div>
-        <article class="db">
-            <div class="db-article">
-                <div class="db-article-line">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form asp-action="Refuse">
-                                <div asp-validation-summary="All" class="text-danger"></div>
-                                <input type="hidden" asp-for="PostId" />
-                                <div class="form-group">
-                                    <label asp-for="Title" class="control-label"></label>
-                                    <input asp-for="Title" class="form-control" type="hidden"/>
-                                    <span asp-validation-for="Title" class="text-danger"></span>
-                                    <textarea asp-for="Title" disabled style="width: 500px !important;"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="Reason" class="control-label"></label>
-                                    <textarea asp-for="Reason" class="form-control"></textarea>
-                                    <span asp-validation-for="Reason" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <input type="submit" value="Từ chối" class="btn btn-primary" />
-                                </div>
-                            </form>
-                        </div>
+    <article class="db">
+            <div class="main-info">
+                <div class="card-info">
+                    <div class="card-body-info">
+                        <form asp-action="Refuse" id="profile-form">
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <input type="hidden" asp-for="PostId" />
+                            <div class="form-group select-option">
+                                <label asp-for="Title" class="control-label"></label>
+                                <input asp-for="Title" class="form-control-user" style="margin-left: 0px !important;" type="hidden" />
+                                <textarea asp-for="Title" class="form-control-user" style="margin-left: 0px !important; border-radius: 10px; padding: 10px;" disabled></textarea>
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Reason" ></label>
+                                <textarea asp-for="Reason" class="form-control"></textarea>
+                                <span asp-validation-for="Reason" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Từ chối" class="btn btn-primary" />
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </article>
-    </div>
 </section>
 
 @section Scripts {
@@ -64,7 +60,7 @@
     @{
         var summernote = new ProjectFinalEngineer.Models.AggregateSummernote.Summernote("#Reason")
         {
-            Height = 200
+            Height = 100
         };
     }
     <partial name="_Summernote" model="summernote" />

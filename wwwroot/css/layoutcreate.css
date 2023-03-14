@@ -25,8 +25,11 @@ html {
 
 body {
     position: relative;
-    min-height: 2000px;
-    background: var(--bg-color);
+    min-height: 1100px;
+    background-color: #151f33 !important;
+    background-image: url(/images/avatars/upper-gradient.svg);
+    background-repeat: no-repeat;
+    background-size: 55%;
     color: var(--text-color);
 }
 
@@ -43,7 +46,6 @@ header {
     background: transparent;
     padding: 1rem;
     transition: all 0.5s ease;
-    /*background: var(--bg-color);*/
 }
 
 a {
@@ -327,10 +329,9 @@ div.social {
     color: var(--text-colorchange);
 }
 
-.row.secondary {
+.row .secondary {
     display: flex;
-    justify-content: space-around;
-    text-align: center;
+    flex-direction: row !important;
 }
 
     .row.secondary i {
@@ -348,17 +349,27 @@ div.social {
         }
 
 .copyright {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
     padding: 0.3em 1em;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
     background: rgb(40, 64, 103);
 }
-
     .copyright p {
-        font-size: 0.9em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
         text-align: center;
+        margin-bottom: 0 !important;
     }
 
-@media screen and (max-width: 1090px) {
-    .row.primary {
+    @media screen and (max-width: 1090px) {
+        .row.primary {
         grid-template-columns: 1fr;
     }
 

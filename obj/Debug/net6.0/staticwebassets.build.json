@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "62SL7vsFak6JVzg7FWozpc8FeSUyJSckHVLywFhcazU=",
+  "Hash": "O88Xgl2xKuCAAEvrBwnXYD6XUYh/EJPOVFS93RZAivA=",
   "Source": "ProjectFinalEngineer",
   "BasePath": "_content/ProjectFinalEngineer",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\AdminPost\\index.css"
+    },
+    {
+      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\AdminPost\\Refuse.css",
+      "SourceId": "ProjectFinalEngineer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\",
+      "BasePath": "_content/ProjectFinalEngineer",
+      "RelativePath": "css/AdminPost/Refuse.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\AdminPost\\Refuse.css"
     },
     {
       "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\AlertMessage\\alertmessage.css",

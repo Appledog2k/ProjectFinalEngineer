@@ -14,8 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap"
           rel="stylesheet">
 </head>
+
 <body>
     <partial name="_AlertMessage" />
+
     <div id="forum">
         <div class="container">
             <div id="forum-wapper">
@@ -105,12 +107,13 @@
                                     </div>
                                     @using (Html.BeginForm("Index", "Post", FormMethod.Get))
                                     {
-                                        <input class="fm-s-input" placeholder="Bắt đầu tìm kiếm" name="searchString" value="@ViewBag.SearchString" />
+                                        <input class="fm-s-input" placeholder="Tìm kiếm..." name="searchString" value="@ViewBag.SearchString" />
                                         <button type="submit" style="display: none"></button>
                                     }
                                 </label>
                             </form>
                         </div>
+
                         <div>
                             <div class="table">
                                 @foreach (var item in Model)
@@ -145,7 +148,6 @@
                                                 </div>
                                                 <div class="category-class">
                                                     <p>Miền kiến thức: @string.Join(", ", item.PostCategories.Select(pc => pc.Category.Title))</p>
-                                                    
                                                 </div>
                                                 <div class="ct-body">
                                                     <div class="ct-body-name">
@@ -219,7 +221,7 @@
                                 </button>
                             </form>
                             <div class="image-google">
-                                <img width="144px;" height="144px;" src="~/images/avatars/icons8-google-news22.svg" style=" margin-left:50px;" alt=""/>
+                                <img width="144px;" height="144px;" src="~/images/avatars/icons8-google-news22.svg" style=" margin-left:50px;" alt="" />
                                 <div class="google-search">
                                     <div class="google-search-element">Tìm kiếm thông tin với google</div>
                                 </div>

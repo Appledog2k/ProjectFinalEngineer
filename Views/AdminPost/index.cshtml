@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<ProjectFinalEngineer.Models.AggregatePost.Post>
 @{
-    ViewData["Title"] = "Diễn đàn";
+    ViewData["Title"] = "Quản lý bài viết";
     Layout = "~/Views/Shared/_LayoutForum.cshtml";
 }
 <head>
@@ -19,9 +19,9 @@
             <div id="forum-wapper">
                 <aside>
                     <div class="forum-left">
-                        <button>
+                        <div class="total-post">
                             <p>Tổng số @ViewBag.totalPosts bài đăng</p>
-                        </button>
+                        </div>
                         <ul class="forum-ul">
                             <li>
                                 <a href="###">
@@ -131,8 +131,8 @@
                                                         {
                                                             <button type="submit" class="ct-header-analytics-see">
                                                                 <div class="soluong">
-                                                                        Phê duyệt
-                                                                    </div>
+                                                                    Phê duyệt
+                                                                </div>
                                                             </button>
                                                         }
                                                         @if (item.Priority == 1)
@@ -144,6 +144,9 @@
                                                             </a>
                                                         }
                                                     </div>
+                                                </div>
+                                                <div class="category-class">
+                                                    <p>Miền kiến thức: @string.Join(", ", item.PostCategories.Select(pc => pc.Category.Title))</p>
                                                 </div>
                                                 <div class="ct-body">
                                                     <div class="ct-body-name">
@@ -168,65 +171,6 @@
                 </div>
                 <aside>
                     <div class="forum-left">
-                        <div class="container-ex">
-                            <div class="wt-title"><p>Thời tiết</p></div>
-                            <div class="search-box">
-                                @*                                <img src="~/images/avatars/icons8-weather-64.png">*@
-                                <i class="fa-solid fa-location-dot loca-icon"></i>
-                                <input type="text" placeholder="Vị trí của bạn">
-                                <button class="wt-btn">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                            <div class="not-found">
-                                <img src="~/images/avatars/404.png">
-                                <p style="color:white">Không tìm thấy vị trí</p>
-                            </div>
-                            <div class="not-location">
-                                <p style="color:white">Chưa nhập vị trí</p>
-                            </div>
-                            <div class="weather-box">
-                                <img src="">
-                                <p class="temperature" style="color:white"></p>
-                                <p class="description" style="color:white"></p>
-                            </div>
-
-                            <div class="weather-details">
-                                <div class="humidity">
-                                    <i class="fa-solid fa-water" style="color:white"></i>
-                                    <div class="text">
-                                        <span style="color:white"></span>
-                                        <p style="color:white">Độ ẩm</p>
-                                    </div>
-                                </div>
-                                <div class="wind">
-                                    <i class="fa-solid fa-wind" style="color:white"></i>
-                                    <div class="text">
-                                        <span style="color:white"></span>
-                                        <p style="color:white">Tốc độ gió</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @*serp stack*@
-                        <div class="container-ex-1">
-                            <div class="wt-title"><p>Google</p></div>
-                            <form id="form" autocomplete="off" class="search-box">
-                                <i class="fab fa-google loca-icon"></i>
-                                <input type="text" id="search" placeholder="Vui lòng nhập từ khóa">
-                                <button>
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </form>
-                            <div class="image-google">
-                                <img width="144px;" height="144px;" src="~/images/avatars/icons8-google-news22.svg" style=" margin-left:50px;" />
-                                <div class="google-search">
-                                    <div class="google-search-element">Tìm kiếm thông tin với google</div>
-                                </div>
-                            </div>
-                            <div id="result">
-                            </div>
-                        </div>
                         <div class="container-ex-2">
                             <div class="img-ex-2"><img width="134px;" height="110px;" src="~/images/avatars/news-1.jpg" /></div>
                             <div class="title-ex-2">
@@ -249,13 +193,3 @@
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
     <script src="~/js/Post/Post.js"></script>
 </body>
-@*
-<h1>@ViewData["Title"]</h1>
-
-<partial name="_AlertMessage" />
-
-<p>
-    <a asp-action="Create">Tạo bài viết mới</a>
-</p>
-<p>Tổng số bài viết: @ViewBag.totalPosts</p>
-*@

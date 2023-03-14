@@ -345,6 +345,10 @@
       "PackagePath": "staticwebassets\\css\\Account\\register.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\AdminPost\\Refuse.css",
+      "PackagePath": "staticwebassets\\css\\AdminPost\\Refuse.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\AdminPost\\index.css",
       "PackagePath": "staticwebassets\\css\\AdminPost\\index.css"
     },
