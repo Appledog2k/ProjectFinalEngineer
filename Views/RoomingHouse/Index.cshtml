@@ -25,37 +25,37 @@
                         </button>
                         <ul class="forum-ul">
                             <li>
-                                <a href="###">
-                                    <span></span>
+                                <a asp-controller="Post" asp-action="Index" class="@((ViewContext.RouteData.Values["Controller"] as string == "RoomingHouse" && ViewContext.RouteData.Values["Action"] as string == "Index") ? "active-sidebar" : "")">
+                                    <span style="background-color: rgb(50 138 241);"></span>
                                     Tất cả chủ đề
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Phổ biến
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Phổ biến trong tuần
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Kiến thức
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Giải đáp
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Trao đổi, mua bán
                                 </a>
@@ -73,7 +73,9 @@
                                             <option>Khu vực Cầu Giấy</option>
                                             <option>Khu vực Hai Bà Trưng</option>
                                         </select>
+                                        @* ReSharper disable UnknownCssClass *@
                                         <svg width="20" height="16" class="fill-current text-grey-600" viewBox="0 0 10 16">
+                                            @* ReSharper restore UnknownCssClass *@
                                             <path d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
                                         </svg>
                                     </div>
@@ -87,7 +89,9 @@
                                             <option>3-10 triệu</option>
                                             <option>10 triệu +</option>
                                         </select>
+                                        @* ReSharper disable UnknownCssClass *@
                                         <svg width="20" height="16" class="fill-current text-grey-600" viewBox="0 0 10 16">
+                                            @* ReSharper restore UnknownCssClass *@
                                             <path d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
                                         </svg>
                                     </div>
@@ -129,38 +133,52 @@
                                                     <div class="ct-header-analytics">
                                                         <div class="ct-header-analytics-see">
                                                             <div>
+                                                                @* ReSharper disable UnknownCssClass *@
                                                                 <i class="far fa-eye"></i>
+                                                                @* ReSharper restore UnknownCssClass *@
                                                             </div>
-                                                            <div class="soluong">66</div>
+                                                            <div class="soluong"> @Html.DisplayFor(modelItem => item.ViewCount)</div>
                                                         </div>
                                                         <div class="ct-header-analytics-mess">
                                                             <div>
-                                                                <i class="far fa-comment-dots"></i>
+                                                                @* ReSharper disable UnknownCssClass *@
+                                                                <i class="far fa-thumbs-up"></i>
+                                                                @* ReSharper restore UnknownCssClass *@
                                                             </div>
-                                                            <div class="soluong">66</div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div class="image-content" style ="width: 50px;height: 50px;">
-                                               
-                                                        @Html.Raw(item.Content)
-                                               
-                                                </div>
-                                                    <div class="ct-body">
-                                                        <div class="ct-body-name">
-                                                            <a>
-                                                                <p style="color: rgb(50 138 241);">@Html.DisplayFor(modelItem => item.Author.UserName)</p></a>
-
-                                                        </div>
-                                                        <div class="ct-body-time">
-                                                            <p>
-                                                                &nbsp;tạo bài viết vào @Html.DisplayFor(modelItem => item.DateUpdated.Day)/@Html.DisplayFor(modelItem => item.DateUpdated.Month)/@Html.DisplayFor(modelItem => item.DateUpdated.Year)
-                                                            </p>
+                                                            <div class="soluong"> @Html.DisplayFor(modelItem => item.ReactCount)</div>
                                                         </div>
                                                     </div>
-
                                                 </div>
+                                                <div class="category-class">
+                                                    @*<p>Khu vực: @string.Join(", ", item.RoomingHouseAreas.Select(pc => pc.Area.Title))</p>*@
+                                                </div>
+                                                <div class="description-image">
+                                                    <div class="image-content">
+                                                        @Html.Raw(item.Image)
+                                                    </div>
+                                                    <div class="description-column" style="padding-top: 10px;">
+                                                        @Html.DisplayFor(modelItem=>item.Description)
+                                                        @if (item.Price > 0)
+                                                        {
+                                                            <p>Giá tiền thuê: @Html.DisplayFor(modelItem => item.Price) đồng/tháng.</p>
+                                                        }
+                                                    </div>
+                                                </div>
+
+                                                <div class="ct-body">
+                                                    <div class="ct-body-name">
+                                                        <a>
+                                                            <p style="color: rgb(50 138 241);">@Html.DisplayFor(modelItem => item.Author.UserName)</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="ct-body-time">
+                                                        <p>
+                                                            &nbsp;tạo bài viết vào @Html.DisplayFor(modelItem => item.DateUpdated.Day)/@Html.DisplayFor(modelItem => item.DateUpdated.Month)/@Html.DisplayFor(modelItem => item.DateUpdated.Year)
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 }
@@ -174,11 +192,14 @@
                         <div class="container-ex">
                             <div class="wt-title"><p>Thời tiết</p></div>
                             <div class="search-box">
-                                @*                                <img src="~/images/avatars/icons8-weather-64.png">*@
+                                @* ReSharper disable UnknownCssClass *@
                                 <i class="fa-solid fa-location-dot loca-icon"></i>
+                                @* ReSharper restore UnknownCssClass *@
                                 <input type="text" placeholder="Vị trí của bạn">
-                                <button class="wt-btn">
+                                <button>
+                                    @* ReSharper disable UnknownCssClass *@
                                     <i class="fas fa-search"></i>
+                                    @* ReSharper restore UnknownCssClass *@
                                 </button>
                             </div>
                             <div class="not-found">
@@ -196,15 +217,19 @@
 
                             <div class="weather-details">
                                 <div class="humidity">
+                                    @* ReSharper disable UnknownCssClass *@
                                     <i class="fa-solid fa-water" style="color:white"></i>
-                                    <div class="text">
+                                    @* ReSharper restore UnknownCssClass *@
+                                    <div>
                                         <span style="color:white"></span>
                                         <p style="color:white">Độ ẩm</p>
                                     </div>
                                 </div>
                                 <div class="wind">
+                                    @* ReSharper disable UnknownCssClass *@
                                     <i class="fa-solid fa-wind" style="color:white"></i>
-                                    <div class="text">
+                                    @* ReSharper restore UnknownCssClass *@
+                                    <div>
                                         <span style="color:white"></span>
                                         <p style="color:white">Tốc độ gió</p>
                                     </div>
@@ -215,32 +240,32 @@
                         <div class="container-ex-1">
                             <div class="wt-title"><p>Đăng ký tìm trọ</p></div>
                             @*<form id="form" autocomplete="off" class="search-box">
-                                <i class="fab fa-google loca-icon"></i>
-                                <input type="text" id="search" placeholder="Vui lòng nhập từ khóa">
-                                <button>
-                                    <i class="fas fa-search"></i>
-                                </button>
+                            <i class="fab fa-google loca-icon"></i>
+                            <input type="text" id="search" placeholder="Vui lòng nhập từ khóa">
+                            <button>
+                            <i class="fas fa-search"></i>
+                            </button>
                             </form>*@
-                            <div class="image-google">
+                            <di>
                                 <img width="220px;" height="160px;" src="~/images/avatars/Bạn mong muốn gì.jpg " style=" margin-left:20px; color: aquamarine" />
                                 @*<div class="google-search">
-                                    <div class="google-search-element">Tìm kiếm thông tin với google</div>
+                                <div class="google-search-element">Tìm kiếm thông tin với google</div>
                                 </div>*@
-                            </div>
+                            </di>
                             <div id="result">
                             </div>
                         </div>
                         <div class="container-ex-2">
                             <div class="img-ex-2"><img width="229px;" height="160px;" src="~/images/avatars/Screenshot_11.png" style=" margin-left:10px; color: aquamarine" /></div>
                             @*<div class="title-ex-2">
-                                <p>
-                                    Đại học bách khoa Hà Nội
-                                </p>
+                            <p>
+                            Đại học bách khoa Hà Nội
+                            </p>
                             </div>
                             <div class="search-ex-2">
-                                <a href="https://ctt.hust.edu.vn/" target="_blank">
-                                    Cổng thông tin
-                                </a>
+                            <a href="https://ctt.hust.edu.vn/" target="_blank">
+                            Cổng thông tin
+                            </a>
                             </div>*@
                         </div>
                     </div>

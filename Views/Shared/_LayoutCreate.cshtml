@@ -22,7 +22,7 @@
         </a>
         <ul class="navbar-create">
             <li class="pt-create">
-                <a asp-controller="Post" asp-action="Index">
+                <a asp-controller="Post" asp-action="Index" class="@((ViewContext.RouteData.Values["Controller"] as string == "Post" && ViewContext.RouteData.Values["Action"] as string == "Create") ? "active" : "")">
                     Diễn đàn
                     <span>// hello everyone - xin chào tất cả mọi người</span>
                 </a>

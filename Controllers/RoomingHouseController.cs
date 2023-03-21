@@ -43,7 +43,7 @@ namespace ProjectFinalEngineer.Controllers
 
             var totalPosts = await roomingHouses.CountAsync();
 
-            if (pagesize <= 0) pagesize = 10;
+            if (pagesize <= 0) pagesize = 5;
             var countPages = (int)Math.Ceiling((double)totalPosts / pagesize);
             if (currentPage > countPages) currentPage = countPages;
             if (currentPage < 1) currentPage = 1;
@@ -65,7 +65,7 @@ namespace ProjectFinalEngineer.Controllers
 
             var roomingHousesInPage = await roomingHouses.Skip((currentPage - 1) * pagesize)
                 .Take(pagesize)
-                .Include(p => p.RommingHouseAreas)
+                .Include(p => p.RoomingHouseAreas)
                 .ThenInclude(pc => pc.Area)
                 .ToListAsync();
 
@@ -97,7 +97,7 @@ namespace ProjectFinalEngineer.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title,Content,Price,Image,AreaIDs")] CreateRoomingHouseModel roomingHouse)
+        public async Task<IActionResult> Create([Bind("Title,Description,Content,Price,Image,AreaIDs")] CreateRoomingHouseModel roomingHouse)
         {
             var areas = await _context.Areas.ToListAsync();
             ViewData["areas"] = new MultiSelectList(areas, "Id", "Title");
@@ -119,7 +119,7 @@ namespace ProjectFinalEngineer.Controllers
             {
                 foreach (var areaId in roomingHouse.AreaIDs)
                 {
-                    _context.Add(new RommingHouseArea()
+                    _context.Add(new RoomingHouseArea()
                     {
                         AreaId = areaId,
                         RoomingHouse = roomingHouse
@@ -175,7 +175,7 @@ namespace ProjectFinalEngineer.Controllers
             }
 
             // var post = await _context.Posts.FindAsync(id);
-            var roomingHouse = await _context.RoomingHouses.Include(p => p.RommingHouseAreas)
+            var roomingHouse = await _context.RoomingHouses.Include(p => p.RoomingHouseAreas)
                 .Include(post => post.Author)
                 .Include(post => post.Comments)
                 .ThenInclude(comment => comment.Author)
@@ -195,8 +195,10 @@ namespace ProjectFinalEngineer.Controllers
                 Title = roomingHouse.Title,
                 Content = roomingHouse.Content,
                 Price = roomingHouse.Price,
+                Image = roomingHouse.Image,
+                Description = roomingHouse.Description,
                 Published = false,
-                AreaIDs = roomingHouse.RommingHouseAreas.Select(pc => pc.AreaId).ToArray()
+                AreaIDs = roomingHouse.RoomingHouseAreas.Select(pc => pc.AreaId).ToArray()
             };
 
             var areas = await _context.Areas.ToListAsync();
@@ -207,7 +209,7 @@ namespace ProjectFinalEngineer.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Image,Content,Price,AreaIDs")] CreateRoomingHouseModel roomingHouse)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Image,Content,Price,AreaIDs")] CreateRoomingHouseModel roomingHouse)
         {
             if (id != roomingHouse.Id)
             {
@@ -220,7 +222,7 @@ namespace ProjectFinalEngineer.Controllers
                 try
                 {
 
-                    var roomingHousesUpdate = await _context.RoomingHouses.Include(p => p.RommingHouseAreas).FirstOrDefaultAsync(p => p.Id == id);
+                    var roomingHousesUpdate = await _context.RoomingHouses.Include(p => p.RoomingHouseAreas).FirstOrDefaultAsync(p => p.Id == id);
                     if (roomingHousesUpdate == null)
                     {
                         return NotFound();
@@ -230,15 +232,17 @@ namespace ProjectFinalEngineer.Controllers
                     roomingHousesUpdate.Content = roomingHouse.Content;
                     roomingHousesUpdate.DateUpdated = DateTime.Now;
                     roomingHousesUpdate.Price = roomingHouse.Price;
+                    roomingHousesUpdate.Description = roomingHouse.Description;
+                    roomingHousesUpdate.Image = roomingHouse.Image;
 
                     roomingHouse.AreaIDs ??= new int[] { };
-                    var oldAreaIds = roomingHousesUpdate.RommingHouseAreas.Select(c => c.AreaId).ToArray();
+                    var oldAreaIds = roomingHousesUpdate.RoomingHouseAreas.Select(c => c.AreaId).ToArray();
                     var newAreaIds = roomingHouse.AreaIDs;
 
-                    var removeRoomingHousesAreas = from roomingHousesAreas in roomingHousesUpdate.RommingHouseAreas
+                    var removeRoomingHousesAreas = from roomingHousesAreas in roomingHousesUpdate.RoomingHouseAreas
                                           where (!newAreaIds.Contains(roomingHousesAreas.AreaId))
                                           select roomingHousesAreas;
-                    _context.RommingHouseAreas.RemoveRange(removeRoomingHousesAreas);
+                    _context.RoomingHouseAreas.RemoveRange(removeRoomingHousesAreas);
 
                     var addRoomingHousesAreas = from areaId in newAreaIds
                                      where !oldAreaIds.Contains(areaId)
@@ -246,9 +250,9 @@ namespace ProjectFinalEngineer.Controllers
 
                     foreach (var areasId in addRoomingHousesAreas)
                     {
-                        _context.RommingHouseAreas.Add(new RommingHouseArea()
+                        _context.RoomingHouseAreas.Add(new RoomingHouseArea()
                         {
-                            RommingHouseId = id,
+                            RoomingHouseId = id,
                             AreaId = areasId
                         });
                     }
@@ -286,23 +290,26 @@ namespace ProjectFinalEngineer.Controllers
                 return NotFound();
             }
 
-            var post = await _context.RoomingHouses
+            var roomingHouse = await _context.RoomingHouses
                 .Include(p => p.Comments)
                 .Include(p => p.Author)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (post == null)
+            if (roomingHouse == null)
             {
                 return NotFound();
             }
 
-            return View(post);
+            return View(roomingHouse);
         }
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var roomingHouse = await _context.RoomingHouses.FindAsync(id);
+            var roomingHouse = await _context.RoomingHouses
+                .Include(p => p.Comments)
+                .Include(p => p.Author)
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (roomingHouse == null)
             {

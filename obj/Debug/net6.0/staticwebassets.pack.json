@@ -329,6 +329,10 @@
       "PackagePath": "staticwebassets\\Images\\sign-out.png"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Account\\RegisterConfirmation.css",
+      "PackagePath": "staticwebassets\\css\\Account\\RegisterConfirmation.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Account\\forgotpassword.css",
       "PackagePath": "staticwebassets\\css\\Account\\forgotpassword.css"
     },

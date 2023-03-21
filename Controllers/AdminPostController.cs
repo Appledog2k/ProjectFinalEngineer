@@ -36,9 +36,9 @@ namespace ProjectFinalEngineer.Controllers
                 posts = posts.Where(post => post.Title.Contains(searchString) || post.Content.Contains(searchString));
             }
 
-            int totalPosts = await posts.CountAsync();
+            var totalPosts = await posts.CountAsync();
             if (pagesize <= 0) pagesize = 10;
-            int countPages = (int)Math.Ceiling((double)totalPosts / pagesize);
+            var countPages = (int)Math.Ceiling((double)totalPosts / pagesize);
 
             if (currentPage > countPages) currentPage = countPages;
             if (currentPage < 1) currentPage = 1;
@@ -66,8 +66,8 @@ namespace ProjectFinalEngineer.Controllers
 
             return View(postsInPage);
         }
-        [AllowAnonymous]
 
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -111,7 +111,6 @@ namespace ProjectFinalEngineer.Controllers
                 return NotFound();
             }
 
-            // var post = await _context.Posts.FindAsync(id);
             var post = await _context.Posts.Include(p => p.PostCategories)
                 .Include(post => post.Author)
                 .Include(post => post.Comments)
@@ -202,7 +201,7 @@ namespace ProjectFinalEngineer.Controllers
                         throw;
                     }
                 }
-                StatusMessage = "Vừa cập nhật bài viết";
+                StatusMessage = "Từ chối bài viết thành công";
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AuthorId"] = new SelectList(_context.Users, "Id", "Id", post.AuthorId);

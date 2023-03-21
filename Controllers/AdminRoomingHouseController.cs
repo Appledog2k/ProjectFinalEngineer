@@ -59,7 +59,7 @@ namespace ProjectFinalEngineer.Controllers
 
             var roomingHousesInPage = await roomingHouses.Skip((currentPage - 1) * pagesize)
                 .Take(pagesize)
-                .Include(p => p.RommingHouseAreas)
+                .Include(p => p.RoomingHouseAreas)
                 .ThenInclude(pc => pc.Area)
                 .ToListAsync();
 
@@ -109,7 +109,7 @@ namespace ProjectFinalEngineer.Controllers
             }
 
             // var post = await _context.Posts.FindAsync(id);
-            var roomingHouse = await _context.RoomingHouses.Include(p => p.RommingHouseAreas)
+            var roomingHouse = await _context.RoomingHouses.Include(p => p.RoomingHouseAreas)
                 .Include(post => post.Author)
                 .Include(post => post.Comments)
                 .ThenInclude(comment => comment.Author)
@@ -129,7 +129,7 @@ namespace ProjectFinalEngineer.Controllers
                 Content = roomingHouse.Content,
                 Price = roomingHouse.Price,
                 Published = false,
-                AreaIDs = roomingHouse.RommingHouseAreas.Select(pc => pc.AreaId).ToArray()
+                AreaIDs = roomingHouse.RoomingHouseAreas.Select(pc => pc.AreaId).ToArray()
             };
 
             var areas = await _context.Areas.ToListAsync();
@@ -153,7 +153,7 @@ namespace ProjectFinalEngineer.Controllers
                 try
                 {
 
-                    var roomingHousesUpdate = await _context.RoomingHouses.Include(p => p.RommingHouseAreas).FirstOrDefaultAsync(p => p.Id == id);
+                    var roomingHousesUpdate = await _context.RoomingHouses.Include(p => p.RoomingHouseAreas).FirstOrDefaultAsync(p => p.Id == id);
                     if (roomingHousesUpdate == null)
                     {
                         return NotFound();
@@ -167,13 +167,13 @@ namespace ProjectFinalEngineer.Controllers
                     // Update PostCategory
                     roomingHouse.AreaIDs ??= new int[] { };
 
-                    var oldAreaIds = roomingHousesUpdate.RommingHouseAreas.Select(c => c.AreaId).ToArray();
+                    var oldAreaIds = roomingHousesUpdate.RoomingHouseAreas.Select(c => c.AreaId).ToArray();
                     var newAreaIds = roomingHouse.AreaIDs;
 
-                    var removeRoomingHousesAreas = from roomingHousesAreas in roomingHousesUpdate.RommingHouseAreas
+                    var removeRoomingHousesAreas = from roomingHousesAreas in roomingHousesUpdate.RoomingHouseAreas
                                                    where (!newAreaIds.Contains(roomingHousesAreas.AreaId))
                                                    select roomingHousesAreas;
-                    _context.RommingHouseAreas.RemoveRange(removeRoomingHousesAreas);
+                    _context.RoomingHouseAreas.RemoveRange(removeRoomingHousesAreas);
 
                     var addRoomingHousesAreas = from areaId in newAreaIds
                                                 where !oldAreaIds.Contains(areaId)
@@ -181,9 +181,9 @@ namespace ProjectFinalEngineer.Controllers
 
                     foreach (var areasId in addRoomingHousesAreas)
                     {
-                        _context.RommingHouseAreas.Add(new RommingHouseArea()
+                        _context.RoomingHouseAreas.Add(new RoomingHouseArea()
                         {
-                            RommingHouseId = id,
+                            RoomingHouseId = id,
                             AreaId = areasId
                         });
                     }

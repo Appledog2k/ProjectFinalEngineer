@@ -2,17 +2,16 @@
 
 namespace ProjectFinalEngineer.Models.RoomingHouse
 {
-    [Table("RommingHouseArea")]
-    public class RommingHouseArea
+    [Table("RoomingHouseArea")]
+    public class RoomingHouseArea
     {
+        public int RoomingHouseId { set; get; }
         public int AreaId { set; get; }
 
-        public int RommingHouseId { set; get; }
-
-        [ForeignKey("AreaID")]
+        [ForeignKey("AreaId")]
         public Area Area { set; get; }
 
-        [ForeignKey("RommingHouseID")]
+        [ForeignKey("RoomingHouseId")]
         public RoomingHouse RoomingHouse { set; get; }
     }
 }

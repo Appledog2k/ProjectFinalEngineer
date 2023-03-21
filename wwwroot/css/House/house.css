@@ -27,6 +27,8 @@ button a {
     color: white;
 }
 
+
+
 button {
     cursor: pointer;
 }
@@ -102,12 +104,31 @@ button {
         row-gap: 0.5rem;
     }
 
-.image-content img {
-    width: 400px !important;
-    height: 200px !important;
-    margin-left: 70px;
-    margin-top: 15px;
+.image-content {
+    width: 60%;
 }
+
+    .image-content img {
+        width: 400px !important;
+        height: 200px !important;
+        margin-left: 70px;
+        margin-top: 15px;
+    }
+
+.description-column {
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    width: 40%;
+    padding: 10px;
+    background-color: rgb(25 48 78/var(--text-opacity));
+    transition: 0.2s ease-out;
+    border-radius: 18px;
+}
+
+    .description-column:hover {
+        background-color: rgba(50,138,241,.1);
+    }
 
 iframe {
     width: 400px !important;
@@ -115,6 +136,7 @@ iframe {
     margin-left: 70px;
     margin-top: 15px;
 }
+
 .forum-ul li a {
     display: flex;
     color: hsla(0, 0%, 100%, 0.85);
@@ -134,6 +156,10 @@ iframe {
         color: rgb(50 138 241 / var(--text-opacity));
         background-color: rgb(24 39 63 / var(--bg-opacity));
     }
+
+        .forum-ul li a:hover .description-column {
+            background-color: rgba(50,138,241,.1);
+        }
 
         .forum-ul li a:hover span {
             --bg-opacity: 1;
@@ -329,6 +355,10 @@ iframe {
         background-color: rgb(25 48 78/var(--text-opacity));
     }
 
+        .contact-element:hover .description-column {
+            background-color: rgba(50,138,241,.1);
+        }
+
     .contact-element .ct-header:hover {
         text-decoration: underline;
     }
@@ -460,7 +490,7 @@ iframe {
 .ct-body {
     display: flex;
     margin-left: 70px;
-   padding-top: 180px;
+    padding-top: 20px;
 }
 
 .ct-body-name {
@@ -476,6 +506,11 @@ iframe {
     line-height: 1;
     font-weight: 600;
     font-size: .6666rem;
+}
+
+.description-image {
+    display: flex;
+    flex-direction: column;
 }
 
 .container-ex {
@@ -645,6 +680,16 @@ iframe {
         font-weight: 500;
         text-transform: capitalize;
     }
+
+.category-class {
+    margin-left: 70px !important;
+    font-size: 10px;
+    margin-top: -10px;
+    color: #bad9fc;
+    color: rgba(186,217,252,.4);
+    font-weight: 600;
+    font-size: .8rem;
+}
 
 .weather-details {
     width: 100%;

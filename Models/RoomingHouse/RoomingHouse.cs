@@ -20,15 +20,21 @@ namespace ProjectFinalEngineer.Models.RoomingHouse
         [Required(ErrorMessage = "Phải có hình ảnh, video")]
         public string Image { set; get; }
 
+        [Display(Name = "Mô tả")]
+        [Required(ErrorMessage = "Phải có mô tả")]
+        public string Description { set; get; }
+
+
         [Display(Name = "Nội dung")]
         public string Content { set; get; }
 
-        public float Price { set; get; }
+        [Required(ErrorMessage = "Phải có giá tiền")]
+        public float Price { set; get; } =0;
 
         [Display(Name = "Xuất bản")]
         public bool Published { set; get; } = false;
         public AppUser Approver { set; get; }
-        public List<RommingHouseArea> RommingHouseAreas { get; set; }
+        public List<RoomingHouseArea> RoomingHouseAreas { get; set; }
 
         [Display(Name = "Tác giả")]
         public string AuthorId { set; get; }

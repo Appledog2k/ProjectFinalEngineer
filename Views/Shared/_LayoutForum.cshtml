@@ -23,7 +23,9 @@
         </a>
         <ul class="navbar">
             <li class="pt">
-                <a asp-controller="Post" asp-action="Index" class="@((ViewContext.RouteData.Values["Controller"] as string == "Post" && ViewContext.RouteData.Values["Action"] as string == "Index") ? "active" : "")">
+                <a asp-controller="Post" asp-action="Index" class="@((ViewContext.RouteData.Values["Controller"] as string == "Post" && ViewContext.RouteData.Values["Action"] as string == "Index") ? "active" : "") ||
+                @((ViewContext.RouteData.Values["Controller"] as string == "Post" && ViewContext.RouteData.Values["Action"] as string == "Details") ? "active" : "") 
+                || @((ViewContext.RouteData.Values["Controller"] as string == "Post" && ViewContext.RouteData.Values["Action"] as string == "Create") ? "active" : "")">
                     Diễn đàn
                     <span>// hello everyone - xin chào tất cả mọi người</span>
                 </a>

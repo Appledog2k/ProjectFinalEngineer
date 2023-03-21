@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "O88Xgl2xKuCAAEvrBwnXYD6XUYh/EJPOVFS93RZAivA=",
+  "Hash": "NXWPzCrhgI3rxnir6WTWRnNOuCHDuyiPG68/iFY6OFI=",
   "Source": "ProjectFinalEngineer",
   "BasePath": "_content/ProjectFinalEngineer",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Account\\register.css"
+    },
+    {
+      "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Account\\RegisterConfirmation.css",
+      "SourceId": "ProjectFinalEngineer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\",
+      "BasePath": "_content/ProjectFinalEngineer",
+      "RelativePath": "css/Account/RegisterConfirmation.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Account\\RegisterConfirmation.css"
     },
     {
       "Identity": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\AdminPost\\index.css",

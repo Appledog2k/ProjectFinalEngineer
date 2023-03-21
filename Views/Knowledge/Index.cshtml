@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutForum.cshtml";
 }
 <head>
-    <meta charset="UTF-8">  
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/css/Post/index.css">
@@ -25,37 +25,37 @@
                         </button>
                         <ul class="forum-ul">
                             <li>
-                                <a href="###">
-                                    <span></span>
+                                <a asp-controller="Post" asp-action="Index" class="@((ViewContext.RouteData.Values["Controller"] as string == "Knowledge" && ViewContext.RouteData.Values["Action"] as string == "Index") ? "active-sidebar" : "")">
+                                    <span style="background-color: rgb(50 138 241);"></span>
                                     Tất cả chủ đề
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Phổ biến
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Phổ biến trong tuần
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Kiến thức
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Giải đáp
                                 </a>
                             </li>
                             <li>
-                                <a href="###">
+                                <a>
                                     <span></span>
                                     Trao đổi, mua bán
                                 </a>
@@ -75,7 +75,9 @@
                                             <option>Thảo luận</option>
                                             <option>Giải pháp</option>
                                         </select>
+                                        @* ReSharper disable UnknownCssClass *@
                                         <svg width="20" height="16" class="fill-current text-grey-600" viewBox="0 0 10 16">
+                                            @* ReSharper restore UnknownCssClass *@
                                             <path d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
                                         </svg>
                                     </div>
@@ -89,7 +91,9 @@
                                             <option>Cần thảo luận</option>
                                             <option>Cần trao đổi</option>
                                         </select>
+                                        @* ReSharper disable UnknownCssClass *@
                                         <svg width="20" height="16" class="fill-current text-grey-600" viewBox="0 0 10 16">
+                                            @* ReSharper restore UnknownCssClass *@
                                             <path d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
                                         </svg>
                                     </div>
@@ -126,17 +130,20 @@
                                                     <div class="ct-header-analytics">
                                                         <div class="ct-header-analytics-see">
                                                             <div>
+                                                                @* ReSharper disable UnknownCssClass *@
                                                                 <i class="far fa-eye"></i>
+                                                                @* ReSharper restore UnknownCssClass *@
                                                             </div>
-                                                            <div class="soluong">66</div>
+                                                            <div class="soluong"> @Html.DisplayFor(modelItem => item.ViewCount)</div>
                                                         </div>
                                                         <div class="ct-header-analytics-mess">
                                                             <div>
-                                                                <i class="far fa-comment-dots"></i>
+                                                                @* ReSharper disable UnknownCssClass *@
+                                                                <i class="far fa-thumbs-up"></i>
+                                                                @* ReSharper restore UnknownCssClass *@
                                                             </div>
-                                                            <div class="soluong">66</div>
+                                                            <div class="soluong"> @Html.DisplayFor(modelItem => item.ReactCount)</div>
                                                         </div>
-
                                                     </div>
                                                 </div>
                                                 <div class="ct-body">

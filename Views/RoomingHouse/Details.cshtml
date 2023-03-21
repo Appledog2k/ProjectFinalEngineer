@@ -78,22 +78,25 @@
                                                 <h4>
                                                     @Html.DisplayFor(model => model.RoomingHouse.Author.UserName)
                                                 </h4>
-                                                <div class="ct-header-analytics">
-                                                    <div class="ct-header-analytics-see">
-                                                        <div>
-                                                            <a asp-action="Edit" asp-route-id="@Model.RoomingHouse.Id">
-                                                                <i class="fa fa-pen fa-xs " style="font-size: 13px;"></i>
-                                                            </a>
+                                                @if (User.IsInRole("Administrator") || Model.RoomingHouse.AuthorId == User.Identity?.Name)
+                                                {
+                                                    <div class="ct-header-analytics">
+                                                        <div class="ct-header-analytics-see">
+                                                            <div>
+                                                                <a asp-action="Edit" asp-route-id="@Model.RoomingHouse.Id">
+                                                                    <i class="fa fa-pen fa-xs " style="font-size: 13px;"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ct-header-analytics-mess">
+                                                            <div>
+                                                                <a asp-action="Delete" asp-route-id="@Model.RoomingHouse.Id">
+                                                                    <i class="far fa-trash-alt" style="font-size: 13px;"></i>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="ct-header-analytics-mess">
-                                                        <div>
-                                                            <a asp-action="Delete" asp-route-id="@Model.RoomingHouse.Id">
-                                                                <i class="far fa-trash-alt" style="font-size: 13px;"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                }
                                             </div>
                                             <div class="ct-body-time">
                                                 <p>
@@ -105,10 +108,18 @@
                                                     @Html.DisplayFor(model => model.RoomingHouse.Title)
                                                 </h1>
                                             </div>
-                                            <div class="title-details">
-                                                <h1>
-                                                    Giá tiền thuê @Html.DisplayFor(model => model.RoomingHouse.Price) đồng/tháng.
-                                                </h1>
+                                            @if (Model.RoomingHouse.Price > 0)
+                                            {
+                                                <div class="title-details">
+                                                    <h1>
+                                                        Giá tiền thuê @Html.DisplayFor(model => model.RoomingHouse.Price) đồng/tháng.
+                                                    </h1>
+                                                </div>
+                                            }
+                                            <div class="ct-body-content">
+                                                <p>
+                                                    @Html.Raw(@Model.RoomingHouse.Image)
+                                                </p>
                                             </div>
                                             <div class="ct-body-content">
                                                 <p>

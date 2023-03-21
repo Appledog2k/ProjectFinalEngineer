@@ -12,7 +12,15 @@ html {
     font-family: "Poppins", sans-serif;
     list-style: none;
 }
-
+.active {
+    color: white;
+    border: 3px solid #328af1;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 3px solid #328af1;
+    border-radius: 3px 3px 3px 3px;
+}
 :root {
     --gradient-from: #328af1;
     --gradient-stops: var(--gradient-from), var(--gradient-to, rgba(50, 138, 241, 0));

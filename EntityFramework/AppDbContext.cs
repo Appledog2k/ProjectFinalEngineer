@@ -41,12 +41,12 @@ public class AppDbContext : IdentityDbContext<AppUser>
         }
         modelBuilder.Entity<PostCategory>().HasKey(p => new { p.PostId, p.CategoryId });
         modelBuilder.Entity<KnowledgeCategory>().HasKey(p => new { p.KnowledgeId, p.CategoryId });
-        modelBuilder.Entity<RommingHouseArea>().HasKey(p => new { p.AreaId, p.RommingHouseId });
+        modelBuilder.Entity<RoomingHouseArea>().HasKey(p => new { p.RoomingHouseId, p.AreaId });
 
 
     }
 
-    public DbSet<RommingHouseArea> RommingHouseAreas { get; set; }
+    public DbSet<RoomingHouseArea> RoomingHouseAreas { get; set; }
     public DbSet<RoomingHouse> RoomingHouses { get; set; }
     public DbSet<Area> Areas { get; set; }
 

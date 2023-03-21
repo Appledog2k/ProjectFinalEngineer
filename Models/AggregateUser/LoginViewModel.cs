@@ -8,7 +8,6 @@ namespace ProjectFinalEngineer.Models.AggregateUser
         [Display(Name = "địa chỉ thư điện tử hoặc tên tài khoản")]
         public string UserNameOrEmail { get; set; }
 
-
         [Required(ErrorMessage = "{0} không được để trống")]
         [DataType(DataType.Password)]
         [Display(Name = "Mật khẩu")]

@@ -490,29 +490,6 @@ namespace ProjectFinalEngineer.Migrations
                     b.ToTable("Area");
                 });
 
-            modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.RommingHouseArea", b =>
-                {
-                    b.Property<int>("AreaId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("RommingHouseId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("AreaID")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("RommingHouseID")
-                        .HasColumnType("integer");
-
-                    b.HasKey("AreaId", "RommingHouseId");
-
-                    b.HasIndex("AreaID");
-
-                    b.HasIndex("RommingHouseID");
-
-                    b.ToTable("RommingHouseArea");
-                });
-
             modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.RoomingHouse", b =>
                 {
                     b.Property<int>("Id")
@@ -535,6 +512,9 @@ namespace ProjectFinalEngineer.Migrations
 
                     b.Property<DateTime>("DateUpdated")
                         .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
 
                     b.Property<string>("Image")
                         .IsRequired()
@@ -570,6 +550,21 @@ namespace ProjectFinalEngineer.Migrations
                     b.HasIndex("AuthorId");
 
                     b.ToTable("RoomingHouse");
+                });
+
+            modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.RoomingHouseArea", b =>
+                {
+                    b.Property<int>("RoomingHouseId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("AreaId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("RoomingHouseId", "AreaId");
+
+                    b.HasIndex("AreaId");
+
+                    b.ToTable("RoomingHouseArea");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -724,21 +719,6 @@ namespace ProjectFinalEngineer.Migrations
                     b.Navigation("ParentArea");
                 });
 
-            modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.RommingHouseArea", b =>
-                {
-                    b.HasOne("ProjectFinalEngineer.Models.RoomingHouse.Area", "Area")
-                        .WithMany()
-                        .HasForeignKey("AreaID");
-
-                    b.HasOne("ProjectFinalEngineer.Models.RoomingHouse.RoomingHouse", "RoomingHouse")
-                        .WithMany("RommingHouseAreas")
-                        .HasForeignKey("RommingHouseID");
-
-                    b.Navigation("Area");
-
-                    b.Navigation("RoomingHouse");
-                });
-
             modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.RoomingHouse", b =>
                 {
                     b.HasOne("ProjectFinalEngineer.Models.AggregateUser.AppUser", "Approver")
@@ -752,6 +732,25 @@ namespace ProjectFinalEngineer.Migrations
                     b.Navigation("Approver");
 
                     b.Navigation("Author");
+                });
+
+            modelBuilder.Entity("ProjectFinalEngineer.Models.RoomingHouse.RoomingHouseArea", b =>
+                {
+                    b.HasOne("ProjectFinalEngineer.Models.RoomingHouse.Area", "Area")
+                        .WithMany()
+                        .HasForeignKey("AreaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjectFinalEngineer.Models.RoomingHouse.RoomingHouse", "RoomingHouse")
+                        .WithMany("RoomingHouseAreas")
+                        .HasForeignKey("RoomingHouseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Area");
+
+                    b.Navigation("RoomingHouse");
                 });
 
             modelBuilder.Entity("ProjectFinalEngineer.Models.AggregateCategory.Category", b =>
@@ -785,7 +784,7 @@ namespace ProjectFinalEngineer.Migrations
                 {
                     b.Navigation("Comments");
 
-                    b.Navigation("RommingHouseAreas");
+                    b.Navigation("RoomingHouseAreas");
                 });
 #pragma warning restore 612, 618
         }
