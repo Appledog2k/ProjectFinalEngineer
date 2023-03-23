@@ -8,6 +8,7 @@ using ProjectFinalEngineer.Models.AggregateExtensions;
 using ProjectFinalEngineer.Models.AggregateRole;
 using ProjectFinalEngineer.Models.AggregateUser;
 using ProjectFinalEngineer.Models.RoomingHouse;
+using System.Security.Claims;
 
 namespace ProjectFinalEngineer.Controllers
 {
@@ -55,6 +56,55 @@ namespace ProjectFinalEngineer.Controllers
                 GenerateUrl = (pageNumber) => Url.Action("Index", new
                 {
                     p = pageNumber, pagesize
+                })
+            };
+
+            ViewBag.pagingModel = pagingModel;
+            ViewBag.totalPosts = totalPosts;
+
+            ViewBag.postIndex = (currentPage - 1) * pagesize;
+
+            var roomingHousesInPage = await roomingHouses.Skip((currentPage - 1) * pagesize)
+                .Take(pagesize)
+                .Include(p => p.RoomingHouseAreas)
+                .ThenInclude(pc => pc.Area)
+                .ToListAsync();
+
+            return View(roomingHousesInPage);
+        }
+
+
+        [AllowAnonymous]
+        public async Task<IActionResult> ListMyRoomingHouse([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString = null)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var roomingHouses = _context.RoomingHouses
+                .OrderByDescending(p => p.DateUpdated)
+                .Include(p => p.Author)
+                .Include(p => p.Comments)
+                .Where(x => x.Author.Id == userId);
+
+            if (searchString != null)
+            {
+                roomingHouses = roomingHouses.Where(post => post.Title.ToLower().Contains(searchString.ToLower()) || post.Content.Contains(searchString));
+            }
+
+
+            var totalPosts = await roomingHouses.CountAsync();
+
+            if (pagesize <= 0) pagesize = 5;
+            var countPages = (int)Math.Ceiling((double)totalPosts / pagesize);
+            if (currentPage > countPages) currentPage = countPages;
+            if (currentPage < 1) currentPage = 1;
+
+            var pagingModel = new PagingModel()
+            {
+                CountPages = countPages,
+                CurrentPage = currentPage,
+                GenerateUrl = (pageNumber) => Url.Action("Index", new
+                {
+                    p = pageNumber,
+                    pagesize
                 })
             };
 
@@ -169,19 +219,19 @@ namespace ProjectFinalEngineer.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
+
             if (id == null)
             {
                 return NotFound();
             }
 
-            // var post = await _context.Posts.FindAsync(id);
             var roomingHouse = await _context.RoomingHouses.Include(p => p.RoomingHouseAreas)
                 .Include(post => post.Author)
                 .Include(post => post.Comments)
-                .ThenInclude(comment => comment.Author)
+                    .ThenInclude(comment => comment.Author)
                 .Include(post => post.Comments)
-                .ThenInclude(comment => comment.Comments)
-                .ThenInclude(reply => reply.Parent)
+                    .ThenInclude(comment => comment.Comments)
+                        .ThenInclude(reply => reply.Parent)
                 .FirstOrDefaultAsync(p => p.Id == id);
 
             if (roomingHouse == null)

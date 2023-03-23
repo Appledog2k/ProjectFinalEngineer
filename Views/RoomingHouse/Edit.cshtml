@@ -1,52 +1,90 @@
 ﻿@model ProjectFinalEngineer.Models.RoomingHouse.CreateRoomingHouseModel
 
 @{
-    ViewData["Title"] = "Cập nhật bài viết";
-    var list = ViewData["categories"] as MultiSelectList;
+    ViewData["Title"] = "Cập nhật bài đăng";
+    var list = ViewData["areas"] as MultiSelectList;
     Layout = "~/Views/Shared/_LayoutCreate.cshtml";
     <link rel="stylesheet" href="~/css/Post/create.css">
 }
+
 <head>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Post/create.css">
+    <script src="~/js/Post/Create.js"></script>
+
 </head>
-<div class="row">
-    <div class="col-md-12">
-        <form asp-action="Edit">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="AreaIDs" class="control-label"></label>
-                <select asp-for="AreaIDs" multiple="multiple" asp-items="list" class="w-100"></select>
-                <span asp-validation-for="AreaIDs" class="text-danger"></span>
-            </div>
 
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Content" class="control-label"></label>
-                <textarea asp-for="Content" class="form-control"></textarea>
-                <span asp-validation-for="Content" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Cập nhật" class="btn btn-primary" />
-            </div>
-        </form>
+<section class="db-main">
+    <div class="db-main-header">
+        <header>
+            <h3>Cập nhật bài đăng</h3>
+            <p>Nếu có sai sót hoặc chỉnh sửa dữ liệu bài đăng hãy cập nhật bài đăng</p>
+        </header>
     </div>
-</div>
+    <div>
+        <article class="db">
+            <div class="db-article">
+                <div class="db-article-line">
+                    <div class="main-info">
+                        <div class="card-info">
+                            <form id="profile-form" asp-action="Edit">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <input type="hidden" asp-for="Id" />
 
-<div>
-    <a asp-action="Index">Danh sách nhà trọ</a>
-</div>
+                                <div class="form-group select-option">
+                                    <label asp-for="AreaIDs"></label>
+                                    <select asp-for="AreaIDs" multiple="multiple" asp-items="list" style="width: 300px !important; height: 50px !important; color: black !important"></select>
+                                    <span asp-validation-for="AreaIDs" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group select-option">
+                                    <label asp-for="Title"></label>
+                                    <input asp-for="Title" class="form-control-user" style="margin-left: 0 !important;" />
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
+                                             
+                                <div class="form-group select-option">
+                                    <label asp-for="Description"></label>
+                                    <input asp-for="Description" class="form-control-user" style="margin-left: 0 !important;" />
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="Price" class="control-label"></label>
+                                    <input asp-for="Price" class="form-control" />
+                                    <span asp-validation-for="Price" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="Image" ></label>
+                                    <textarea asp-for="Image" class="form-control"></textarea>
+                                    <span asp-validation-for="Image" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="Content" ></label>
+                                    <textarea asp-for="Content" class="form-control"></textarea>
+                                    <span asp-validation-for="Content" class="text-danger"></span>
+                                </div>
+
+         
+                                <div class="form-group">
+                                    <input type="submit" value="Cập nhật" class="btn btn-primary" />
+                                    <a asp-action="Index" style="color: white!important;">Danh sách bài viết</a>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
 
 
 @section Scripts {
@@ -58,17 +96,29 @@
         $("#AreaIDs").multipleSelect({
             selectAll: false,
             keepOpen: false,
-            isOpen: false,
+            isOpen: false
         });
+        $('#your-modal-id').modal('hide');
+        $('body').removeClass('modal-open');
+        $('.modal-backdrop').remove();
     </script>
 
     <partial name="_ValidationScriptsPartial" />
-    @{
-        var summernote = new ProjectFinalEngineer.Models.AggregateSummernote.Summernote("#Content")
-                {
-                    Height = 500
-                };
-    }
-    <partial name="_Summernote" model="summernote"></partial>
-
 }
+
+
+@{
+    var summernote = new ProjectFinalEngineer.Models.AggregateSummernote.Summernote("#Content")
+            {
+                Height = 100
+            };
+    var summernoteMedia = new ProjectFinalEngineer.Models.AggregateSummernote.Summernote("#Image")
+            {
+                Height = 0,
+                Toolbar = @"[['insert', ['picture', 'video']],
+        ['view', ['fullscreen', 'codeview', 'help']],]",
+            };
+}
+<partial name="_Summernote" model="summernote" />
+<partial name="_Summernote" model="summernoteMedia" />
+

@@ -1,35 +1,34 @@
-﻿@using System.Security.Claims
-@using Microsoft.AspNetCore.Identity
-@using Microsoft.AspNetCore.Mvc.TagHelpers
-@using ProjectFinalEngineer.Models.AggregateUser
-@model IEnumerable<ProjectFinalEngineer.Models.RoomingHouse.RoomingHouse>
-@inject UserManager<AppUser> UserManager
+﻿@model IEnumerable<ProjectFinalEngineer.Models.AggregatePost.Post>
+
 @{
-    ViewData["Title"] = "Danh sách bài đăng";
-    Layout = "~/Views/Shared/_LayoutHouse.cshtml";
+    ViewData["Title"] = "Diễn đàn";
+    Layout = "~/Views/Shared/_LayoutForum.cshtml";
 }
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/css/House/house.css">
+    <link rel="stylesheet" href="~/css/Post/index.css">
     <title>@ViewData["Title"]</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap"
           rel="stylesheet">
 </head>
+
 <body>
     <partial name="_AlertMessage" />
+
     <div id="forum">
         <div class="container">
             <div id="forum-wapper">
                 <aside>
                     <div class="forum-left">
                         <button>
-                            <a asp-action="Create">Thêm mới nhà trọ</a>
+                            <a asp-action="Create">Tạo bài viết mới</a>
                         </button>
                         <ul class="forum-ul">
                             <li>
-                                <a asp-controller="Post" asp-action="Index" class="@((ViewContext.RouteData.Values["Controller"] as string == "RoomingHouse" && ViewContext.RouteData.Values["Action"] as string == "Index") ? "active-sidebar" : "")">
+                                <a asp-controller="Post" asp-action="ListMyArticle" class="@((ViewContext.RouteData.Values["Controller"] as string == "Post" && ViewContext.RouteData.Values["Action"] as string == "Index") ? "active-sidebar" : "")">
                                     <span style="background-color: rgb(50 138 241);"></span>
                                     Tất cả chủ đề
                                 </a>
@@ -74,12 +73,12 @@
                                 <div class="ft-1">
                                     <div class="select-wrap">
                                         <select>
-                                            <option>Khu vực Cầu Giấy</option>
-                                            <option>Khu vực Hai Bà Trưng</option>
+                                            <option>Mới</option>
+                                            <option>Phổ biến</option>
+                                            <option>Thảo luận</option>
+                                            <option>Giải pháp</option>
                                         </select>
-                                        @* ReSharper disable UnknownCssClass *@
-                                        <svg width="20" height="16" class="fill-current text-grey-600" viewBox="0 0 10 16">
-                                            @* ReSharper restore UnknownCssClass *@
+                                        <svg width="20" height="16" viewBox="0 0 10 16">
                                             <path d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
                                         </svg>
                                     </div>
@@ -87,15 +86,12 @@
                                 <div class="ft-2">
                                     <div class="select-wrap">
                                         <select>
-                                            <option>Tất cả mức giá</option>
-                                            <option>Dưới 1 triệu</option>
-                                            <option>1 -3 triệu</option>
-                                            <option>3-10 triệu</option>
-                                            <option>10 triệu +</option>
+                                            <option>Tất cả miền kiến thức</option>
+                                            <option>Lập trình</option>
+                                            <option>Giải tích, đại số</option>
+                                            <option>Đại cương điện tử</option>
                                         </select>
-                                        @* ReSharper disable UnknownCssClass *@
-                                        <svg width="20" height="16" class="fill-current text-grey-600" viewBox="0 0 10 16">
-                                            @* ReSharper restore UnknownCssClass *@
+                                        <svg width="20" height="16" viewBox="0 0 10 16">
                                             <path d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
                                         </svg>
                                     </div>
@@ -109,10 +105,15 @@
                                             <div class="search_rectangle"> </div>
                                         </div>
                                     </div>
-                                    <input class="fm-s-input" placeholder="Tìm kiếm bằng từ khóa" />
+                                    @using (Html.BeginForm("ListMyArticle", "Post", FormMethod.Get))
+                                    {
+                                        <input class="fm-s-input" placeholder="Tìm kiếm..." name="searchString" value="@ViewBag.SearchString" />
+                                        <button type="submit" style="display: none"></button>
+                                    }
                                 </label>
                             </form>
                         </div>
+
                         <div>
                             <div class="table">
                                 @foreach (var item in Model)
@@ -125,7 +126,7 @@
                                             <div>
                                                 <div class="ct-header">
                                                     <h4>
-                                                        <a asp-action="Details" asp-route-id="@item.Id">
+                                                        <a asp-action="Details" asp-route-id="@item.PostId">
                                                             @Html.DisplayFor(modelItem => item.Title)
                                                         </a>
                                                     </h4>
@@ -149,57 +150,27 @@
                                                     </div>
                                                 </div>
                                                 <div class="category-class">
-                                                    <p>Khu vực: @string.Join(", ", item.RoomingHouseAreas.Select(pc => pc.Area.Title))</p>
-                                                    @if (item.Author != null)
-                                                    {
-                                                        var author = item.Author;
-                                                        var roleNames = await UserManager.GetRolesAsync(author);
-                                                        if (roleNames.Any())
-                                                        {
-                                                            if (roleNames.Contains("Người cho thuê"))
-                                                            {
-                                                                <p>Vai trò : Người cho thuê</p>
-                                                            }
-                                                            else if (roleNames.Contains("Administrator"))
-                                                            {
-                                                                <p>Vai trò: Quản trị viên</p>
-                                                            }
-                                                            else if (roleNames.Contains("Member"))
-                                                            {
-                                                                <p>Vai trò: Thành viên</p>
-                                                            }
-                                                            else if (roleNames.Contains("Editor"))
-                                                            {
-                                                                <p>Vai trò: Người kiểm duyệt</p>
-                                                            }
-
-                                                        }
-                                                    }
-
+                                                    <p>Miền kiến thức: @string.Join(", ", item.PostCategories.Select(pc => pc.Category.Title))</p>
                                                 </div>
-                                                <div class="description-image">
-                                                    <div class="image-content">
-                                                        @Html.Raw(item.Image)
-                                                    </div>
-                                                    <div class="description-column" style="padding-top: 10px;">
-                                                        @Html.DisplayFor(modelItem=>item.Description)
-                                                        @if (item.Price > 0)
-                                                        {
-                                                            <p>Giá tiền thuê: @Html.DisplayFor(modelItem => item.Price) đồng/tháng.</p>
-                                                        }
-                                                    </div>
+                                                <div class="category-class" style="padding-top: 10px; display: flex; flex-direction: row;">
+                                                    <p style="">
+                                                        Lý do từ chối:&nbsp;
+                                                        <div style="color: #F56857">@Html.Raw(item.Reason) </div>
+                                                    </p>
                                                 </div>
-
-                                                <div class="ct-body">
-                                                    <div class="ct-body-name">
-                                                        <a>
-                                                            <p style="color: rgb(50 138 241);">@Html.DisplayFor(modelItem => item.Author.UserName)</p>
-                                                        </a>
-                                                    </div>
+                                                <div class="ct-body" style="margin-top: 15px !important;">
                                                     <div class="ct-body-time">
-                                                        <p>
-                                                            &nbsp;tạo bài viết vào @Html.DisplayFor(modelItem => item.DateUpdated.Day)/@Html.DisplayFor(modelItem => item.DateUpdated.Month)/@Html.DisplayFor(modelItem => item.DateUpdated.Year)
+                                                        <p style="display: flex">
+                                                            @if (item.Published == true)
+                                                            {
+                                                            <p> &nbsp;Tạo bài viết vào @Html.DisplayFor(modelItem => item.DateUpdated.Day)/@Html.DisplayFor(modelItem => item.DateUpdated.Month)/@Html.DisplayFor(modelItem => item.DateUpdated.Year) trạng thái "đã phê duyệt"</p>
+                                                            }
+                                                            else
+                                                            {
+                                                            <p> &nbsp;Tạo bài viết vào @Html.DisplayFor(modelItem => item.DateUpdated.Day)/@Html.DisplayFor(modelItem => item.DateUpdated.Month)/@Html.DisplayFor(modelItem => item.DateUpdated.Year) trạng thái "bị từ chối"</p>
+                                                            }
                                                         </p>
+
                                                     </div>
                                                 </div>
 
@@ -261,38 +232,41 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="container-ex-2">
-                            <div class="wt-title">
-                                <p>
-                                    Một số lưu ý
-                                </p>
-
-                            </div>
-                            <div style="font-size: 13px; font-weight: 600; color: azure">
-                                <p>Nếu bạn là chủ trọ, hãy sử dụng chức năng liên hệ để chúng tôi để được xác thực thông tin, việc này sẽ giúp uy tín của bạn được tăng cao.</p>
-                                <p>Những bài đăng cho thuê trọ với vai trò "Người cho thuê" đã được hệ thống xác thực là đáng tin cậy.</p>
-                            </div>
-                        </div>
-                        @*serp stack*@
-
-                        <div class="container-ex-2">
-                            <div class="wt-title">
-                                <p>Đăng ký tìm trọ</p>
-                            </div>
-                            @*<form id="form" autocomplete="off" class="search-box">
-                            <i class="fab fa-google loca-icon"></i>
-                            <input type="text" id="search" placeholder="Vui lòng nhập từ khóa">
-                            <button>
-                            <i class="fas fa-search"></i>
-                            </button>
-                            </form>*@
+                        <div class="container-ex-1">
+                            <div class="wt-title"><p>Google</p></div>
+                            <form id="form" autocomplete="off" class="search-box">
+                                @* ReSharper disable UnknownCssClass *@
+                                <i class="fab fa-google loca-icon"></i>
+                                @* ReSharper restore UnknownCssClass *@
+                                <input type="text" id="search" placeholder="Vui lòng nhập từ khóa">
+                                <button>
+                                    @* ReSharper disable UnknownCssClass *@
+                                    <i class="fas fa-search"></i>
+                                    @* ReSharper restore UnknownCssClass *@
+                                </button>
+                            </form>
                             <div>
-                                <img width="220px;" height="160px;" src="~/images/avatars/Bạn mong muốn gì.jpg " style=" margin-left:20px; color: aquamarine" />
-                                @*<div class="google-search">
-                                <div class="google-search-element">Tìm kiếm thông tin với google</div>
-                                </div>*@
+                                <img width="144px;" height="144px;" src="~/images/avatars/icons8-google-news22.svg" style=" margin-left:50px;" alt="" />
+                                <div class="google-search">
+                                    <div>Tìm kiếm thông tin với google</div>
+                                </div>
                             </div>
                             <div id="result">
+                            </div>
+                        </div>
+                        <div class="container-ex-2">
+                            <div class="img-ex-2">
+                                <img width="134px;" height="110px;" src="~/images/avatars/news-1.jpg" />
+                            </div>
+                            <div class="title-ex-2">
+                                <p>
+                                    Đại học bách khoa Hà Nội
+                                </p>
+                            </div>
+                            <div class="search-ex-2">
+                                <a href="https://ctt.hust.edu.vn/" target="_blank">
+                                    Cổng thông tin
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -304,13 +278,3 @@
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
     <script src="~/js/Post/Post.js"></script>
 </body>
-@*
-<h1>@ViewData["Title"]</h1>
-
-<partial name="_AlertMessage" />
-
-<p>
-    <a asp-action="Create">Tạo bài viết mới</a>
-</p>
-<p>Tổng số bài viết: @ViewBag.totalPosts</p>
-*@

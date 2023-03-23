@@ -21,7 +21,6 @@ namespace ProjectFinalEngineer.Models.RoomingHouse
         public string Image { set; get; }
 
         [Display(Name = "Mô tả")]
-        [Required(ErrorMessage = "Phải có mô tả")]
         public string Description { set; get; }
 
 

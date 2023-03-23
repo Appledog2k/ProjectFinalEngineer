@@ -260,6 +260,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Post/ListMyArticle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxMaXN0TXlBcnRpY2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Post/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -306,6 +310,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/RoomingHouse/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbWluZ0hvdXNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/RoomingHouse/ListMyRoomingHouse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbWluZ0hvdXNlXExpc3RNeVJvb21pbmdIb3VzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/WorkSpace/ProjectFinal/ProjectFinalEngineer/Views/Shared/Error.cshtml]

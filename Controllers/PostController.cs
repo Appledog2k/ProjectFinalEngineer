@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -32,6 +33,8 @@ public class PostController : Controller
 
     [TempData]
     public string StatusMessage { get; set; }
+
+
 
     [AllowAnonymous]
     public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString)
@@ -78,6 +81,57 @@ public class PostController : Controller
                          .Include(p => p.PostCategories)
                          .ThenInclude(pc => pc.Category)
                          .ToListAsync();
+
+        return View(postsInPage);
+    }
+
+    [AllowAnonymous]
+    public async Task<IActionResult> ListMyArticle([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString)
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var posts = _context.Posts
+            .Include(p => p.Author)
+            .Include(post => post.Comments)
+            .OrderByDescending(p => p.DateUpdated)
+            .Where(x => x.Author.Id == userId);
+
+        if (searchString != null)
+        {
+            posts = posts.Where(post => post.Title.ToLower().Contains(searchString.ToLower()) ||
+                                        post.Content.Contains(searchString)
+                                        || post.PostCategories
+                                            .Any(pc => pc.Category.Title.ToLower().Contains(searchString.ToLower())));
+        }
+
+        var totalPosts = await posts.CountAsync();
+        if (pagesize <= 0) pagesize = 10;
+
+        var countPages = (int)Math.Ceiling((double)totalPosts / pagesize);
+
+        if (currentPage > countPages) currentPage = countPages;
+        if (currentPage < 1) currentPage = 1;
+
+        var pagingModel = new PagingModel()
+        {
+            CountPages = countPages,
+            CurrentPage = currentPage,
+            GenerateUrl = (pageNumber) => Url.Action("Index", new
+            {
+                p = pageNumber,
+                pagesize
+            })
+        };
+
+        ViewBag.pagingModel = pagingModel;
+        ViewBag.totalPosts = totalPosts;
+
+        ViewBag.postIndex = (currentPage - 1) * pagesize;
+
+        var postsInPage = await posts.Skip((currentPage - 1) * pagesize)
+            .Take(pagesize)
+            .Include(p => p.PostCategories)
+            .ThenInclude(pc => pc.Category)
+            .ToListAsync();
 
         return View(postsInPage);
     }

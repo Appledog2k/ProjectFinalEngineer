@@ -149,18 +149,24 @@ button {
     color: white;
 }
 
-.category-list-url {
+.category-list-task {
     text-align: left;
-    padding-left: 30px;
+    padding-left: 200px;
 }
 
 .category-list-body {
     margin-left: 400px;
     color: white;
 }
-
-.category-list-body-title a {
+.category-list-body-title {
+    margin-top: 10px;
+}
+    .category-list-body-title a {
+        color: white;
+    }
+.category-list-body-task{
     color: white;
+    padding-left: 200px;
 }
 .category-list-body-task a {
     color: white;

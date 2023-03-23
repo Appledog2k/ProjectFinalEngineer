@@ -148,7 +148,13 @@
                                                 <div class="category-class">
                                                     <p>Miền kiến thức: @string.Join(", ", item.PostCategories.Select(pc => pc.Category.Title))</p>
                                                 </div>
-                                                <div class="ct-body">
+                                                <div class="category-class" style="padding-top: 10px; display: flex; flex-direction: row;">
+                                                    <p style="">
+                                                        Lý do từ chối:&nbsp;
+                                                        <div style="color: #F56857">@Html.Raw(item.Reason) </div>
+                                                    </p>
+                                                </div>
+                                                <div class="ct-body" style="margin-top: 15px !important;">
                                                     <div class="ct-body-name">
                                                         <a><p style="color:rgb(50 138 241);">@Html.DisplayFor(modelItem => item.Author.UserName)</p></a>
 

@@ -17,15 +17,24 @@
             <i class="far fa-user"></i>
             @UserManager.GetUserName(User)</button>
         <div id="myDropdown-user" class="dropdown-user-content">
+
             <a asp-controller="Manage" asp-action="Index" title="Tài khoản">
                 <i class="far fa-user"></i>
                 Thông tin cá nhân
+            </a>
+            <a asp-controller="Post" asp-action="ListMyArticle" title="Bài viết của tôi">
+                <i class="fas fa-newspaper"></i>
+                Bài viết của tôi
+            </a>
+            <a asp-controller="RoomingHouse" asp-action="ListMyRoomingHouse" title="Bài đăng của tôi">
+                <i class="fas fa-house"></i>
+                Bài đăng nhà trọ
             </a>
             <a asp-controller="Manage" asp-action="ChangePassword">
                 <i class="fas fa-unlock"></i>
                 Đổi mật khẩu
             </a>
-            <form  asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm">
+            <form asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm">
                 <button type="submit">
                     <i class="fas fa-sign-out"></i>
                     Đăng xuất

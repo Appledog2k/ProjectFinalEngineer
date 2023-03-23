@@ -178,14 +178,10 @@
                         <div class="container-ex">
                             <div class="wt-title"><p>Thời tiết</p></div>
                             <div class="search-box">
-                                @* ReSharper disable UnknownCssClass *@
                                 <i class="fa-solid fa-location-dot loca-icon"></i>
-                                @* ReSharper restore UnknownCssClass *@
                                 <input type="text" placeholder="Vị trí của bạn">
-                                <button>
-                                    @* ReSharper disable UnknownCssClass *@
+                                <button class="wt-btn">
                                     <i class="fas fa-search"></i>
-                                    @* ReSharper restore UnknownCssClass *@
                                 </button>
                             </div>
                             <div class="not-found">
@@ -203,19 +199,15 @@
 
                             <div class="weather-details">
                                 <div class="humidity">
-                                    @* ReSharper disable UnknownCssClass *@
                                     <i class="fa-solid fa-water" style="color:white"></i>
-                                    @* ReSharper restore UnknownCssClass *@
-                                    <div>
+                                    <div class="text">
                                         <span style="color:white"></span>
                                         <p style="color:white">Độ ẩm</p>
                                     </div>
                                 </div>
                                 <div class="wind">
-                                    @* ReSharper disable UnknownCssClass *@
                                     <i class="fa-solid fa-wind" style="color:white"></i>
-                                    @* ReSharper restore UnknownCssClass *@
-                                    <div>
+                                    <div class="text">
                                         <span style="color:white"></span>
                                         <p style="color:white">Tốc độ gió</p>
                                     </div>
@@ -225,29 +217,23 @@
                         <div class="container-ex-1">
                             <div class="wt-title"><p>Google</p></div>
                             <form id="form" autocomplete="off" class="search-box">
-                                @* ReSharper disable UnknownCssClass *@
                                 <i class="fab fa-google loca-icon"></i>
-                                @* ReSharper restore UnknownCssClass *@
                                 <input type="text" id="search" placeholder="Vui lòng nhập từ khóa">
                                 <button>
-                                    @* ReSharper disable UnknownCssClass *@
                                     <i class="fas fa-search"></i>
-                                    @* ReSharper restore UnknownCssClass *@
                                 </button>
                             </form>
-                            <div>
+                            <div class="image-google">
                                 <img width="144px;" height="144px;" src="~/images/avatars/icons8-google-news22.svg" style=" margin-left:50px;" alt="" />
                                 <div class="google-search">
-                                    <div>Tìm kiếm thông tin với google</div>
+                                    <div class="google-search-element">Tìm kiếm thông tin với google</div>
                                 </div>
                             </div>
                             <div id="result">
                             </div>
                         </div>
                         <div class="container-ex-2">
-                            <div class="img-ex-2">
-                                <img width="134px;" height="110px;" src="~/images/avatars/news-1.jpg" />
-                            </div>
+                            <div class="img-ex-2"><img width="134px;" height="110px;" src="~/images/avatars/news-1.jpg" /></div>
                             <div class="title-ex-2">
                                 <p>
                                     Đại học bách khoa Hà Nội

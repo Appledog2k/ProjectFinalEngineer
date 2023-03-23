@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.Options;
 using ProjectFinalEngineer.BusinessManager;
 using ProjectFinalEngineer.EntityFramework;
 using ProjectFinalEngineer.Models.AggregateRole;
@@ -40,9 +38,12 @@ namespace ProjectFinalEngineer
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+
             services.AddIdentity<AppUser, IdentityRole>()
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
+
+
             // services.AddTransient(typeof(ILogger<>), typeof(Logger<>));
             // Truy cập IdentityOptions
             services.Configure<IdentityOptions>(options =>
@@ -57,7 +58,7 @@ namespace ProjectFinalEngineer
 
                 // Cấu hình Lockout - khóa user
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); // Khóa 5 phút
-                options.Lockout.MaxFailedAccessAttempts = 1000; // Thất bại 3 lầ thì khóa
+                options.Lockout.MaxFailedAccessAttempts = 1000; // Thất bại 1000 lần thì khóa
                 options.Lockout.AllowedForNewUsers = true;
 
                 // Cấu hình về User.
@@ -107,6 +108,8 @@ namespace ProjectFinalEngineer
             services.AddTransient<ICommentBusinessManager, CommentBusinessManager>();
             services.AddTransient<ICommentService, CommentService>();
             services.AddSingleton<IdentityErrorDescriber, App.Services.AppIdentityErrorDescriber>();
+
+
 
             services.AddAuthorization(options =>
             {

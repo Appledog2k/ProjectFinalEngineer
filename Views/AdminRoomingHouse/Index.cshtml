@@ -103,7 +103,7 @@
                                             <div class="search_rectangle"> </div>
                                         </div>
                                     </div>
-                                    @using (Html.BeginForm("Index", "Post", FormMethod.Get))
+                                    @using (Html.BeginForm("Index", "RoomingHouse", FormMethod.Get))
                                     {
                                         <input class="fm-s-input" placeholder="Bắt đầu tìm kiếm" name="searchString" value="@ViewBag.SearchString" />
                                         <button type="submit" style="display: none"></button>
@@ -139,14 +139,23 @@
                                                         @if (item.Priority == 1)
                                                         {
                                                             <a asp-action="Refuse" asp-route-id="@item.Id">
-                                                                <div class="ct-header-analytics-mess">
+                                                                <div class="ct-header-analytics-mess" style="margin-top: 1.5px;">
                                                                     <div class="soluong">Từ chối</div>
                                                                 </div>
                                                             </a>
                                                         }
                                                     </div>
                                                 </div>
-                                                <div class="ct-body">
+                                                <div class="category-class">
+                                                    <p>Khu vực: @string.Join(", ", item.RoomingHouseAreas.Select(pc => pc.Area.Title))</p>
+                                                </div>
+                                                <div class="category-class" style="padding-top: 10px; display: flex; flex-direction: row;">
+                                                    <p style="">
+                                                        Lý do từ chối:&nbsp;
+                                                        <div style="color: #F56857">@Html.Raw(item.Reason) </div>
+                                                    </p>
+                                                </div>
+                                                <div class="ct-body" style="margin-top: 15px !important;">
                                                     <div class="ct-body-name">
                                                         <a><p style="color:rgb(50 138 241);">@Html.DisplayFor(modelItem => item.Author.UserName)</p></a>
 

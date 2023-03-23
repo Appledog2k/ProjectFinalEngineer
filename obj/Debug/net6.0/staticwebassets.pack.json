@@ -401,6 +401,10 @@
       "PackagePath": "staticwebassets\\css\\LayoutForum.css"
     },
     {
+      "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\LayoutHouse.css",
+      "PackagePath": "staticwebassets\\css\\LayoutHouse.css"
+    },
+    {
       "Id": "E:\\WorkSpace\\ProjectFinal\\ProjectFinalEngineer\\wwwroot\\css\\Manage\\ChangePassword.css",
       "PackagePath": "staticwebassets\\css\\Manage\\ChangePassword.css"
     },

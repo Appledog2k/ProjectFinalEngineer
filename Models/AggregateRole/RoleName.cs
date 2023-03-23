@@ -1,4 +1,4 @@
-namespace ProjectFinalEngineer.Models.AggregateRole
+﻿namespace ProjectFinalEngineer.Models.AggregateRole
 {
     public class RoleName
     {

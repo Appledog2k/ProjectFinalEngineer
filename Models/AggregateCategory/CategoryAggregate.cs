@@ -16,7 +16,7 @@ namespace ProjectFinalEngineer.Models.AggregateCategory
         public string Title { get; set; }
 
         [DataType(DataType.Text)]
-        [Display(Name = "Mô tả miền kiến thưucs")]
+        [Display(Name = "Mô tả miền kiến thức")]
         public string Description { get; set; }
 
         public ICollection<Category> CategoryChildren { get; set; }

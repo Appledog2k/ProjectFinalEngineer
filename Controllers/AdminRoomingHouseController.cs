@@ -127,6 +127,7 @@ namespace ProjectFinalEngineer.Controllers
                 Id = roomingHouse.Id,
                 Title = roomingHouse.Title,
                 Content = roomingHouse.Content,
+                Image = roomingHouse.Image,
                 Price = roomingHouse.Price,
                 Published = false,
                 AreaIDs = roomingHouse.RoomingHouseAreas.Select(pc => pc.AreaId).ToArray()
@@ -140,7 +141,7 @@ namespace ProjectFinalEngineer.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Refuse(int id, [Bind("Id,Title,Reason")] CreateRoomingHouseModel roomingHouse)
+        public async Task<IActionResult> Refuse(int id, [Bind("Id,Title,Reason,Image")] CreateRoomingHouseModel roomingHouse)
         {
             if (id != roomingHouse.Id)
             {
@@ -160,6 +161,7 @@ namespace ProjectFinalEngineer.Controllers
                     }
 
                     roomingHousesUpdate.Title = roomingHouse.Title;
+                    roomingHousesUpdate.Image = roomingHouse.Image;
                     roomingHousesUpdate.DateUpdated = DateTime.Now;
                     roomingHousesUpdate.Reason = roomingHouse.Reason;
                     roomingHousesUpdate.Priority = 2;
