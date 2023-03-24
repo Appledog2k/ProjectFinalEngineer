@@ -19,14 +19,7 @@
                             <h4 class="commenter-name">@comment.Author.UserName</h4>
                             <div class="comment-date">@comment.CreatedOn.ToString("MMMM d, yyyy hh:mm tt")</div>
                             <p class="comment-message">@comment.Content</p>
-                            @*  @if (!User.Identity.IsAuthenticated)
-                        {
-                        <a class="reply-btn btn" asp-page="/Account/Login" asp-route-ReturnUrl="~/forum/article/Details/@Model.Post.PostId">Login to reply</a>
-                        }
-                        else
-                        {
-                        <a aria-expanded="false" href="@($"#replyComment{comment.Id}")" data-toggle="collapse" class="reply-btn btn reply-button">Trả lời</a>
-                        }*@
+
                         </div>
                         <ul class="comment-list" list="@comment.Comments" count="0">
                             @foreach (var reply in comment.Comments)

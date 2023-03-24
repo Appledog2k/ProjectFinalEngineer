@@ -36,8 +36,10 @@ namespace ProjectFinalEngineer.Controllers
         [HttpGet]
         public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage)
         {
-            var model = new UserListModel();
-            model.CurrentPage = currentPage;
+            var model = new UserListModel
+            {
+                CurrentPage = currentPage
+            };
 
             var qr = _userManager.Users.OrderBy(u => u.UserName);
 
@@ -68,15 +70,13 @@ namespace ProjectFinalEngineer.Controllers
             return View(model);
         }
 
-        // GET: /ManageUser/AddRole/id
         [HttpGet("{id}")]
         public async Task<IActionResult> AddRoleAsync(string id)
         {
-            // public SelectList allRoles { get; set; }
             var model = new AddUserRoleModel();
             if (string.IsNullOrEmpty(id))
             {
-                return NotFound($"Không có user");
+                return NotFound($"Không tìm thấy giá trị thỏa mãn");
             }
 
             model.User = await _userManager.FindByIdAsync(id);
@@ -88,7 +88,7 @@ namespace ProjectFinalEngineer.Controllers
 
             model.RoleNames = (await _userManager.GetRolesAsync(model.User)).ToArray();
 
-            List<string> roleNames = await _roleManager.Roles.Select(r => r.Name).ToListAsync();
+            var roleNames = await _roleManager.Roles.Select(r => r.Name).ToListAsync();
             ViewBag.allRoles = new SelectList(roleNames);
 
             await GetClaims(model);
@@ -96,14 +96,13 @@ namespace ProjectFinalEngineer.Controllers
             return View(model);
         }
 
-        // GET: /ManageUser/AddRole/id
         [HttpPost("{id}")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddRoleAsync(string id, [Bind("RoleNames")] AddUserRoleModel model)
         {
             if (string.IsNullOrEmpty(id))
             {
-                return NotFound($"Không có user");
+                return NotFound($"Không tìm thấy giá trị thỏa mãn");
             }
 
             model.User = await _userManager.FindByIdAsync(id);
@@ -119,7 +118,7 @@ namespace ProjectFinalEngineer.Controllers
             var deleteRoles = oldRoleNames.Where(r => !model.RoleNames.Contains(r));
             var addRoles = model.RoleNames.Where(r => !oldRoleNames.Contains(r));
 
-            List<string> roleNames = await _roleManager.Roles.Select(r => r.Name).ToListAsync();
+            var roleNames = await _roleManager.Roles.Select(r => r.Name).ToListAsync();
 
             ViewBag.allRoles = new SelectList(roleNames);
 
@@ -137,8 +136,7 @@ namespace ProjectFinalEngineer.Controllers
                 return View(model);
             }
 
-
-            StatusMessage = $"Vừa cập nhật role cho user: {model.User.UserName}";
+            StatusMessage = $"Vừa cập nhật vai trò cho thành viên: {model.User.UserName}";
 
             return RedirectToAction("Index");
         }
@@ -196,7 +194,7 @@ namespace ProjectFinalEngineer.Controllers
                 return View(model);
             }
 
-            StatusMessage = $"Vừa cập nhật mật khẩu cho user: {user.UserName}";
+            StatusMessage = $"Vừa cập nhật mật khẩu cho tài khoản: {user.UserName}";
 
             return RedirectToAction("Index");
         }
@@ -218,19 +216,19 @@ namespace ProjectFinalEngineer.Controllers
         {
 
             var user = await _userManager.FindByIdAsync(userid);
-            if (user == null) return NotFound("Không tìm thấy user");
+            if (user == null) return NotFound("Không tìm thấy thành viên");
             ViewBag.user = user;
             if (!ModelState.IsValid) return View(model);
             var claims = _context.UserClaims.Where(c => c.UserId == user.Id);
 
             if (claims.Any(c => c.ClaimType == model.ClaimType && c.ClaimValue == model.ClaimValue))
             {
-                ModelState.AddModelError(string.Empty, "Đặc tính này đã có");
+                ModelState.AddModelError(string.Empty, "Quyền này đã có");
                 return View(model);
             }
 
             await _userManager.AddClaimAsync(user, new Claim(model.ClaimType, model.ClaimValue));
-            StatusMessage = "Đã thêm đặc tính cho user";
+            StatusMessage = "Đã thêm quyền cho thành viên";
 
             return RedirectToAction("AddRole", new { id = user.Id });
         }
@@ -241,7 +239,7 @@ namespace ProjectFinalEngineer.Controllers
             var userClaim = _context.UserClaims.FirstOrDefault(c => c.Id == claimId);
             var user = await _userManager.FindByIdAsync(userClaim?.UserId);
 
-            if (user == null) return NotFound("Không tìm thấy user");
+            if (user == null) return NotFound("Không tìm thấy thành viên");
 
             var model = new AddUserClaimModel();
 
@@ -253,6 +251,7 @@ namespace ProjectFinalEngineer.Controllers
 
             return View("AddClaim", model);
         }
+
         [HttpPost("{claimId:int}")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditClaim(int claimId, AddUserClaimModel model)
@@ -268,10 +267,9 @@ namespace ProjectFinalEngineer.Controllers
                 && c.ClaimValue == model.ClaimValue
                 && c.Id != userClaim.Id))
             {
-                ModelState.AddModelError("Claim này đã có");
+                ModelState.AddModelError("Quyền này đã có");
                 return View("AddClaim", model);
             }
-
 
             if (userClaim != null)
             {
@@ -280,12 +278,13 @@ namespace ProjectFinalEngineer.Controllers
             }
 
             await _context.SaveChangesAsync();
-            StatusMessage = "Bạn vừa cập nhật claim";
+            StatusMessage = "Bạn vừa cập nhật quyền";
 
             ViewBag.user = user;
             ViewBag.userclaim = userClaim;
             return RedirectToAction("AddRole", new { id = user.Id });
         }
+
         [HttpPost("{claimId:int}")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteClaimAsync(int claimId)
@@ -293,12 +292,12 @@ namespace ProjectFinalEngineer.Controllers
             var userClaim = _context.UserClaims.FirstOrDefault(c => c.Id == claimId);
             var user = await _userManager.FindByIdAsync(userClaim?.UserId);
 
-            if (user == null) return NotFound("Không tìm thấy user");
+            if (user == null) return NotFound("Không tìm thấy thành viên");
 
             if (userClaim != null)
                 await _userManager.RemoveClaimAsync(user, new Claim(userClaim.ClaimType, userClaim.ClaimValue));
 
-            StatusMessage = "Bạn đã xóa claim";
+            StatusMessage = "Bạn đã xóa quyền";
 
             return RedirectToAction("AddRole", new { id = user.Id });
         }
@@ -315,11 +314,9 @@ namespace ProjectFinalEngineer.Controllers
                                 select c;
             model.ClaimsInRole = await claimsInRole.ToListAsync();
 
-
             model.ClaimsInUserClaim = await (from c in _context.UserClaims
                                              where c.UserId == model.User.Id
                                              select c).ToListAsync();
-
         }
     }
 }

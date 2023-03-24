@@ -13,7 +13,8 @@ using ProjectFinalEngineer.Models.AggregateUser;
 namespace ProjectFinalEngineer.Controllers
 {
     [Route("/database-manage/[action]")]
-    //[Authorize(Roles = RoleName.Administrator)]
+
+    [Authorize(Roles = RoleName.Administrator)]
     public class DbManageController : Controller
     {
         private readonly AppDbContext _dbContext;
@@ -64,7 +65,6 @@ namespace ProjectFinalEngineer.Controllers
                     await _roleManager.CreateAsync(new IdentityRole(rolename));
                 }
             }
-            // admin, pass=admin123, admin@example.com
             var useradmin = await _userManager.FindByEmailAsync("admin@example.com");
             if (useradmin == null)
             {
@@ -109,9 +109,6 @@ namespace ProjectFinalEngineer.Controllers
             var categories = new Category[] { cate1, cate2, cate12, cate11, cate21, cate211 };
             _dbContext.Categories.AddRange(categories);
 
-
-
-            // POST
             var rCateIndex = new Random();
             int bv = 1;
 
@@ -141,7 +138,6 @@ namespace ProjectFinalEngineer.Controllers
 
             _dbContext.AddRange(posts);
             _dbContext.AddRange(post_categories);
-            // END POST
             _dbContext.SaveChanges();
         }
     }

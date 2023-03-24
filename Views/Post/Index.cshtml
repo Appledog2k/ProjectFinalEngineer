@@ -1,5 +1,7 @@
+@using Microsoft.AspNetCore.Identity
+@using ProjectFinalEngineer.Models.AggregateUser
 @model IEnumerable<ProjectFinalEngineer.Models.AggregatePost.Post>
-
+@inject UserManager<AppUser> UserManager
 @{
     ViewData["Title"] = "Diễn đàn";
     Layout = "~/Views/Shared/_LayoutForum.cshtml";
@@ -151,7 +153,32 @@
                                                 </div>
                                                 <div class="category-class">
                                                     <p>Miền kiến thức: @string.Join(", ", item.PostCategories.Select(pc => pc.Category.Title))</p>
+                                                    @if (item.Author != null)
+                                                    {
+                                                        var author = item.Author;
+                                                        var roleNames = await UserManager.GetRolesAsync(author);
+                                                        if (roleNames.Any())
+                                                        {
+                                                            if (roleNames.Contains("Người cho thuê"))
+                                                            {
+                                                                <p>Vai trò : Người cho thuê</p>
+                                                            }
+                                                            else if (roleNames.Contains("Administrator"))
+                                                            {
+                                                                <p>Vai trò: Quản trị viên</p>
+                                                            }
+                                                            else if (roleNames.Contains("Member"))
+                                                            {
+                                                                <p>Vai trò: Thành viên</p>
+                                                            }
+                                                            else if (roleNames.Contains("Editor"))
+                                                            {
+                                                                <p>Vai trò: Người kiểm duyệt</p>
+                                                            }
+                                                        }
+                                                    }
                                                 </div>
+
                                                 <div class="ct-body">
                                                     <div class="ct-body-name">
                                                         <a><p style="color:rgb(50 138 241);">@Html.DisplayFor(modelItem => item.Author.UserName)</p></a>

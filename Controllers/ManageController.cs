@@ -14,30 +14,24 @@ namespace ProjectFinalEngineer.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
-        private readonly IEmailSender _emailSender;
         private readonly ILogger<ManageController> _logger;
 
         public ManageController(
         UserManager<AppUser> userManager,
         SignInManager<AppUser> signInManager,
-        IEmailSender emailSender,
         ILogger<ManageController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _emailSender = emailSender;
             _logger = logger;
         }
 
-        //
-        // GET: /Manage/Index
         [HttpGet]
         public async Task<IActionResult> Index(ManageMessageId? message = null)
         {
             ViewData["StatusMessage"] =
                 message == ManageMessageId.ChangePasswordSuccess ? "Đã thay đổi mật khẩu."
                 : message == ManageMessageId.SetPasswordSuccess ? "Đã đặt lại mật khẩu."
-                : message == ManageMessageId.SetTwoFactorSuccess ? "Your two-factor authentication provider has been set."
                 : message == ManageMessageId.Error ? "Có lỗi."
                 : message == ManageMessageId.AddPhoneSuccess ? "Đã thêm số điện thoại."
                 : message == ManageMessageId.RemovePhoneSuccess ? "Đã bỏ số điện thoại."
@@ -79,16 +73,12 @@ namespace ProjectFinalEngineer.Controllers
             return _userManager.GetUserAsync(HttpContext.User);
         }
 
-        //
-        // GET: /Manage/ChangePassword
         [HttpGet]
         public IActionResult ChangePassword()
         {
             return View();
         }
 
-        //
-        // POST: /Manage/ChangePassword
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
@@ -104,7 +94,7 @@ namespace ProjectFinalEngineer.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    _logger.LogInformation(3, "User changed their password successfully.");
+                    _logger.LogInformation(3, "Người dùng thai đổi mật khẩu thành công");
                     return RedirectToAction(nameof(Index), new { Message = ManageMessageId.ChangePasswordSuccess });
                 }
                 ModelState.AddModelError(result);
@@ -112,16 +102,13 @@ namespace ProjectFinalEngineer.Controllers
             }
             return RedirectToAction(nameof(Index), new { Message = ManageMessageId.Error });
         }
-        //
-        // GET: /Manage/SetPassword
+
         [HttpGet]
         public IActionResult SetPassword()
         {
             return View();
         }
 
-        //
-        // POST: /Manage/SetPassword
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> SetPassword(SetPasswordViewModel model)
@@ -146,7 +133,6 @@ namespace ProjectFinalEngineer.Controllers
             return RedirectToAction(nameof(Index), new { Message = ManageMessageId.Error });
         }
 
-        //GET: /Manage/ManageLogins
         [HttpGet]
         public async Task<IActionResult> ManageLogins(ManageMessageId? message = null)
         {
@@ -171,21 +157,15 @@ namespace ProjectFinalEngineer.Controllers
             });
         }
 
-
-        //
-        // POST: /Manage/LinkLogin
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult LinkLogin(string provider)
         {
-            // Request a redirect to the external login provider to link a login for the current user
             var redirectUrl = Url.Action("LinkLoginCallback", "Manage");
             var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl, _userManager.GetUserId(User));
             return Challenge(properties, provider);
         }
 
-        //
-        // GET: /Manage/LinkLoginCallback
         [HttpGet]
         public async Task<ActionResult> LinkLoginCallback()
         {
@@ -204,9 +184,6 @@ namespace ProjectFinalEngineer.Controllers
             return RedirectToAction(nameof(ManageLogins), new { Message = message });
         }
 
-
-        //
-        // POST: /Manage/RemoveLogin
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> RemoveLogin(RemoveLoginViewModel account)
@@ -224,79 +201,8 @@ namespace ProjectFinalEngineer.Controllers
             }
             return RedirectToAction(nameof(ManageLogins), new { Message = message });
         }
-        //
-        // GET: /Manage/AddPhoneNumber
-        public IActionResult AddPhoneNumber()
-        {
-            return View();
-        }
-
-        //
-        // POST: /Manage/AddPhoneNumber
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddPhoneNumber(AddPhoneNumberViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-            // Generate the token and send it
-            var user = await GetCurrentUserAsync();
-            var code = await _userManager.GenerateChangePhoneNumberTokenAsync(user, model.PhoneNumber);
-            await _emailSender.SendSmsAsync(model.PhoneNumber, "Mã xác thực là: " + code);
-            return RedirectToAction(nameof(VerifyPhoneNumber), new { model.PhoneNumber });
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> VerifyPhoneNumber(string phoneNumber)
-        {
-            await _userManager.GenerateChangePhoneNumberTokenAsync(await GetCurrentUserAsync(), phoneNumber);
-            return phoneNumber == null ? View("Error") : View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> VerifyPhoneNumber(VerifyPhoneNumberViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-            var user = await GetCurrentUserAsync();
-            if (user != null)
-            {
-                var result = await _userManager.ChangePhoneNumberAsync(user, model.PhoneNumber, model.Code);
-                if (result.Succeeded)
-                {
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction(nameof(Index), new { Message = ManageMessageId.AddPhoneSuccess });
-                }
-            }
-            ModelState.AddModelError(string.Empty, "Lỗi thêm số điện thoại");
-            return View(model);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> RemovePhoneNumber()
-        {
-            var user = await GetCurrentUserAsync();
-            if (user != null)
-            {
-                var result = await _userManager.SetPhoneNumberAsync(user, null);
-                if (result.Succeeded)
-                {
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction(nameof(Index), new { Message = ManageMessageId.RemovePhoneSuccess });
-                }
-            }
-            return RedirectToAction(nameof(Index), new { Message = ManageMessageId.Error });
-        }
 
 
-        //
-        // POST: /Manage/EnableTwoFactorAuthentication
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EnableTwoFactorAuthentication()
@@ -310,8 +216,6 @@ namespace ProjectFinalEngineer.Controllers
             return RedirectToAction(nameof(Index), "Manage");
         }
 
-        //
-        // POST: /Manage/DisableTwoFactorAuthentication
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DisableTwoFactorAuthentication()
@@ -339,8 +243,6 @@ namespace ProjectFinalEngineer.Controllers
             return RedirectToAction(nameof(Index), "Manage");
         }
 
-        //
-        // POST: /Manage/GenerateRecoveryCode
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> GenerateRecoveryCode()

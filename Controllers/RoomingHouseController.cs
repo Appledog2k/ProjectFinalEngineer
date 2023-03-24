@@ -28,7 +28,7 @@ namespace ProjectFinalEngineer.Controllers
         public string StatusMessage { get; set; }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString = null)
+        public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString)
         {
             var roomingHouses = _context.RoomingHouses
                 .OrderByDescending(p => p.DateUpdated)
@@ -38,9 +38,11 @@ namespace ProjectFinalEngineer.Controllers
 
             if (searchString != null)
             {
-                roomingHouses = roomingHouses.Where(post => post.Title.ToLower().Contains(searchString.ToLower()) || post.Content.Contains(searchString));
+                roomingHouses = roomingHouses.Where(post => post.Title.ToLower().Contains(searchString.ToLower()) 
+                                                            || post.Content.Contains(searchString)
+                                                            || post.RoomingHouseAreas
+                                                                .Any(pc => pc.Area.Title.ToLower().Contains(searchString.ToLower())));
             }
-
 
             var totalPosts = await roomingHouses.CountAsync();
 
@@ -73,9 +75,8 @@ namespace ProjectFinalEngineer.Controllers
             return View(roomingHousesInPage);
         }
 
-
         [AllowAnonymous]
-        public async Task<IActionResult> ListMyRoomingHouse([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString = null)
+        public async Task<IActionResult> ListMyRoomingHouse([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var roomingHouses = _context.RoomingHouses
@@ -86,7 +87,10 @@ namespace ProjectFinalEngineer.Controllers
 
             if (searchString != null)
             {
-                roomingHouses = roomingHouses.Where(post => post.Title.ToLower().Contains(searchString.ToLower()) || post.Content.Contains(searchString));
+                roomingHouses = roomingHouses.Where(post => post.Title.ToLower().Contains(searchString.ToLower())
+                                                            || post.Content.Contains(searchString)
+                                                            || post.RoomingHouseAreas
+                                                                .Any(pc => pc.Area.Title.ToLower().Contains(searchString.ToLower())));
             }
 
 
@@ -284,6 +288,7 @@ namespace ProjectFinalEngineer.Controllers
                     roomingHousesUpdate.Price = roomingHouse.Price;
                     roomingHousesUpdate.Description = roomingHouse.Description;
                     roomingHousesUpdate.Image = roomingHouse.Image;
+                    roomingHousesUpdate.Published = false;
 
                     roomingHouse.AreaIDs ??= new int[] { };
                     var oldAreaIds = roomingHousesUpdate.RoomingHouseAreas.Select(c => c.AreaId).ToArray();

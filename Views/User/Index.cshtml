@@ -43,7 +43,7 @@
                                     <dd>
                                         @if (string.IsNullOrEmpty(user.RoleNames))
                                         {
-                                            <a class="userArea-addrole" asp-action="AddRole" asp-route-id="@user.Id">+ Thêm vai trò</a>
+                                            <a asp-action="AddRole" asp-route-id="@user.Id">+ Thêm vai trò</a>
                                         }
                                         else
                                         {
@@ -77,7 +77,7 @@
             {
                 CurrentPage = Model.CurrentPage,
                 CountPages = Model.CountPages,
-                GenerateUrl = (int? p) => Url.Action("Index", new { p = p })
+                GenerateUrl = p => Url.Action("Index", new { p })
             };
 }
 

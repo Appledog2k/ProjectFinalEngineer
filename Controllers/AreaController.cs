@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProjectFinalEngineer.EntityFramework;
-using ProjectFinalEngineer.Models.AggregateCategory;
 using ProjectFinalEngineer.Models.AggregateRole;
 using ProjectFinalEngineer.Models.RoomingHouse;
 
@@ -35,7 +34,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(areas);
         }
 
-        // GET: Forum/Category/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -59,7 +57,6 @@ namespace ProjectFinalEngineer.Controllers
             string prefix = string.Concat(Enumerable.Repeat("----", level));
             foreach (var area in source)
             {
-                // category.Title = prefix + " " + category.Title;
                 des.Add(new Area()
                 {
                     Id = area.Id,

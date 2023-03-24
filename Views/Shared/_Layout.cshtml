@@ -18,11 +18,7 @@
 <body>
     <header>
         <a asp-controller="Home" asp-action="Home" class="logo">
-            @*<img width="100px" height="50px" src= "~/Images/Avatars/Screenshot_20230209_091816.png"/>*@
-            
             <img width="120px" height="60px" src="~/Images/home/logobeau.svg" />
-
-
         </a>
         <ul class="navbar">
             <li class="pt">
@@ -94,36 +90,36 @@
             </div>
             <div class="column links">
                 <h3>Liên kết</h3>
-                <ul class="quickLinks">
+                <ul>
                     <li>
-                        <a asp-area="Blog" asp-controller="Post" asp-action="Index">
+                        <a asp-controller="Post" asp-action="Index">
                             Diễn đàn
                         </a>
                     </li>
                     <li>
-                        <a href="###">
+                        <a>
                             Kiến thức
                         </a>
                     </li>
                     <li>
-                        <a asp-area="Blog" asp-controller="Post" asp-action="Index">
+                        <a asp-controller="Post" asp-action="Index">
                             Tìm trọ
                         </a>
                     </li>
                     <li>
-                        <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                        <a asp-controller="Contact" asp-action="SendContact">
                             Liên hệ
                         </a>
                     </li>
                     <li>
-                        <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                        <a asp-controller="Contact" asp-action="SendContact">
                             Tiện ích
                         </a>
                     </li>
                 </ul>
 
             </div>
-            <div class="column subscribe">
+            <div class="column">
                 <h3>Gửi lời nhắn</h3>
                 <div class="btn-col">
                     <input type="text" placeholder="Gửi lời nhắn tới quản lý">

@@ -109,7 +109,11 @@
                                             <div class="search_rectangle"> </div>
                                         </div>
                                     </div>
-                                    <input class="fm-s-input" placeholder="Tìm kiếm bằng từ khóa" />
+                                    @using (Html.BeginForm("Index", "RoomingHouse", FormMethod.Get))
+                                    {
+                                        <input class="fm-s-input" placeholder="Tìm kiếm..." name="searchString" value="@ViewBag.SearchString" />
+                                        <button type="submit" style="display: none"></button>
+                                    }
                                 </label>
                             </form>
                         </div>

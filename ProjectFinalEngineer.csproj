@@ -48,18 +48,12 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Uploads\**">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Remove="Models\Account\**" />
     <Content Remove="Models\Account\**" />
     <EmbeddedResource Remove="Models\Account\**" />
     <None Remove="Models\Account\**" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
 

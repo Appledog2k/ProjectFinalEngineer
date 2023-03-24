@@ -27,7 +27,6 @@ namespace ProjectFinalEngineer.Controllers
         [TempData]
         public string StatusMessage { get; set; }
 
-        // GET: forum/knowledge
         [AllowAnonymous]
         public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString = null)
         {
@@ -66,7 +65,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(knowledgesInPage);
         }
 
-        // GET: Blog/Post/Create
         public async Task<IActionResult> CreateAsync()
         {
             var categories = await _context.Categories.ToListAsync();
@@ -109,7 +107,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(knowledge);
         }
 
-        // GET: Blog/Post/Details/5
         [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
@@ -189,7 +186,6 @@ namespace ProjectFinalEngineer.Controllers
                     knowledgeUpdate.Content = knowledge.Content;
                     knowledgeUpdate.DateUpdated = DateTime.Now;
 
-                    // Update PostCategory
                     knowledge.CategoryIDs ??= new int[] { };
 
                     var oldCateIds = knowledgeUpdate.KnowledgeCategories.Select(c => c.CategoryId).ToArray();
@@ -235,7 +231,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(knowledge);
         }
 
-        // GET: Blog/Post/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -254,7 +249,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(post);
         }
 
-        // POST: Blog/Post/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -277,7 +271,5 @@ namespace ProjectFinalEngineer.Controllers
         {
             return _context.Knowledges.Any(e => e.Id == id);
         }
-
-
     }
 }

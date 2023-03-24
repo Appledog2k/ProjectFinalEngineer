@@ -328,28 +328,6 @@ E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\appsettings.json
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\libman.json
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\package-lock.json
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\package.json
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\.tmb\1_0F29BEEC41D52C972EBADD2D358E80E8.jpg
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\.tmb\1_C0F454B9EA8DCD7EA838CCAD4C5D0EAA.jpg
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\.tmb\quang hung (2)_4DFB64581E4A7D2EF938F5C2B78E7E5D.jpg
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\.tmb\quang hung (2)_7003CFBAFFD5B171E17FBFBCEF29CFB1.jpg
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\1.jpg
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\Avatars\avatar1.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\Avatars\avatar2.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\Avatars\avatar3.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\Avatars\avatar4.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\avatar_circle.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji1.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji2.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji3.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji4.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji5.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji6.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji7.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\emojis\emoji8.jpg
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\remove.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\send.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\Images\sign-out.png
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\Uploads\quang hung (2).jpg
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.staticwebassets.runtime.json
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.exe
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\ProjectFinalEngineer.deps.json
@@ -638,8 +616,6 @@ E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\refint\ProjectFi
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.pdb
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.genruntimeconfig.cache
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ref\ProjectFinalEngineer.dll
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.Resource.resources
-E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\obj\Debug\net6.0\ProjectFinalEngineer.csproj.GenerateResource.cache
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\System.Web.Razor.dll
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\System.Web.Helpers.dll
 E:\WorkSpace\ProjectFinal\ProjectFinalEngineer\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll

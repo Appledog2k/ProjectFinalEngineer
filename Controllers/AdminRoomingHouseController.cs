@@ -29,7 +29,7 @@ namespace ProjectFinalEngineer.Controllers
                 .Include(p => p.Author)
                 .Include(p => p.Comments)
                 .Where(x => x.Published == false);
-            //.Where(post => post.Title.Contains(searchString) || post.Content.Contains(searchString));
+
             if (searchString != null)
             {
                 roomingHouses = roomingHouses.Where(post => post.Title.ToLower().Contains(searchString.ToLower()) || post.Content.Contains(searchString.ToLower()));
@@ -108,7 +108,6 @@ namespace ProjectFinalEngineer.Controllers
                 return NotFound();
             }
 
-            // var post = await _context.Posts.FindAsync(id);
             var roomingHouse = await _context.RoomingHouses.Include(p => p.RoomingHouseAreas)
                 .Include(post => post.Author)
                 .Include(post => post.Comments)
@@ -165,8 +164,6 @@ namespace ProjectFinalEngineer.Controllers
                     roomingHousesUpdate.DateUpdated = DateTime.Now;
                     roomingHousesUpdate.Reason = roomingHouse.Reason;
                     roomingHousesUpdate.Priority = 2;
-
-                    // Update PostCategory
                     roomingHouse.AreaIDs ??= new int[] { };
 
                     var oldAreaIds = roomingHousesUpdate.RoomingHouseAreas.Select(c => c.AreaId).ToArray();

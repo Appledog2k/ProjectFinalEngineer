@@ -35,7 +35,6 @@ public class PostController : Controller
     public string StatusMessage { get; set; }
 
 
-
     [AllowAnonymous]
     public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString)
     {

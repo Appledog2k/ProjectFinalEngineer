@@ -1,15 +1,15 @@
 using System.Security.Claims;
 using System.Text;
 using System.Text.Encodings.Web;
-using App.Utilities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
-using ProjectFinalEngineer.Models;
 using ProjectFinalEngineer.Models.AggregateExtensions;
 using ProjectFinalEngineer.Models.AggregateUser;
+using ProjectFinalEngineer.Services;
+using ProjectFinalEngineer.Utilities;
 
 namespace ProjectFinalEngineer.Controllers
 {
@@ -34,7 +34,6 @@ namespace ProjectFinalEngineer.Controllers
             _logger = logger;
         }
 
-        // GET: /Account/Login
         [HttpGet("/login/")]
         [AllowAnonymous]
         public IActionResult Login(string returnUrl = null)
@@ -42,7 +41,7 @@ namespace ProjectFinalEngineer.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
-        // POST: /Account/Login
+
         [HttpPost("/login/")]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -69,26 +68,19 @@ namespace ProjectFinalEngineer.Controllers
                     _logger.LogInformation(1, "User logged in.");
                     return LocalRedirect(returnUrl);
                 }
-                if (result.RequiresTwoFactor)
-                {
-                    return RedirectToAction(nameof(SendCode), new { ReturnUrl = returnUrl, model.RememberMe });
-                }
 
                 if (result.IsLockedOut)
                 {
                     _logger.LogWarning(2, "Tài khoản bị khóa");
                     return View("Lockout");
                 }
-                else
-                {
-                    ModelState.AddModelError("Tài khoản hoặc mật khẩu không chính xác");
-                    return View(model);
-                }
+
+                ModelState.AddModelError("Tài khoản hoặc mật khẩu không chính xác");
+                return View(model);
             }
             return View(model);
         }
 
-        // POST: /Account/LogOff
         [HttpPost("/logout/")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> LogOff()
@@ -97,8 +89,7 @@ namespace ProjectFinalEngineer.Controllers
             _logger.LogInformation("User đăng xuất");
             return RedirectToAction("Home", "Home", new { area = "" });
         }
-        //
-        // GET: /Account/Register
+
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Register(string returnUrl = null)
@@ -107,8 +98,7 @@ namespace ProjectFinalEngineer.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
-        //
-        // POST: /Account/Register
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -116,6 +106,7 @@ namespace ProjectFinalEngineer.Controllers
         {
             returnUrl ??= Url.Content("~/");
             ViewData["ReturnUrl"] = returnUrl;
+
             if (ModelState.IsValid)
             {
                 var user = new AppUser { UserName = model.UserName, Email = model.Email };
@@ -125,11 +116,10 @@ namespace ProjectFinalEngineer.Controllers
                 {
                     _logger.LogInformation("Đã tạo user mới.");
 
-                    // Phát sinh token để xác nhận email
+                    // Tạo Token để xác nhận email
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 
-                    // https://localhost:5001/confirm-email?userId=fdsfds&code=xyz&returnUrl=
                     var callbackUrl = Url.ActionLink(
                         action: nameof(ConfirmEmail),
                         values:
@@ -149,24 +139,20 @@ namespace ProjectFinalEngineer.Controllers
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
-                        return LocalRedirect(Url.Action(nameof(RegisterConfirmation)));
+                        return LocalRedirect(Url.Action(nameof(RegisterConfirmation)) ?? string.Empty);
                     }
-                    else
-                    {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
-                    }
+
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    return LocalRedirect(returnUrl);
 
                 }
 
                 ModelState.AddModelError(result);
             }
 
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
 
-        // GET: /Account/ConfirmEmail
         [HttpGet]
         [AllowAnonymous]
         public IActionResult RegisterConfirmation()
@@ -174,7 +160,6 @@ namespace ProjectFinalEngineer.Controllers
             return View();
         }
 
-        // GET: /Account/ConfirmEmail
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> ConfirmEmail(string userId, string code)
@@ -193,8 +178,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(result.Succeeded ? "ConfirmEmail" : "ErrorConfirmEmail");
         }
 
-        //
-        // POST: /Account/ExternalLogin
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -205,8 +188,7 @@ namespace ProjectFinalEngineer.Controllers
             var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
             return Challenge(properties, provider);
         }
-        //
-        // GET: /Account/ExternalLoginCallback
+
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> ExternalLoginCallback(string returnUrl = null, string remoteError = null)
@@ -223,7 +205,6 @@ namespace ProjectFinalEngineer.Controllers
                 return RedirectToAction(nameof(Login));
             }
 
-            // Sign in the user with this external login provider if the user already has a login.
             var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false);
             if (result.Succeeded)
             {
@@ -241,14 +222,12 @@ namespace ProjectFinalEngineer.Controllers
             {
                 return View("Lockout");
             }
-            else
-            {
-                // If the user does not have an account, then ask the user to create an account.
-                ViewData["ReturnUrl"] = returnUrl;
-                ViewData["ProviderDisplayName"] = info.ProviderDisplayName;
-                var email = info.Principal.FindFirstValue(ClaimTypes.Email);
-                return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = email });
-            }
+
+            // If the user does not have an account, then ask the user to create an account.
+            ViewData["ReturnUrl"] = returnUrl;
+            ViewData["ProviderDisplayName"] = info.ProviderDisplayName;
+            var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+            return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = email });
         }
 
         //
@@ -516,10 +495,6 @@ namespace ProjectFinalEngineer.Controllers
             if (model.SelectedProvider == "Email")
             {
                 await _emailSender.SendEmailAsync(await _userManager.GetEmailAsync(user), "Security Code", message);
-            }
-            else if (model.SelectedProvider == "Phone")
-            {
-                await _emailSender.SendSmsAsync(await _userManager.GetPhoneNumberAsync(user), message);
             }
 
             return RedirectToAction(nameof(VerifyCode), new { Provider = model.SelectedProvider, model.ReturnUrl, model.RememberMe });

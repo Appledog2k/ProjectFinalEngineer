@@ -42,22 +42,17 @@ public class AppDbContext : IdentityDbContext<AppUser>
         modelBuilder.Entity<PostCategory>().HasKey(p => new { p.PostId, p.CategoryId });
         modelBuilder.Entity<KnowledgeCategory>().HasKey(p => new { p.KnowledgeId, p.CategoryId });
         modelBuilder.Entity<RoomingHouseArea>().HasKey(p => new { p.RoomingHouseId, p.AreaId });
-
-
     }
 
     public DbSet<RoomingHouseArea> RoomingHouseAreas { get; set; }
     public DbSet<RoomingHouse> RoomingHouses { get; set; }
     public DbSet<Area> Areas { get; set; }
-
     public DbSet<KnowledgeCategory> KnowledgeCategories { get; set; }
     public DbSet<Knowledge> Knowledges { get; set; }
-
     public DbSet<Contact> Contacts { get; set; }
     public DbSet<Comment> Comments { get; set; }
     public DbSet<Category> Categories { get; set; }
     public DbSet<Post> Posts { set; get; }
     public DbSet<PostCategory> PostCategories { set; get; }
     public DbSet<AppUser> AppUsers { set; get; }
-
 }

@@ -1,4 +1,8 @@
-﻿@model IEnumerable<ProjectFinalEngineer.Models.RoomingHouse.RoomingHouse>
+﻿@using ProjectFinalEngineer.Models.AggregateUser
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<ProjectFinalEngineer.Models.RoomingHouse.RoomingHouse>
+@inject UserManager<AppUser> UserManager
 @{
     ViewData["Title"] = "Diễn đàn";
     Layout = "~/Views/Shared/_LayoutForum.cshtml";
@@ -148,6 +152,30 @@
                                                 </div>
                                                 <div class="category-class">
                                                     <p>Khu vực: @string.Join(", ", item.RoomingHouseAreas.Select(pc => pc.Area.Title))</p>
+                                                    @if (item.Author != null)
+                                                    {
+                                                        var author = item.Author;
+                                                        var roleNames = await UserManager.GetRolesAsync(author);
+                                                        if (roleNames.Any())
+                                                        {
+                                                            if (roleNames.Contains("Người cho thuê"))
+                                                            {
+                                                                <p>Vai trò : Người cho thuê</p>
+                                                            }
+                                                            else if (roleNames.Contains("Administrator"))
+                                                            {
+                                                                <p>Vai trò: Quản trị viên</p>
+                                                            }
+                                                            else if (roleNames.Contains("Member"))
+                                                            {
+                                                                <p>Vai trò: Thành viên</p>
+                                                            }
+                                                            else if (roleNames.Contains("Editor"))
+                                                            {
+                                                                <p>Vai trò: Người kiểm duyệt</p>
+                                                            }
+                                                        }
+                                                    }
                                                 </div>
                                                 <div class="category-class" style="padding-top: 10px; display: flex; flex-direction: row;">
                                                     <p style="">
@@ -155,7 +183,7 @@
                                                         <div style="color: #F56857">@Html.Raw(item.Reason) </div>
                                                     </p>
                                                 </div>
-                                                <div class="ct-body" style="margin-top: 15px !important;">
+                                                <div class="ct-body" style="margin-top: 3px !important;">
                                                     <div class="ct-body-name">
                                                         <a><p style="color:rgb(50 138 241);">@Html.DisplayFor(modelItem => item.Author.UserName)</p></a>
 

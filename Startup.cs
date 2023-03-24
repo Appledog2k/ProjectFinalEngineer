@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.FileProviders;
 using ProjectFinalEngineer.BusinessManager;
 using ProjectFinalEngineer.EntityFramework;
 using ProjectFinalEngineer.Models.AggregateRole;
 using ProjectFinalEngineer.Models.AggregateUser;
+using ProjectFinalEngineer.Services;
 using ProjectFinalEngineer.Services.Comment;
 
 namespace ProjectFinalEngineer
@@ -23,28 +23,24 @@ namespace ProjectFinalEngineer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // add extensions timezone information
+            // .NET type Datetime: millisecond, PostgreSQL type timestamp: microsecond => convert timestamp => DatetimeOffset
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
+            // PositiveInfinity, NegativeInfinity hoặc NaN => DateTime.MaxValue && DateTime.MinValue
             AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
-            services.AddSignalR();
+
             services.AddDbContext<AppDbContext>(options =>
             {
                 string connectString = Configuration.GetConnectionString("ForumDb");
                 options.UseNpgsql(connectString);
             });
 
-           
-
-
             services.AddControllersWithViews();
             services.AddRazorPages();
-
             services.AddIdentity<AppUser, IdentityRole>()
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
 
-
-            // services.AddTransient(typeof(ILogger<>), typeof(Logger<>));
             // Truy cập IdentityOptions
             services.Configure<IdentityOptions>(options =>
             {
@@ -65,7 +61,6 @@ namespace ProjectFinalEngineer
                 options.User.AllowedUserNameCharacters = // các ký tự đặt tên user
                     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
                 options.User.RequireUniqueEmail = true;  // Email là duy nhất
-
 
                 // Cấu hình đăng nhập.
                 options.SignIn.RequireConfirmedEmail = true;            // Cấu hình xác thực địa chỉ email (email phải tồn tại)
@@ -102,14 +97,14 @@ namespace ProjectFinalEngineer
                     ;
 
             services.AddOptions();
+
             var mailsetting = Configuration.GetSection("MailSettings");
             services.Configure<MailSettings>(mailsetting);
+
             services.AddSingleton<IEmailSender, SendMailService>();
             services.AddTransient<ICommentBusinessManager, CommentBusinessManager>();
             services.AddTransient<ICommentService, CommentService>();
             services.AddSingleton<IdentityErrorDescriber, App.Services.AppIdentityErrorDescriber>();
-
-
 
             services.AddAuthorization(options =>
             {
@@ -133,26 +128,18 @@ namespace ProjectFinalEngineer
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(
-                    Path.Combine(Directory.GetCurrentDirectory(), "Uploads")
-                ),
-                RequestPath = "/contents"
-            });
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 // URL: /{controller}/{action}/{id?}
-                // First/Index
+                // Home/Home
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Home}/{id?}");

@@ -19,8 +19,10 @@ namespace ProjectFinalEngineer.Controllers
         {
             _context = context;
         }
+
         [TempData]
         public string StatusMessage { get; set; }
+
         [AllowAnonymous]
         public async Task<IActionResult> Index([FromQuery(Name = "p")] int currentPage, int pagesize, string searchString = null)
         {
@@ -90,6 +92,7 @@ namespace ProjectFinalEngineer.Controllers
             };
             return View(result);
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ApprovePost(int postId)

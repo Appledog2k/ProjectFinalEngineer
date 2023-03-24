@@ -17,14 +17,12 @@ namespace ProjectFinalEngineer.Controllers
             _context = context;
         }
 
-        // GET: Contact
         [HttpGet("/admin/contact")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Contacts.OrderByDescending(x => x.DateSent).ToListAsync());
         }
 
-        // GET: Contact/Details/5
         [HttpGet("/admin/contact/details/{id}")]
         public async Task<IActionResult> Details(int? id)
         {
@@ -42,15 +40,17 @@ namespace ProjectFinalEngineer.Controllers
 
             return View(contact);
         }
+
         [TempData]
         public string StatusMessage { set; get; }
-        // GET: Contact/Create
+
         [HttpGet("/SendContact/")]
         [AllowAnonymous]
         public IActionResult SendContact()
         {
             return View();
         }
+
         [HttpPost("/SendContact/")]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -67,7 +67,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(contact);
         }
 
-        // GET: Contact/Delete/5
         [HttpGet("/admin/contact/delete/{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
@@ -86,7 +85,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(contact);
         }
 
-        // POST: Contact/Delete/5
         [HttpPost("/admin/contact/delete/{id}"), ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -104,6 +102,5 @@ namespace ProjectFinalEngineer.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
     }
 }

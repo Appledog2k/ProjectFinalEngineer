@@ -19,7 +19,6 @@ namespace ProjectFinalEngineer.Controllers
             _context = context;
         }
 
-        // GET: Forum/Category
         public async Task<IActionResult> Index()
         {
             var qr = (from c in _context.Categories select c)
@@ -33,7 +32,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(categories);
         }
 
-        // GET: Forum/Category/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -98,7 +96,7 @@ namespace ProjectFinalEngineer.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title,Description,Slug,ParentCategoryId")] Category category)
+        public async Task<IActionResult> Create([Bind("Title,Description,ParentCategoryId")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -130,7 +128,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(category);
         }
 
-        // GET: Blog/Category/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -164,10 +161,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(category);
         }
 
-
-        // POST: Blog/Category/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Slug,ParentCategoryId")] Category category)
@@ -214,12 +207,8 @@ namespace ProjectFinalEngineer.Controllers
                         }
                         return false;
                     };
-                // End Func 
                 checkCateIds(childCates.ToList());
             }
-
-
-
 
             if (ModelState.IsValid && canUpdate)
             {
@@ -229,7 +218,7 @@ namespace ProjectFinalEngineer.Controllers
                         category.ParentCategoryId = null;
 
                     var dtc = _context.Categories.FirstOrDefault(c => c.Id == id);
-                    _context.Entry(dtc).State = EntityState.Detached;
+                    if (dtc != null) _context.Entry((object)dtc).State = EntityState.Detached;
 
                     _context.Update(category);
                     await _context.SaveChangesAsync();
