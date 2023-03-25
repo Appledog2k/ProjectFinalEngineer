@@ -33,8 +33,6 @@ namespace ProjectFinalEngineer.Controllers
         [TempData]
         public string StatusMessage { get; set; }
 
-        //
-        // GET: /Role/Index
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -58,14 +56,12 @@ namespace ProjectFinalEngineer.Controllers
             return View(roles);
         }
 
-        // GET: /Role/Create
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: /Role/Create
         [HttpPost, ActionName(nameof(Create))]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateAsync(CreateRoleModel model)
@@ -89,7 +85,6 @@ namespace ProjectFinalEngineer.Controllers
             return View();
         }
 
-        // GET: /Role/Delete/roleid
         [HttpGet("{roleid}")]
         public async Task<IActionResult> DeleteAsync(string roleid)
         {
@@ -102,7 +97,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(role);
         }
 
-        // POST: /Role/Edit/1
         [HttpPost("{roleid}"), ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmAsync(string roleid)
@@ -125,7 +119,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(role);
         }
 
-        // GET: /Role/Edit/roleid
         [HttpGet("{roleid}")]
         public async Task<IActionResult> EditAsync(string roleid, [Bind("Name")] EditRoleModel model)
         {
@@ -143,7 +136,6 @@ namespace ProjectFinalEngineer.Controllers
 
         }
 
-        // POST: /Role/Edit/1
         [HttpPost("{roleid}"), ActionName("Edit")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditConfirmAsync(string roleid, [Bind("Name")] EditRoleModel model)
@@ -177,7 +169,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(model);
         }
 
-        // GET: /Role/AddRoleClaim/roleid
         [HttpGet("{roleid}")]
         public async Task<IActionResult> AddRoleClaimAsync(string roleid)
         {
@@ -195,7 +186,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(model);
         }
 
-        // POST: /Role/AddRoleClaim/roleid
         [HttpPost("{roleid}")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddRoleClaimAsync(string roleid, [Bind("ClaimType", "ClaimValue")] EditClaimModel model)
@@ -231,7 +221,6 @@ namespace ProjectFinalEngineer.Controllers
 
         }
 
-        // GET: /Role/EditRoleClaim/claimid
         [HttpGet("{claimid:int}")]
         public async Task<IActionResult> EditRoleClaim(int claimid)
         {
@@ -252,8 +241,6 @@ namespace ProjectFinalEngineer.Controllers
 
             return View(Input);
         }
-
-        // GET: /Role/EditRoleClaim/claimid
         [HttpPost("{claimid:int}")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditRoleClaim(int claimid, [Bind("ClaimType", "ClaimValue")] EditClaimModel Input)
@@ -286,7 +273,7 @@ namespace ProjectFinalEngineer.Controllers
 
             return RedirectToAction("Edit", new { roleid = role.Id });
         }
-        // POST: /Role/EditRoleClaim/claimid
+  
         [HttpPost("{claimid:int}")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteClaim(int claimid, [Bind("ClaimType", "ClaimValue")] EditClaimModel Input)

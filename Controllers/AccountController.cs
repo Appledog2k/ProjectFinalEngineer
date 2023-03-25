@@ -222,16 +222,12 @@ namespace ProjectFinalEngineer.Controllers
             {
                 return View("Lockout");
             }
-
-            // If the user does not have an account, then ask the user to create an account.
             ViewData["ReturnUrl"] = returnUrl;
             ViewData["ProviderDisplayName"] = info.ProviderDisplayName;
             var email = info.Principal.FindFirstValue(ClaimTypes.Email);
             return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = email });
         }
 
-        //
-        // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -240,7 +236,6 @@ namespace ProjectFinalEngineer.Controllers
             returnUrl ??= Url.Content("~/");
             if (ModelState.IsValid)
             {
-                // Get the information about the user from the external login provider
                 var info = await _signInManager.GetExternalLoginInfoAsync();
                 if (info == null)
                 {
@@ -252,7 +247,7 @@ namespace ProjectFinalEngineer.Controllers
                 string externalEmail = null;
                 AppUser externalEmailUser = null;
 
-                // Claim ~ Dac tinh mo ta mot doi tuong 
+                // Claim 
                 if (info.Principal.HasClaim(c => c.Type == ClaimTypes.Email))
                 {
                     externalEmail = info.Principal.FindFirstValue(ClaimTypes.Email);
@@ -278,11 +273,6 @@ namespace ProjectFinalEngineer.Controllers
                     }
                     else
                     {
-                        // registeredUser = externalEmailUser (externalEmail != Input.Email)
-                        /*
-                            info => user1 (mail1@abc.com)
-                                 => user2 (mail2@abc.com)
-                        */
                         ModelState.AddModelError(string.Empty, "Không liên kết được tài khoản, hãy sử dụng email khác");
                         return View();
                     }
@@ -347,8 +337,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(model);
         }
 
-        //
-        // GET: /Account/ForgotPassword
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ForgotPassword()
@@ -356,8 +344,6 @@ namespace ProjectFinalEngineer.Controllers
             return View();
         }
 
-        //
-        // POST: /Account/ForgotPassword
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -368,7 +354,6 @@ namespace ProjectFinalEngineer.Controllers
                 var user = await _userManager.FindByEmailAsync(model.Email);
                 if (user == null || !await _userManager.IsEmailConfirmedAsync(user))
                 {
-                    // Don't reveal that the user does not exist or is not confirmed
                     return View("ForgotPasswordConfirmation");
                 }
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
@@ -392,8 +377,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(model);
         }
 
-        //
-        // GET: /Account/ForgotPasswordConfirmation
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ForgotPasswordConfirmation()
@@ -401,8 +384,6 @@ namespace ProjectFinalEngineer.Controllers
             return View();
         }
 
-        //
-        // GET: /Account/ResetPassword
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ResetPassword(string code = null)
@@ -410,8 +391,7 @@ namespace ProjectFinalEngineer.Controllers
             return code == null ? View("Error") : View();
         }
 
-        //
-        // POST: /Account/ResetPassword
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -437,8 +417,7 @@ namespace ProjectFinalEngineer.Controllers
             return View();
         }
 
-        //
-        // GET: /Account/ResetPasswordConfirmation
+
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ResetPasswordConfirmation()
@@ -446,8 +425,7 @@ namespace ProjectFinalEngineer.Controllers
             return View();
         }
 
-        //
-        // GET: /Account/SendCode
+ 
         [HttpGet]
         [AllowAnonymous]
         public async Task<ActionResult> SendCode(string returnUrl = null, bool rememberMe = false)
@@ -461,8 +439,7 @@ namespace ProjectFinalEngineer.Controllers
             var factorOptions = userFactors.Select(purpose => new SelectListItem { Text = purpose, Value = purpose }).ToList();
             return View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
-        //
-        // POST: /Account/SendCode
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -514,8 +491,6 @@ namespace ProjectFinalEngineer.Controllers
             return View(new VerifyCodeViewModel { Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
-        //
-        // POST: /Account/VerifyCode
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -527,9 +502,6 @@ namespace ProjectFinalEngineer.Controllers
                 return View(model);
             }
 
-            // The following code protects for brute force attacks against the two factor codes.
-            // If a user enters incorrect codes for a specified amount of time then the user account
-            // will be locked out for a specified amount of time.
             var result = await _signInManager.TwoFactorSignInAsync(model.Provider, model.Code, model.RememberMe, model.RememberBrowser);
             if (result.Succeeded)
             {
@@ -547,8 +519,6 @@ namespace ProjectFinalEngineer.Controllers
             }
         }
 
-        //
-        // GET: /Account/VerifyAuthenticatorCode
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> VerifyAuthenticatorCode(bool rememberMe, string returnUrl = null)
@@ -562,8 +532,7 @@ namespace ProjectFinalEngineer.Controllers
             return View(new VerifyAuthenticatorCodeViewModel { ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
-        //
-        // POST: /Account/VerifyAuthenticatorCode
+        
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -575,9 +544,6 @@ namespace ProjectFinalEngineer.Controllers
                 return View(model);
             }
 
-            // The following code protects for brute force attacks against the two factor codes.
-            // If a user enters incorrect codes for a specified amount of time then the user account
-            // will be locked out for a specified amount of time.
             var result = await _signInManager.TwoFactorAuthenticatorSignInAsync(model.Code, model.RememberMe, model.RememberBrowser);
             if (result.Succeeded)
             {
@@ -594,13 +560,11 @@ namespace ProjectFinalEngineer.Controllers
                 return View(model);
             }
         }
-        //
-        // GET: /Account/UseRecoveryCode
+ 
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> UseRecoveryCode(string returnUrl = null)
         {
-            // Require that the user has already logged in via username/password or external login
             var user = await _signInManager.GetTwoFactorAuthenticationUserAsync();
             if (user == null)
             {
@@ -609,8 +573,7 @@ namespace ProjectFinalEngineer.Controllers
             return View(new UseRecoveryCodeViewModel { ReturnUrl = returnUrl });
         }
 
-        //
-        // POST: /Account/UseRecoveryCode
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -640,9 +603,5 @@ namespace ProjectFinalEngineer.Controllers
         {
             return View();
         }
-
-
-
-
     }
 }
